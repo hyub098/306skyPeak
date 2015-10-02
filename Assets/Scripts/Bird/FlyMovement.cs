@@ -89,7 +89,7 @@ public class FlyMovement : MonoBehaviour {
 
 			rotate = false;
 
-			if(transform.eulerAngles.x < 110){
+			if(transform.eulerAngles.x < 100){
 				transform.eulerAngles = new Vector3(45,transform.eulerAngles.y, transform.eulerAngles.z);
 			}
 			else{
