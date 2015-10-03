@@ -3,8 +3,6 @@ using System.Collections;
 
 public class PauseMenu : MonoBehaviour {
 
-	public string levelSelect;
-	public string mainMenu;
 	public bool isPaused;
 	public GameObject pauseMenuCanvus;
 
@@ -13,8 +11,11 @@ public class PauseMenu : MonoBehaviour {
 
 		if (isPaused) {
 			pauseMenuCanvus.SetActive (true);
+			Time.timeScale = 0f; //Stops the game
+
 		} else {
 			pauseMenuCanvus.SetActive (false);
+			Time.timeScale = 1f;
 		}
 
 		if (Input.GetKeyDown (KeyCode.Escape)) {
@@ -29,11 +30,4 @@ public class PauseMenu : MonoBehaviour {
 
 	}
 
-	public void LevelSelect(){
-
-	}
-
-	public void Quit(){
-
-	}
 }

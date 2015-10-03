@@ -67,8 +67,11 @@ public class newFlyControl : MonoBehaviour {
 		transform.position += transform.forward * Time.deltaTime * speed;
 		
 		if (Rotation ()) {
+
 			//rotate the plane from input
-			transform.Rotate (-Input.GetAxis("Vertical")*2,0.0f, -Input.GetAxis("Horizontal")*3);
+			//transform.Rotate (-Input.GetAxis("Vertical")*2,0.0f, -Input.GetAxis("Horizontal")*3);
+
+			transform.Rotate (Input.GetAxis("Mouse X")*0.001f,0.0f, Input.GetAxis("Mouse Y")*0.001f);
 		}
 		
 		//speed -= transform.forward.y * Time.deltaTime *  2.0f;
