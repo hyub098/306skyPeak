@@ -35,8 +35,14 @@ public class FlyMovement : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		Debug.Log ("plane pilot script added to: " + gameObject.name);
+<<<<<<< HEAD
 		anim = GetComponent<Animation> ();
 		rb = GetComponent<Rigidbody> ();
+=======
+        //		rb = this.GetComponent<Rigidbody> ();
+        //		rb.velocity = Vector3.ClampMagnitude (rb.velocity, 0f);
+
+>>>>>>> 06c423ff0019c82ce9e1e236da570043dd961aa7
 
      //   SetTimerText();
 
@@ -46,7 +52,10 @@ public class FlyMovement : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 06c423ff0019c82ce9e1e236da570043dd961aa7
 //        minute = (int)counter / 60;
 //        second = (int)counter % 60;
 //        time += Time.deltaTime;
@@ -66,6 +75,7 @@ public class FlyMovement : MonoBehaviour {
 		Camera.main.transform.LookAt (transform.position + transform.forward * 1.0f);
 
 
+<<<<<<< HEAD
 		float h = Input.GetAxisRaw("Horizontal");
 		float v = Input.GetAxisRaw("Vertical");
 		Move (h, v);
@@ -85,11 +95,46 @@ public class FlyMovement : MonoBehaviour {
 //			//rotate the plane from input
 //			transform.Rotate (-Input.GetAxis("Vertical"),0.0f, -Input.GetAxis("Horizontal"));
 //	//	}
+=======
+		//move the plane
+		transform.position += transform.forward * Time.deltaTime * speed;
+	
+		if (Rotation ()) {
+			//rotate the plane from input
+			transform.Rotate (-Input.GetAxis("Vertical")*2,0.0f, -Input.GetAxis("Horizontal")*3);
+		}
+>>>>>>> 06c423ff0019c82ce9e1e236da570043dd961aa7
 
 		//speed -= transform.forward.y * Time.deltaTime *  2.0f;
 		
 	}
 
+<<<<<<< HEAD
+=======
+
+
+//	/**
+//	 * If collide with objects with tag pick up
+//	 * 
+//	 */ 
+//	void OnTriggerEnter(Collider other){
+//		
+//		if ( other.gameObject.CompareTag("Pick Up")){
+//			other.gameObject.SetActive(false);
+//			count++;
+//			SetCountText();
+//		}
+//		
+//	}
+//
+//	//Set Text to UI
+//	void SetCountText()
+//		
+//	{
+//		countText.text = "Count: " + count.ToString ();
+//		
+//	}
+>>>>>>> 06c423ff0019c82ce9e1e236da570043dd961aa7
 
 	
 
