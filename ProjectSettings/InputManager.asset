@@ -38,6 +38,38 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
+    m_Name: Mouse X
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: mouse 0
+    altNegativeButton: 
+    altPositiveButton: mouse 0
+    gravity: 1000
+    dead: .00100000005
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 1
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Mouse Y
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: left ctrl
+    altNegativeButton: 
+    altPositiveButton: mouse 0
+    gravity: 1000
+    dead: .00100000005
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 1
+    axis: 1
+    joyNum: 0
+  - serializedVersion: 3
     m_Name: Fire1
     descriptiveName: 
     descriptiveNegativeName: 
@@ -262,11 +294,19 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
+<<<<<<< HEAD
     m_Name: Submit
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: enter
+=======
+    m_Name: Cancel
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+>>>>>>> da8c285ba7bfd861c5045180a977f7ec9a9cda2e
     altNegativeButton: 
     altPositiveButton: space
     gravity: 1000
@@ -278,11 +318,19 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
+<<<<<<< HEAD
     m_Name: Cancel
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: escape
+=======
+    m_Name: Submit
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+>>>>>>> da8c285ba7bfd861c5045180a977f7ec9a9cda2e
     altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 1000
