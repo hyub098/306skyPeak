@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class FlyMovement : MonoBehaviour {
 	
 	public float speed;
-	private float inputSpd;
 //	public float moveSpd;
 	
 //	public Text winText;
@@ -16,12 +15,12 @@ public class FlyMovement : MonoBehaviour {
 	private float rotationX;
 	private float rotationZ;
 	private Vector3 movement;
-	private float v;
 	private Rigidbody rb;
 
 	private Animation anim;
 	private Vector3 moveDistance;
 	private bool start = false;
+
 
 
 //    int incrementTime = 1;
@@ -39,13 +38,10 @@ public class FlyMovement : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		Debug.Log ("plane pilot script added to: " + gameObject.name);
-		inputSpd = 0;
-		moveDistance = new Vector3(0,0,0);
 
 		anim = GetComponent<Animation> ();
 		rb = GetComponent<Rigidbody> ();
 
-		float v = 0;
      //   SetTimerText();
 
         //		SetCountText();
@@ -54,7 +50,7 @@ public class FlyMovement : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-		inputSpd = Mathf.Clamp (inputSpd, 1, 20);
+
 //        minute = (int)counter / 60;
 //        second = (int)counter % 60;
 //        time += Time.deltaTime;
@@ -110,9 +106,29 @@ public class FlyMovement : MonoBehaviour {
 		}
 		//move the plane
 
+
+//		if (v != 0) {
+//			anim.Play("flyNormal");
+//			speed = Mathf.Clamp (speed, 1, 20);
+//
+//			speed = v * speed;
+//		}
+//
+//
+//		//move the plane
+//		transform.position += transform.forward * Time.deltaTime * speed;
+//	
+//	//	if (Rotation ()) {
+//			//rotate the plane from input
+//			transform.Rotate (-Input.GetAxis("Vertical"),0.0f, -Input.GetAxis("Horizontal"));
+//	//	}
+
+//		//move the plane
+//		transform.position += transform.forward * Time.deltaTime * speed;
+//	
 //		if (Rotation ()) {
-			//rotate the plane from input
-			transform.Rotate (/*-Input.GetAxis("Vertical")*1.5f*/ -v,0.0f, -h*2);
+//			//rotate the plane from input
+//			transform.Rotate (-Input.GetAxis("Vertical")*2,0.0f, -Input.GetAxis("Horizontal")*3);
 //		}
 
 
@@ -137,7 +153,7 @@ public class FlyMovement : MonoBehaviour {
 			rotate = false;
 
 			if(transform.eulerAngles.x < 100){
-				transform.eulerAngles = new Vector3(44.9f,transform.eulerAngles.y, transform.eulerAngles.z);
+				transform.eulerAngles = new Vector3(45,transform.eulerAngles.y, transform.eulerAngles.z);
 			}
 			else{
 				transform.eulerAngles = new Vector3(315,transform.eulerAngles.y, transform.eulerAngles.z);
@@ -170,5 +186,33 @@ public class FlyMovement : MonoBehaviour {
 
 
 
+	void Move(float h, float v)
+	{
+		movement.Set (v/10, v, h);
 
+		if (h != 0 || v != 0) {
+			anim.Play("flyNormal");
+		}
+		
+		movement = movement.normalized * speed * Time.deltaTime;
+		
+		rb.MovePosition (transform.position + movement);
+		transform.Rotate (-Input.GetAxis("Vertical"),0.0f, -Input.GetAxis("Horizontal"));
+	}
+
+
+	void Turning(){
+		
+		Ray camRay = Camera.main.ScreenPointToRay (Input.mousePosition);
+		
+		RaycastHit floorHit;
+		
+		if (Physics.Raycast (camRay, out floorHit, camRayLength, floorMask)) {
+			Vector3 playerToMouse = floorHit.point - transform.position;
+			playerToMouse.y = 0f;
+			
+			Quaternion newRotation = Quaternion .LookRotation(playerToMouse);
+			rb.MoveRotation(newRotation);
+		}
+	}
 }
