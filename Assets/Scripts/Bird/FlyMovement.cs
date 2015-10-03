@@ -6,18 +6,13 @@ public class FlyMovement : MonoBehaviour {
 	
 	public float maxSpd;
 	private float currentSpd;
-	
-	
-	private int count;
-	
-	private float rotationX;
-	private float rotationZ;
-	private Vector3 movement;
+
 	private Rigidbody rb;
-	
 	private Animation anim;
 	private Vector3 moveDistance;
 	private bool start = false;
+
+	private float time;
 	
 
 	// Use this for initialization
@@ -50,20 +45,31 @@ public class FlyMovement : MonoBehaviour {
 		if (transform.position.y != 1 && !start) {
 			rb.useGravity = false;
 			anim.Play ("flyNormal");
-			start =true;
-			
-			
+			start = true;
+		} else {
+			time = time + (Time.deltaTime) * 1 ;
+			if(time > 3){
+				playRestClip();
+				time = 0;
+			}
 		}
 
 		//Speed up with space
 		if (Input.GetKey ("space")) {
 
+			//Increase speed slowly to max
 			currentSpd = Mathf.Lerp(currentSpd,maxSpd,Time.deltaTime);
 			Debug.Log("CurrentSpd:"+currentSpd);
+
+			//move the plane
 			moveDistance = transform.forward * Time.deltaTime * currentSpd;
 			transform.position += moveDistance;
+
+			//remove rigid body force
 			rb.velocity = Vector3.zero;
 			rb.useGravity = false;
+
+			//animation clip
 			anim.Play ("flyNormal");
 
 			
@@ -84,11 +90,10 @@ public class FlyMovement : MonoBehaviour {
 
 				                }
 		}
-		//move the plane
-		
+
 		if (Rotation ()) {
-		//rotate the plane from input
-		transform.Rotate (-v,h, -h/2);
+			//rotate the plane from input
+			transform.Rotate (-v,h, -h/2);
 		}
 
 		
@@ -102,7 +107,7 @@ public class FlyMovement : MonoBehaviour {
 	 * Note: Camera shakes when rotation is re-adjusted. Looking for better way to constraint rotation
 	 * 
 	 */
-	bool Rotation()
+	private bool Rotation()
 	{
 		bool rotate = true;
 		
@@ -120,6 +125,17 @@ public class FlyMovement : MonoBehaviour {
 		}
 		
 		return rotate;
+	}
+
+	void playRestClip(){
+		int clipNum = Random.Range (0, 2);
+		if (clipNum == 0) {
+			anim.Play ("idleFloor1");
+		} else if (clipNum == 1) {
+			anim.Play ("idleFloor2");
+		} else {
+			anim.Play ("idleFloor3");
+		}
 	}
 
 	
