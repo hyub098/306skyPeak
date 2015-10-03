@@ -72,10 +72,13 @@ public class FlyMovement : MonoBehaviour {
 			rb.velocity = Vector3.zero;
 			rb.useGravity = false;
 
-			//animation clip
-			anim.Play ("flyNormal");
 
-			
+			//animation clip
+			if(transform.eulerAngles.x > 0 && transform.eulerAngles.x < 61){ 
+				anim.Play("glideNormal");
+			}else if(transform.eulerAngles.x > 299 && transform.eulerAngles.x < 361){
+				anim.Play ("flyNormal");
+			}
 		} else {
 
 			currentSpd = 0;
