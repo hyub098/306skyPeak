@@ -4,163 +4,181 @@ using UnityEngine.UI;
 
 public class FlyMovement : MonoBehaviour {
 	
-	public float speed;
-	private float inputSpd;
-//	public float moveSpd;
-	
-//	public Text winText;
+	public float maxSpd;
+	private float currentSpd;
 
-
-	private int count;
-
-	private float rotationX;
-	private float rotationZ;
-	private Vector3 movement;
-	private float v;
 	private Rigidbody rb;
-
 	private Animation anim;
 	private Vector3 moveDistance;
+	private bool start = false;
 
+	private float time;
 
-
-//    int incrementTime = 1;
-//    float incrementBy = 1;
-//    float counter = 0;
-//    int minute = 0;
-//    int second = 0;
-//    float time = 0;
-
-//    public string timerFormatted;
-//    public Text timerText;
-
-
-
-    // Use this for initialization
-    void Start () {
+	// Use this for initialization
+	void Start () {
 		Debug.Log ("plane pilot script added to: " + gameObject.name);
-		inputSpd = 0;
 		moveDistance = new Vector3(0,0,0);
-
+		currentSpd = 0;
 		anim = GetComponent<Animation> ();
 		rb = GetComponent<Rigidbody> ();
+		
+	
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		currentSpd = Mathf.Clamp (currentSpd, 0, maxSpd);
 
-		float v = 0;
-     //   SetTimerText();
-
-        //		SetCountText();
-    }
-
-    // Update is called once per frame
-    void Update () {
-
-		inputSpd = Mathf.Clamp (inputSpd, 1, 20);
-//        minute = (int)counter / 60;
-//        second = (int)counter % 60;
-//        time += Time.deltaTime;
-//        while (time > incrementTime)
-//        {
-//            time -= incrementTime;
-//            counter += incrementBy;
-//        }
-//        timerFormatted = string.Format("{0:00}:{1:00}", minute, second);
-//        SetTimerText();
-
-        //camera position adjust
-        Vector3 moveCamtTo = transform.position - transform.forward * 5.0f + Vector3.up * 5.0f;
+		//camera position adjust
+		Vector3 moveCamtTo = transform.position - transform.forward * 5.0f + Vector3.up * 5.0f;
 		float bias = 0.96f;
 		Camera.main.transform.position = Camera.main.transform.position * bias + moveCamtTo * (1.0f - bias);
 		
 		Camera.main.transform.LookAt (transform.position + transform.forward * 1.0f);
 
-
-
-		float h = Input.GetAxis("Horizontal");
-		float v = Input.GetAxis ("Vertical");
-//		if (Input.GetKeyDown ("up")) {
-//			v = 1;
-//		} else if (Input.GetKeyDown ("down")) {
-//			v = -1;
-//		}else{ v=0;}
-
-		if (transform.position.y != 0) {
-			inputSpd = speed;
-//			anim.Play ("flyNormal");
+		beforeStart ();
+			
+	 	//Check if game started
+		if (start) {
+			constrain ();
 		}
-		//	inputSpd = v * inputSpd;
-		if (Input.GetKey ("space")) {
 
-			moveDistance = transform.forward * Time.deltaTime * inputSpd;
-			transform.position += moveDistance;
-
-		} else {
-			if(moveDistance.magnitude == 0){ moveDistance = Vector3.zero;}
-
-			transform.position += 10*moveDistance/inputSpd;
-			 
-			moveDistance = moveDistance - moveDistance/10;
-		}
-		//move the plane
-
-//		if (Rotation ()) {
-			//rotate the plane from input
-			transform.Rotate (/*-Input.GetAxis("Vertical")*1.5f*/ -v,0.0f, -h*2);
-//		}
+		move ();
 
 
-		//speed -= transform.forward.y * Time.deltaTime *  2.0f;
+
+
 		
 	}
-
 	
-
+	
+	
 	/**
 	 * Limit rotation to 45 degrees up/down, 50 degreesleft/right
 	 * 
 	 * Note: Camera shakes when rotation is re-adjusted. Looking for better way to constraint rotation
 	 * 
 	 */
-	bool Rotation()
+	private bool Rotation()
 	{
 		bool rotate = true;
-
-		if (transform.eulerAngles.x > 45f && transform.eulerAngles.x < 315f){ 
-
+		
+		if (transform.eulerAngles.x > 60f && transform.eulerAngles.x < 300f){ 
+			
 			rotate = false;
-
+			
 			if(transform.eulerAngles.x < 100){
-				transform.eulerAngles = new Vector3(44.9f,transform.eulerAngles.y, transform.eulerAngles.z);
+				transform.eulerAngles = new Vector3(59.9f,transform.eulerAngles.y, transform.eulerAngles.z);
 			}
 			else{
-				transform.eulerAngles = new Vector3(315,transform.eulerAngles.y, transform.eulerAngles.z);
+				transform.eulerAngles = new Vector3(300,transform.eulerAngles.y, transform.eulerAngles.z);
 			}
-
+			
 		}
-
-//		if (50f < transform.eulerAngles.z  && transform.eulerAngles.z < 310f){ 
-//			rotate = false;
-//
-//			if(transform.eulerAngles.z < 100){
-//				transform.eulerAngles = new Vector3(transform.eulerAngles.x,transform.eulerAngles.y,45);
-//
-//			}else{
-//				transform.eulerAngles = new Vector3(transform.eulerAngles.x,transform.eulerAngles.y,310);
-//
-//			}
-//			
-//		}
-
-/// Test
-
+		
 		return rotate;
 	}
-//
-//    void SetTimerText()
-//    {
-//        timerText.text = "Time: " + timerFormatted;
-//    }
+
+	void playRestClip(){
+		int clipNum = Random.Range (0, 2);
+		if (clipNum == 0) {
+			anim.Play ("idleFloor1");
+		} else if (clipNum == 1) {
+			anim.Play ("idleFloor2");
+		} else {
+			anim.Play ("idleFloor3");
+		}
+	}
+
+	void constrain(){
+		if (transform.position.y <= 1) {
+			transform.position = new Vector3(transform.position.x,1,transform.position.z);
+			//remove rigid body force
+			rb.velocity = Vector3.zero;
+			rb.useGravity = false;
+
+		
+			anim.Play("idleFloor1");
+
+		}
+	}
 
 
+	// Check if game started
+	void beforeStart(){
+		//start when player rise
+		if (transform.position.y != 1 && !start) {
+			rb.useGravity = false;
+			anim.Play ("flyNormal");
+			start = true;
+		} else {
+			time = time + (Time.deltaTime) * 1 ;
+			if(time > 3){
+				playRestClip();
+				time = 0;
+			}
+		}
+	}
 
 
+	//flight control
+	void move(){
+		//Get input from both axis
+		float h = Input.GetAxis("Horizontal");
+		float v = Input.GetAxis ("Vertical");
+		
+		
+		
+		//Speed up with space
+		if (Input.GetKey ("space")) {
+			
+			//Increase speed slowly to max
+			currentSpd = Mathf.Lerp(currentSpd,maxSpd,Time.deltaTime);
+			Debug.Log("CurrentSpd:"+currentSpd);
+			
+			//move the plane
+			moveDistance = transform.forward * Time.deltaTime * currentSpd;
+			transform.position += moveDistance;
+			
+			//remove rigid body force
+			rb.velocity = Vector3.zero;
+			rb.useGravity = false;
+			
+			
+			//animation clip
+			if(transform.eulerAngles.x > 0 && transform.eulerAngles.x < 61){ 
+				anim.Play("glideNormal");
+			}else if(transform.eulerAngles.x > 299 && transform.eulerAngles.x < 361){
+				anim.Play ("flyNormal");
+			}
+		} else {
+
+
+			currentSpd = 0;
+			if(start){
+				float desiredZAngle = 0;
+				float desiredXAngle = 330;
+				if(transform.eulerAngles.z > 180){desiredZAngle = 360;} else {desiredZAngle = 0;}
+				if(transform.eulerAngles.x > 0 && transform.eulerAngles.x < 60){desiredXAngle = -30;}
+				if(transform.position.y > 2){
+					anim.Play("idleFloor2");
+				}
+				rb.useGravity = true;
+				transform.rotation = Quaternion.Euler(Mathf.Lerp(transform.eulerAngles.x,desiredXAngle,Time.deltaTime),
+				                                      transform.eulerAngles.y,
+				                                      Mathf.Lerp(transform.eulerAngles.z,desiredZAngle,Time.deltaTime));
+				
+			}
+		}
+		
+		if (Rotation ()) {
+			//rotate the plane from input
+			transform.Rotate (-v,h, -h/2);
+		}
+
+
+	}
+
+	
+	
 }

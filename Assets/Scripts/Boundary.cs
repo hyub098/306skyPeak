@@ -27,10 +27,10 @@ public class Boundary : MonoBehaviour {
 		rb.AddForce (new Vector3 (0, 0,10));
 		outofbounds ();
 	}
-
+	
 	void outofbounds() { 
-
-			if (rb.transform.position.x < minX) {
+		
+		if (rb.transform.position.x < minX) {
 			rb.AddForce (new Vector3 (10, 0, 0));
 			ispushing = true;
 		} else if (rb.transform.position.x > maxX) {
@@ -60,7 +60,7 @@ public class Boundary : MonoBehaviour {
 				rb.velocity = Vector3.zero;
 			}
 		}
-
-
-}
+		
+		
+	}
 }
