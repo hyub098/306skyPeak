@@ -6,7 +6,7 @@ public class FlyMovement : MonoBehaviour {
 	
 	public float speed;
 //	public float moveSpd;
-	public Text countText;
+	
 //	public Text winText;
 //	private Rigidbody rb;
 
@@ -14,25 +14,49 @@ public class FlyMovement : MonoBehaviour {
 
 	private float rotationX;
 	private float rotationZ;
-	
 
-	
-	// Use this for initialization
-	void Start () {
+
+    int incrementTime = 1;
+    float incrementBy = 1;
+    float counter = 0;
+    int minute = 0;
+    int second = 0;
+    float time = 0;
+
+    public string timerFormatted;
+    public Text timerText;
+
+
+
+    // Use this for initialization
+    void Start () {
 		Debug.Log ("plane pilot script added to: " + gameObject.name);
-//		rb = this.GetComponent<Rigidbody> ();
-//		rb.velocity = Vector3.ClampMagnitude (rb.velocity, 0f);
-
-		count = 0;
-//		SetCountText();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        //		rb = this.GetComponent<Rigidbody> ();
+        //		rb.velocity = Vector3.ClampMagnitude (rb.velocity, 0f);
 
 
-		//camera position adjust
-		Vector3 moveCamtTo = transform.position - transform.forward * 10.0f + Vector3.up * 5.0f;
+        SetTimerText();
+
+        //		SetCountText();
+    }
+
+    // Update is called once per frame
+    void Update () {
+
+
+        minute = (int)counter / 60;
+        second = (int)counter % 60;
+        time += Time.deltaTime;
+        while (time > incrementTime)
+        {
+            time -= incrementTime;
+            counter += incrementBy;
+        }
+        timerFormatted = string.Format("{0:00}:{1:00}", minute, second);
+        SetTimerText();
+
+        //camera position adjust
+        Vector3 moveCamtTo = transform.position - transform.forward * 10.0f + Vector3.up * 5.0f;
 		float bias = 0.96f;
 		Camera.main.transform.position = Camera.main.transform.position * bias + moveCamtTo * (1.0f - bias);
 		
@@ -115,4 +139,10 @@ public class FlyMovement : MonoBehaviour {
 
 		return rotate;
 	}
+
+    void SetTimerText()
+    {
+        timerText.text = "Time: " + timerFormatted;
+    }
+
 }
