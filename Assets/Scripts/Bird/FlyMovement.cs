@@ -4,11 +4,8 @@ using UnityEngine.UI;
 
 public class FlyMovement : MonoBehaviour {
 	
-	public float speed;
-	private float inputSpd;
-	//	public float moveSpd;
-	
-	//	public Text winText;
+	public float maxSpd;
+	private float currentSpd;
 	
 	
 	private int count;
@@ -16,7 +13,6 @@ public class FlyMovement : MonoBehaviour {
 	private float rotationX;
 	private float rotationZ;
 	private Vector3 movement;
-	private float v;
 	private Rigidbody rb;
 	
 	private Animation anim;
@@ -27,21 +23,17 @@ public class FlyMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Debug.Log ("plane pilot script added to: " + gameObject.name);
-		inputSpd = 0;
 		moveDistance = new Vector3(0,0,0);
-		
+		currentSpd = 0;
 		anim = GetComponent<Animation> ();
 		rb = GetComponent<Rigidbody> ();
 		
-		float v = 0;
-
+	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-		inputSpd = Mathf.Clamp (inputSpd, 1, 20);
-
+		currentSpd = Mathf.Clamp (currentSpd, 0, maxSpd);
 		//camera position adjust
 		Vector3 moveCamtTo = transform.position - transform.forward * 5.0f + Vector3.up * 5.0f;
 		float bias = 0.96f;
@@ -50,23 +42,25 @@ public class FlyMovement : MonoBehaviour {
 		Camera.main.transform.LookAt (transform.position + transform.forward * 1.0f);
 		
 		
-		
+		//Get input from both axis
 		float h = Input.GetAxis("Horizontal");
 		float v = Input.GetAxis ("Vertical");
 
-		
+		//start when player rise
 		if (transform.position.y != 1 && !start) {
 			rb.useGravity = false;
-			inputSpd = speed;
 			anim.Play ("flyNormal");
 			start =true;
 			
 			
 		}
-		//	inputSpd = v * inputSpd;
+
+		//Speed up with space
 		if (Input.GetKey ("space")) {
-			
-			moveDistance = transform.forward * Time.deltaTime * inputSpd;
+
+			currentSpd = Mathf.Lerp(currentSpd,maxSpd,Time.deltaTime);
+			Debug.Log("CurrentSpd:"+currentSpd);
+			moveDistance = transform.forward * Time.deltaTime * currentSpd;
 			transform.position += moveDistance;
 			rb.velocity = Vector3.zero;
 			rb.useGravity = false;
@@ -74,11 +68,11 @@ public class FlyMovement : MonoBehaviour {
 
 			
 		} else {
-			if(moveDistance.magnitude == 0){ moveDistance = Vector3.zero;}
-			
-			transform.position += 10*moveDistance/inputSpd; 
-			moveDistance = moveDistance - moveDistance/10;
-
+//			if(moveDistance.magnitude == 0){ moveDistance = Vector3.zero;}
+//			
+//			transform.position += 10*moveDistance/currentSpd; 
+//			moveDistance = moveDistance - moveDistance/10;
+			currentSpd = 0;
 			if(start){
 				float desiredAngle = 0;
 				if(transform.eulerAngles.z > 180){desiredAngle = 360;} else {desiredAngle = 0;}
@@ -92,13 +86,11 @@ public class FlyMovement : MonoBehaviour {
 		}
 		//move the plane
 		
-				if (Rotation ()) {
+		if (Rotation ()) {
 		//rotate the plane from input
 		transform.Rotate (-v,h, -h/2);
-				}
-		
-		
-		//speed -= transform.forward.y * Time.deltaTime *  2.0f;
+		}
+
 		
 	}
 	
