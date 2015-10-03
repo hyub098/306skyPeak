@@ -20,6 +20,7 @@ public class FlyMovement : MonoBehaviour {
 	private Animation anim;
 	private Vector3 moveDistance;
 	private bool start = false;
+	private float inputSpd;
 
 
 
@@ -186,33 +187,4 @@ public class FlyMovement : MonoBehaviour {
 
 
 
-	void Move(float h, float v)
-	{
-		movement.Set (v/10, v, h);
-
-		if (h != 0 || v != 0) {
-			anim.Play("flyNormal");
-		}
-		
-		movement = movement.normalized * speed * Time.deltaTime;
-		
-		rb.MovePosition (transform.position + movement);
-		transform.Rotate (-Input.GetAxis("Vertical"),0.0f, -Input.GetAxis("Horizontal"));
-	}
-
-
-	void Turning(){
-		
-		Ray camRay = Camera.main.ScreenPointToRay (Input.mousePosition);
-		
-		RaycastHit floorHit;
-		
-		if (Physics.Raycast (camRay, out floorHit, camRayLength, floorMask)) {
-			Vector3 playerToMouse = floorHit.point - transform.position;
-			playerToMouse.y = 0f;
-			
-			Quaternion newRotation = Quaternion .LookRotation(playerToMouse);
-			rb.MoveRotation(newRotation);
-		}
-	}
 }
