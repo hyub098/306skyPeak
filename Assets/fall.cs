@@ -12,8 +12,9 @@ public class fall : MonoBehaviour {
 	void Update () {
 	
 		flyCount++;
-		if (flyCount > 100) {
+		if (flyCount > 200) {
 		transform.position=new Vector3(0, 6,13);
+			flyCount=0;
 		}
 
 
