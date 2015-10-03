@@ -8,7 +8,7 @@ public class FlyMovement : MonoBehaviour {
 //	public float moveSpd;
 	
 //	public Text winText;
-//	private Rigidbody rb;
+//	private Rigidbodyrb;
 
 	private int count;
 
