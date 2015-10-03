@@ -69,6 +69,17 @@ public class FlyMovement : MonoBehaviour {
 		Camera.main.transform.LookAt (transform.position + transform.forward * 1.0f);
 
 
+		//move the plane
+		transform.position += transform.forward * Time.deltaTime * speed;
+
+		if (Rotation ()) {
+			//rotate the plane from input
+			transform.Rotate (-Input.GetAxis("Vertical"),0.0f, -Input.GetAxis("Horizontal"));
+		}
+
+		//speed -= transform.forward.y * Time.deltaTime *  2.0f;
+		
+	}
 
 		float h = Input.GetAxisRaw("Horizontal");
 		float v = Input.GetAxisRaw("Vertical");
