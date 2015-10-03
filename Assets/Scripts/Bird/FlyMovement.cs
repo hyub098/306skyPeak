@@ -86,7 +86,7 @@ public class FlyMovement : MonoBehaviour {
 		flyCount++;
 		if (flyCount > 150) {
 //			anim.SetBool ("Fall", true);
-			anima.Play("falling");
+			//anima.Play("falling");
 		}
 	}
 
