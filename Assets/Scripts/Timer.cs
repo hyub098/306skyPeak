@@ -12,7 +12,7 @@ public class Timer : MonoBehaviour {
 	float time = 0;
 	
 	public string timerFormatted;
-	public Time timerText;
+	public Text timerText;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +37,6 @@ public class Timer : MonoBehaviour {
 
 	void SetTimerText()
 	{
-		//timerText.text = "Time: " + timerFormatted;
+		timerText.text = timerFormatted;
 	}
 }
