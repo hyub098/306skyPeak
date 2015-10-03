@@ -37,6 +37,6 @@ public class Timer : MonoBehaviour {
 
 	void SetTimerText()
 	{
-		timerText.text = "Time: " + timerFormatted;
+		//timerText.text = "Time: " + timerFormatted;
 	}
 }
