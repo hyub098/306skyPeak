@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Boundary : MonoBehaviour {
+<<<<<<< HEAD
 	int minX = -250; //left boundary 
 	int maxX = 200; //right boundary 
 	int minY = -10; // up boundary 
@@ -14,6 +15,12 @@ public class Boundary : MonoBehaviour {
 	int counter=0;
 //	Direction d =Direction.normal;
 
+=======
+	int minX = -150; //left boundary 
+	int maxX = 150; //right boundary 
+	int minY = -150; // up boundary 
+	int maxY = 150; // down boundary
+>>>>>>> 25bc75b7383484384932b211a28d3cc056d6f4a1
 	// Use this for initialization
 	void Start () {
 	
