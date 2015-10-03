@@ -12,11 +12,12 @@ public class fall : MonoBehaviour {
 	void Update () {
 	
 		flyCount++;
-		if (flyCount > 150) {
-
+		if (flyCount > 200) {
+		transform.position=new Vector3(0, 6,13);
+			flyCount=0;
 		}
 
-		transform.position=new Vector3(5*Random.value, 0,-5*Random.value );
+
 
 	}
 }

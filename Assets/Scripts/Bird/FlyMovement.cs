@@ -68,7 +68,7 @@ public class FlyMovement : MonoBehaviour {
 	
 		if (Rotation ()) {
 			//rotate the plane from input
-			transform.Rotate (-Input.GetAxis("Vertical"),0.0f, -Input.GetAxis("Horizontal"));
+			transform.Rotate (-Input.GetAxis("Vertical")*2,0.0f, -Input.GetAxis("Horizontal")*3);
 		}
 
 		//speed -= transform.forward.y * Time.deltaTime *  2.0f;
