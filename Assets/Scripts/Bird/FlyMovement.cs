@@ -96,7 +96,9 @@ public class FlyMovement : MonoBehaviour {
 		} else {
 			if(moveDistance.magnitude == 0){ moveDistance = Vector3.zero;}
 
-			transform.position += 2*moveDistance/inputSpd;
+			transform.position += 10*moveDistance/inputSpd;
+			 
+			moveDistance = moveDistance - moveDistance/10;
 		}
 		//move the plane
 
