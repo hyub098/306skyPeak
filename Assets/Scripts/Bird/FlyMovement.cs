@@ -17,7 +17,7 @@ public class FlyMovement : MonoBehaviour {
 	
 
 	
-	// Use this for initialization.
+	// Use this for initialization
 	void Start () {
 		Debug.Log ("plane pilot script added to: " + gameObject.name);
 //		rb = this.GetComponent<Rigidbody> ();
