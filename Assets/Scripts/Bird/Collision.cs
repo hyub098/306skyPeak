@@ -19,7 +19,7 @@ public class Collision : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 		anim = GetComponent<Animation> ();
 		flyMovement = GetComponent<FlyMovement> ();
-		life = 1;
+		life = 3;
 
 	}
 	
@@ -33,6 +33,14 @@ public class Collision : MonoBehaviour {
 
 		if (other.gameObject.CompareTag ("Terrain")) {
 			life--;
+			RaycastHit hit;
+			if (Physics.Raycast(transform.position, transform.forward, out hit))
+			{
+				Debug.Log("Point of contact: "+hit.point);
+				pushBack();
+
+			}
+
 			if(life < 1){
 				flyMovement.enabled = false;
 				rb.useGravity = true;
@@ -60,6 +68,14 @@ public class Collision : MonoBehaviour {
 			
 			anim.Play("hitTheFloor");
 			
+		}
+	}
+	void pushBack(){
+		flyMovement.enabled = false;
+		for (int i=0; i<100; i++) {
+			Quaternion.Euler(Mathf.Lerp(transform.eulerAngles.x,desiredXAngle,Time.deltaTime),
+			                 transform.eulerAngles.y,
+			                 Mathf.Lerp(transform.eulerAngles.z,desiredZAngle,Time.deltaTime));
 		}
 	}
 }
