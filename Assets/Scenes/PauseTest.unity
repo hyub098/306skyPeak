@@ -211,10 +211,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1237946249}
+  - {fileID: 1889578264}
   - {fileID: 579086883}
   - {fileID: 2018284661}
   - {fileID: 916673940}
-  - {fileID: 1889578264}
   m_Father: {fileID: 72822586}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
@@ -340,7 +340,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe25f6eda80644538d1cfb6a67a8732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minute: 0
+  second: 0
   timerFormatted: 
+  timerText: {fileID: 480352483}
+  scoreText: {fileID: 0}
 --- !u!114 &480352483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,7 +411,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 136596623}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 5.5999999, y: 49.7999992}
@@ -555,7 +559,7 @@ RectTransform:
   m_Children:
   - {fileID: 653993759}
   m_Father: {fileID: 136596623}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: -45}
@@ -1001,8 +1005,9 @@ GameObject:
   - 224: {fileID: 1889578264}
   - 222: {fileID: 1889578266}
   - 114: {fileID: 1889578265}
+  - 114: {fileID: 1889578267}
   m_Layer: 0
-  m_Name: Score
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1019,7 +1024,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 136596623}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: -132}
@@ -1063,6 +1068,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1889578263}
+--- !u!114 &1889578267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1889578263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f31880d46bf24a58bfe06db481d4e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1889578265}
 --- !u!1 &1911859157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,7 +1184,7 @@ RectTransform:
   m_Children:
   - {fileID: 1911859160}
   m_Father: {fileID: 136596623}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
