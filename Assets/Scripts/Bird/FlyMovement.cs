@@ -34,9 +34,7 @@ public class FlyMovement : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 		
 		float v = 0;
-		//   SetTimerText();
-		
-		//		SetCountText();
+
 	}
 	
 	// Update is called once per frame
@@ -55,11 +53,7 @@ public class FlyMovement : MonoBehaviour {
 		
 		float h = Input.GetAxis("Horizontal");
 		float v = Input.GetAxis ("Vertical");
-		//		if (Input.GetKeyDown ("up")) {
-		//			v = 1;
-		//		} else if (Input.GetKeyDown ("down")) {
-		//			v = -1;
-		//		}else{ v=0;}
+
 		
 		if (transform.position.y != 1 && !start) {
 			rb.useGravity = false;
@@ -74,23 +68,33 @@ public class FlyMovement : MonoBehaviour {
 			
 			moveDistance = transform.forward * Time.deltaTime * inputSpd;
 			transform.position += moveDistance;
-//			rb.velocity = Vector3.zero;
-//			rb.useGravity = false;
+			rb.velocity = Vector3.zero;
+			rb.useGravity = false;
+			anim.Play ("flyNormal");
+
 			
 		} else {
-			//			if(moveDistance.magnitude == 0){ moveDistance = Vector3.zero;}
-			//
-			//			transform.position += 10*moveDistance/inputSpd; 
-			//			moveDistance = moveDistance - moveDistance/10;
-//			if(start){
-//				rb.useGravity = true;
-//			}
+			if(moveDistance.magnitude == 0){ moveDistance = Vector3.zero;}
+			
+			transform.position += 10*moveDistance/inputSpd; 
+			moveDistance = moveDistance - moveDistance/10;
+
+			if(start){
+				float desiredAngle = 0;
+				if(transform.eulerAngles.z > 180){desiredAngle = 360;} else {desiredAngle = 0;}
+				anim.Play("flyPrey");
+				rb.useGravity = true;
+				transform.rotation = Quaternion.Euler(Mathf.Lerp(transform.eulerAngles.x,330f,Time.deltaTime),
+				                                      transform.eulerAngles.y,
+				                                      Mathf.Lerp(transform.eulerAngles.z,desiredAngle,Time.deltaTime));
+
+				                }
 		}
 		//move the plane
 		
 				if (Rotation ()) {
 		//rotate the plane from input
-		transform.Rotate (/*-Input.GetAxis("Vertical")*1.5f*/ -v*2,0.0f, -h*2);
+		transform.Rotate (-v,h, -h/2);
 				}
 		
 		
@@ -110,15 +114,15 @@ public class FlyMovement : MonoBehaviour {
 	{
 		bool rotate = true;
 		
-		if (transform.eulerAngles.x > 45f && transform.eulerAngles.x < 315f){ 
+		if (transform.eulerAngles.x > 60f && transform.eulerAngles.x < 300f){ 
 			
 			rotate = false;
 			
 			if(transform.eulerAngles.x < 100){
-				transform.eulerAngles = new Vector3(44.9f,transform.eulerAngles.y, transform.eulerAngles.z);
+				transform.eulerAngles = new Vector3(59.9f,transform.eulerAngles.y, transform.eulerAngles.z);
 			}
 			else{
-				transform.eulerAngles = new Vector3(315,transform.eulerAngles.y, transform.eulerAngles.z);
+				transform.eulerAngles = new Vector3(300,transform.eulerAngles.y, transform.eulerAngles.z);
 			}
 			
 		}
