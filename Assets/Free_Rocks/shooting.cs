@@ -6,6 +6,7 @@ public class shooting : MonoBehaviour {
 	public Rigidbody projectile;
 	public float speed = 20;
 	private int count;
+	private Vector3 vector;
 
 	void Start(){
 		count = 0;
@@ -17,8 +18,9 @@ public class shooting : MonoBehaviour {
 	{
 			if (count > 20) {
 			Rigidbody instantiatedProjectile = Instantiate (projectile, transform.position, transform.rotation)as Rigidbody;
+			instantiatedProjectile.gameObject.transform.Rotate(-90.0f,0.0f,0.0f);
 			instantiatedProjectile.velocity = transform.TransformDirection (new Vector3 (0, 0, speed));
-			//Destroy (instantiatedProjectile, 3);
+			Destroy (instantiatedProjectile.gameObject, 3);
 			count=0;
 		}
 		count++;
