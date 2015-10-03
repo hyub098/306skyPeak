@@ -1,39 +1,64 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+public enum Direction
+{
+	minX, maxX, minY, maxY,minZ,maxZ,normal
+}
 public class Boundary : MonoBehaviour {
-<<<<<<< HEAD
-	int minX = -250; //left boundary 
+	int minX = -200; //left boundary 
 	int maxX = 200; //right boundary 
-	int minY = -10; // up boundary 
-	int maxY = 2000; // down boundary
-	int maxZ =2000;
-	int minZ =-2000;
+	int minY = -200; // up boundary 
+	int maxY = 200; // down boundary
+	int maxZ =200;
+	int minZ =-200;
 	public Rigidbody rb;
 	float strengh=1.0f;
 	bool ispushing=false;
 	int counter=0;
 	Direction d =Direction.normal;
-=======
-	int minX = -150; //left boundary 
-	int maxX = 150; //right boundary 
-	int minY = -150; // up boundary 
-	int maxY = 150; // down boundary
->>>>>>> 207fccd2c6a592b72dbb50d410b7636ac0baf509
 	// Use this for initialization
 	void Start () {
-	
+		rb = GetComponent<Rigidbody> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		outofbounds ();
 	}
-
+	
 	void outofbounds() { 
-		if (transform.position.x < minX) { transform.position=new Vector3(80,140,200); } 
-		if (transform.position.x > maxX) { transform.position=new Vector3(80,140,200); }
-		if (transform.position.y < minY) { transform.position=new Vector3(80,140,200); }
-		if (transform.position.y > maxY) { transform.position=new Vector3(80,140,200); }
+		
+		if (rb.transform.position.x < minX) {
+			rb.AddForce (new Vector3 (10, 0, 0));
+			ispushing = true;
+		} else if (rb.transform.position.x > maxX) {
+			rb.AddForce (new Vector3 (-10, 0, 0));
+			d = Direction.maxX;
+			ispushing = true;
+		} else if (rb.transform.position.z < minZ) {
+			rb.AddForce (new Vector3 (0, 0, 10));
+			d = Direction.minZ;
+			ispushing = true;
+		} else if (rb.transform.position.z > maxZ) {
+			rb.AddForce (new Vector3 (0, 0, -10));
+			Debug.Log ("reach maxZ");
+			d = Direction.maxZ;
+			ispushing = true;
+		} else if (rb.transform.position.y < minY) {
+			rb.AddForce (new Vector3 (0, 10, 0));
+			d = Direction.minY;
+			ispushing = true;
+		} else if (rb.transform.position.y > maxY) { 
+			rb.AddForce (new Vector3 (0, -10, 0)); 
+			d = Direction.maxY;
+			ispushing = true;
+		} else {
+			if(ispushing){
+				ispushing=false;
+				rb.velocity = Vector3.zero;
+			}
+		}
+		
+		
 	}
 }
