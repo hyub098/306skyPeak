@@ -15,9 +15,6 @@ public class FlyMovement : MonoBehaviour {
 	private float rotationX;
 	private float rotationZ;
 
-	Animator anim;
-	Animation anima;
-	private float flyCount;
 
     int incrementTime = 1;
     float incrementBy = 1;
@@ -34,8 +31,6 @@ public class FlyMovement : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		Debug.Log ("plane pilot script added to: " + gameObject.name);
-		anim = GetComponent<Animator> ();
-		anima = GetComponent<Animation> ();
         //		rb = this.GetComponent<Rigidbody> ();
         //		rb.velocity = Vector3.ClampMagnitude (rb.velocity, 0f);
 
@@ -48,8 +43,6 @@ public class FlyMovement : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-
-		animating();
 //        minute = (int)counter / 60;
 //        second = (int)counter % 60;
 //        time += Time.deltaTime;
@@ -82,13 +75,7 @@ public class FlyMovement : MonoBehaviour {
 		
 	}
 
-	void animating(){
-		flyCount++;
-		if (flyCount > 150) {
-//			anim.SetBool ("Fall", true);
-			//anima.Play("falling");
-		}
-	}
+
 
 //	/**
 //	 * If collide with objects with tag pick up
