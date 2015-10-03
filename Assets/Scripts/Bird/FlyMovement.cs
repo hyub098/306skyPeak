@@ -18,8 +18,9 @@ public class FlyMovement : MonoBehaviour {
 	private Rigidbody rb;
 
 	private Animation anim;
-	private float camRayLength = 100;
-	private int floorMask;
+	private Vector3 moveDistance;
+	private bool start = false;
+
 
 
 //    int incrementTime = 1;
@@ -69,22 +70,42 @@ public class FlyMovement : MonoBehaviour {
 		Camera.main.transform.LookAt (transform.position + transform.forward * 1.0f);
 
 
-		//move the plane
-		transform.position += transform.forward * Time.deltaTime * speed;
 
-		if (Rotation ()) {
-			//rotate the plane from input
-			transform.Rotate (-Input.GetAxis("Vertical"),0.0f, -Input.GetAxis("Horizontal"));
+		float h = Input.GetAxis("Horizontal");
+		float v = Input.GetAxis ("Vertical");
+//		if (Input.GetKeyDown ("up")) {
+//			v = 1;
+//		} else if (Input.GetKeyDown ("down")) {
+//			v = -1;
+//		}else{ v=0;}
+
+		if (transform.position.y != 0 && !start) {
+			rb.useGravity = false;
+			inputSpd = speed;
+			anim.Play ("flyNormal");
+			start =true;
+
+
 		}
+		//	inputSpd = v * inputSpd;
+		if (Input.GetKey ("space")) {
 
-		//speed -= transform.forward.y * Time.deltaTime *  2.0f;
-		
-	}
+			moveDistance = transform.forward * Time.deltaTime * inputSpd;
+			transform.position += moveDistance;
+			rb.velocity = Vector3.zero;
+			rb.useGravity = false;
 
-		float h = Input.GetAxisRaw("Horizontal");
-		float v = Input.GetAxisRaw("Vertical");
-		Move (h, v);
-	//	Turning ();
+		} else {
+//			if(moveDistance.magnitude == 0){ moveDistance = Vector3.zero;}
+//
+//			transform.position += 10*moveDistance/inputSpd; 
+//			moveDistance = moveDistance - moveDistance/10;
+			if(start){
+				rb.useGravity = true;
+			}
+		}
+		//move the plane
+
 
 //		if (v != 0) {
 //			anim.Play("flyNormal");
