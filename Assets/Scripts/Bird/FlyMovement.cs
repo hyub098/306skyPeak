@@ -29,7 +29,7 @@ public class FlyMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		currentSpd = Mathf.Clamp (currentSpd, 0, maxSpd);
-		constrain ();
+
 		//camera position adjust
 		Vector3 moveCamtTo = transform.position - transform.forward * 5.0f + Vector3.up * 5.0f;
 		float bias = 0.96f;
@@ -54,7 +54,9 @@ public class FlyMovement : MonoBehaviour {
 				time = 0;
 			}
 		}
-
+		if (start) {
+			constrain ();
+		}
 		//Speed up with space
 		if (Input.GetKey ("space")) {
 
@@ -82,9 +84,11 @@ public class FlyMovement : MonoBehaviour {
 				float desiredXAngle = 330;
 				if(transform.eulerAngles.z > 180){desiredZAngle = 360;} else {desiredZAngle = 0;}
 				if(transform.eulerAngles.x > 0 && transform.eulerAngles.x < 60){desiredXAngle = -30;}
-				anim.Play("flyPrey");
+				if(transform.position.y > 2){
+					anim.Play("idleFloor2");
+				}
 				rb.useGravity = true;
-					transform.rotation = Quaternion.Euler(Mathf.Lerp(transform.eulerAngles.x,desiredXAngle,Time.deltaTime),
+				transform.rotation = Quaternion.Euler(Mathf.Lerp(transform.eulerAngles.x,desiredXAngle,Time.deltaTime),
 				                                      transform.eulerAngles.y,
 				                                      Mathf.Lerp(transform.eulerAngles.z,desiredZAngle,Time.deltaTime));
 
@@ -139,8 +143,15 @@ public class FlyMovement : MonoBehaviour {
 	}
 
 	void constrain(){
-		if (transform.position.y <= 0) {
-			transform.position = new Vector3(transform.position.x,0,transform.position.z);
+		if (transform.position.y <= 1) {
+			transform.position = new Vector3(transform.position.x,1,transform.position.z);
+			//remove rigid body force
+			rb.velocity = Vector3.zero;
+			rb.useGravity = false;
+
+		
+			anim.Play("idleFloor1");
+
 		}
 	}
 
