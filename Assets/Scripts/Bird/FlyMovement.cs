@@ -21,7 +21,7 @@ public class FlyMovement : MonoBehaviour {
 
 	private Animation anim;
 	private Vector3 moveDistance;
-
+	private bool start = false;
 
 
 //    int incrementTime = 1;
@@ -83,22 +83,30 @@ public class FlyMovement : MonoBehaviour {
 //			v = -1;
 //		}else{ v=0;}
 
-		if (transform.position.y != 0) {
+		if (transform.position.y != 0 && !start) {
+			rb.useGravity = false;
 			inputSpd = speed;
 			anim.Play ("flyNormal");
+			start =true;
+
+
 		}
 		//	inputSpd = v * inputSpd;
 		if (Input.GetKey ("space")) {
 
 			moveDistance = transform.forward * Time.deltaTime * inputSpd;
 			transform.position += moveDistance;
+			rb.velocity = Vector3.zero;
+			rb.useGravity = false;
 
 		} else {
-			if(moveDistance.magnitude == 0){ moveDistance = Vector3.zero;}
-
-			transform.position += 10*moveDistance/inputSpd;
-			 
-			moveDistance = moveDistance - moveDistance/10;
+//			if(moveDistance.magnitude == 0){ moveDistance = Vector3.zero;}
+//
+//			transform.position += 10*moveDistance/inputSpd; 
+//			moveDistance = moveDistance - moveDistance/10;
+			if(start){
+				rb.useGravity = true;
+			}
 		}
 		//move the plane
 

@@ -5,12 +5,12 @@ public enum Direction
 	minX, maxX, minY, maxY,minZ,maxZ,normal
 }
 public class Boundary : MonoBehaviour {
-	int minX = -200; //left boundary 
+	int minX = -250; //left boundary 
 	int maxX = 200; //right boundary 
-	int minY = -200; // up boundary 
-	int maxY = 200; // down boundary
-	int maxZ =200;
-	int minZ =-200;
+	int minY = -10; // up boundary 
+	int maxY = 2000; // down boundary
+	int maxZ =2000;
+	int minZ =-2000;
 	public Rigidbody rb;
 	float strengh=1.0f;
 	bool ispushing=false;
