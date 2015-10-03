@@ -85,7 +85,7 @@ public class FlyMovement : MonoBehaviour {
 
 		if (transform.position.y != 0) {
 			inputSpd = speed;
-			anim.Play ("flyNormal");
+//			anim.Play ("flyNormal");
 		}
 		//	inputSpd = v * inputSpd;
 		if (Input.GetKey ("space")) {
