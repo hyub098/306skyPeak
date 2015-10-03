@@ -8,22 +8,24 @@ public class FlyMovement : MonoBehaviour {
 //	public float moveSpd;
 	
 //	public Text winText;
-//	private Rigidbodyrb;
+
 
 	private int count;
 
 	private float rotationX;
 	private float rotationZ;
+	private Vector3 movement;
+	private Rigidbody rb;
 
-	Animation anim;
-	private float flyCount;
+	private Animation anim;
 
-    int incrementTime = 1;
-    float incrementBy = 1;
-    float counter = 0;
-    int minute = 0;
-    int second = 0;
-    float time = 0;
+
+//    int incrementTime = 1;
+//    float incrementBy = 1;
+//    float counter = 0;
+//    int minute = 0;
+//    int second = 0;
+//    float time = 0;
 
 //    public string timerFormatted;
 //    public Text timerText;
@@ -34,9 +36,7 @@ public class FlyMovement : MonoBehaviour {
     void Start () {
 		Debug.Log ("plane pilot script added to: " + gameObject.name);
 		anim = GetComponent<Animation> ();
-        //		rb = this.GetComponent<Rigidbody> ();
-        //		rb.velocity = Vector3.ClampMagnitude (rb.velocity, 0f);
-
+		rb = GetComponent<Rigidbody> ();
 
      //   SetTimerText();
 
@@ -47,7 +47,6 @@ public class FlyMovement : MonoBehaviour {
     void Update () {
 
 
-		animating();
 //        minute = (int)counter / 60;
 //        second = (int)counter % 60;
 //        time += Time.deltaTime;
@@ -66,50 +65,33 @@ public class FlyMovement : MonoBehaviour {
 		
 		Camera.main.transform.LookAt (transform.position + transform.forward * 1.0f);
 
-		//Vector3 currentAngle = transform.rotation.eulerAngles;
 
-		//move the plane
-		transform.position += transform.forward * Time.deltaTime * speed;
-	
-		if (Rotation ()) {
-			//rotate the plane from input
-			transform.Rotate (-Input.GetAxis("Vertical"),0.0f, -Input.GetAxis("Horizontal"));
-		}
+		float h = Input.GetAxisRaw("Horizontal");
+		float v = Input.GetAxisRaw("Vertical");
+		Move (h, v);
+
+//		if (v != 0) {
+//			anim.Play("flyNormal");
+//			speed = Mathf.Clamp (speed, 1, 20);
+//
+//			speed = v * speed;
+//		}
+//
+//
+//		//move the plane
+//		transform.position += transform.forward * Time.deltaTime * speed;
+//	
+//	//	if (Rotation ()) {
+//			//rotate the plane from input
+//			transform.Rotate (-Input.GetAxis("Vertical"),0.0f, -Input.GetAxis("Horizontal"));
+//	//	}
 
 		//speed -= transform.forward.y * Time.deltaTime *  2.0f;
 		
 	}
 
-	void animating(){
-		flyCount++;
-		if (flyCount > 150) {
-//			anim.SetBool ("Fall", true);
-			anim.Play("falling");
-		}
-	}
 
-//	/**
-//	 * If collide with objects with tag pick up
-//	 * 
-//	 */ 
-//	void OnTriggerEnter(Collider other){
-//		
-//		if ( other.gameObject.CompareTag("Pick Up")){
-//			other.gameObject.SetActive(false);
-//			count++;
-//			SetCountText();
-//		}
-//		
-//	}
-//
-//	//Set Text to UI
-//	void SetCountText()
-//		
-//	{
-//		countText.text = "Count: " + count.ToString ();
-//		
-//	}
-
+	
 
 	/**
 	 * Limit rotation to 45 degrees up/down, 50 degreesleft/right
@@ -157,4 +139,19 @@ public class FlyMovement : MonoBehaviour {
 //        timerText.text = "Time: " + timerFormatted;
 //    }
 
+
+
+	void Move(float h, float v)
+	{
+		movement.Set (h, v, 0f);
+
+		if (h != 0 || v != 0) {
+			anim.Play("flyNormal");
+		}
+		
+		movement = movement.normalized * speed * Time.deltaTime;
+		
+		rb.MovePosition (transform.position + movement);
+		transform.Rotate (-Input.GetAxis("Vertical"),0.0f, -Input.GetAxis("Horizontal"));
+	}
 }
