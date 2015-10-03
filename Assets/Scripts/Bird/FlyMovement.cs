@@ -29,6 +29,7 @@ public class FlyMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		currentSpd = Mathf.Clamp (currentSpd, 0, maxSpd);
+		constrain ();
 		//camera position adjust
 		Vector3 moveCamtTo = transform.position - transform.forward * 5.0f + Vector3.up * 5.0f;
 		float bias = 0.96f;
@@ -74,19 +75,18 @@ public class FlyMovement : MonoBehaviour {
 
 			
 		} else {
-//			if(moveDistance.magnitude == 0){ moveDistance = Vector3.zero;}
-//			
-//			transform.position += 10*moveDistance/currentSpd; 
-//			moveDistance = moveDistance - moveDistance/10;
+
 			currentSpd = 0;
 			if(start){
-				float desiredAngle = 0;
-				if(transform.eulerAngles.z > 180){desiredAngle = 360;} else {desiredAngle = 0;}
+				float desiredZAngle = 0;
+				float desiredXAngle = 330;
+				if(transform.eulerAngles.z > 180){desiredZAngle = 360;} else {desiredZAngle = 0;}
+				if(transform.eulerAngles.x > 0 && transform.eulerAngles.x < 60){desiredXAngle = -30;}
 				anim.Play("flyPrey");
 				rb.useGravity = true;
-				transform.rotation = Quaternion.Euler(Mathf.Lerp(transform.eulerAngles.x,330f,Time.deltaTime),
+					transform.rotation = Quaternion.Euler(Mathf.Lerp(transform.eulerAngles.x,desiredXAngle,Time.deltaTime),
 				                                      transform.eulerAngles.y,
-				                                      Mathf.Lerp(transform.eulerAngles.z,desiredAngle,Time.deltaTime));
+				                                      Mathf.Lerp(transform.eulerAngles.z,desiredZAngle,Time.deltaTime));
 
 				                }
 		}
@@ -135,6 +135,12 @@ public class FlyMovement : MonoBehaviour {
 			anim.Play ("idleFloor2");
 		} else {
 			anim.Play ("idleFloor3");
+		}
+	}
+
+	void constrain(){
+		if (transform.position.y <= 0) {
+			transform.position = new Vector3(transform.position.x,0,transform.position.z);
 		}
 	}
 
