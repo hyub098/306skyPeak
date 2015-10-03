@@ -15,6 +15,9 @@ public class FlyMovement : MonoBehaviour {
 	private float rotationX;
 	private float rotationZ;
 
+	Animator anim;
+	Animation anima;
+	private float flyCount;
 
     int incrementTime = 1;
     float incrementBy = 1;
@@ -23,19 +26,21 @@ public class FlyMovement : MonoBehaviour {
     int second = 0;
     float time = 0;
 
-    public string timerFormatted;
-    public Text timerText;
+//    public string timerFormatted;
+//    public Text timerText;
 
 
 
     // Use this for initialization
     void Start () {
 		Debug.Log ("plane pilot script added to: " + gameObject.name);
+		anim = GetComponent<Animator> ();
+		anima = GetComponent<Animation> ();
         //		rb = this.GetComponent<Rigidbody> ();
         //		rb.velocity = Vector3.ClampMagnitude (rb.velocity, 0f);
 
 
-        SetTimerText();
+     //   SetTimerText();
 
         //		SetCountText();
     }
@@ -44,23 +49,24 @@ public class FlyMovement : MonoBehaviour {
     void Update () {
 
 
-        minute = (int)counter / 60;
-        second = (int)counter % 60;
-        time += Time.deltaTime;
-        while (time > incrementTime)
-        {
-            time -= incrementTime;
-            counter += incrementBy;
-        }
-        timerFormatted = string.Format("{0:00}:{1:00}", minute, second);
-        SetTimerText();
+		animating();
+//        minute = (int)counter / 60;
+//        second = (int)counter % 60;
+//        time += Time.deltaTime;
+//        while (time > incrementTime)
+//        {
+//            time -= incrementTime;
+//            counter += incrementBy;
+//        }
+//        timerFormatted = string.Format("{0:00}:{1:00}", minute, second);
+//        SetTimerText();
 
         //camera position adjust
-        Vector3 moveCamtTo = transform.position - transform.forward * 10.0f + Vector3.up * 5.0f;
+        Vector3 moveCamtTo = transform.position - transform.forward * 5.0f + Vector3.up * 5.0f;
 		float bias = 0.96f;
 		Camera.main.transform.position = Camera.main.transform.position * bias + moveCamtTo * (1.0f - bias);
 		
-		Camera.main.transform.LookAt (transform.position + transform.forward * 5.0f);
+		Camera.main.transform.LookAt (transform.position + transform.forward * 1.0f);
 
 		//Vector3 currentAngle = transform.rotation.eulerAngles;
 
@@ -74,6 +80,14 @@ public class FlyMovement : MonoBehaviour {
 
 		//speed -= transform.forward.y * Time.deltaTime *  2.0f;
 		
+	}
+
+	void animating(){
+		flyCount++;
+		if (flyCount > 150) {
+//			anim.SetBool ("Fall", true);
+			anima.Play("falling");
+		}
 	}
 
 //	/**
@@ -139,10 +153,10 @@ public class FlyMovement : MonoBehaviour {
 
 		return rotate;
 	}
-
-    void SetTimerText()
-    {
-        timerText.text = "Time: " + timerFormatted;
-    }
+//
+//    void SetTimerText()
+//    {
+//        timerText.text = "Time: " + timerFormatted;
+//    }
 
 }
