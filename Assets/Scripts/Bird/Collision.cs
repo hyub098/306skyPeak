@@ -12,6 +12,8 @@ public class Collision : MonoBehaviour {
 	private Vector3 moveBackPosition;
 	private float time;
 	// Use this for initialization
+	public Canvas gameOver;
+	private bool ispause;
 
 	void Start () {
 
@@ -22,6 +24,8 @@ public class Collision : MonoBehaviour {
 		anim = GetComponent<Animation> ();
 		flyMovement = GetComponent<FlyMovement> ();
 		life = 3;
+		gameOver.enabled = false;
+		ispause = false;
 
 	}
 	
@@ -47,43 +51,64 @@ public class Collision : MonoBehaviour {
 			time = time + (Time.deltaTime) * 1 ;
 		}
 
+		if (ispause) {
+			Time.timeScale = 0f;
+		}
+
 	}
 
-	void OnTriggerEnter(Collider other){
-		collision = true;
+//	void OnTriggerEnter(Collider other){
+//		collision = true;
+//
+//
+//
+//		if (other.gameObject.CompareTag ("Terrain")) {
+//			life--;
+//			RaycastHit hit;
+//			if (Physics.Raycast(transform.position, transform.forward, out hit))
+//			{
+//				Debug.Log("Point of contact: "+hit.point);
+//				Vector3 moveDistance = transform.forward * Time.deltaTime*200;
+//				Debug.Log(hit.point-moveDistance);
+//				flyMovement.enabled = false;
+//				moveBackPosition=transform.position-moveDistance;
+//				Debug.Log ("disabled");
+//				pushBack();
+//
+//			}
+//
+//			if(life < 1){
+//				flyMovement.enabled = false;
+//				rb.useGravity = true;
+//				//Move to the bottom when hit hill
+//				float terrainHeightWhereWeAre = Terrain.activeTerrain.SampleHeight (transform.position);
+//				
+//				if (terrainHeightWhereWeAre < transform.position.y) {
+//					transform.position = new Vector3(transform.position.x,terrainHeightWhereWeAre,transform.position.z);
+//				}
+//				anim.Play ("falling");
+//				Debug.Log ("Fall now");
+//			}
+//
+//
+//		} 
+//	}
 
-
-
-		if (other.gameObject.CompareTag ("Terrain")) {
+	void OnCollisionEnter (UnityEngine.Collision ha){
+		if (life > 0) {
 			life--;
-			RaycastHit hit;
-			if (Physics.Raycast(transform.position, transform.forward, out hit))
-			{
-				Debug.Log("Point of contact: "+hit.point);
-				Vector3 moveDistance = transform.forward * Time.deltaTime*200;
-				Debug.Log(hit.point-moveDistance);
-				flyMovement.enabled = false;
-				moveBackPosition=transform.position-moveDistance;
-				Debug.Log ("disabled");
-				pushBack();
+		
+		}
 
-			}
+		if (life < 1) {
+			flyMovement.enabled = false;
+			rb.useGravity = true;
+			anim.Play ("falling");
+			ispause=true;
+			gameOver.enabled=true;
 
-			if(life < 1){
-				flyMovement.enabled = false;
-				rb.useGravity = true;
-				//Move to the bottom when hit hill
-				float terrainHeightWhereWeAre = Terrain.activeTerrain.SampleHeight (transform.position);
-				
-				if (terrainHeightWhereWeAre < transform.position.y) {
-					transform.position = new Vector3(transform.position.x,terrainHeightWhereWeAre,transform.position.z);
-				}
-				anim.Play ("falling");
-				Debug.Log ("Fall now");
-			}
+		}
 
-
-		} 
 	}
 
 	void constrain(){

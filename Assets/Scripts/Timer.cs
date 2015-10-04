@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class Timer : MonoBehaviour {
+public class Timer: MonoBehaviour {
 
 	int incrementTime = 1;
 	float incrementBy = 1;
@@ -37,7 +37,7 @@ public class Timer : MonoBehaviour {
 		}
 		timerFormatted = string.Format("{0:00}:{1:00}", minute, second);
 		SetTimerText();
-	
+        calcScore();
 	}
 
 	void SetTimerText()
@@ -46,11 +46,42 @@ public class Timer : MonoBehaviour {
 	}
 
 	void calcScore() {
-
+        
 		totalTime = (minute * 60) + second;
-		factorScore = 1 / totalTime;
-		score = (int)factorScore * 100000;
-	}
+        if (totalTime < 30)
+        {
+            score = 1000;
+        } else if (totalTime < 120)
+        {
+            score = 500;
+
+        }
+        else if (totalTime < 240)
+        {
+            score = 250;
+
+        }
+        else if (totalTime < 480)
+        {
+            score = 125;
+
+        }
+        else if (totalTime < 960)
+        {
+            score = 100;
+
+        }
+        else if (totalTime < 1200)
+        {
+            score = 50;
+
+        } else
+        {
+            score = 10;
+        }
+        //Debug.Log(totalTime);
+        PlayerPrefs.SetInt("highscore", 545);
+    }
 
 	public int getMin() {
 		return minute;

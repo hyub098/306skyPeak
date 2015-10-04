@@ -7,6 +7,7 @@ public class MailCount : MonoBehaviour {
 	public Text mailText;
 	public Text gold;
 	public int goldCount;
+	public  Canvas Congratulations;
 
 	private Rigidbody rb;
 
@@ -14,6 +15,7 @@ public class MailCount : MonoBehaviour {
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
 		mailCount = 0;
+		Congratulations.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -30,6 +32,12 @@ public class MailCount : MonoBehaviour {
 			Debug.Log ("Deliver");
 			goldCount=goldCount+mailCount*100;
 			mailCount=0;
+
+			if(goldCount==300){
+			Congratulations.enabled=true;
+				Time.timeScale = 0f;
+			}
+
 		}
 
 
