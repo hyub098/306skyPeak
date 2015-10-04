@@ -717,8 +717,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You can only hold 3 scolls at a time. \nAs soon as you collect 3, dispose
-    them in the mailbox to be able to deliver some more. \n\nLet's do this!\n"
+  m_Text: "You can only hold 3 scolls at a time. \nAs soon as you collect 3, deliver
+    them in the mailbox so you can collect some more. \n\nLet's do this!\n"
 --- !u!222 &1587760372
 CanvasRenderer:
   m_ObjectHideFlags: 0
