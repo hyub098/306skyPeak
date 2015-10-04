@@ -241,8 +241,9 @@ GameObject:
   - 224: {fileID: 135202289}
   - 222: {fileID: 135202288}
   - 114: {fileID: 135202287}
+  - 114: {fileID: 135202290}
   m_Layer: 5
-  m_Name: Text
+  m_Name: scoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,6 +306,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 67}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
+--- !u!114 &135202290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 135202286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07190ea2a20174347a8a1a27a624d207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 135202287}
 --- !u!1 &872165588
 GameObject:
   m_ObjectHideFlags: 0
