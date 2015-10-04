@@ -16,7 +16,7 @@ public class shooting : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-			if (count > 20) {
+			if (count > 100) {
 			Rigidbody instantiatedProjectile = Instantiate (projectile, transform.position, transform.rotation)as Rigidbody;
 			instantiatedProjectile.gameObject.transform.Rotate(-90.0f,0.0f,0.0f);
 			instantiatedProjectile.velocity = transform.TransformDirection (new Vector3 (0, 0, speed));
