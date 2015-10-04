@@ -12,8 +12,8 @@ public class randomFalling : MonoBehaviour {
 	void Update () {
 		
 		flyCount++;
-		if (flyCount > 200) {
-			transform.position=new Vector3(0, 6,13);
+		if (flyCount > 1000) {
+			transform.position=new Vector3(100+500*Random.value, 400,800*Random.value );
 			flyCount=0;
 		}
 		
