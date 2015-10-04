@@ -50,6 +50,7 @@ public class Timer: MonoBehaviour {
 		totalTime = (minute * 60) + second;
         if (totalTime < 30)
         {
+<<<<<<< HEAD
             score = 1000;
         } else if (totalTime < 120)
         {
@@ -81,6 +82,39 @@ public class Timer: MonoBehaviour {
         }
         //Debug.Log(totalTime);
         PlayerPrefs.SetInt("highscore", 545);
+=======
+            score = 100000;
+        } else if (totalTime < 60)
+        {
+            score = 50000;
+
+        }
+        else if (totalTime < 120)
+        {
+            score = 25000;
+
+        }
+        else if (totalTime < 240)
+        {
+            score = 12500;
+
+        }
+        else if (totalTime < 480)
+        {
+            score = 10000;
+
+        }
+        else if (totalTime < 960)
+        {
+            score = 5000;
+
+        } else
+        {
+            score = 1000;
+        }
+        //Debug.Log(totalTime);
+        PlayerPrefs.SetInt("highscore", score);
+>>>>>>> 5f13bb8bdebce434094b9e44e44ab426f50f1439
     }
 
 	public int getMin() {
