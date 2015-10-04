@@ -1,7 +1,7 @@
 ﻿#pragma strict
 
 function Start () {
-    yield WaitForSeconds(3);
+    yield WaitForSeconds(5);
     Application.LoadLevel("map");
 }
 
