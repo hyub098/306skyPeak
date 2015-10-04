@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class Boundary : MonoBehaviour {
-	int minX = -200; //left boundary 
-	int maxX = 200; //right boundary 
-	int minY = -200; // up boundary 
-	int maxY = 200; // down boundary
-	int maxZ =200;
-	int minZ =-200;
+	int minX = -600; //left boundary 
+	int maxX = 600; //right boundary 
+	int minY = -600; // up boundary 
+	int maxY = 600; // down boundary
+	int maxZ =600;
+	int minZ =-600;
 	private Rigidbody rb;
 	bool ispushing=false;
 	// Use this for initialization
