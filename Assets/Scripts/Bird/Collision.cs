@@ -9,8 +9,10 @@ public class Collision : MonoBehaviour {
 	public Text healthText;
 	private int life;
 	private FlyMovement flyMovement;
-
+	private Vector3 moveBackPosition;
+	private float time;
 	// Use this for initialization
+
 	void Start () {
 
 		Debug.Log ("Collision script added to: " + gameObject.name);
@@ -26,6 +28,25 @@ public class Collision : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		healthText.text = "life:" + life;
+		if (flyMovement.enabled == false) {
+
+			if(time>5){
+				flyMovement.enabled=true;
+				Debug.Log ("enabled");
+				time=0;
+
+			}else{
+				Debug.Log("moveBackPosition"+moveBackPosition);
+				Debug.Log("current:"+transform.position);
+				pushBack();
+//				transform.rotation = Quaternion.Euler(transform.eulerAngles.x,
+//				                                      transform.eulerAngles.y,
+//				                                      Mathf.Lerp(transform.eulerAngles.z,transform.eulerAngles.z+10,Time.deltaTime));
+
+			}
+			time = time + (Time.deltaTime) * 1 ;
+		}
+
 	}
 
 	void OnTriggerEnter(Collider other){
@@ -37,6 +58,11 @@ public class Collision : MonoBehaviour {
 			if (Physics.Raycast(transform.position, transform.forward, out hit))
 			{
 				Debug.Log("Point of contact: "+hit.point);
+				Vector3 moveDistance = transform.forward * Time.deltaTime*200;
+				Debug.Log(hit.point-moveDistance);
+				flyMovement.enabled = false;
+				moveBackPosition=transform.position-moveDistance;
+				Debug.Log ("disabled");
 				pushBack();
 
 			}
@@ -71,11 +97,9 @@ public class Collision : MonoBehaviour {
 		}
 	}
 	void pushBack(){
-		flyMovement.enabled = false;
-		for (int i=0; i<100; i++) {
-			Quaternion.Euler(Mathf.Lerp(transform.eulerAngles.x,desiredXAngle,Time.deltaTime),
-			                 transform.eulerAngles.y,
-			                 Mathf.Lerp(transform.eulerAngles.z,desiredZAngle,Time.deltaTime));
-		}
+		transform.position = transform.position - transform.forward * Time.deltaTime ;
+	}
+	public bool V3Equal(Vector3 a, Vector3 b){
+		return Vector3.SqrMagnitude(a - b) < 0.01;
 	}
 }
