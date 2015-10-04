@@ -52,6 +52,8 @@ public class Collision : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		collision = true;
 
+
+
 		if (other.gameObject.CompareTag ("Terrain")) {
 			life--;
 			RaycastHit hit;
