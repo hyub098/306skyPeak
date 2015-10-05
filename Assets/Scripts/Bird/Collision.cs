@@ -14,6 +14,9 @@ public class Collision : MonoBehaviour {
 	// Use this for initialization
 	public Canvas gameOver;
 	private bool ispause;
+	private float deadTime;
+	private bool isSaved;
+
 
 	void Start () {
 
@@ -26,6 +29,8 @@ public class Collision : MonoBehaviour {
 		life = 3;
 		gameOver.enabled = false;
 		ispause = false;
+		isSaved = false;
+
 
 	}
 	
@@ -53,6 +58,20 @@ public class Collision : MonoBehaviour {
 
 		if (ispause) {
 			Time.timeScale = 0f;
+		}
+
+		if (life < 1) {
+
+			if(!isSaved){
+				deadTime = time;
+				isSaved=true;
+			}
+			Debug.Log(time-deadTime);
+
+			if(time - deadTime > 3){
+				Application.LoadLevel(Application.loadedLevel);
+			}
+
 		}
 
 	}
@@ -104,10 +123,17 @@ public class Collision : MonoBehaviour {
 			flyMovement.enabled = false;
 			rb.useGravity = true;
 			anim.Play ("falling");
-			ispause=true;
+//			ispause=true;
 			gameOver.enabled=true;
 
+
+
 		}
+
+	}
+
+	IEnumerator reload(){
+		yield return new WaitForSeconds(100);
 
 	}
 
