@@ -116,11 +116,11 @@ RectTransform:
   - {fileID: 1742939024}
   m_Father: {fileID: 1679278905}
   m_RootOrder: 3
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -500.700012, y: 100.300003}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -40}
   m_SizeDelta: {x: 150, y: 50}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &108199984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -820,9 +820,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  timerFormatted: 
-  timerText: {fileID: 0}
 --- !u!1 &1679278904
 GameObject:
   m_ObjectHideFlags: 0
