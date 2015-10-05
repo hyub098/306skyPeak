@@ -14,5 +14,6 @@ public class LoadOnClick : MonoBehaviour
     {
         //loadingImage.SetActive(true);
         Application.LoadLevel(level);
+		Time.timeScale = 1f;
     }
 }
