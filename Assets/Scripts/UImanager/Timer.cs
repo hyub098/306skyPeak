@@ -18,13 +18,13 @@ public class Timer: MonoBehaviour {
 	public Text timerText;
 	public Text scoreText;
 
-	// Use this for initialization
+	// Initialize timer to 00:00
 	void Start () {
 
 		SetTimerText();
 	}
 	
-	// Update is called once per frame
+	// Update the timer every second
 	void Update () {
 
 		minute = (int)counter / 60;
@@ -35,6 +35,7 @@ public class Timer: MonoBehaviour {
 			time -= incrementTime;
 			counter += incrementBy;
 		}
+
 		timerFormatted = string.Format("{0:00}:{1:00}", minute, second);
 		SetTimerText();
         calcScore();
@@ -45,6 +46,8 @@ public class Timer: MonoBehaviour {
 		timerText.text = timerFormatted;
 	}
 
+	// Algorithm to calculate the score using the time played
+	// This will be improved later
 	void calcScore() {
         
 		totalTime = (minute * 60) + second;
@@ -79,15 +82,10 @@ public class Timer: MonoBehaviour {
         {
             score = 10;
         }
-        //Debug.Log(totalTime);
+        
+        // Store the player's score
         PlayerPrefs.SetInt("highscore", score);
     }
 
-	public int getMin() {
-		return minute;
-	}
 
-	public int getSec() {
-		return second;
-	}
 }
