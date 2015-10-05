@@ -27,6 +27,8 @@ public class FlyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		//Lock max speed
 		currentSpd = Mathf.Clamp (currentSpd, 0, maxSpd);
 
 		//camera position adjust
@@ -36,6 +38,8 @@ public class FlyMovement : MonoBehaviour {
 		
 		Camera.main.transform.LookAt (transform.position + transform.forward * 1.0f);
 
+
+		//check if owl started
 		beforeStart ();
 			
 	 	//Check if game started
@@ -43,16 +47,11 @@ public class FlyMovement : MonoBehaviour {
 			constrain ();
 		}
 
+		//move owl
 		move ();
-
-
-
-
 		
 	}
-	
-	
-	
+
 	/**
 	 * Limit rotation to 45 degrees up/down, 50 degreesleft/right
 	 * 
@@ -79,6 +78,7 @@ public class FlyMovement : MonoBehaviour {
 		return rotate;
 	}
 
+	//Play different animation randomly
 	void playRestClip(){
 		int clipNum = Random.Range (0, 2);
 		if (clipNum == 0) {
@@ -90,6 +90,8 @@ public class FlyMovement : MonoBehaviour {
 		}
 	}
 
+
+	//Stop owl going below ground level
 	void constrain(){
 		if (transform.position.y <= 1) {
 			transform.position = new Vector3(transform.position.x,1,transform.position.z);
@@ -153,9 +155,11 @@ public class FlyMovement : MonoBehaviour {
 			}
 		} else {
 
-
+			//Re-adjust owl if space is not pressed
 			currentSpd = 0;
 			if(start){
+
+				//Calculate angle to re-adjust
 				float desiredZAngle = 0;
 				float desiredXAngle = 330;
 				if(transform.eulerAngles.z > 180){desiredZAngle = 360;} else {desiredZAngle = 0;}
@@ -163,14 +167,19 @@ public class FlyMovement : MonoBehaviour {
 				if(transform.position.y > 2){
 					anim.Play("idleFloor2");
 				}
+
+				//turn on gravity to allow falling
 				rb.useGravity = true;
+
+				//change rotation of owl
 				transform.rotation = Quaternion.Euler(Mathf.Lerp(transform.eulerAngles.x,desiredXAngle,Time.deltaTime),
 				                                      transform.eulerAngles.y,
 				                                      Mathf.Lerp(transform.eulerAngles.z,desiredZAngle,Time.deltaTime));
 				
 			}
 		}
-		
+
+		//Change rotation of owl base on user input
 		if (Rotation ()) {
 			//rotate the plane from input
 			transform.Rotate (-v,h, -h/2);
