@@ -5,17 +5,9 @@ using UnityEngine.UI;
 public class bird : MonoBehaviour {
 	
 	public float speed;
-	//	public float moveSpd;
-	
-	//	public Text winText;
-	//	private Rigidbodyrb;
-	
 	private int count;
-	
 	private float rotationX;
 	private float rotationZ;
-	
-	
 	int incrementTime = 1;
 	float incrementBy = 1;
 	float counter = 0;
@@ -30,14 +22,9 @@ public class bird : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		Debug.Log ("plane pilot script added to: " + gameObject.name);
-		//		rb = this.GetComponent<Rigidbody> ();
-		//		rb.velocity = Vector3.ClampMagnitude (rb.velocity, 0f);
-		
-		
+		Debug.Log ("plane pilot script added to: " + gameObject.name);			
 		SetTimerText();
-		
-		//		SetCountText();
+
 	}
 	
 	// Update is called once per frame
@@ -71,33 +58,11 @@ public class bird : MonoBehaviour {
 			//rotate the plane from input
 			transform.Rotate (-Input.GetAxis("Vertical"),0.0f, -Input.GetAxis("Horizontal"));
 		}
-		
-		//speed -= transform.forward.y * Time.deltaTime *  2.0f;
+			
 		
 	}
 	
-	//	/**
-	//	 * If collide with objects with tag pick up
-	//	 * 
-	//	 */ 
-	//	void OnTriggerEnter(Collider other){
-	//		
-	//		if ( other.gameObject.CompareTag("Pick Up")){
-	//			other.gameObject.SetActive(false);
-	//			count++;
-	//			SetCountText();
-	//		}
-	//		
-	//	}
-	//
-	//	//Set Text to UI
-	//	void SetCountText()
-	//		
-	//	{
-	//		countText.text = "Count: " + count.ToString ();
-	//		
-	//	}
-	
+
 	
 	/**
 	 * Limit rotation to 45 degrees up/down, 50 degreesleft/right
@@ -120,22 +85,8 @@ public class bird : MonoBehaviour {
 				transform.eulerAngles = new Vector3(315,transform.eulerAngles.y, transform.eulerAngles.z);
 			}
 			
-		}
-		
-		//		if (50f < transform.eulerAngles.z  && transform.eulerAngles.z < 310f){ 
-		//			rotate = false;
-		//
-		//			if(transform.eulerAngles.z < 100){
-		//				transform.eulerAngles = new Vector3(transform.eulerAngles.x,transform.eulerAngles.y,45);
-		//
-		//			}else{
-		//				transform.eulerAngles = new Vector3(transform.eulerAngles.x,transform.eulerAngles.y,310);
-		//
-		//			}
-		//			
-		//		}
-		
-		/// Test
+		}		
+
 		
 		return rotate;
 	}

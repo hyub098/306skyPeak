@@ -6,8 +6,8 @@ public class Boundary : MonoBehaviour {
 	int maxX = 600; //right boundary 
 	int minY = -600; // up boundary 
 	int maxY = 600; // down boundary
-	int maxZ =600;
-	int minZ =-600;
+	int maxZ =600;// front boundary
+	int minZ =-600; //back boundary
 	private Rigidbody rb;
 	bool ispushing=false;
 	// Use this for initialization
@@ -21,7 +21,7 @@ public class Boundary : MonoBehaviour {
 	}
 	
 	void outofbounds() { 
-		
+		//set the x,y,z position to limit if out of bounds
 		if (rb.transform.position.x < minX) {
 			transform.position=new Vector3 (minX, transform.position.y, transform.position.z);
 		
