@@ -29,8 +29,6 @@ public class Collision : MonoBehaviour {
 		gameOver.enabled = false;
 		ispause = false;
 		isSaved = false;
-
-
 	}
 	
 	// Update is called once per frame

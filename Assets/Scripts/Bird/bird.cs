@@ -17,9 +17,6 @@ public class bird : MonoBehaviour {
 	
 	public string timerFormatted;
 	public Text timerText;
-	
-	
-	
 	// Use this for initialization
 	void Start () {
 		Debug.Log ("plane pilot script added to: " + gameObject.name);			
