@@ -47,7 +47,7 @@ public class Timer: MonoBehaviour {
 	}
 
 	// Algorithm to calculate the score using the time played
-	// This will be improved later
+	// TODO This will be improved later
 	void calcScore() {
         
 		totalTime = (minute * 60) + second;
