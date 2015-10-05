@@ -72,7 +72,14 @@ public class MailCount : MonoBehaviour {
 			other.gameObject.SetActive (false);
 			Debug.Log (" Got Mail");
 			mailCount++;
-			}
-		}
+            using (System.IO.StreamWriter file =
+               new System.IO.StreamWriter(@"C:\Users\Public\skypeak_log.txt", true))
+                {
+                    file.WriteLine("Expected outcome: mailcount " + (mailCount - 1).ToString() + " -> " + "collision with mail" + "-->" + mailCount.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
+                    file.WriteLine("assert: mailcount " + (mailCount - 1).ToString() + " -> " + "collision with mail" + "-->" + mailCount.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
+                }
+
+            }
+        }
 	}
 }
