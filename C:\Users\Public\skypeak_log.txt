@@ -6,3 +6,21 @@ Expected outcome: life 1 -> collision-->0 at time 11:06:46 PM
 assert: life 1 -> collision-->0 at time 11:06:46 PM
 Expected outcome: mailcount 0 -> collision with mail-->1 at time 11:08:40 PM
 assert: mailcount 0 -> collision with mail-->1 at time 11:08:40 PM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 12:27:28 AM
+assert: mailcount 0 -> collision with mail-->1 at time 12:27:28 AM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 12:27:33 AM
+assert: mailcount 1 -> collision with mail-->2 at time 12:27:33 AM
+Expected outcome: mailcount 2 -> collision with mail-->3 at time 12:27:53 AM
+assert: mailcount 2 -> collision with mail-->3 at time 12:27:53 AM
+Expected outcome: life 3 -> collision-->2 at time 12:27:58 AM
+assert: life 3 -> collision-->2 at time 12:27:58 AM
+Expected outcome: life 2 -> collision-->1 at time 12:27:58 AM
+assert: life 2 -> collision-->1 at time 12:27:58 AM
+Expected outcome: life 1 -> collision-->0 at time 12:28:00 AM
+assert: life 1 -> collision-->0 at time 12:28:00 AM
+Expected outcome: life 3 -> collision-->2 at time 12:28:09 AM
+assert: life 3 -> collision-->2 at time 12:28:09 AM
+Expected outcome: life 2 -> collision-->1 at time 12:28:10 AM
+assert: life 2 -> collision-->1 at time 12:28:10 AM
+Expected outcome: life 1 -> collision-->0 at time 12:28:17 AM
+assert: life 1 -> collision-->0 at time 12:28:17 AM

@@ -1197,7 +1197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &432401223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5519,7 +5519,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvasorg: {fileID: 1445546221}
-  Help: {fileID: 0}
 --- !u!4 &1468029613 stripped
 Transform:
   m_PrefabParentObject: {fileID: 420526, guid: 682dde4a65b724c1d803b3e6cb6a6390, type: 2}
