@@ -1,7 +1,15 @@
 To play the game online, visit : http://chahatchawla.github.io
 
-Game Overview: Click on "mountains" on the map to play the mountain level. The player needs to collect 3 mail and deliver it to the mailbox to win this stage. Also, beware of the falling rocks as colliding into the terrain or the falling rocks, decrease your life and you only have 3 lives.
-Game controls: arrows key are used for directions controls. Press and hold space bar to move forward (acceleration). Keys can be press simultaneously to fly and change direction smoothly. Press "Esc" to pause the game.
+Game Overview: 
+Click on "mountains" on the map to play the mountain level. 
+The player needs to collect 3 mail and deliver it to the mailbox to win this stage. 
+Also, beware of the falling rocks as colliding into the terrain or the falling rocks, decrease your life and you only have 3 lives.
+
+Game controls: 
+arrows key are used for directions controls. 
+Press and hold space bar to move forward (acceleration). 
+Keys can be press simultaneously to fly and change direction smoothly. 
+Press "Esc" to pause the game.
 
 To download the project:
 
