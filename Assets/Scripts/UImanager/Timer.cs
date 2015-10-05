@@ -80,7 +80,7 @@ public class Timer: MonoBehaviour {
             score = 10;
         }
         //Debug.Log(totalTime);
-        PlayerPrefs.SetInt("highscore", 545);
+        PlayerPrefs.SetInt("highscore", score);
     }
 
 	public int getMin() {
