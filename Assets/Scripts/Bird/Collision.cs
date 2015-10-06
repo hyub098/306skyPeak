@@ -61,9 +61,9 @@ public class Collision : MonoBehaviour {
 			}
 			Debug.Log(time-deadTime);
 
-			if(time - deadTime > 3){
-				Application.LoadLevel(Application.loadedLevel);
-			}
+			//if(time - deadTime > 3){
+			//	Application.LoadLevel(Application.loadedLevel);
+			//}
 
 		}
 

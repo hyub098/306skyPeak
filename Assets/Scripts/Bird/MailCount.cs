@@ -40,9 +40,9 @@ public class MailCount : MonoBehaviour {
 			Debug.Log(time-winTime);
 			Congratulations.enabled=true;
 
-			if(time - winTime > 3){
-				Application.LoadLevel("map");
-			}
+			//if(time - winTime > 3){
+			//	Application.LoadLevel("map");
+			//}
 
 			if(time < 60){
 				//achievement
