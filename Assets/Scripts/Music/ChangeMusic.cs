@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ChangeMusic : MonoBehaviour {
 
-    public AudioClip level2Music;
+    //public AudioClip level2Music;
     public AudioClip level1Music;
 
     private AudioSource source;
@@ -28,16 +28,16 @@ public class ChangeMusic : MonoBehaviour {
 
     void OnLevelWasLoaded(int level)
     {
-        if (level == 2)
-        {
-            count = count + 1;
-            source.clip = level2Music;
-            source.Play();
-        }
-        else if(count != 0)
+
+        count = count + 1;
+        if(level==1 && count != 1)
         {
             source.clip = level1Music;
             source.Play();
+        }
+          if (level == 2 )
+         {
+           source.Stop();
         }
 
     }

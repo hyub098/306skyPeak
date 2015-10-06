@@ -14,16 +14,21 @@ public class FlyMovement : MonoBehaviour {
 
 	private float time;
 
-	// Use this for initialization
-	void Start () {
+    public AudioClip windSound;
+    public AudioClip wingSound;
+    private AudioSource source;
+
+    // Use this for initialization
+    void Start () {
 		Debug.Log ("plane pilot script added to: " + gameObject.name);
 		moveDistance = new Vector3(0,0,0);
 		currentSpd = 0;
 		anim = GetComponent<Animation> ();
 		rb = GetComponent<Rigidbody> ();
-		
-	
-	}
+        source = GetComponent<AudioSource>();
+
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -151,16 +156,15 @@ public class FlyMovement : MonoBehaviour {
 			if(transform.eulerAngles.x > 0 && transform.eulerAngles.x < 61){ 
 				anim.Play("glideNormal");
 			}else if(transform.eulerAngles.x > 299 && transform.eulerAngles.x < 361){
-				anim.Play ("flyNormal");
+                anim.Play ("flyNormal");
 			}
 		} else {
 
 			//Re-adjust owl if space is not pressed
 			currentSpd = 0;
 			if(start){
-
-				//Calculate angle to re-adjust
-				float desiredZAngle = 0;
+                //Calculate angle to re-adjust
+                float desiredZAngle = 0;
 				float desiredXAngle = 330;
 				if(transform.eulerAngles.z > 180){desiredZAngle = 360;} else {desiredZAngle = 0;}
 				if(transform.eulerAngles.x > 0 && transform.eulerAngles.x < 60){desiredXAngle = -30;}
