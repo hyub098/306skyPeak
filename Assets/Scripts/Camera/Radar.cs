@@ -31,18 +31,19 @@ public class Radar : MonoBehaviour {
 
 
 		for(int i =0; i<radarObjs.Count;i++){
-			if(Vector3.Distance(radarObjs[i].transform.position,transform.position) > switchDist){
+			if(Vector3.Distance(radarObjs[i].transform.position,player.transform.position) > switchDist){
 
 				//switch to border
 				helpTransform.LookAt(radarObjs[i].transform);
 				borderObjs[i].transform.position = transform.position + switchDist * helpTransform.forward;
 
-//				borderObjs[i].layer = LayerMask.NameToLayer("Radar");
-//				radarObjs[i].layer = LayerMask.NameToLayer("Invisible");
+
+				borderObjs[i].layer = LayerMask.NameToLayer("Radar");
+				radarObjs[i].layer = LayerMask.NameToLayer("Invisible");
 			}
 			else{
-//				borderObjs[i].layer = LayerMask.NameToLayer("Invisible");
-//				radarObjs[i].layer = LayerMask.NameToLayer("Radar");
+				borderObjs[i].layer = LayerMask.NameToLayer("Invisible");
+				radarObjs[i].layer = LayerMask.NameToLayer("Radar");
 
 			}
 			 
