@@ -17,6 +17,8 @@ public class FlyMovement : MonoBehaviour {
     public AudioClip windSound;
     public AudioClip wingSound;
     private AudioSource source;
+    private int count=0;
+    private int count2 = 0;
 
     // Use this for initialization
     void Start () {
@@ -133,30 +135,44 @@ public class FlyMovement : MonoBehaviour {
 		//Get input from both axis
 		float h = Input.GetAxis("Horizontal");
 		float v = Input.GetAxis ("Vertical");
-		
-		
-		
-		//Speed up with space
-		if (Input.GetKey ("space")) {
-			
-			//Increase speed slowly to max
-			currentSpd = Mathf.Lerp(currentSpd,maxSpd,Time.deltaTime);
-			Debug.Log("CurrentSpd:"+currentSpd);
-			
-			//move the plane
-			moveDistance = transform.forward * Time.deltaTime * currentSpd;
-			transform.position += moveDistance;
-			
-			//remove rigid body force
-			rb.velocity = Vector3.zero;
-			rb.useGravity = false;
-			
-			
-			//animation clip
-			if(transform.eulerAngles.x > 0 && transform.eulerAngles.x < 61){ 
-				anim.Play("glideNormal");
-			}else if(transform.eulerAngles.x > 299 && transform.eulerAngles.x < 361){
-                anim.Play ("flyNormal");
+
+
+
+        //Speed up with space
+        if (Input.GetKey("space")) {
+
+            //Increase speed slowly to max
+            currentSpd = Mathf.Lerp(currentSpd, maxSpd, Time.deltaTime);
+            Debug.Log("CurrentSpd:" + currentSpd);
+
+            //move the plane
+            moveDistance = transform.forward * Time.deltaTime * currentSpd;
+            transform.position += moveDistance;
+
+            //remove rigid body force
+            rb.velocity = Vector3.zero;
+            rb.useGravity = false;
+
+
+            //animation clip
+            if (transform.eulerAngles.x > 0 && transform.eulerAngles.x < 61) {
+                anim.Play("glideNormal");
+                count2++;
+                if (count2 == 300)
+                {
+                    source.clip = windSound;
+                    source.Play();
+                    count2 = 0;
+                }
+            } else if (transform.eulerAngles.x > 299 && transform.eulerAngles.x < 361) {
+                anim.Play("flyNormal");
+                count++;
+                if (count == 100)
+                {
+                    source.clip = wingSound;
+                    source.Play();
+                    count = 0;
+                }
 			}
 		} else {
 
