@@ -17,6 +17,7 @@ public class Radar : MonoBehaviour {
 	public float switchDist;
 	public Transform helpTransform;
 	public GameObject player;
+	//public GameObject mailBox;
 
 
 	// Use this for initialization
