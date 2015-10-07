@@ -158,6 +158,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1969388535}
   m_RootOrder: 3
+--- !u!4 &183170278 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 472554, guid: b3557fbeed6f247e1a4a0b75ed21d16b, type: 2}
+  m_PrefabInternal: {fileID: 211868275}
 --- !u!1001 &211868275
 Prefab:
   m_ObjectHideFlags: 0
@@ -257,6 +261,10 @@ Prefab:
       propertyPath: far clip plane
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 472554, guid: b3557fbeed6f247e1a4a0b75ed21d16b, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3557fbeed6f247e1a4a0b75ed21d16b, type: 2}
   m_IsPrefabParent: 0
@@ -287,7 +295,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1592205153}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!108 &352516818
 Light:
   m_ObjectHideFlags: 0
@@ -411,8 +419,8 @@ EllipsoidParticleEmitter:
   serializedVersion: 2
   m_Enabled: 1
   m_Emit: 1
-  minSize: .00999999978
-  maxSize: .00999999978
+  minSize: .0199999996
+  maxSize: .0199999996
   minEnergy: 1
   maxEnergy: 1
   minEmission: 500
@@ -425,7 +433,7 @@ EllipsoidParticleEmitter:
   angularVelocity: 0
   rndAngularVelocity: 0
   rndRotation: 0
-  Simulate in Worldspace?: 1
+  Simulate in Worldspace?: 0
   m_OneShot: 0
   m_Ellipsoid: {x: 10, y: .100000001, z: 10}
   m_MinEmitterRange: 0
@@ -436,11 +444,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 807045719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 8, z: 10}
+  m_LocalPosition: {x: 0, y: 9, z: -100.000015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 1592205153}
+  m_RootOrder: 2
 --- !u!1 &953352747
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!26 &953352748
 ParticleRenderer:
   m_ObjectHideFlags: 0
@@ -546,7 +554,7 @@ EllipsoidParticleEmitter:
   angularVelocity: 0
   rndAngularVelocity: 0
   rndRotation: 0
-  Simulate in Worldspace?: 1
+  Simulate in Worldspace?: 0
   m_OneShot: 0
   m_Ellipsoid: {x: 10, y: 0, z: 10}
   m_MinEmitterRange: 0
@@ -557,10 +565,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 953352747}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 183170278}
   m_RootOrder: 0
 --- !u!1 &973669656
 GameObject:
@@ -777,7 +785,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!1 &1244632032
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,4 +947,4 @@ Transform:
   - {fileID: 973669660}
   - {fileID: 118451364}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
