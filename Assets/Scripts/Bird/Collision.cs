@@ -16,8 +16,12 @@ public class Collision : MonoBehaviour {
 	private float deadTime;
 	private bool isSaved;
 
+    public AudioClip gameoverSound;
+    public AudioClip hitSound;
+    private AudioSource source;
+    private int count=0;
 
-	void Start () {
+    void Start () {
 
 		Debug.Log ("Collision script added to: " + gameObject.name);
 
@@ -29,7 +33,9 @@ public class Collision : MonoBehaviour {
 		gameOver.enabled = false;
 		ispause = false;
 		isSaved = false;
-	}
+
+        source = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -62,8 +68,10 @@ public class Collision : MonoBehaviour {
 			Debug.Log(time-deadTime);
 
 			if(time - deadTime > 3){
-				Application.LoadLevel(Application.loadedLevel);
-			}
+
+                //	Application.LoadLevel(Application.loadedLevel);
+
+            }
 
 		}
 
@@ -75,6 +83,8 @@ public class Collision : MonoBehaviour {
 		//check the life
 		if (life > 0) {
 			life--;
+            source.clip = hitSound;
+            source.Play();
             using (System.IO.StreamWriter file =
                new System.IO.StreamWriter(@"C:\Users\Public\skypeak_log.txt", true))
             {
@@ -88,7 +98,13 @@ public class Collision : MonoBehaviour {
 			flyMovement.enabled = false;
 			rb.useGravity = true;
 			anim.Play ("falling");
-			gameOver.enabled=true;
+            if (count == 0)
+            {
+                count = count + 1;
+                source.clip = gameoverSound;
+                source.Play();
+            }
+            gameOver.enabled=true;
 
 
 

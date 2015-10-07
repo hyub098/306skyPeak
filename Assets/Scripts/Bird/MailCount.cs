@@ -13,7 +13,11 @@ public class MailCount : MonoBehaviour {
 	private bool isSaved;
 	public Text achieveText;
 
-	private Rigidbody rb;
+    public AudioClip getMailSound;
+    public AudioClip postMailSound;
+    private AudioSource source;
+
+    private Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +26,8 @@ public class MailCount : MonoBehaviour {
 		Congratulations.enabled = false;
 		isSaved = false;
 		achieveText.enabled = false;
-	}
+        source = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -40,9 +45,9 @@ public class MailCount : MonoBehaviour {
 			Debug.Log(time-winTime);
 			Congratulations.enabled=true;
 
-			if(time - winTime > 3){
-				Application.LoadLevel("map");
-			}
+			//if(time - winTime > 3){
+			//	Application.LoadLevel("map");
+			//}
 
 			if(time < 60){
 				//achievement
@@ -61,9 +66,10 @@ public class MailCount : MonoBehaviour {
 			Debug.Log ("Deliver");
 			goldCount=goldCount+mailCount*100;
 			mailCount=0;
+            source.clip = postMailSound;
+            source.Play();
 
-
-		}
+        }
 
 		// If the player hit the mail
 		if (other.gameObject.CompareTag ("Mail")) {
@@ -72,6 +78,8 @@ public class MailCount : MonoBehaviour {
 			other.gameObject.SetActive (false);
 			Debug.Log (" Got Mail");
 			mailCount++;
+            source.clip = getMailSound;
+            source.Play();
             using (System.IO.StreamWriter file =
                new System.IO.StreamWriter(@"C:\Users\Public\skypeak_log.txt", true))
                 {
