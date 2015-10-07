@@ -32,7 +32,7 @@ public class FlyMovement : MonoBehaviour {
 		currentSpd = Mathf.Clamp (currentSpd, 0, maxSpd);
 
 		//camera position adjust
-		Vector3 moveCamtTo = transform.position - transform.forward * 0.3f + Vector3.up * 0.3f;
+		Vector3 moveCamtTo = transform.position - transform.forward * 0.5f + Vector3.up * 0.3f;
 		float bias = 0.96f;
 		Camera.main.transform.position = Camera.main.transform.position * bias + moveCamtTo * (1.0f - bias);
 		
