@@ -30,12 +30,14 @@ public class Radar : MonoBehaviour {
 		transform.position = new Vector3 (player.transform.position.x, player.transform.position.y + 18.1f, player.transform.position.z);
 
 
+
 		for(int i =0; i<radarObjs.Count;i++){
 			if(Vector3.Distance(radarObjs[i].transform.position,player.transform.position) > switchDist){
 
 				//switch to border
 				helpTransform.LookAt(radarObjs[i].transform);
 				borderObjs[i].transform.position = transform.position + switchDist * helpTransform.forward;
+				Debug.Log(i);
 
 
 				borderObjs[i].layer = LayerMask.NameToLayer("Radar");
