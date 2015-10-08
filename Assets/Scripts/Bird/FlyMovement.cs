@@ -22,7 +22,6 @@ public class FlyMovement : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		Debug.Log ("plane pilot script added to: " + gameObject.name);
 		moveDistance = new Vector3(0,0,0);
 		currentSpd = 0;
 		anim = GetComponent<Animation> ();
