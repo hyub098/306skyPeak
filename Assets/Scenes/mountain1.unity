@@ -3546,8 +3546,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mailCount: 0
   mailText: {fileID: 354822032}
-  gold: {fileID: 718590549}
-  goldCount: 0
   Congratulations: {fileID: 768171933}
   achieveText: {fileID: 2049341368}
   getMailSound: {fileID: 0}

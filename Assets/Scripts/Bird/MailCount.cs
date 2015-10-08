@@ -17,6 +17,7 @@ public class MailCount : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Debug.Log ("script added:" );
 		rb = GetComponent<Rigidbody> ();
 		mailCount = 0;
 		Congratulations.enabled = false;
@@ -35,7 +36,7 @@ public class MailCount : MonoBehaviour {
 	
 			
 
-			Congratulations.enabled=true;
+			//Congratulations.enabled=true;
 
 			if(time < 60){
 				//achievement
