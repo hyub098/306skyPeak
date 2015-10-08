@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 public class NetworkManager : MonoBehaviour {
-	private const string typeName = "UniqueGameName";
-	private const string gameName = "RoomName";
+	private const string typeName = "SkyPeak";
+	private const string gameName = "David";
 	public GameObject playerPrefab;
 	private HostData[] hostList;
 	private void StartServer()

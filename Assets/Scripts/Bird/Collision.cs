@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
+<<<<<<< HEAD
 public class Collision : MonoBehaviour
 {
     private Rigidbody rb;
@@ -16,6 +17,21 @@ public class Collision : MonoBehaviour
     private bool ispause;
     private float deadTime;
     private bool isSaved;
+=======
+public class Collision : MonoBehaviour {
+	private Rigidbody rb;
+	private Animation anim;
+	private bool collision;
+	public Text healthText;
+	private int life;
+	private FlyMovement flyMovement;
+	private Vector3 moveBackPosition;
+	private float time;
+	public Canvas gameOver;
+	private bool ispause;
+	private float deadTime;
+	private bool isSaved;
+>>>>>>> b1a92af59a00c81299eaba16b161b76194112ea7
 
     public AudioClip gameoverSound;
     public AudioClip hitSound;
@@ -27,6 +43,7 @@ public class Collision : MonoBehaviour
 
         Debug.Log("Collision script added to: " + gameObject.name);
 
+<<<<<<< HEAD
         collision = false;
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animation>();
@@ -35,6 +52,16 @@ public class Collision : MonoBehaviour
         gameOver.enabled = false;
         ispause = false;
         isSaved = false;
+=======
+		collision = false;
+		rb = GetComponent<Rigidbody> ();
+		anim = GetComponent<Animation> ();
+		flyMovement = GetComponent<FlyMovement> ();
+		life = 3;
+		gameOver.enabled = false;
+		ispause = false;
+		isSaved = false;
+>>>>>>> b1a92af59a00c81299eaba16b161b76194112ea7
 
         source = GetComponent<AudioSource>();
     }

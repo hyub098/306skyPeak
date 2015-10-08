@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 public class NetworkManager2 : MonoBehaviour {
-	private const string typeName = "UniqueGameName";
-	private const string gameName = "RoomName";
+	private const string typeName = "SkyPeak";
+	private const string gameName = "Leon";
 	public GameObject playerPrefab;
 	private HostData[] hostList;
 	private void StartServer()
@@ -60,7 +60,7 @@ public class NetworkManager2 : MonoBehaviour {
 	}
 	private void SpawnPlayer()
 	{
-		Network.Instantiate(playerPrefab, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
+		Network.Instantiate(playerPrefab, new Vector3(500f, 1f, 1f), Quaternion.identity, 0);
 	}
 	// Use this for initialization
 	void Start () {
