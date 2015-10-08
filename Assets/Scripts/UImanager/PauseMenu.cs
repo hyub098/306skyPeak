@@ -4,12 +4,14 @@ using System.Collections;
 public class PauseMenu : MonoBehaviour {
 
 	public bool isPaused;
-	private Canvas canvas;
+	public Canvas canvas;
 
 	// Disable the pause menu at the beginnig
 	void Start(){
-		canvas = GetComponent<Canvas> ();
-		canvas.enabled = false;
+    
+        canvas = GetComponent<Canvas>();
+        canvas.enabled = false;
+       
 	}
 
 
