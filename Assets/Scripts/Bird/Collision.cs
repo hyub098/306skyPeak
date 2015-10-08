@@ -103,10 +103,9 @@ public class Collision : MonoBehaviour {
                 count = count + 1;
                 source.clip = gameoverSound;
                 source.Play();
+                Debug.Log("game over");
             }
-            gameOver.enabled=true;
-
-
+            gameOver.enabled = true;
 
 		}
 

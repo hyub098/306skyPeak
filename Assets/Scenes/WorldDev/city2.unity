@@ -439,15 +439,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 421696, guid: e925d1b3d51db43f592f8f3a2c2d9910, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 421696, guid: e925d1b3d51db43f592f8f3a2c2d9910, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 421696, guid: e925d1b3d51db43f592f8f3a2c2d9910, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -40
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 10861854, guid: e925d1b3d51db43f592f8f3a2c2d9910, type: 2}
+      propertyPath: m_Lightmapping
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e925d1b3d51db43f592f8f3a2c2d9910, type: 2}
