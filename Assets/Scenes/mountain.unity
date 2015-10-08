@@ -5088,6 +5088,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24be8e1643b8a474fbb57fcda8a1c454, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1248563263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4a3a521c5c1494aae123742ca5c8f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 1689440839}
+  thisPropertyPath: MailCount.mailCount
+  compareToType: 1
+  other: {fileID: 0}
+  otherPropertyPath: 
+  constantValueGeneric: 0
+  compareType: 0
 --- !u!1001 &1272356934
 Prefab:
   m_ObjectHideFlags: 0
@@ -7141,6 +7159,52 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e925d1b3d51db43f592f8f3a2c2d9910, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1689440839 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 101830, guid: e925d1b3d51db43f592f8f3a2c2d9910, type: 2}
+  m_PrefabInternal: {fileID: 1689440838}
+--- !u!114 &1689440840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1689440839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bafa54482a87ac4cbd7ff1bfd1ac93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkAfterTime: 1
+  repeatCheckTime: 1
+  repeatEveryTime: 1
+  checkAfterFrames: 1
+  repeatCheckFrame: 1
+  repeatEveryFrame: 1
+  hasFailed: 0
+  checkMethods: 8192
+  m_ActionBase: {fileID: 2026168974}
+  checksPerformed: 0
+--- !u!114 &1689440841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1689440839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bafa54482a87ac4cbd7ff1bfd1ac93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkAfterTime: 1
+  repeatCheckTime: 1
+  repeatEveryTime: 1
+  checkAfterFrames: 1
+  repeatCheckFrame: 1
+  repeatEveryFrame: 1
+  hasFailed: 0
+  checkMethods: 2
+  m_ActionBase: {fileID: 1248563263}
+  checksPerformed: 0
 --- !u!4 &1721920697 stripped
 Transform:
   m_PrefabParentObject: {fileID: 420526, guid: 682dde4a65b724c1d803b3e6cb6a6390, type: 2}
@@ -7846,6 +7910,24 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 420526, guid: 682dde4a65b724c1d803b3e6cb6a6390, type: 2}
   m_PrefabInternal: {fileID: 88868359}
+--- !u!114 &2026168974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4a3a521c5c1494aae123742ca5c8f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 1689440839}
+  thisPropertyPath: MailCount.mailCount
+  compareToType: 1
+  other: {fileID: 0}
+  otherPropertyPath: 
+  constantValueGeneric: 3
+  compareType: 5
 --- !u!1 &2049341366
 GameObject:
   m_ObjectHideFlags: 0
