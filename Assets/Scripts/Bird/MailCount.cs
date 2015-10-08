@@ -14,6 +14,9 @@ public class MailCount : MonoBehaviour {
     private AudioSource source;
 
     private Rigidbody rb;
+	private int level;
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +26,9 @@ public class MailCount : MonoBehaviour {
 		Congratulations.enabled = false;
 		achieveText.enabled = false;
         source = GetComponent<AudioSource>();
+		level = getLevel();
     }
+
 
 	
 	// Update is called once per frame
@@ -36,7 +41,7 @@ public class MailCount : MonoBehaviour {
 	
 			
 
-			//Congratulations.enabled=true;
+		checkWin ();
 
 			if(time < 60){
 				//achievement
@@ -83,5 +88,33 @@ public class MailCount : MonoBehaviour {
 
             }
         }
+	}
+
+	int getLevel(){
+		int level = 0;
+		if(Application.loadedLevelName.Equals("Park")){
+			level = 1;
+		}else if(Application.loadedLevelName.Equals("mountain1")){
+			level = 2;
+		}else if(Application.loadedLevelName.Equals("city")){
+			level = 3;
+		}
+		return level;
+	}
+
+	void checkWin(){
+		if (level == 1) {
+			if (mailCount >= 5) {
+				Congratulations.enabled=true;
+			}		
+		} else if (level == 2) {
+			if (mailCount >= 7) {
+				Congratulations.enabled=true;
+			}
+		} else if (level == 3) {
+			if (mailCount >= 10){
+				Congratulations.enabled=true;
+			}
+		}
 	}
 }
