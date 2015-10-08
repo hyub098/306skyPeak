@@ -34,7 +34,8 @@ public class birdNetwork : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (GetComponent<NetworkView>().isMine)
+		{
 		//Lock max speed
 		currentSpd = Mathf.Clamp (currentSpd, 0, maxSpd);
 		
@@ -53,9 +54,12 @@ public class birdNetwork : MonoBehaviour {
 		if (start) {
 			constrain ();
 		}
-		
+
+			move ();
+		}
+
 		//move owl
-		move ();
+
 		
 	}
 	
