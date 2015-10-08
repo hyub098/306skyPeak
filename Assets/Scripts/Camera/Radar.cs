@@ -104,6 +104,8 @@ public class Radar : MonoBehaviour {
 
 	void checkActive(){
 		foreach (GameObject o in trackerdObjs) {
+
+			//if not active 
 			if(!o.activeSelf){
 				for(int i =0 ;i <radarObjs.Count; i++){
 					if(radarObjs[i].transform.position == o.transform.position){

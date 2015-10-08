@@ -55,7 +55,12 @@ public class onlineFly : MonoBehaviour {
 		}
 		
 		//move owl
-		move ();
+		if (GetComponent<NetworkView>().isMine)
+		{
+			move ();	
+		}
+
+
 		
 	}
 	
