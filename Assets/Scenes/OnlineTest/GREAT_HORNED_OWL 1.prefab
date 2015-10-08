@@ -1132,7 +1132,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120518}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
   m_LocalPosition: {x: 300, y: 400, z: 106.150002}
   m_LocalScale: {x: .200000003, y: .109999999, z: .0700000003}
   m_Children:
@@ -1581,7 +1581,7 @@ NetworkView:
   m_GameObject: {fileID: 120518}
   m_Enabled: 1
   m_StateSynchronization: 1
-  m_Observed: {fileID: 488906}
+  m_Observed: {fileID: 11416854}
   m_ViewID:
     m_ID: 0
     m_Type: 0
@@ -1611,6 +1611,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: maxSpd
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Observed
+      value: 
+      objectReference: {fileID: 11416854}
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalRotation.w
+      value: .707106709
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalRotation.x
+      value: .707106829
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
