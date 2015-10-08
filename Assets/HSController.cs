@@ -14,14 +14,10 @@ public class HSController : MonoBehaviour
    
     void Start()
     {        
-        StartCoroutine(GetScores());
+        StartCoroutine(PostScores("Zainab", 122));
     }
-    IEnumerator Testing() {
-        var URL = "http://wararm.altervista.org/gioco/login.php";
-        WWW hs_get = new WWW(URL);
-        yield return hs_get;
-        Debug.Log(hs_get.text);
-    }
+
+
     public string Md5Sum(string strToEncrypt)
     {
         System.Text.UTF8Encoding ue = new System.Text.UTF8Encoding();
