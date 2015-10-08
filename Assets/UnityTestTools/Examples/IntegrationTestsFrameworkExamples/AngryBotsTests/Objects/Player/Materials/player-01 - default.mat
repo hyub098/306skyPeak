@@ -71,16 +71,16 @@ Material:
         second: 47.8373146
       data:
         first:
-          name: _EmissionLM
-        second: 50
-      data:
-        first:
           name: _SelfIllumStrength
         second: 1.5
       data:
         first:
           name: _RoomReflectionAmount
         second: 2.92537308
+      data:
+        first:
+          name: _EmissionLM
+        second: 50
       data:
         first:
           name: _SelfIllumination
