@@ -93,7 +93,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 72822586}
-  - 114: {fileID: 72822587}
   m_Layer: 0
   m_Name: Pause Menu
   m_TagString: Untagged
@@ -114,19 +113,6 @@ Transform:
   - {fileID: 136596623}
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!114 &72822587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 72822585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f5d691e428b5479c99621d2f47d3877, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPaused: 0
-  pauseMenuCanvus: {fileID: 136596619}
 --- !u!1 &136596619
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,6 +125,7 @@ GameObject:
   - 114: {fileID: 136596621}
   - 114: {fileID: 136596620}
   - 114: {fileID: 136596624}
+  - 114: {fileID: 136596625}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -234,6 +221,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingImage: {fileID: 0}
+  clickSound: {fileID: 0}
+--- !u!114 &136596625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 136596619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f5d691e428b5479c99621d2f47d3877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPaused: 0
+  canvas: {fileID: 136596622}
 --- !u!1 &183541457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,12 +1077,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1889578263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07190ea2a20174347a8a1a27a624d207, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  minute: 0
-  second: 0
-  scoreText: {fileID: 1889578265}
+  scoreText: {fileID: 0}
 --- !u!1 &1911859157
 GameObject:
   m_ObjectHideFlags: 0
