@@ -10,9 +10,20 @@ public class LoadOnClick : MonoBehaviour
 
     public GameObject loadingImage;
 
+    public AudioClip clickSound;
+    private AudioSource source;
+
+    void Start()
+    {
+        source = GetComponent<AudioSource>();
+        source.clip = clickSound;
+    }
+
     public void LoadScene(int level)
     {
         //loadingImage.SetActive(true);
+        //source.clip = clickSound;
+        //source.Play();
         Application.LoadLevel(level);
 		Time.timeScale = 1f;
     }

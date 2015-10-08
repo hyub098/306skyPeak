@@ -8,6 +8,8 @@ TagManager:
   - Mail
   - Pick Up
   - Mail box
+  - AICars
+  - Ground
   layers:
   - Default
   - TransparentFX
