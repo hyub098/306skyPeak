@@ -1911,7 +1911,9 @@ GameObject:
   m_PrefabParentObject: {fileID: 101274, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
   m_PrefabInternal: {fileID: 1250663238}
 --- !u!64 &184151517
-MeshCollider:
+
+  m_RootOrder: 4
+
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
