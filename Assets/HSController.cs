@@ -14,7 +14,7 @@ public class HSController : MonoBehaviour
    
     void Start()
     {        
-        StartCoroutine(PostScores("Zainab", 122));
+        StartCoroutine(GetScores());
     }
     IEnumerator Testing() {
         var URL = "http://wararm.altervista.org/gioco/login.php";
@@ -85,6 +85,7 @@ public class HSController : MonoBehaviour
         else
         {
             guiText.text = hs_get.text; // this is a GUIText that will display the scores in game.
+			Debug.Log (hs_get.text);
         }
     }
 
