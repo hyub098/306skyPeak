@@ -8,7 +8,7 @@ public class Collision : MonoBehaviour {
 	private bool collision;
 	public Text healthText;
 	private int life;
-	private birdNetwork flyMovement;
+	private FlyMovement flyMovement;
 	private Vector3 moveBackPosition;
 	private float time;
 	public Canvas gameOver;
@@ -28,7 +28,7 @@ public class Collision : MonoBehaviour {
 		collision = false;
 		rb = GetComponent<Rigidbody> ();
 		anim = GetComponent<Animation> ();
-		flyMovement = GetComponent<birdNetwork> ();
+		flyMovement = GetComponent<FlyMovement> ();
 		life = 3;
 		gameOver.enabled = false;
 		ispause = false;
