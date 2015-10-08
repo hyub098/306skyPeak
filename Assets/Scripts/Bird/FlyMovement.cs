@@ -39,11 +39,11 @@ public class FlyMovement : MonoBehaviour {
 		currentSpd = Mathf.Clamp (currentSpd, 0, maxSpd);
 
 		//camera position adjust
-		Vector3 moveCamtTo = transform.position - transform.forward * 5.0f + Vector3.up * 5.0f;
+		Vector3 moveCamtTo = transform.position - transform.forward * 0.5f + Vector3.up * 0.3f;
 		float bias = 0.96f;
 		Camera.main.transform.position = Camera.main.transform.position * bias + moveCamtTo * (1.0f - bias);
 		
-		Camera.main.transform.LookAt (transform.position + transform.forward * 1.0f);
+		Camera.main.transform.LookAt (transform.position + transform.forward * 0.01f);
 
 
 		//check if owl started
@@ -100,8 +100,8 @@ public class FlyMovement : MonoBehaviour {
 
 	//Stop owl going below ground level
 	void constrain(){
-		if (transform.position.y <= 1) {
-			transform.position = new Vector3(transform.position.x,1,transform.position.z);
+		if (transform.position.y <= 0.1f) {
+			transform.position = new Vector3(transform.position.x,0.1f,transform.position.z);
 			//remove rigid body force
 			rb.velocity = Vector3.zero;
 			rb.useGravity = false;
@@ -202,7 +202,7 @@ public class FlyMovement : MonoBehaviour {
 		//Change rotation of owl base on user input
 		if (Rotation ()) {
 			//rotate the plane from input
-			transform.Rotate (-v,h, -h/2);
+			transform.Rotate (-v,h*1.2f, -h*0.6f);
 		}
 
 
