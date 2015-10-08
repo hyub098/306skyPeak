@@ -5,12 +5,8 @@ using System.Collections;
 public class MailCount : MonoBehaviour {
 	public int mailCount;
 	public Text mailText;
-	public Text gold;
-	public int goldCount;
 	public  Canvas Congratulations;
 	private float time;
-	private float winTime;
-	private bool isSaved;
 	public Text achieveText;
 
     public AudioClip getMailSound;
@@ -21,33 +17,26 @@ public class MailCount : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Debug.Log ("script added:" );
 		rb = GetComponent<Rigidbody> ();
 		mailCount = 0;
 		Congratulations.enabled = false;
-		isSaved = false;
 		achieveText.enabled = false;
         source = GetComponent<AudioSource>();
     }
+
 	
 	// Update is called once per frame
 	void Update () {
 
+		//update mail number
 		mailText.text =  ("Mail:" + mailCount);
-		gold.text = ("Gold: " + goldCount);
 
 		time = time + (Time.deltaTime) * 1 ;
-		if (goldCount == 300) {
+	
 			
-			if(!isSaved){
-				winTime = time;
-				isSaved=true;
-			}
-			Debug.Log(time-winTime);
-			Congratulations.enabled=true;
 
-			//if(time - winTime > 3){
-			//	Application.LoadLevel("map");
-			//}
+			//Congratulations.enabled=true;
 
 			if(time < 60){
 				//achievement
@@ -55,7 +44,7 @@ public class MailCount : MonoBehaviour {
 
 			}
 			
-		}
+
 	
 	}
 
@@ -64,7 +53,6 @@ public class MailCount : MonoBehaviour {
 		// If the player collide withe the mail box, increase the gold according to the number of mails
 		if (other.gameObject.CompareTag ("Mail box")) {
 			Debug.Log ("Deliver");
-			goldCount=goldCount+mailCount*100;
 			mailCount=0;
             source.clip = postMailSound;
             source.Play();
@@ -74,12 +62,18 @@ public class MailCount : MonoBehaviour {
 		// If the player hit the mail
 		if (other.gameObject.CompareTag ("Mail")) {
 			// Player can only carry 3 mails at a time
-			if(mailCount<3){
+			if(mailCount<10){
 			other.gameObject.SetActive (false);
+
+
 			Debug.Log (" Got Mail");
 			mailCount++;
+
+			//play audio
             source.clip = getMailSound;
             source.Play();
+
+			//debug file
             using (System.IO.StreamWriter file =
                new System.IO.StreamWriter(@"C:\Users\Public\skypeak_log.txt", true))
                 {
