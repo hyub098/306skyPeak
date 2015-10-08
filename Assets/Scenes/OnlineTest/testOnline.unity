@@ -2097,9 +2097,35 @@ Prefab:
       propertyPath: gameOver
       value: 
       objectReference: {fileID: 1415713692}
+    - target: {fileID: 8282576, guid: 366676459310543aa92165b0d3898a70, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489048, guid: 366676459310543aa92165b0d3898a70, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 366676459310543aa92165b0d3898a70, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &660239685 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 120518, guid: 366676459310543aa92165b0d3898a70, type: 2}
+  m_PrefabInternal: {fileID: 660239684}
+--- !u!114 &660239686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 660239685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6655af24b09402bb0e40a1133abaf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpd: 0
+  windSound: {fileID: 0}
+  wingSound: {fileID: 0}
 --- !u!1 &663861861
 GameObject:
   m_ObjectHideFlags: 0
@@ -6978,6 +7004,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1612422651}
   - 114: {fileID: 1612422650}
+  - 114: {fileID: 1612422652}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -6991,7 +7018,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1612422649}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ca696f1c5c084e9cbc31d1be9b5dc64, type: 3}
   m_Name: 
@@ -7009,6 +7036,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
+--- !u!114 &1612422652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1612422649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c0e3a069b884bc9bf586702f0667a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 0}
 --- !u!1 &1652942117
 GameObject:
   m_ObjectHideFlags: 0
