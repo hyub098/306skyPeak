@@ -13,8 +13,8 @@ public class Radar : MonoBehaviour {
 
 	public GameObject[] trackerdObjs;
 	public GameObject radarPrefab;
-	List<GameObject> radarObjs; 
-	List<GameObject> borderObjs; 
+	public List<GameObject> radarObjs; 
+	public List<GameObject> borderObjs; 
 	public float switchDist;
 	public Transform helpTransform;
 	public GameObject player;
@@ -36,6 +36,7 @@ public class Radar : MonoBehaviour {
 		//Keep radar cam same position as the owl, but above it by 18.1f in y.
 		transform.position = new Vector3 (player.transform.position.x, player.transform.position.y + 18.1f, player.transform.position.z);
 
+		checkActive ();
 
 		mailBorders ();
 		radarBorders ();
@@ -99,5 +100,21 @@ public class Radar : MonoBehaviour {
 			mailRadar.layer = LayerMask.NameToLayer("Radar");
 		}
 
+	}
+
+	void checkActive(){
+		foreach (GameObject o in trackerdObjs) {
+			if(!o.activeSelf){
+				for(int i =0 ;i <radarObjs.Count; i++){
+					if(radarObjs[i].transform.position == o.transform.position){
+						radarObjs[i].layer = LayerMask.NameToLayer("Invisible");
+						borderObjs[i].layer = LayerMask.NameToLayer("Invisible");
+						radarObjs.RemoveAt(i);
+						borderObjs.RemoveAt(i);
+					}
+				}
+
+			}
+		}
 	}
 }
