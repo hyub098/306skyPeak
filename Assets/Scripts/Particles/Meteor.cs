@@ -1,22 +1,24 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-public class LightingCollision : MonoBehaviour {
+public class Meteor : MonoBehaviour {
 
-	//public GameObject player;
+	public Text healthText;
+	private int life;
 
 	// Use this for initialization
 	void Start () {
-	
+		life = 3;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		healthText.text = "life:" + life;
 	}
 
 	void OnParticleCollision(GameObject other){
-		Debug.Log ("Collide with Particle!");
-		Time.timeScale = 0f;
+		Debug.Log ("Collide");
+		life --;
 	}
 }
