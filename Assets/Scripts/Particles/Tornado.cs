@@ -26,10 +26,10 @@ public class Tornado : MonoBehaviour {
 		realtime = Time.deltaTime + realtime;
 //		Debug.Log (realtime);
 		if (realtime - time > 3) {
-//		
-//			flymovement.enabled = true;
-//			rb.velocity = Vector3.zero;
-//			Debug.Log("Get Control");
+		
+			flymovement.enabled = true;
+			rb.velocity = Vector3.zero;
+			Debug.Log("Get Control");
 		}
 	}
 
