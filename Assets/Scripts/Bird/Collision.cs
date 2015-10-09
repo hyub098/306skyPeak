@@ -12,7 +12,8 @@ public class Collision : MonoBehaviour {
 	private Vector3 moveBackPosition;
 	private float time;
 	public Canvas gameOver;
-	private bool ispause;
+    public Image achievement_Pressure, achievement_Wipeout;
+    private bool ispause;
 	private float deadTime;
 	private bool isSaved;
 
@@ -20,6 +21,7 @@ public class Collision : MonoBehaviour {
     public AudioClip hitSound;
     private AudioSource source;
     private int count = 0;
+
 
     void Start()
     {
@@ -32,7 +34,9 @@ public class Collision : MonoBehaviour {
 		flyMovement = GetComponent<FlyMovement> ();
 		life = 3;
 		gameOver.enabled = false;
-		ispause = false;
+        achievement_Pressure.enabled = false;
+        achievement_Wipeout.enabled = false;
+        ispause = false;
 		isSaved = false;
 
         source = GetComponent<AudioSource>();
@@ -88,6 +92,12 @@ public class Collision : MonoBehaviour {
                 count = count + 1;
                 source.clip = gameoverSound;
                 source.Play();
+
+                //If time is less than 10 seconds give the wipeout 
+                if (time <= 10)
+                {
+                    achievement_Wipeout.enabled = true;
+                }
             }
 
         }
@@ -126,6 +136,14 @@ public class Collision : MonoBehaviour {
                 //Debug.Log("game over");
             //}
             gameOver.enabled = true;
+
+            //If time is less than 10 seconds give the wipeout 
+            if (time < 10)
+            {
+                achievement_Wipeout.enabled = true;
+            }
+
+            
 
         }
 

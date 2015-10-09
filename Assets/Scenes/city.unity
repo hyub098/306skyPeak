@@ -9201,6 +9201,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthText: {fileID: 1136033031}
   gameOver: {fileID: 1365401408}
+  achievement_Pressure: {fileID: 0}
+  achievement_Wipeout: {fileID: 0}
   gameoverSound: {fileID: 8300000, guid: 9fee655191e0bd847bb895531704f6f9, type: 3}
   hitSound: {fileID: 8300000, guid: 91d3042120789dd4cb27aee4eb1b82fa, type: 3}
 --- !u!65 &910471767
@@ -11419,6 +11421,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1075248701}
   - 82: {fileID: 1075248702}
+  - 114: {fileID: 1075248703}
   m_Layer: 0
   m_Name: endScene
   m_TagString: Untagged
@@ -11509,6 +11512,23 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1075248703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1075248700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d40b31b9675f4e1b8d81ca514f64902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthText: {fileID: 0}
+  gameOver: {fileID: 1365401408}
+  achievement_Pressure: {fileID: 263707134}
+  achievement_Wipeout: {fileID: 2103211407}
+  gameoverSound: {fileID: 0}
+  hitSound: {fileID: 0}
 --- !u!1 &1075876845
 GameObject:
   m_ObjectHideFlags: 0
