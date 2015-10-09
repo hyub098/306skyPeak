@@ -19,6 +19,14 @@ public class FlyController : MonoBehaviour {
 	private int count=0;
 	private int count2 = 0;
 	
+	private float lastSynchronizationTime = 0f;
+	private float syncDelay = 0f;
+	private float syncTime = 0f;
+	private Vector3 syncStartPosition = Vector3.zero;
+	private Vector3 syncEndPosition = Vector3.zero;
+
+
+	
 	// Use this for initialization
 	void Start () {
 		Debug.Log ("plane pilot script added to: " + gameObject.name);
@@ -29,6 +37,35 @@ public class FlyController : MonoBehaviour {
 		source = GetComponent<AudioSource>();
 		
 		
+	}
+	void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
+	{
+		Vector3 syncPosition = Vector3.zero;
+		Vector3 syncVelocity = Vector3.zero;
+		if (stream.isWriting)
+		{
+			syncPosition = GetComponent<Rigidbody>().position;
+			stream.Serialize(ref syncPosition);
+			
+			syncPosition = GetComponent<Rigidbody>().velocity;
+			stream.Serialize(ref syncVelocity);
+		}
+		else
+		{
+			stream.Serialize(ref syncPosition);
+			stream.Serialize(ref syncVelocity);
+			
+			syncTime = 0f;
+			syncDelay = Time.time - lastSynchronizationTime;
+			lastSynchronizationTime = Time.time;
+			
+			syncEndPosition = syncPosition + syncVelocity * syncDelay;
+			syncStartPosition = GetComponent<Rigidbody>().position;
+		}
+	}
+	void Awake()
+	{
+		lastSynchronizationTime = Time.time;
 	}
 	
 	// Update is called once per frame
@@ -54,13 +91,19 @@ public class FlyController : MonoBehaviour {
 		}
 		
 		//move owl
-		if (GetComponent<NetworkView>().isMine)
-		{
+		if (GetComponent<NetworkView> ().isMine) {
 			move ();	
+		} else {
+			SyncedMovement();
 		}
 		
 		
+	}
+	private void SyncedMovement()
+	{
+		syncTime += Time.deltaTime;
 		
+		GetComponent<Rigidbody>().position = Vector3.Lerp(syncStartPosition, syncEndPosition, syncTime / syncDelay);
 	}
 	
 	/**

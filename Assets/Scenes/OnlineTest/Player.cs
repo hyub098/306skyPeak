@@ -20,15 +20,11 @@ public class Player : MonoBehaviour
 
 	void Start () {
 
-<<<<<<< HEAD
-		//gameObject.transform.Rotate (0, 90, 0);
-=======
 		Debug.Log ("plane pilot script added to: " + gameObject.name);
 		moveDistance = new Vector3(0,0,0);
 		currentSpd = 0;
 		anim = GetComponent<Animation> ();
 		rb = GetComponent<Rigidbody> ();
->>>>>>> 0dfa1a1661f95a67776826cdb2a74202bc6a7462
 	}
 
     void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)

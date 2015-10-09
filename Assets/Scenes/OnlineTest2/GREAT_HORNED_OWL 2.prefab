@@ -167,6 +167,7 @@ GameObject:
   - 114: {fileID: 11450514}
   - 82: {fileID: 8282576}
   - 148: {fileID: 14887806}
+  - 114: {fileID: 11419018}
   m_Layer: 0
   m_Name: GREAT_HORNED_OWL 2
   m_TagString: Player
@@ -1419,6 +1420,20 @@ MonoBehaviour:
   gameOver: {fileID: 0}
   gameoverSound: {fileID: 8300000, guid: 9fee655191e0bd847bb895531704f6f9, type: 3}
   hitSound: {fileID: 8300000, guid: 91d3042120789dd4cb27aee4eb1b82fa, type: 3}
+--- !u!114 &11419018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 120518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14eaaec347ec9491e8e1f0e741713c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpd: 10
+  windSound: {fileID: 0}
+  wingSound: {fileID: 0}
 --- !u!114 &11450514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1441,7 +1456,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 152948}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71a5dfabad4d34f1494ef6ad5fba3f8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 26f10d2ecb3184d8da8ea365cfb9b403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!124 &12409332
@@ -1555,7 +1570,7 @@ NetworkView:
   m_GameObject: {fileID: 120518}
   m_Enabled: 1
   m_StateSynchronization: 1
-  m_Observed: {fileID: 0}
+  m_Observed: {fileID: 11419018}
   m_ViewID:
     m_ID: 0
     m_Type: 0
@@ -1584,12 +1599,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxSpd
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Observed
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11419018}
     - target: {fileID: 0}
       propertyPath: speed
       value: 10
