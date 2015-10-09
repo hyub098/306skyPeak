@@ -7,7 +7,7 @@ public class MailCount : MonoBehaviour {
 	public Text mailText;
 	public  Canvas Congratulations;
 	private float time;
-	public Text achieveText;
+    public Image achievement_Mountain, achievement_Perfect, achievement_City, achievement_CloseOne, achievement_Park, achievement_Fast;
 
     public AudioClip getMailSound;
     public AudioClip postMailSound;
@@ -24,7 +24,12 @@ public class MailCount : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 		mailCount = 0;
 		Congratulations.enabled = false;
-		achieveText.enabled = false;
+        achievement_Mountain.enabled = false;
+        achievement_Perfect.enabled = false;
+        achievement_City.enabled = false;
+        achievement_CloseOne.enabled = false;
+        achievement_Park.enabled = false;
+        achievement_Fast.enabled = false;
         source = GetComponent<AudioSource>();
 		level = getLevel();
     }
@@ -44,8 +49,8 @@ public class MailCount : MonoBehaviour {
 		checkWin ();
 
 			if(time < 60){
-				//achievement
-				achieveText.enabled = true;
+            //achievement
+                achievement_Fast.enabled = true;
 
 			}
 			
