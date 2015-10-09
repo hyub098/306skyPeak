@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
 	void Start () {
 
-		gameObject.transform.Rotate (0, 90, 0);
+		//gameObject.transform.Rotate (0, 90, 0);
 	}
 
     void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
