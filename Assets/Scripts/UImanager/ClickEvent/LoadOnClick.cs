@@ -8,8 +8,6 @@ using System.Collections;
 public class LoadOnClick : MonoBehaviour
 {
 
-    public GameObject loadingImage;
-
     public AudioClip clickSound;
     private AudioSource source;
 
