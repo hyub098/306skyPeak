@@ -17,7 +17,13 @@ EditorBuildSettings:
     path: Assets/Scenes/UIDev/endScene.unity
   - enabled: 0
     path: Assets/Scenes/PlayerDev/testCollison.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/mountain.unity
   - enabled: 1
+    path: Assets/Scenes/mountain1.unity
+  - enabled: 1
     path: Assets/Scenes/network.unity
+  - enabled: 1
+    path: Assets/Scenes/Park.unity
+  - enabled: 1
+    path: Assets/Scenes/city.unity
