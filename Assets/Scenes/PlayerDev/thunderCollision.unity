@@ -210,6 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c54a3bf66144fb4b8a9a1a7e5a12f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &230709510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,6 +1194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c54a3bf66144fb4b8a9a1a7e5a12f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &1147535953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1762,7 +1764,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: b824f6f760d254b4fb44e809d0af9eb3, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19900002, guid: b824f6f760d254b4fb44e809d0af9eb3, type: 2}
+      propertyPath: m_MaxParticleSize
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b824f6f760d254b4fb44e809d0af9eb3, type: 2}
@@ -1978,6 +1984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c54a3bf66144fb4b8a9a1a7e5a12f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &2025550531
 GameObject:
   m_ObjectHideFlags: 0
