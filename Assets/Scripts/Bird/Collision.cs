@@ -108,7 +108,7 @@ public class Collision : MonoBehaviour {
     //collision detection
     void OnCollisionEnter(UnityEngine.Collision collision)
     {
-<<<<<<< HEAD
+
 		if (!collision.gameObject.CompareTag ("Mail box")) {
 			//check the life
 			if (life > 0) {
@@ -139,46 +139,7 @@ public class Collision : MonoBehaviour {
 
 			}
 		}
-=======
-        //check the life
-        if (life > 0)
-        {
-            life--;
-            source.clip = hitSound;
-            source.Play();
-          //  using (System.IO.StreamWriter file =
-            //   new System.IO.StreamWriter(@"C:\Users\Public\skypeak_log.txt", true))
-            //{
-              //  file.WriteLine("Expected outcome: life " + (life + 1).ToString() + " -> " + "collision" + "-->" + life.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
-                //file.WriteLine("assert: life " + (life + 1).ToString() + " -> " + "collision" + "-->" + life.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
-            //}
 
-        }
-
-        if (life < 1)
-        {
-            flyMovement.enabled = false;
-            rb.useGravity = true;
-            anim.Play("falling");
-            //if (count == 0)
-            //{
-              //  count = count + 1;
-                //source.clip = gameoverSound;
-                //source.Play();
-                //Debug.Log("game over");
-            //}
-            gameOver.enabled = true;
-
-            //If time is less than 10 seconds give the wipeout 
-            if (time < 10)
-            {
-                achievement_Wipeout.enabled = true;
-            }
-
-            
-
-        }
->>>>>>> 7c5428f9aba352ffd94abf9aeb8e1ceea6beb5a9
 
     }
 
