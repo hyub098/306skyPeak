@@ -22,6 +22,9 @@ public class NetworkCharacter : Photon.MonoBehaviour
 			// We own this player: send the others our data
 			stream.SendNext(transform.position);
 			stream.SendNext(transform.rotation);
+
+			moveMent myC = GetComponent<moveMent>();
+			stream.SendNext((int)myC._characterState);
 			
 		}
 		else
@@ -29,6 +32,8 @@ public class NetworkCharacter : Photon.MonoBehaviour
 			// Network player, receive data
 			this.correctPlayerPos = (Vector3)stream.ReceiveNext();
 			this.correctPlayerRot = (Quaternion)stream.ReceiveNext();
+			moveMent myC = GetComponent<moveMent>();
+			myC._characterState = (BirdState)stream.ReceiveNext();
 		}
 	}
 }

@@ -30,7 +30,7 @@ public class RandomMatchmaker : Photon.PunBehaviour
 
 		GameObject monster = PhotonNetwork.Instantiate("GREAT_HORNED_OWL 1", Vector3.zero, Quaternion.identity, 0);
 		moveMent controller = monster.GetComponent<moveMent>();
-		controller.enabled = true;
+		controller.isControllable = true;
 		//CharacterCamera camera = monster.GetComponent<CharacterCamera>();
 		//camera.enabled = true;
 	}
