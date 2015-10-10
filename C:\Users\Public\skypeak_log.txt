@@ -1,0 +1,34 @@
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 4:35:20 PM
+assert: mailcount 0 -> collision with mail-->1 at time 4:35:20 PM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 4:35:42 PM
+assert: mailcount 1 -> collision with mail-->2 at time 4:35:42 PM
+Expected outcome: mailcount 2 -> collision with mail-->3 at time 4:35:45 PM
+assert: mailcount 2 -> collision with mail-->3 at time 4:35:45 PM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 4:36:03 PM
+assert: mailcount 0 -> collision with mail-->1 at time 4:36:03 PM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 4:36:20 PM
+assert: mailcount 1 -> collision with mail-->2 at time 4:36:20 PM
+Expected outcome: mailcount 2 -> collision with mail-->3 at time 4:36:59 PM
+assert: mailcount 2 -> collision with mail-->3 at time 4:36:59 PM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 4:37:55 PM
+assert: mailcount 0 -> collision with mail-->1 at time 4:37:55 PM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 4:38:15 PM
+assert: mailcount 1 -> collision with mail-->2 at time 4:38:15 PM
+Expected outcome: mailcount 2 -> collision with mail-->3 at time 4:38:19 PM
+assert: mailcount 2 -> collision with mail-->3 at time 4:38:19 PM
+Expected outcome: mailcount 3 -> collision with mail-->4 at time 4:38:19 PM
+assert: mailcount 3 -> collision with mail-->4 at time 4:38:19 PM
+Expected outcome: mailcount 4 -> collision with mail-->5 at time 4:38:59 PM
+assert: mailcount 4 -> collision with mail-->5 at time 4:38:59 PM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 4:41:47 PM
+assert: mailcount 0 -> collision with mail-->1 at time 4:41:47 PM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 4:41:58 PM
+assert: mailcount 1 -> collision with mail-->2 at time 4:41:58 PM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 4:46:31 PM
+assert: mailcount 0 -> collision with mail-->1 at time 4:46:31 PM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 4:47:17 PM
+assert: mailcount 0 -> collision with mail-->1 at time 4:47:17 PM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 4:47:25 PM
+assert: mailcount 1 -> collision with mail-->2 at time 4:47:25 PM
+Expected outcome: mailcount 2 -> collision with mail-->3 at time 4:47:25 PM
+assert: mailcount 2 -> collision with mail-->3 at time 4:47:25 PM

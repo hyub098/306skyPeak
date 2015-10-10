@@ -77,8 +77,8 @@ public class MailCount : MonoBehaviour {
 			mailCount++;
 
 			//play audio
-            source.clip = getMailSound;
-            source.Play();
+            //source.clip = getMailSound;
+            //source.Play();
 
 			//debug file
             using (System.IO.StreamWriter file =
