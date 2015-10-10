@@ -31,6 +31,7 @@ public class LifeManager : MonoBehaviour {
 
 		healtText.text = "life:" + life;
 
+		//flash damage color
 		if (damaged) {
 			damageImg.color = flashColour;
 		} else {
@@ -49,10 +50,6 @@ public class LifeManager : MonoBehaviour {
 //			source.Play ();
 
 
-			/**
-			 *
-			 * image effect to be done
-			 */
 
 			//  using (System.IO.StreamWriter file =
 			//   new System.IO.StreamWriter(@"C:\Users\Public\skypeak_log.txt", true))
