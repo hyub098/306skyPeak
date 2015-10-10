@@ -431,6 +431,7 @@ GameObject:
   - 224: {fileID: 263341702}
   - 222: {fileID: 263341704}
   - 114: {fileID: 263341703}
+  - 114: {fileID: 263341705}
   m_Layer: 5
   m_Name: firstName
   m_TagString: Untagged
@@ -452,8 +453,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -663, y: -200.5}
-  m_SizeDelta: {x: 371, y: 60}
+  m_AnchoredPosition: {x: -663, y: -7933}
+  m_SizeDelta: {x: 740, y: 1609}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &263341703
 MonoBehaviour:
@@ -486,13 +487,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Farida                                   100
+  m_Text: Name
 --- !u!222 &263341704
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 263341701}
+--- !u!114 &263341705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 263341701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b64d5e4d634c8545b023e23ac832d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiText: {fileID: 263341703}
 --- !u!1 &300136372
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,7 +882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &574729670
 RectTransform:
   m_ObjectHideFlags: 0
@@ -898,8 +911,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f020c632153dcdd4d9723bfb4133ab14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guiText: {fileID: 574729672}
-  secretKey: 6d795365637265744b6579
 --- !u!114 &574729672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1728,7 +1739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1711744549
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1757,8 +1768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f020c632153dcdd4d9723bfb4133ab14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guiText: {fileID: 1711744551}
-  secretKey: 6d795365637265744b6579
 --- !u!114 &1711744551
 MonoBehaviour:
   m_ObjectHideFlags: 0
