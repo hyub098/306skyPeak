@@ -14,7 +14,7 @@ public class HSController : MonoBehaviour
    
     void Start()
     {        
-        StartCoroutine(PostScores("Me", 600));
+        StartCoroutine(PostScores("placeholder", 500));
     }
 
 
