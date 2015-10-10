@@ -44,11 +44,7 @@ public class MailCount : MonoBehaviour {
 
 		time = time + (Time.deltaTime) * 1 ;
 	
-			if(time < 60){
-            //achievement
-            //achievement_Fast.enabled = true;
-
-			}
+			
 			
 
 	
@@ -104,20 +100,51 @@ public class MailCount : MonoBehaviour {
 		return level;
 	}
 
-	void checkWin(){
-		Debug.Log ("check win");
-		if (level == 1) {
-			if (mailCount >= 3) {
-				Congratulations.enabled=true;
-			}		
-		} else if (level == 2) {
-			if (mailCount >= 5) {
-				Congratulations.enabled=true;
-			}
-		} else if (level == 3) {
-			if (mailCount >= 10){
-				Congratulations.enabled=true;
-			}
-		}
-	}
+    void checkWin()
+    {
+        Debug.Log("check win");
+        if (level == 1)
+        {
+            if (mailCount >= 3)
+            {
+                Congratulations.enabled = true;
+                //Achievement for beating park in under a minute
+                if (time < 60)
+                {
+
+                    achievement_Park.enabled = true;
+
+                }
+
+            }
+        }
+        else if (level == 2)
+        {
+            if (mailCount >= 5)
+            {
+                Congratulations.enabled = true;
+                //Achievement for beating mountain in under a minute
+                if (time < 120)
+                {
+
+                    achievement_Mountain.enabled = true;
+
+                }
+            }
+        }
+        else if (level == 3)
+        {
+            if (mailCount >= 10)
+            {
+                Congratulations.enabled = true;
+                //Achievement for beating city in under 3 minutes
+                if (time < 180)
+                {
+
+                    achievement_City.enabled = true;
+
+                }
+            }
+        }
+    }
 }
