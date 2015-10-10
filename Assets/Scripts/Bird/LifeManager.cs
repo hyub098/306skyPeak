@@ -5,9 +5,9 @@ using System.Collections;
 public class LifeManager : MonoBehaviour {
 	public Text healtText;
 
-	public AudioClip gameoverSound;
-	public AudioClip hitSound;
-	private AudioSource source;
+//	public AudioClip gameoverSound;
+//	public AudioClip hitSound;
+//	private AudioSource source;
 
 
 	public Image damageImg;
@@ -15,22 +15,21 @@ public class LifeManager : MonoBehaviour {
 	public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
 
 	bool damaged;
-	public Canvas gameOver;
 
 
-	private int life;
-;
+	public int life;
 
 	// Use this for initialization
 	void Start () {
-		life = 3;
-		source = GetComponent<AudioSource>();
+
+//		source = GetComponent<AudioSource>();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		healtText = "life:" + life;
+
+		healtText.text = "life:" + life;
 
 		if (damaged) {
 			damageImg.color = flashColour;
@@ -46,8 +45,8 @@ public class LifeManager : MonoBehaviour {
 		//check the life
 		if (life > 0) {
 			life--;
-			source.clip = hitSound;
-			source.Play ();
+//			source.clip = hitSound;
+//			source.Play ();
 
 
 			/**

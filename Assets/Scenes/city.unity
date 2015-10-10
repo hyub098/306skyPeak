@@ -12448,6 +12448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 1136033031}
+  life: 0
   gameOver: {fileID: 1365401408}
   achievement_Pressure: {fileID: 0}
   achievement_Wipeout: {fileID: 0}
@@ -15863,6 +15864,17 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 400008, guid: 01603b7302bd34f379cc7d1ef6b55a15, type: 2}
   m_PrefabInternal: {fileID: 1065930815}
+--- !u!114 &1065930846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1065930819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46cab4519c1145ba9a3ea79031c3ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1066246027 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100806, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
@@ -16172,6 +16184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 0}
+  life: 0
   gameOver: {fileID: 1365401408}
   achievement_Pressure: {fileID: 263707134}
   achievement_Wipeout: {fileID: 2103211407}

@@ -3834,9 +3834,10 @@ GameObject:
   - 111: {fileID: 1009465644}
   - 54: {fileID: 1009465643}
   - 65: {fileID: 1009465642}
+  - 114: {fileID: 1009465646}
   - 114: {fileID: 1009465641}
-  - 114: {fileID: 1009465640}
   - 114: {fileID: 1009465639}
+  - 114: {fileID: 1009465640}
   - 114: {fileID: 1009465638}
   - 82: {fileID: 1009465645}
   - 114: {fileID: 1009465637}
@@ -3870,7 +3871,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009465635}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bafa54482a87ac4cbd7ff1bfd1ac93a, type: 3}
   m_Name: 
@@ -3883,7 +3884,7 @@ MonoBehaviour:
   repeatEveryFrame: 1
   hasFailed: 0
   checkMethods: 1
-  m_ActionBase: {fileID: 1907582872}
+  m_ActionBase: {fileID: 0}
   checksPerformed: 0
 --- !u!114 &1009465638
 MonoBehaviour:
@@ -3891,7 +3892,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009465635}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bafa54482a87ac4cbd7ff1bfd1ac93a, type: 3}
   m_Name: 
@@ -3904,7 +3905,7 @@ MonoBehaviour:
   repeatEveryFrame: 1
   hasFailed: 0
   checkMethods: 2
-  m_ActionBase: {fileID: 1381308902}
+  m_ActionBase: {fileID: 0}
   checksPerformed: 0
 --- !u!114 &1009465639
 MonoBehaviour:
@@ -3918,7 +3919,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2881b5ac18dd84774841c3708444fedd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 0
   mailCount: 0
   mailText: {fileID: 1091065293}
   Congratulations: {fileID: 1019536149}
@@ -3946,8 +3946,7 @@ MonoBehaviour:
 --- !u!114 &1009465641
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11452840, guid: e925d1b3d51db43f592f8f3a2c2d9910,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009465635}
   m_Enabled: 1
@@ -3955,13 +3954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d40b31b9675f4e1b8d81ca514f64902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 2063201811}
-  life: 0
   gameOver: {fileID: 45865085}
-  achievement_Pressure: {fileID: 975463469}
-  achievement_Wipeout: {fileID: 1781222583}
-  gameoverSound: {fileID: 8300000, guid: 9fee655191e0bd847bb895531704f6f9, type: 3}
-  hitSound: {fileID: 8300000, guid: 91d3042120789dd4cb27aee4eb1b82fa, type: 3}
 --- !u!65 &1009465642
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4034,7 +4027,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009465635}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -4098,6 +4091,22 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1009465646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1009465635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85361ac43fbef4916807b3d5ac9b1a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healtText: {fileID: 2063201811}
+  damageImg: {fileID: 1322447080}
+  flashSpeed: .5
+  flashColour: {r: 1, g: 0, b: 0, a: .100000001}
+  life: 3
 --- !u!1 &1016818546
 GameObject:
   m_ObjectHideFlags: 0
@@ -5341,6 +5350,73 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 464016, guid: 34500e1d4b7155c4890dc22dc1e6181c, type: 2}
   m_PrefabInternal: {fileID: 1306664942}
+--- !u!1 &1322447078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1322447079}
+  - 222: {fileID: 1322447081}
+  - 114: {fileID: 1322447080}
+  m_Layer: 5
+  m_Name: damageImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1322447079
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1322447078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1787279998}
+  m_RootOrder: 5
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1322447080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1322447078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1322447081
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1322447078}
 --- !u!1 &1327828375 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 138244, guid: c370a91b345318d4eac7637d8ad2b05a, type: 2}
@@ -5451,24 +5527,6 @@ Transform:
   - {fileID: 425303797}
   m_Father: {fileID: 1498521961}
   m_RootOrder: 1
---- !u!114 &1381308902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da4a3a521c5c1494aae123742ca5c8f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  go: {fileID: 1009465635}
-  thisPropertyPath: MailCount.mailCount
-  compareToType: 1
-  other: {fileID: 0}
-  otherPropertyPath: 
-  constantValueGeneric: 0
-  compareType: 0
 --- !u!1001 &1383744307
 Prefab:
   m_ObjectHideFlags: 0
@@ -7561,6 +7619,7 @@ RectTransform:
   - {fileID: 1091065292}
   - {fileID: 2063201810}
   - {fileID: 1880326565}
+  - {fileID: 1322447079}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
@@ -8001,24 +8060,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4303096, guid: ad27bebd4cdf77344a4a75889655f7bd, type: 2}
---- !u!114 &1907582872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da4a3a521c5c1494aae123742ca5c8f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  go: {fileID: 1009465635}
-  thisPropertyPath: Collision.life
-  compareToType: 1
-  other: {fileID: 0}
-  otherPropertyPath: 
-  constantValueGeneric: 3
-  compareType: 0
 --- !u!1001 &1941152713
 Prefab:
   m_ObjectHideFlags: 0

@@ -11,15 +11,15 @@ public class Collision : MonoBehaviour {
 	private Vector3 moveBackPosition;
 	private float time;
 	public Canvas gameOver;
-    public Image achievement_Pressure, achievement_Wipeout;
+//    public Image achievement_Pressure, achievement_Wipeout;
     private bool ispause;
 	private float deadTime;
 	private bool isSaved;
 
-	public LifeManager lifeManager;
+	private LifeManager lifeManager;
     
     private int count = 0;
-
+	private int life;
 
     void Start()
     {
@@ -31,11 +31,11 @@ public class Collision : MonoBehaviour {
 		anim = GetComponent<Animation> ();
 		flyMovement = GetComponent<FlyMovement> ();
 		gameOver.enabled = false;
-        achievement_Pressure.enabled = false;
-        achievement_Wipeout.enabled = false;
+//        achievement_Pressure.enabled = false;
+//        achievement_Wipeout.enabled = false;
         ispause = false;
 		isSaved = false;
-		lifeManager = new LifeManager ();
+		lifeManager = GetComponent<LifeManager> ();
 
        
     }
@@ -67,36 +67,36 @@ public class Collision : MonoBehaviour {
             Time.timeScale = 0f;
         }
 
-        if (life < 1)
-        {
-
-            if (!isSaved)
-            {
-                deadTime = time;
-                isSaved = true;
-            }
-            Debug.Log(time - deadTime);
-
-            if (time - deadTime > 3)
-            {
-
-                //	Application.LoadLevel(Application.loadedLevel);
-
-            }
-            if (count == 0)
-            {
-                gameOver.enabled = true;
-                count = count + 1;
-               
-
-                //If time is less than 10 seconds give the wipeout 
-                if (time <= 10)
-                {
-                    achievement_Wipeout.enabled = true;
-                }
-            }
-
-        }
+//        if (life < 1)
+//        {
+//
+//            if (!isSaved)
+//            {
+//                deadTime = time;
+//                isSaved = true;
+//            }
+//            Debug.Log(time - deadTime);
+//
+//            if (time - deadTime > 3)
+//            {
+//
+//                //	Application.LoadLevel(Application.loadedLevel);
+//
+//            }
+//            if (count == 0)
+//            {
+//                gameOver.enabled = true;
+//                count = count + 1;
+//               
+//
+//                //If time is less than 10 seconds give the wipeout 
+//                if (time <= 10)
+//                {
+//                    achievement_Wipeout.enabled = true;
+//                }
+//            }
+//
+//        }
 
     }
 
@@ -106,7 +106,7 @@ public class Collision : MonoBehaviour {
     {
 
 		if (!collision.gameObject.CompareTag ("Mail box")) {
-			int life = lifeManager.subtractLife();
+			life = lifeManager.subtractLife();
 
 
 			
