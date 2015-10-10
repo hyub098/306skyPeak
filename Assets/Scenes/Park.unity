@@ -3209,23 +3209,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4342224, guid: 18cc4e56883a25347965f7758ed71742, type: 2}
---- !u!114 &911777775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2586c8e41f35d2f4fadde53020bf4207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  go: {fileID: 1009465635}
-  thisPropertyPath: gameObject.activeSelf
-  compareToType: 0
-  other: {fileID: 0}
-  otherPropertyPath: 
-  constantValueGeneric: 0
 --- !u!1 &918400681
 GameObject:
   m_ObjectHideFlags: 0
@@ -3854,9 +3837,9 @@ GameObject:
   - 114: {fileID: 1009465641}
   - 114: {fileID: 1009465640}
   - 114: {fileID: 1009465639}
-  - 114: {fileID: 1009465637}
   - 114: {fileID: 1009465638}
   - 82: {fileID: 1009465645}
+  - 114: {fileID: 1009465637}
   m_Layer: 0
   m_Name: GREAT_HORNED_OWL (1)
   m_TagString: Player
@@ -3893,14 +3876,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkAfterTime: 1
-  repeatCheckTime: 1
+  repeatCheckTime: 0
   repeatEveryTime: 1
   checkAfterFrames: 1
   repeatCheckFrame: 1
   repeatEveryFrame: 1
   hasFailed: 0
-  checkMethods: 2
-  m_ActionBase: {fileID: 911777775}
+  checkMethods: 1
+  m_ActionBase: {fileID: 1907582872}
   checksPerformed: 0
 --- !u!114 &1009465638
 MonoBehaviour:
@@ -3920,8 +3903,8 @@ MonoBehaviour:
   repeatCheckFrame: 1
   repeatEveryFrame: 1
   hasFailed: 0
-  checkMethods: 8192
-  m_ActionBase: {fileID: 1826878556}
+  checkMethods: 2
+  m_ActionBase: {fileID: 1381308902}
   checksPerformed: 0
 --- !u!114 &1009465639
 MonoBehaviour:
@@ -3959,8 +3942,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpd: 5
-  windSound: {fileID: 8300000, guid: e39fb023bd852704c9455b66733c05cc, type: 3}
-  wingSound: {fileID: 8300000, guid: 6ab6bf0b8eaedf24d820677edcc5999c, type: 3}
 --- !u!114 &1009465641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3974,7 +3955,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 2063201811}
+  life: 0
   gameOver: {fileID: 45865085}
+  achievement_Pressure: {fileID: 975463469}
+  achievement_Wipeout: {fileID: 1781222583}
   gameoverSound: {fileID: 8300000, guid: 9fee655191e0bd847bb895531704f6f9, type: 3}
   hitSound: {fileID: 8300000, guid: 91d3042120789dd4cb27aee4eb1b82fa, type: 3}
 --- !u!65 &1009465642
@@ -5466,6 +5450,24 @@ Transform:
   - {fileID: 425303797}
   m_Father: {fileID: 1498521961}
   m_RootOrder: 1
+--- !u!114 &1381308902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4a3a521c5c1494aae123742ca5c8f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 1009465635}
+  thisPropertyPath: MailCount.mailCount
+  compareToType: 1
+  other: {fileID: 0}
+  otherPropertyPath: 
+  constantValueGeneric: 0
+  compareType: 0
 --- !u!1001 &1383744307
 Prefab:
   m_ObjectHideFlags: 0
@@ -7669,23 +7671,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 469722, guid: 7bbe5e1e81bf85c41851e99d0bbc3b3a, type: 2}
   m_PrefabInternal: {fileID: 1821146725}
---- !u!114 &1826878556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2586c8e41f35d2f4fadde53020bf4207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  go: {fileID: 1009465635}
-  thisPropertyPath: gameObject.activeSelf
-  compareToType: 0
-  other: {fileID: 0}
-  otherPropertyPath: 
-  constantValueGeneric: 0
 --- !u!1 &1837820434 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 165264, guid: 40b641cefef37b147b40453898c94c69, type: 2}
@@ -8015,6 +8000,24 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4303096, guid: ad27bebd4cdf77344a4a75889655f7bd, type: 2}
+--- !u!114 &1907582872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4a3a521c5c1494aae123742ca5c8f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 1009465635}
+  thisPropertyPath: Collision.life
+  compareToType: 1
+  other: {fileID: 0}
+  otherPropertyPath: 
+  constantValueGeneric: 3
+  compareType: 0
 --- !u!1001 &1941152713
 Prefab:
   m_ObjectHideFlags: 0
@@ -8106,7 +8109,7 @@ Transform:
   m_PrefabParentObject: {fileID: 426318, guid: e925d1b3d51db43f592f8f3a2c2d9910, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1970225906}
-  m_LocalRotation: {x: 1.2516324e-08, y: 1.44174859e-08, z: .89827019, w: -.439443529}
+  m_LocalRotation: {x: 1.25163249e-08, y: 1.44174868e-08, z: .898270249, w: -.439443558}
   m_LocalPosition: {x: -.00221523526, y: .0513425991, z: .000188770297}
   m_LocalScale: {x: 1, y: .99999994, z: 1}
   m_Children:
