@@ -28,9 +28,11 @@ public class RandomMatchmaker : Photon.PunBehaviour
 
 	void OnJoinedRoom(){
 
-		GameObject monster = PhotonNetwork.Instantiate("GREAT_HORNED_OWL 1", Vector3.zero, Quaternion.identity, 0);
-		moveMent controller = monster.GetComponent<moveMent>();
+		GameObject bird = PhotonNetwork.Instantiate("GREAT_HORNED_OWL 1", Vector3.zero, Quaternion.identity, 0);
+		moveMent controller = bird.GetComponent<moveMent>();
+		// Enable the camera
 		controller.isControllable = true;
+
 		//CharacterCamera camera = monster.GetComponent<CharacterCamera>();
 		//camera.enabled = true;
 	}
