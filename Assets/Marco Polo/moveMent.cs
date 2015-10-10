@@ -26,6 +26,7 @@ public class moveMent : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		UpdateAnimation ();
 
 		if (isControllable) {
 			InputMovement ();
@@ -55,15 +56,24 @@ public class moveMent : MonoBehaviour {
 		
 		}
 
-		if (_characterState == BirdState.fly) {
+
+	}
+
+	private void UpdateAnimation(){
+
+		if (_characterState == BirdState.Idle) {
+			anim.Play("idleFloor2");
 		
+		}
+
+		if (_characterState == BirdState.fly) {
+			
 			anim.Play ("flyNormal");
 		}
-
+		
 		if (_characterState == BirdState.fall) {
 			
-			anim.Play ("idleFloor2");
+			anim.Play ("falling");
 		}
-
 	}
 }
