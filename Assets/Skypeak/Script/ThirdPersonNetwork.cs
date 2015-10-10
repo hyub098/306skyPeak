@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Setupveri : MonoBehaviour {
+public class ThirdPersonNetwork : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
