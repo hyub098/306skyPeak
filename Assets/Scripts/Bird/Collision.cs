@@ -7,7 +7,7 @@ public class Collision : MonoBehaviour {
 	private Animation anim;
 	private bool collision;
 	public Text healthText;
-	private int life;
+	public int life;
 	private FlyMovement flyMovement;
 	private Vector3 moveBackPosition;
 	private float time;
@@ -171,4 +171,6 @@ public class Collision : MonoBehaviour {
     {
         return Vector3.SqrMagnitude(a - b) < 0.01;
     }
+
+
 }
