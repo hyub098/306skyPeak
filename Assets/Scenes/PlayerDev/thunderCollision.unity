@@ -448,15 +448,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9.14999962
+      value: 5.19999981
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -.707106829
+      value: .707106829
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
       propertyPath: m_LocalRotation.y
@@ -497,7 +497,7 @@ Prefab:
     - target: {fileID: 19900000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 96ec520bb5e3d4223af1590fdd3626fc, type: 2}
     - target: {fileID: 19800000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
       propertyPath: CollisionModule.collidesWith.m_Bits
       value: 1024
@@ -510,6 +510,50 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 19800000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
+      propertyPath: InitialModule.startLifetime.minCurve.m_Curve.Array.data[0].value
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
+      propertyPath: InitialModule.startSize.maxCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
+      propertyPath: InitialModule.startSize.minCurve.m_Curve.Array.data[0].value
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
   m_IsPrefabParent: 0
@@ -1201,6 +1245,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthText: {fileID: 0}
   gameOver: {fileID: 0}
+  achievement_Pressure: {fileID: 0}
+  achievement_Wipeout: {fileID: 0}
   gameoverSound: {fileID: 0}
   hitSound: {fileID: 0}
 --- !u!65 &1147535958

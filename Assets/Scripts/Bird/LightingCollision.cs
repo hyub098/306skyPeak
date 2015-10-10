@@ -16,7 +16,7 @@ public class LightingCollision : MonoBehaviour {
 	}
 
 	void OnParticleCollision(GameObject other){
-		Debug.Log ("Collide with Particle!");
+		Debug.Log ("Collide with thunder!");
 		Time.timeScale = 0f;
 	}
 }
