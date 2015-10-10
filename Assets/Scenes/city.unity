@@ -12716,6 +12716,7 @@ GameObject:
   - 82: {fileID: 910471763}
   - 114: {fileID: 910471770}
   - 114: {fileID: 910471771}
+  - 114: {fileID: 910471772}
   m_Layer: 0
   m_Name: GREAT_HORNED_OWL (1)
   m_TagString: Player
@@ -12960,6 +12961,19 @@ MonoBehaviour:
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: .100000001}
   life: 3
+--- !u!114 &910471772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 910471761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dd8e1fe038ff466291b7ea2c0912bbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: {fileID: 1365401408}
+  mountainHelp: {fileID: 0}
 --- !u!1 &913127998 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 102108, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
