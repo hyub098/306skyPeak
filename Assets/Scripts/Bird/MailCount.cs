@@ -30,7 +30,7 @@ public class MailCount : MonoBehaviour {
         achievement_CloseOne.enabled = false;
         achievement_Park.enabled = false;
         achievement_Fast.enabled = false;
-        source = GetComponent<AudioSource>();
+        //source = GetComponent<AudioSource>();
 		level = getLevel();
     }
 
@@ -44,13 +44,9 @@ public class MailCount : MonoBehaviour {
 
 		time = time + (Time.deltaTime) * 1 ;
 	
-			
-
-		checkWin ();
-
 			if(time < 60){
             //achievement
-                achievement_Fast.enabled = true;
+            //achievement_Fast.enabled = true;
 
 			}
 			
@@ -63,9 +59,10 @@ public class MailCount : MonoBehaviour {
 		// If the player collide withe the mail box, increase the gold according to the number of mails
 		if (other.gameObject.CompareTag ("Mail box")) {
 			Debug.Log ("Deliver");
-			mailCount=0;
-            source.clip = postMailSound;
-            source.Play();
+			checkWin ();
+			//mailCount=0;
+            //source.clip = postMailSound;
+            //source.Play();
 
         }
 
@@ -108,12 +105,13 @@ public class MailCount : MonoBehaviour {
 	}
 
 	void checkWin(){
+		Debug.Log ("check win");
 		if (level == 1) {
-			if (mailCount >= 5) {
+			if (mailCount >= 3) {
 				Congratulations.enabled=true;
 			}		
 		} else if (level == 2) {
-			if (mailCount >= 7) {
+			if (mailCount >= 5) {
 				Congratulations.enabled=true;
 			}
 		} else if (level == 3) {

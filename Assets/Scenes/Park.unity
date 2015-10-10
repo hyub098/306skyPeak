@@ -3938,7 +3938,12 @@ MonoBehaviour:
   mailCount: 0
   mailText: {fileID: 1091065293}
   Congratulations: {fileID: 1019536149}
-  achieveText: {fileID: 0}
+  achievement_Mountain: {fileID: 240052934}
+  achievement_Perfect: {fileID: 1051738462}
+  achievement_City: {fileID: 245098783}
+  achievement_CloseOne: {fileID: 1215046830}
+  achievement_Park: {fileID: 698353554}
+  achievement_Fast: {fileID: 665777115}
   getMailSound: {fileID: 8300000, guid: b25a86a96e6107943b8664b2dc827ace, type: 3}
   postMailSound: {fileID: 8300000, guid: 70c1151b299e967479535ff12f855b77, type: 3}
 --- !u!114 &1009465640
@@ -6129,6 +6134,35 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1504241263}
+--- !u!1 &1510230183 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 181320, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+  m_PrefabInternal: {fileID: 1613542723}
+--- !u!64 &1510230185
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1510230183}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 0}
+--- !u!136 &1510230186
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1510230183}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: .5
+  m_Height: 2.20000005
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: -.5}
 --- !u!1 &1524689508
 GameObject:
   m_ObjectHideFlags: 0
@@ -6456,6 +6490,52 @@ Transform:
   - {fileID: 871562044}
   m_Father: {fileID: 368059458}
   m_RootOrder: 2
+--- !u!1001 &1613542723
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 22.7999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 6.0999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181150, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1622813128 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 113192, guid: 3f077b9fac439b842874b96fe57da15f, type: 2}
@@ -7147,68 +7227,6 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
   m_StereoMirrorMode: 0
---- !u!1001 &1757880728
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 471336, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 22.7999992
-      objectReference: {fileID: 0}
-    - target: {fileID: 471336, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 6.0999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 471336, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 471336, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 471336, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 471336, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 471336, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 471336, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198668, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 471336, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalScale.x
-      value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 471336, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalScale.y
-      value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 471336, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalScale.z
-      value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 104140, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_TagString
-      value: Mail box
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &1758902552
 Prefab:
   m_ObjectHideFlags: 0
