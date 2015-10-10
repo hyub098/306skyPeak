@@ -9,6 +9,7 @@ public class Tornado : MonoBehaviour {
 	private Rigidbody rb;
 	private float realtime;
 	private float time;
+	private bool collide = false;
 
 
 	// Use this for initialization
@@ -25,11 +26,11 @@ public class Tornado : MonoBehaviour {
 
 		realtime = Time.deltaTime + realtime;
 //		Debug.Log (realtime);
-		if (realtime - time > 3) {
+		if (realtime - time > 3 && collide) {
 		
 			flymovement.enabled = true;
 			rb.velocity = Vector3.zero;
-			Debug.Log("Get Control");
+			collide = !collide;
 		}
 	}
 
@@ -37,6 +38,7 @@ public class Tornado : MonoBehaviour {
 		Debug.Log ("Lost control");
 
 		flymovement.enabled = false;
+		collide = true;
 		time = realtime;
 
 		rb.AddForce (5000.0f, 1000.0f, 3000.0f, ForceMode.Force);

@@ -3723,13 +3723,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mailCount: 0
   mailText: {fileID: 354822032}
-  Congratulations: {fileID: 0}
-  achievement_Mountain: {fileID: 0}
-  achievement_Perfect: {fileID: 0}
-  achievement_City: {fileID: 0}
-  achievement_CloseOne: {fileID: 0}
-  achievement_Park: {fileID: 0}
-  achievement_Fast: {fileID: 0}
+  Congratulations: {fileID: 780524316}
+  achievement_Mountain: {fileID: 775570457}
+  achievement_Perfect: {fileID: 391556143}
+  achievement_City: {fileID: 1840225548}
+  achievement_CloseOne: {fileID: 318003987}
+  achievement_Park: {fileID: 423717198}
+  achievement_Fast: {fileID: 1041655000}
   getMailSound: {fileID: 8300000, guid: b25a86a96e6107943b8664b2dc827ace, type: 3}
   postMailSound: {fileID: 8300000, guid: 70c1151b299e967479535ff12f855b77, type: 3}
 --- !u!114 &742969695
@@ -3745,8 +3745,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpd: 4
-  windSound: {fileID: 8300000, guid: e39fb023bd852704c9455b66733c05cc, type: 3}
-  wingSound: {fileID: 8300000, guid: 6ab6bf0b8eaedf24d820677edcc5999c, type: 3}
 --- !u!114 &742969696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3761,8 +3759,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthText: {fileID: 436009560}
   gameOver: {fileID: 1415713692}
-  achievement_Pressure: {fileID: 0}
-  achievement_Wipeout: {fileID: 0}
+  achievement_Pressure: {fileID: 2026748613}
+  achievement_Wipeout: {fileID: 1714387212}
   gameoverSound: {fileID: 8300000, guid: 9fee655191e0bd847bb895531704f6f9, type: 3}
   hitSound: {fileID: 8300000, guid: 91d3042120789dd4cb27aee4eb1b82fa, type: 3}
 --- !u!65 &742969697
@@ -4853,7 +4851,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 869160422}
   - 82: {fileID: 869160423}
-  - 114: {fileID: 869160424}
   m_Layer: 0
   m_Name: endScene
   m_TagString: Untagged
@@ -4944,23 +4941,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &869160424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 869160421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d40b31b9675f4e1b8d81ca514f64902, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthText: {fileID: 0}
-  gameOver: {fileID: 1415713692}
-  achievement_Pressure: {fileID: 2026748613}
-  achievement_Wipeout: {fileID: 1714387212}
-  gameoverSound: {fileID: 0}
-  hitSound: {fileID: 0}
 --- !u!1 &873158186
 GameObject:
   m_ObjectHideFlags: 0
@@ -9591,7 +9571,6 @@ GameObject:
   - 114: {fileID: 1811760663}
   - 114: {fileID: 1811760664}
   - 82: {fileID: 1811760665}
-  - 114: {fileID: 1811760666}
   m_Layer: 0
   m_Name: congratulationScene
   m_TagString: Untagged
@@ -9705,28 +9684,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &1811760666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1811760661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2881b5ac18dd84774841c3708444fedd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mailCount: 0
-  mailText: {fileID: 0}
-  Congratulations: {fileID: 780524316}
-  achievement_Mountain: {fileID: 775570457}
-  achievement_Perfect: {fileID: 391556143}
-  achievement_City: {fileID: 1840225548}
-  achievement_CloseOne: {fileID: 318003987}
-  achievement_Park: {fileID: 423717198}
-  achievement_Fast: {fileID: 1041655000}
-  getMailSound: {fileID: 0}
-  postMailSound: {fileID: 0}
 --- !u!1 &1828769433
 GameObject:
   m_ObjectHideFlags: 0
