@@ -7528,6 +7528,35 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300074, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
+--- !u!1 &367064292 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 181320, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+  m_PrefabInternal: {fileID: 773216952}
+--- !u!136 &367064294
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 367064292}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: .5
+  m_Height: 2.20000005
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: -.5}
+--- !u!64 &367064295
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 367064292}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 0}
 --- !u!1 &376585378 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 101242, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
@@ -11036,6 +11065,52 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4301172, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
+--- !u!1001 &773216952
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 22.7999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 6.0999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181150, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &778457895 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 101778, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
@@ -12592,64 +12667,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4301974, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
---- !u!1001 &907304782
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 22.7999992
-      objectReference: {fileID: 0}
-    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 6.0999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalScale.x
-      value: .00999999978
-      objectReference: {fileID: 0}
-    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalScale.y
-      value: .00999999978
-      objectReference: {fileID: 0}
-    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_LocalScale.z
-      value: .00999999978
-      objectReference: {fileID: 0}
-    - target: {fileID: 181320, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &908951637 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100606, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
@@ -17259,7 +17276,7 @@ MonoBehaviour:
   switchDist: 8
   helpTransform: {fileID: 899128476}
   player: {fileID: 910471761}
-  mailBox: {fileID: 0}
+  mailBox: {fileID: 367064292}
   mailRrefab: {fileID: 180614, guid: 69629f43bea804e2ca2595cc551054f1, type: 2}
 --- !u!20 &1143971424
 Camera:
