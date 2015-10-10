@@ -1,20 +1,20 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
 public class HSController : MonoBehaviour
 {
-    public Text guiText;
+    public Text guiText; 
     private string secretKey = "mySecretKey"; // Edit this value and make sure it's the same as the one stored on the server
-                                              //be sure to add a ? to your url
+     //be sure to add a ? to your url
 
 
-
-
-
+  
+       
+   
     void Start()
-    {
-        StartCoroutine(PostScores("placeholder", 500));
+    {        
+		StartCoroutine(GetScores());
     }
 
 
@@ -72,7 +72,7 @@ public class HSController : MonoBehaviour
         WWW hs_get = new WWW(highscoreURL);
         yield return hs_get;
 
-        Debug.Log(hs_get);
+		//Debug.Log(hs_get.responseHeaders.Values);
 
         if (hs_get.error != null)
         {
@@ -81,7 +81,6 @@ public class HSController : MonoBehaviour
         else
         {
             guiText.text = hs_get.text; // this is a GUIText that will display the scores in game.
-            Debug.Log(hs_get.text);
         }
     }
 
