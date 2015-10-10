@@ -10,7 +10,7 @@ public class fivesecond : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (count > 100) {
+		if (count > 200) {
 			gameObject.SetActive (false);
 		}
 		count++;
