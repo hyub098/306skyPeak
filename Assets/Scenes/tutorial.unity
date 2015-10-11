@@ -2979,9 +2979,7 @@ GameObject:
   - 111: {fileID: 1009465644}
   - 54: {fileID: 1009465643}
   - 65: {fileID: 1009465642}
-  - 114: {fileID: 1009465641}
   - 114: {fileID: 1009465640}
-  - 114: {fileID: 1009465639}
   - 82: {fileID: 1009465645}
   - 114: {fileID: 1009465646}
   m_Layer: 0
@@ -3008,29 +3006,6 @@ Transform:
   - {fileID: 1573715383}
   m_Father: {fileID: 0}
   m_RootOrder: 11
---- !u!114 &1009465639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11474288, guid: e925d1b3d51db43f592f8f3a2c2d9910,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1009465635}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2881b5ac18dd84774841c3708444fedd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mailCount: 0
-  mailText: {fileID: 0}
-  Congratulations: {fileID: 1019536149}
-  achievement_Mountain: {fileID: 0}
-  achievement_Perfect: {fileID: 0}
-  achievement_City: {fileID: 0}
-  achievement_CloseOne: {fileID: 0}
-  achievement_Park: {fileID: 0}
-  achievement_Fast: {fileID: 0}
-  getMailSound: {fileID: 8300000, guid: b25a86a96e6107943b8664b2dc827ace, type: 3}
-  postMailSound: {fileID: 8300000, guid: 70c1151b299e967479535ff12f855b77, type: 3}
 --- !u!114 &1009465640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3044,19 +3019,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpd: 4
---- !u!114 &1009465641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11452840, guid: e925d1b3d51db43f592f8f3a2c2d9910,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1009465635}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d40b31b9675f4e1b8d81ca514f64902, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOver: {fileID: 0}
 --- !u!65 &1009465642
 BoxCollider:
   m_ObjectHideFlags: 0
