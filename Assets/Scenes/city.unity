@@ -12827,6 +12827,7 @@ GameObject:
   - 114: {fileID: 910471770}
   - 114: {fileID: 910471771}
   - 114: {fileID: 910471772}
+  - 64: {fileID: 910471773}
   m_Layer: 0
   m_Name: GREAT_HORNED_OWL (1)
   m_TagString: Player
@@ -12981,7 +12982,7 @@ BoxCollider:
   m_GameObject: {fileID: 910471761}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.29999995, y: .800000012, z: 1.5}
   m_Center: {x: 0, y: .300000012, z: 0}
@@ -13084,6 +13085,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOver: {fileID: 1365401408}
   mountainHelp: {fileID: 1607939771}
+--- !u!64 &910471773
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 910471761}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 0}
 --- !u!1 &913127998 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 102108, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
