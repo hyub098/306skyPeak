@@ -18,7 +18,7 @@ public class randomFalling : MonoBehaviour {
 		// After a period of time, move the object to a random place
 		flyCount++;
 		if (flyCount > 1000) {
-			transform.position=new Vector3(100+500*Random.value, 400,800*Random.value );
+			transform.position=new Vector3(20+80*Random.value, 50,80*Random.value );
             source.Play();
             flyCount =0;
 		}
