@@ -10,7 +10,7 @@ public enum BirdState
 
 }
 
-public class moveMent : MonoBehaviour {
+public class MoveMent : MonoBehaviour {
 
 	private Animation anim;
 	public BirdState _characterState;

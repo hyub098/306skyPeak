@@ -23,7 +23,7 @@ public class NetworkCharacter : Photon.MonoBehaviour
 			stream.SendNext(transform.position);
 			stream.SendNext(transform.rotation);
 
-			moveMent myC = GetComponent<moveMent>();
+			MoveMent myC = GetComponent<MoveMent>();
 			stream.SendNext((int)myC._characterState);
 			
 		}
@@ -32,7 +32,7 @@ public class NetworkCharacter : Photon.MonoBehaviour
 			// Network player, receive data
 			this.correctPlayerPos = (Vector3)stream.ReceiveNext();
 			this.correctPlayerRot = (Quaternion)stream.ReceiveNext();
-			moveMent myC = GetComponent<moveMent>();
+			MoveMent myC = GetComponent<MoveMent>();
 			myC._characterState = (BirdState)stream.ReceiveNext();
 		}
 	}

@@ -3,6 +3,7 @@
 public class RandomMatchmaker : Photon.PunBehaviour
 {
 	// Use this for initialization
+	public string playerPrefabName="GREAT_HORNED_OWL 1";
 	void Start()
 	{
 		PhotonNetwork.ConnectUsingSettings("0.1");
@@ -28,12 +29,14 @@ public class RandomMatchmaker : Photon.PunBehaviour
 
 	void OnJoinedRoom(){
 
-		GameObject bird = PhotonNetwork.Instantiate("GREAT_HORNED_OWL 1", Vector3.zero, Quaternion.identity, 0);
-		moveMent controller = bird.GetComponent<moveMent>();
+		GameObject bird = PhotonNetwork.Instantiate(this.playerPrefabName, Vector3.zero, Quaternion.identity, 0);
+		MoveMent controller = bird.GetComponent<MoveMent>();
 		// Enable the camera
 		controller.isControllable = true;
 
-		//CharacterCamera camera = monster.GetComponent<CharacterCamera>();
-		//camera.enabled = true;
+		CameraScript camera = bird.GetComponentInChildren<CameraScript> ();
+
+		camera.isMine = true;
+
 	}
 }
