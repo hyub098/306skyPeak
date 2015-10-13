@@ -9936,8 +9936,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "You have 5 scrolls to deliver to the mailbox in order to complete this
-    stage.  \nBe careful of falling rocks and arrows.\nTry to beat your high score
-    to win some achievments! Wink Wink!\n"
+    stage.  \nBe careful of falling rocks.\nTry to beat your high score to win some
+    achievments! Wink Wink!\n"
 --- !u!222 &1724112744
 CanvasRenderer:
   m_ObjectHideFlags: 0
