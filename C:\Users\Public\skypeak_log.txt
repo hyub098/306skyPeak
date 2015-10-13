@@ -160,3 +160,17 @@ Expected outcome: mailcount 4 -> collision with mail-->5 at time 5:11:18 PM
 assert: mailcount 4 -> collision with mail-->5 at time 5:11:18 PM
 Expected outcome: mailcount 5 -> collision with mail-->6 at time 5:11:32 PM
 assert: mailcount 5 -> collision with mail-->6 at time 5:11:32 PM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 11:47:40 AM
+assert: mailcount 0 -> collision with mail-->1 at time 11:47:40 AM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 11:47:50 AM
+assert: mailcount 1 -> collision with mail-->2 at time 11:47:50 AM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 11:48:23 AM
+assert: mailcount 0 -> collision with mail-->1 at time 11:48:23 AM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 11:48:36 AM
+assert: mailcount 1 -> collision with mail-->2 at time 11:48:36 AM
+Expected outcome: mailcount 2 -> collision with mail-->3 at time 11:49:31 AM
+assert: mailcount 2 -> collision with mail-->3 at time 11:49:31 AM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 12:18:24 PM
+assert: mailcount 0 -> collision with mail-->1 at time 12:18:24 PM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 12:18:27 PM
+assert: mailcount 1 -> collision with mail-->2 at time 12:18:27 PM

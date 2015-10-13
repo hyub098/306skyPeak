@@ -25,27 +25,25 @@ public class Tornado : MonoBehaviour {
 	void Update () {
 
 		realtime = Time.deltaTime + realtime;
-//		Debug.Log (realtime);
 		if (realtime - time > 3 && collide) {
 		
 			flymovement.enabled = true;
 			rb.velocity = Vector3.zero;
 			collide = !collide;
 		}
+
+		checkNear ();
 	}
 
-	void OnParticleCollision(GameObject other){
-		Debug.Log ("Lost control");
 
-		flymovement.enabled = false;
-		collide = true;
-		time = realtime;
-
-		rb.AddForce (5000.0f, 1000.0f, 3000.0f, ForceMode.Force);
-
-//		player.transform.position = new Vector3 (Mathf.Lerp(player.transform.position.x,-35f,Time.deltaTime), 
-//		                                         Mathf.Lerp(player.transform.position.y,14.2f,Time.deltaTime),
-//		                                         Mathf.Lerp(player.transform.position.z, -2.7f, Time.deltaTime) );
-
+	//If near tornado, create collision
+	void checkNear(){
+		if (Vector3.Distance (player.transform.position, transform.position) < 8) {
+			flymovement.enabled = false;
+			collide = true;
+			time = realtime;
+			
+			rb.AddForce (5000.0f, 1000.0f, 3000.0f, ForceMode.Force);
+		}
 	}
 }
