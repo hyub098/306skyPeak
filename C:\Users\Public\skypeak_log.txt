@@ -1,0 +1,8 @@
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 3:31:09 PM
+assert: mailcount 0 -> collision with mail-->1 at time 3:31:09 PM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 3:31:09 PM
+assert: mailcount 1 -> collision with mail-->2 at time 3:31:09 PM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 3:34:50 PM
+assert: mailcount 0 -> collision with mail-->1 at time 3:34:50 PM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 3:35:04 PM
+assert: mailcount 1 -> collision with mail-->2 at time 3:35:04 PM
