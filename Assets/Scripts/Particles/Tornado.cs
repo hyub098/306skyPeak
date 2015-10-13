@@ -43,7 +43,7 @@ public class Tornado : MonoBehaviour {
 			collide = true;
 			time = realtime;
 			
-			rb.AddForce (5000.0f, 1000.0f, 3000.0f, ForceMode.Force);
+			rb.AddForce (5000.0f, 200.0f, 3000.0f, ForceMode.Force);
 		}
 	}
 }
