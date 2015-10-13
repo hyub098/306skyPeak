@@ -40,7 +40,6 @@ public class Collision : MonoBehaviour {
 		gameOver.enabled = false;
 
 		skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();  
-		skinnedMeshRenderer.material.mainTexture = normTexture;
 //        achievement_Pressure.enabled = false;
 //        achievement_Wipeout.enabled = false;
         ispause = false;
@@ -61,10 +60,14 @@ public class Collision : MonoBehaviour {
 
 		if ((time - hitTime) < 5) {
 			invincible = true;
+			StartCoroutine(flash());
 		} else {
 			invincible = false;
-			Debug.Log ("false");
+			skinnedMeshRenderer.material.color = Color.white;
 		}
+
+	
+
 
         if (ispause)
         {
@@ -112,11 +115,12 @@ public class Collision : MonoBehaviour {
 
 			if (!collision.gameObject.CompareTag ("Mail box")) {
 
-			if(invincible == false){
+			if(!invincible){
 				invincible = true;
 				hitTime = time;
 				Debug.Log(hitTime);
 				life = lifeManager.subtractLife ();
+//				flash();
 			}
 
 
@@ -141,5 +145,18 @@ public class Collision : MonoBehaviour {
 
 
     }
+	IEnumerator flash(){
+		invincible = true;
+		for(int i = 0; i<2;i++){
+
+				skinnedMeshRenderer.material.color = Color.clear;
+			yield return new WaitForSeconds(.1f);
+
+				skinnedMeshRenderer.material.color = Color.white;
+			yield return new WaitForSeconds(.1f);
+		}
+
+	}
+
 
 }
