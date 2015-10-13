@@ -11,7 +11,7 @@ public class Timer: MonoBehaviour {
 	public int second = 0;
 	int totalTime;
 	float factorScore;
-	int score;
+	int score =0 ;
 	float time = 0;
 	
 	public string timerFormatted;
@@ -51,36 +51,39 @@ public class Timer: MonoBehaviour {
 	void calcScore() {
         
 		totalTime = (minute * 60) + second;
-        if (totalTime < 30)
-        {
-            score = 1000;
-        } else if (totalTime < 120)
-        {
-            score = 500;
+        //if (totalTime < 30)
+        //{
+        //  score = 1000;
+        //} else if (totalTime < 120)
+        //{
+        //  score = 500;
 
-        }
-        else if (totalTime < 240)
-        {
-            score = 250;
+        //}
+        //else if (totalTime < 240)
+        //{
+        //  score = 250;
 
-        }
-        else if (totalTime < 480)
-        {
-            score = 125;
+        //}
+        //else if (totalTime < 480)
+        //{
+        //  score = 125;
 
-        }
-        else if (totalTime < 960)
-        {
-            score = 100;
+        //}
+        //else if (totalTime < 960)
+        //{
+        //  score = 100;
 
-        }
-        else if (totalTime < 1200)
-        {
-            score = 50;
+        //}
+        //else if (totalTime < 1200)
+        //{
+        //  score = 50;
 
-        } else
-        {
-            score = 10;
+        //} else
+        //{
+        //  score = 10;
+        //}
+        if (totalTime != 0) {
+            score = 1000000 / totalTime; 
         }
         
         // Store the player's score
