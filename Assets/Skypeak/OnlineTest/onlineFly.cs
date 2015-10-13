@@ -11,13 +11,7 @@ public class onlineFly : MonoBehaviour {
 	private Animation anim;
 	private Vector3 moveDistance;
 	private bool start = false;
-	
 	private float time;
-	
-	public AudioClip windSound;
-	public AudioClip wingSound;
-	private AudioSource source;
-	private int count=0;
 	private int count2 = 0;
 	
 	// Use this for initialization
@@ -26,10 +20,7 @@ public class onlineFly : MonoBehaviour {
 		moveDistance = new Vector3(0,0,0);
 		currentSpd = 0;
 		anim = GetComponent<Animation> ();
-		rb = GetComponent<Rigidbody> ();
-		source = GetComponent<AudioSource>();
-		
-		
+		rb = GetComponent<Rigidbody> ();				
 	}
 	
 	// Update is called once per frame
@@ -165,19 +156,10 @@ public class onlineFly : MonoBehaviour {
 				count2++;
 				if (count2 == 300)
 				{
-					source.clip = windSound;
-					source.Play();
 					count2 = 0;
 				}
 			} else if (transform.eulerAngles.x > 299 && transform.eulerAngles.x < 361) {
 				anim.Play("flyNormal");
-				count++;
-				if (count == 100)
-				{
-					source.clip = wingSound;
-					source.Play();
-					count = 0;
-				}
 			}
 		} else {
 			
