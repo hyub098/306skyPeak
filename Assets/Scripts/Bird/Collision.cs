@@ -19,7 +19,7 @@ public class Collision : MonoBehaviour {
 	private LifeManager lifeManager;
     
     private int count = 0;
-	private int life;
+	public int life;
 	private bool invincible;
 	private float hitTime;
 
