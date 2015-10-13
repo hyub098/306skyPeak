@@ -6566,7 +6566,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1062137974}
-  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
+  m_LocalRotation: {x: .707106888, y: 0, z: 0, w: .707106769}
   m_LocalPosition: {x: 22.8029995, y: 25, z: 18.0319996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7227,7 +7227,7 @@ Transform:
   m_PrefabParentObject: {fileID: 426318, guid: e925d1b3d51db43f592f8f3a2c2d9910, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1194498716}
-  m_LocalRotation: {x: 1.2516324e-08, y: 1.44174859e-08, z: .89827019, w: -.439443529}
+  m_LocalRotation: {x: 1.25163249e-08, y: 1.44174868e-08, z: .898270249, w: -.439443558}
   m_LocalPosition: {x: -.00221523526, y: .0513425991, z: .000188770297}
   m_LocalScale: {x: 1, y: .99999994, z: 1}
   m_Children:
@@ -10235,7 +10235,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 462130, guid: 30c13599319e24318b7896714077e21b, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 462130, guid: 30c13599319e24318b7896714077e21b, type: 2}
       propertyPath: m_LocalScale.x
@@ -10256,6 +10256,10 @@ Prefab:
     - target: {fileID: 158456, guid: 30c13599319e24318b7896714077e21b, type: 2}
       propertyPath: m_Name
       value: scroll (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 158456, guid: 30c13599319e24318b7896714077e21b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30c13599319e24318b7896714077e21b, type: 2}
@@ -10615,9 +10619,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You have 10 mail to deliver in exchange for gold coins. \nYou can only
-    hold 3 scolls at a time. \nMake sure you deliver them as soon as possible.\nBe
-    fast!"
+  m_Text: "You have 5 scrolls to deliver to the mailbox in order to complete this
+    stage.  \nBe careful of falling rocks and arrows.\nTry to beat your high score
+    to win some achievments! Wink Wink!\n"
 --- !u!222 &1724112744
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10904,6 +10908,10 @@ Prefab:
     - target: {fileID: 158456, guid: 30c13599319e24318b7896714077e21b, type: 2}
       propertyPath: m_Name
       value: scroll (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 158456, guid: 30c13599319e24318b7896714077e21b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30c13599319e24318b7896714077e21b, type: 2}
@@ -11285,7 +11293,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 462130, guid: 30c13599319e24318b7896714077e21b, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 462130, guid: 30c13599319e24318b7896714077e21b, type: 2}
       propertyPath: m_LocalScale.x
@@ -11306,6 +11314,10 @@ Prefab:
     - target: {fileID: 158456, guid: 30c13599319e24318b7896714077e21b, type: 2}
       propertyPath: m_Name
       value: scroll (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 158456, guid: 30c13599319e24318b7896714077e21b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30c13599319e24318b7896714077e21b, type: 2}
@@ -11541,6 +11553,10 @@ Prefab:
       propertyPath: m_Name
       value: scroll (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 158456, guid: 30c13599319e24318b7896714077e21b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30c13599319e24318b7896714077e21b, type: 2}
   m_IsPrefabParent: 0
@@ -11606,6 +11622,10 @@ Prefab:
     - target: {fileID: 158456, guid: 30c13599319e24318b7896714077e21b, type: 2}
       propertyPath: m_Name
       value: scroll (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 158456, guid: 30c13599319e24318b7896714077e21b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30c13599319e24318b7896714077e21b, type: 2}
@@ -11725,6 +11745,10 @@ Prefab:
     - target: {fileID: 158456, guid: 30c13599319e24318b7896714077e21b, type: 2}
       propertyPath: m_Name
       value: scroll (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 158456, guid: 30c13599319e24318b7896714077e21b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30c13599319e24318b7896714077e21b, type: 2}
