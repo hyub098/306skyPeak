@@ -144,7 +144,6 @@ GameObject:
   - 114: {fileID: 45865083}
   - 114: {fileID: 45865080}
   - 82: {fileID: 45865082}
-  - 114: {fileID: 45865086}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -312,27 +311,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!114 &45865086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 45865079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bafa54482a87ac4cbd7ff1bfd1ac93a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkAfterTime: 1
-  repeatCheckTime: 1
-  repeatEveryTime: 1
-  checkAfterFrames: 1
-  repeatCheckFrame: 1
-  repeatEveryFrame: 1
-  hasFailed: 0
-  checkMethods: 2
-  m_ActionBase: {fileID: 1054417061}
-  checksPerformed: 0
 --- !u!1001 &64435774
 Prefab:
   m_ObjectHideFlags: 0
@@ -2640,6 +2618,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
+--- !u!114 &681549965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4a3a521c5c1494aae123742ca5c8f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 2078015720}
+  thisPropertyPath: MailCount.mailCount
+  compareToType: 1
+  other: {fileID: 0}
+  otherPropertyPath: 
+  constantValueGeneric: 3
+  compareType: 5
 --- !u!4 &692579025 stripped
 Transform:
   m_PrefabParentObject: {fileID: 465264, guid: 40b641cefef37b147b40453898c94c69, type: 2}
@@ -4450,24 +4446,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1051738460}
---- !u!114 &1054417061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da4a3a521c5c1494aae123742ca5c8f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  go: {fileID: 2078015720}
-  thisPropertyPath: LifeManager.life
-  compareToType: 1
-  other: {fileID: 0}
-  otherPropertyPath: 
-  constantValueGeneric: 0
-  compareType: 0
 --- !u!1 &1065458105 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 158456, guid: 30c13599319e24318b7896714077e21b, type: 2}
@@ -7567,7 +7545,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1772687839}
   - 82: {fileID: 1772687840}
-  - 114: {fileID: 1772687841}
   m_Layer: 0
   m_Name: endScene
   m_TagString: Untagged
@@ -7658,27 +7635,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &1772687841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1772687838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bafa54482a87ac4cbd7ff1bfd1ac93a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkAfterTime: 1
-  repeatCheckTime: 1
-  repeatEveryTime: 1
-  checkAfterFrames: 1
-  repeatCheckFrame: 1
-  repeatEveryFrame: 1
-  hasFailed: 0
-  checkMethods: 64
-  m_ActionBase: {fileID: 1952164699}
-  checksPerformed: 0
 --- !u!1 &1781222581
 GameObject:
   m_ObjectHideFlags: 0
@@ -8413,24 +8369,6 @@ Transform:
   - {fileID: 773760849}
   m_Father: {fileID: 180860185}
   m_RootOrder: 0
---- !u!114 &1952164699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da4a3a521c5c1494aae123742ca5c8f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  go: {fileID: 2078015720}
-  thisPropertyPath: LifeManager.life
-  compareToType: 1
-  other: {fileID: 0}
-  otherPropertyPath: 
-  constantValueGeneric: 0
-  compareType: 0
 --- !u!1 &1954283905 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: bd45e59577463714f9441db4b88afd7c, type: 3}
@@ -8782,6 +8720,7 @@ GameObject:
   - 64: {fileID: 2078015722}
   - 114: {fileID: 2078015733}
   - 114: {fileID: 2078015734}
+  - 114: {fileID: 2078015735}
   m_Layer: 0
   m_Name: GREAT_HORNED_OWL (1)
   m_TagString: Player
@@ -9092,6 +9031,27 @@ MonoBehaviour:
   hasFailed: 0
   checkMethods: 1
   m_ActionBase: {fileID: 2145733332}
+  checksPerformed: 0
+--- !u!114 &2078015735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2078015720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bafa54482a87ac4cbd7ff1bfd1ac93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkAfterTime: 1
+  repeatCheckTime: 1
+  repeatEveryTime: 1
+  checkAfterFrames: 1
+  repeatCheckFrame: 1
+  repeatEveryFrame: 1
+  hasFailed: 0
+  checkMethods: 8192
+  m_ActionBase: {fileID: 681549965}
   checksPerformed: 0
 --- !u!1 &2078684935
 GameObject:
