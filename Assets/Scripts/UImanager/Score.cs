@@ -12,7 +12,7 @@ public class Score : MonoBehaviour
     // Update the score of the player
     void Update()
     {
-        scoreText.text = "Score: "+PlayerPrefs.GetInt("highscore", score);
+        scoreText.text = ""+PlayerPrefs.GetInt("highscore", score);
     }
 
 }
