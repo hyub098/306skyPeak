@@ -23,7 +23,7 @@ public class MailCount : MonoBehaviour {
 		Debug.Log ("script added:" );
 		rb = GetComponent<Rigidbody> ();
 		mailCount = 0;
-		Congratulations.enabled = false;
+		Congratulations.enabled = true;
         achievement_Mountain.enabled = false;
         achievement_Perfect.enabled = false;
         achievement_City.enabled = false;
