@@ -85,6 +85,24 @@ NavMeshSettings:
     cellSize: .166666657
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &5917041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4a3a521c5c1494aae123742ca5c8f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 2078015720}
+  thisPropertyPath: MailCount.mailCount
+  compareToType: 1
+  other: {fileID: 0}
+  otherPropertyPath: 
+  constantValueGeneric: 0
+  compareType: 0
 --- !u!1 &30618296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2569,7 +2587,7 @@ GameObject:
   - 4: {fileID: 678771160}
   - 114: {fileID: 678771161}
   m_Layer: 0
-  m_Name: mountain-help
+  m_Name: park-help
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4017,8 +4035,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You have 10 mail to deliver in exchange for gold coins. \nYou can only
-    hold 3 scolls at a time. \nMake sure you deliver them as soon as possible.\nBe
+  m_Text: "You have 3 scrolls to deliver to the mailbox in order to complete this
+    stage. \nMake sure you deliver them as soon as possible to achieve a high score.\nBe
     fast!"
 --- !u!222 &997980464
 CanvasRenderer:
@@ -5746,7 +5764,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1402007526}
-  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
+  m_LocalRotation: {x: .707106888, y: 0, z: 0, w: .707106769}
   m_LocalPosition: {x: 22.8029995, y: 25, z: 18.0319996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8326,7 +8344,7 @@ Transform:
   m_PrefabParentObject: {fileID: 426318, guid: e925d1b3d51db43f592f8f3a2c2d9910, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1947077404}
-  m_LocalRotation: {x: 1.2516324e-08, y: 1.44174859e-08, z: .89827019, w: -.439443529}
+  m_LocalRotation: {x: 1.25163249e-08, y: 1.44174868e-08, z: .898270249, w: -.439443558}
   m_LocalPosition: {x: -.00221523526, y: .0513425991, z: .000188770297}
   m_LocalScale: {x: 1, y: .99999994, z: 1}
   m_Children:
@@ -8682,6 +8700,8 @@ GameObject:
   - 114: {fileID: 2078015724}
   - 114: {fileID: 2078015723}
   - 64: {fileID: 2078015722}
+  - 114: {fileID: 2078015733}
+  - 114: {fileID: 2078015734}
   m_Layer: 0
   m_Name: GREAT_HORNED_OWL (1)
   m_TagString: Player
@@ -8951,6 +8971,48 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &2078015733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2078015720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bafa54482a87ac4cbd7ff1bfd1ac93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkAfterTime: 1
+  repeatCheckTime: 1
+  repeatEveryTime: 1
+  checkAfterFrames: 1
+  repeatCheckFrame: 1
+  repeatEveryFrame: 1
+  hasFailed: 0
+  checkMethods: 2
+  m_ActionBase: {fileID: 5917041}
+  checksPerformed: 0
+--- !u!114 &2078015734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2078015720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bafa54482a87ac4cbd7ff1bfd1ac93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkAfterTime: 1
+  repeatCheckTime: 1
+  repeatEveryTime: 1
+  checkAfterFrames: 1
+  repeatCheckFrame: 1
+  repeatEveryFrame: 1
+  hasFailed: 0
+  checkMethods: 2
+  m_ActionBase: {fileID: 2145733332}
+  checksPerformed: 0
 --- !u!1 &2078684935
 GameObject:
   m_ObjectHideFlags: 0
@@ -9260,3 +9322,21 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 465264, guid: 40b641cefef37b147b40453898c94c69, type: 2}
   m_PrefabInternal: {fileID: 964774063}
+--- !u!114 &2145733332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4a3a521c5c1494aae123742ca5c8f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 2078015720}
+  thisPropertyPath: LifeManager.life
+  compareToType: 1
+  other: {fileID: 0}
+  otherPropertyPath: 
+  constantValueGeneric: 3
+  compareType: 0
