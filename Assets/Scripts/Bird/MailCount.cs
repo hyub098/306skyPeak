@@ -23,7 +23,7 @@ public class MailCount : MonoBehaviour {
 		Debug.Log ("script added:" );
 		rb = GetComponent<Rigidbody> ();
 		mailCount = 0;
-		Congratulations.enabled = true;
+		Congratulations.enabled = false;
         achievement_Mountain.enabled = false;
         achievement_Perfect.enabled = false;
         achievement_City.enabled = false;
@@ -108,6 +108,7 @@ public class MailCount : MonoBehaviour {
             if (mailCount >= 3)
             {
                 Congratulations.enabled = true;
+				Time.timeScale = 0f; //Stop the game
                 //Achievement for beating park in under a minute
                 if (time < 60)
                 {
@@ -123,6 +124,7 @@ public class MailCount : MonoBehaviour {
             if (mailCount >= 5)
             {
                 Congratulations.enabled = true;
+				Time.timeScale = 0f; //Stop the game
                 //Achievement for beating mountain in under a minute
                 if (time < 120)
                 {
@@ -137,6 +139,7 @@ public class MailCount : MonoBehaviour {
             if (mailCount >= 10)
             {
                 Congratulations.enabled = true;
+				Time.timeScale = 0f; //Stop the game
                 //Achievement for beating city in under 3 minutes
                 if (time < 180)
                 {

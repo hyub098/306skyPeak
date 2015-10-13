@@ -7,4 +7,7 @@ public class TornadoMovement : MonoBehaviour {
 	void Update () {
 		transform.position = transform.forward * Time.deltaTime;
 	}
+
+
+
 }

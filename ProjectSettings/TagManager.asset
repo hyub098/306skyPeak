@@ -10,6 +10,8 @@ TagManager:
   - Mail box
   - AICars
   - Ground
+  - Tornado
+  - No Impact
   layers:
   - Default
   - TransparentFX
