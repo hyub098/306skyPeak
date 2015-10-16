@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 
+
+//Class to count the mail as it is collected
 public class MailCount : MonoBehaviour {
 	public int mailCount;
 	public Text mailText;
