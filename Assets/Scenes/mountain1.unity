@@ -555,13 +555,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkAfterTime: 1
-  repeatCheckTime: 1
+  repeatCheckTime: 0
   repeatEveryTime: 1
   checkAfterFrames: 1
   repeatCheckFrame: 1
   repeatEveryFrame: 1
   hasFailed: 0
-  checkMethods: 2
+  checkMethods: 1
   m_ActionBase: {fileID: 243081325}
   checksPerformed: 0
 --- !u!114 &29683431
@@ -576,13 +576,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkAfterTime: 1
-  repeatCheckTime: 1
+  repeatCheckTime: 0
   repeatEveryTime: 1
   checkAfterFrames: 1
   repeatCheckFrame: 1
   repeatEveryFrame: 1
   hasFailed: 0
-  checkMethods: 2
+  checkMethods: 1
   m_ActionBase: {fileID: 469768328}
   checksPerformed: 0
 --- !u!114 &29683432
@@ -5779,7 +5779,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7124,7 +7124,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Please enter your username..
+  m_Text: Please enter your name..
 --- !u!222 &1062099974
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10472,7 +10472,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

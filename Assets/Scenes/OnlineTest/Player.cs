@@ -176,7 +176,7 @@ public class Player : MonoBehaviour
             ChangeColorTo(new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f)));
     }
 
-    [RPC] void ChangeColorTo(Vector3 color)
+    [PunRPC] void ChangeColorTo(Vector3 color)
     {
         GetComponent<Renderer>().material.color = new Color(color.x, color.y, color.z, 1f);
 
