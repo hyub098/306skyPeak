@@ -19,6 +19,6 @@ public class HunterMovement : MonoBehaviour {
 
 	//Create new destination
 	void newDest(){
-		float newX = 
+		//float newX = 
 	}
 }
