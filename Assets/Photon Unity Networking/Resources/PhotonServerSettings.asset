@@ -31,4 +31,5 @@ MonoBehaviour:
   - PunPickupSimple
   - PunRespawn
   - RequestForPickupTimes
+  - SendChatMessage
   DisableAutoOpenWizard: 1
