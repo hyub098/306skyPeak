@@ -731,6 +731,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOver: {fileID: 1415713692}
+  achievement_Pressure: {fileID: 2026748613}
+  achievement_Wipeout: {fileID: 1714387212}
 --- !u!65 &29683427
 BoxCollider:
   m_ObjectHideFlags: 0

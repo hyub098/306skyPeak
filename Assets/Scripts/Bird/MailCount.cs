@@ -15,12 +15,16 @@ public class MailCount : MonoBehaviour {
 
     private Rigidbody rb;
 	private int level;
+    private int life;
+    private Collision collision;
 
 
 
-	// Use this for initialization
-	void Start () {
-		Debug.Log ("script added:" );
+
+    // Use this for initialization
+    void Start () {
+        collision = GetComponent<Collision>();
+        Debug.Log ("script added:" );
 		rb = GetComponent<Rigidbody> ();
 		mailCount = 0;
 		Congratulations.enabled = false;
@@ -30,6 +34,7 @@ public class MailCount : MonoBehaviour {
         achievement_CloseOne.enabled = false;
         achievement_Park.enabled = false;
         achievement_Fast.enabled = false;
+       
         //source = GetComponent<AudioSource>();
 		level = getLevel();
     }
@@ -117,6 +122,19 @@ public class MailCount : MonoBehaviour {
 
                 }
 
+                //Achievement for beating park without losing a life
+                life = collision.returnLife();
+                if (life == 3)
+                {
+                    achievement_Mountain.enabled = true;
+                }
+
+                //Achievement for winning with only one life left
+                if (life == 1)
+                {
+                    achievement_CloseOne.enabled = true;
+                }
+
             }
         }
         else if (level == 2)
@@ -132,6 +150,20 @@ public class MailCount : MonoBehaviour {
                     achievement_Mountain.enabled = true;
 
                 }
+
+                //Achievement for beating mountain without losing a life
+                life = collision.returnLife();
+                if (life == 3)
+                {
+                    achievement_Park.enabled = true;
+                }
+
+                //Achievement for winning with only one life left
+                if (life == 1)
+                {
+                    achievement_CloseOne.enabled = true;
+                }
+
             }
         }
         else if (level == 3)
@@ -147,7 +179,27 @@ public class MailCount : MonoBehaviour {
                     achievement_City.enabled = true;
 
                 }
+
+                //Achievement for beating city without losing a life
+                life = collision.returnLife();
+                if (life == 3)
+                {
+                    achievement_Park.enabled = true;
+                }
+
+                //Achievement for winning with only one life left
+                if (life == 1)
+                {
+                    achievement_CloseOne.enabled = true;
+                }
+
             }
         }
+    }
+
+
+    public int returnMail()
+    {
+        return mailCount;
     }
 }
