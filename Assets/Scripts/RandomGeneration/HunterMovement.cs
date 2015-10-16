@@ -10,6 +10,7 @@ public class HunterMovement : MonoBehaviour {
 	private float time = 0;
 	private float shootingTime = 0;
 	private Animation anim;
+	private Axe axe;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animation> ();
@@ -59,6 +60,7 @@ public class HunterMovement : MonoBehaviour {
 	IEnumerator shootTime(){
 		shoot = true;
 		anim.Play ("Lumbering");
+		//axe.shootAxe ();
 		yield return new WaitForSeconds(5f);
 
 		shoot = false;
