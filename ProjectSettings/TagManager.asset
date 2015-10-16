@@ -12,6 +12,7 @@ TagManager:
   - Ground
   - Tornado
   - No Impact
+  - Axe
   layers:
   - Default
   - TransparentFX
