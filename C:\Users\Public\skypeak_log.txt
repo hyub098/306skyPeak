@@ -1,0 +1,2 @@
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 6:28:09 PM
+assert: mailcount 0 -> collision with mail-->1 at time 6:28:09 PM
