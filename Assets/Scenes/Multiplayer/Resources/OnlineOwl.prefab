@@ -548,7 +548,7 @@ GameObject:
   - 114: {fileID: 11470896}
   - 114: {fileID: 11459372}
   m_Layer: 0
-  m_Name: GREAT_HORNED_OWL 1
+  m_Name: OnlineOwl
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
