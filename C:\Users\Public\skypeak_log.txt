@@ -22,3 +22,7 @@ Expected outcome: mailcount 3 -> collision with mail-->4 at time 11:01:05 AM
 assert: mailcount 3 -> collision with mail-->4 at time 11:01:05 AM
 Expected outcome: mailcount 4 -> collision with mail-->5 at time 11:01:53 AM
 assert: mailcount 4 -> collision with mail-->5 at time 11:01:53 AM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 11:31:54 AM
+assert: mailcount 0 -> collision with mail-->1 at time 11:31:54 AM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 11:33:02 AM
+assert: mailcount 1 -> collision with mail-->2 at time 11:33:02 AM
