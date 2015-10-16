@@ -62,16 +62,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _ShadowTex
+          name: _BumpSpecMap
         second:
-          m_Texture: {fileID: 2800000, guid: 94e75b0ad4a3633479cdb70de082f1df, type: 3}
+          m_Texture: {fileID: 2800000, guid: 931a543324e384245803f14852d6631b, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _BumpSpecMap
+          name: _ShadowTex
         second:
-          m_Texture: {fileID: 2800000, guid: 931a543324e384245803f14852d6631b, type: 3}
+          m_Texture: {fileID: 2800000, guid: 94e75b0ad4a3633479cdb70de082f1df, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Name: Tree Data
   m_EditorClassIdentifier: 
   _uniqueID: 1003
-  materialHash: 6480001d508b9f895e17839999b3768b-730329088
+  materialHash: 50805ae5e41fdb7ed9788867dc077c3c-730329088
   root:
     _uniqueID: 1
     seed: 1234
