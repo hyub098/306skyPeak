@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Expected outcome: mailcount 0 -> collision with mail-->1 at time 10:43:57 AM
 assert: mailcount 0 -> collision with mail-->1 at time 10:43:57 AM
 Expected outcome: mailcount 0 -> collision with mail-->1 at time 10:45:39 AM
@@ -34,3 +35,11 @@ Expected outcome: mailcount 8 -> collision with mail-->9 at time 10:58:20 AM
 assert: mailcount 8 -> collision with mail-->9 at time 10:58:20 AM
 Expected outcome: mailcount 9 -> collision with mail-->10 at time 10:58:20 AM
 assert: mailcount 9 -> collision with mail-->10 at time 10:58:20 AM
+=======
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 10:37:55 AM
+assert: mailcount 0 -> collision with mail-->1 at time 10:37:55 AM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 10:37:57 AM
+assert: mailcount 1 -> collision with mail-->2 at time 10:37:57 AM
+Expected outcome: mailcount 2 -> collision with mail-->3 at time 10:38:19 AM
+assert: mailcount 2 -> collision with mail-->3 at time 10:38:19 AM
+>>>>>>> 4d6968dace2603dc8f0e5e4ac7a2e542fa730656

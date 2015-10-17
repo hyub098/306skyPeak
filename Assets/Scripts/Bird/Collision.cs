@@ -166,7 +166,7 @@ public class Collision : MonoBehaviour {
 			//Debug.Log("game over");
 			//}
 			gameOver.enabled = true;
-			
+			Time.timeScale = 0f; //Stop the game
 			
 			
 			//Check for time and 3 mail achievements

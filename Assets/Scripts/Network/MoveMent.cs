@@ -34,6 +34,7 @@ public class MoveMent : MonoBehaviour {
 		anim = GetComponent<Animation> ();
 		rb = GetComponent<Rigidbody> ();	
 		isFinish = false;
+		maxSpd = 10;
 	}
 	
 	// Update is called once per frame
@@ -41,7 +42,7 @@ public class MoveMent : MonoBehaviour {
 
 		//Lock max speed
 		currentSpd = Mathf.Clamp (currentSpd, 0, maxSpd);
-		Vector3 moveCamtTo = transform.position - transform.forward * 5.0f + Vector3.up * 5.0f;
+		Vector3 moveCamtTo = transform.position - transform.forward * 5.0f + Vector3.up * 2.0f;
 		float bias = 0.96f;
 
 		gameObject.transform.GetChild(3).transform.position=gameObject.transform.GetChild(3).transform.position* bias + moveCamtTo * (1.0f - bias);
@@ -139,14 +140,17 @@ public class MoveMent : MonoBehaviour {
 			if (transform.eulerAngles.x > 0 && transform.eulerAngles.x < 61) {
 				//anim.Play("glideNormal");
 				_characterState = BirdState.Glide;
+				maxSpd=20;
 				count2++;
 				if (count2 == 300)
 				{
 					count2 = 0;
+					maxSpd=10;
 				}
 			} else if (transform.eulerAngles.x > 299 && transform.eulerAngles.x < 361) {
 				//anim.Play("flyNormal");
 				_characterState = BirdState.Fly;
+				maxSpd=10;
 			}
 		} else {
 			

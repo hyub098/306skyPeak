@@ -6,16 +6,15 @@ public class MainManager : MonoBehaviour
 	public Camera camera;
 	void Awake()
 	{
-		//PhotonNetwork.logLevel = NetworkLogLevel.Full;
 	
-		//Connect to the main photon server. This is the only IP and port we ever need to set(!)
+		//Connect to the main photon server. 
 		if (!PhotonNetwork.connected)
-			PhotonNetwork.ConnectUsingSettings("v1.0"); // version of the game/demo. used to separate older clients from newer ones (e.g. if incompatible)
+			PhotonNetwork.ConnectUsingSettings("v1.0"); // version of the game.
 		
 		//Load name from PlayerPrefs
 		PhotonNetwork.playerName = PlayerPrefs.GetString("playerName", "Guest" + Random.Range(1, 9999));
 
-		//Set camera clipping for nicer "main menu" background
+		//Set camera  for  "main menu" 
 		camera.farClipPlane = camera.nearClipPlane + 0.1f;
 		
 	}
@@ -96,7 +95,7 @@ public class MainManager : MonoBehaviour
 		}
 		else
 		{
-			//Room listing: simply call GetRoomList: no need to fetch/poll whatever!
+			//Room listing: simply call GetRoomList.
 			scrollPos = GUILayout.BeginScrollView(scrollPos);
 			foreach (RoomInfo game in PhotonNetwork.GetRoomList())
 			{
@@ -117,11 +116,8 @@ public class MainManager : MonoBehaviour
 	
 	void ShowConnectingGUI()
 	{
-		GUILayout.BeginArea(new Rect((Screen.width - 400) / 2, (Screen.height - 300) / 2, 400, 300));
-		
-		GUILayout.Label("Connecting to Photon server.");
-		GUILayout.Label("Hint: This demo uses a settings file and logs the server address to the console.");
-		
+		GUILayout.BeginArea(new Rect((Screen.width - 400) / 2, (Screen.height - 300) / 2, 400, 300));		
+		GUILayout.Label("Connecting to Photon server.");	
 		GUILayout.EndArea();
 	}
 }
