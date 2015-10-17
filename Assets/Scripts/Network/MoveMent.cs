@@ -39,7 +39,7 @@ public class MoveMent : MonoBehaviour {
 
 		//Lock max speed
 		currentSpd = Mathf.Clamp (currentSpd, 0, maxSpd);
-		Vector3 moveCamtTo = transform.position - transform.forward * 0.5f + Vector3.up * 0.3f;
+		Vector3 moveCamtTo = transform.position - transform.forward * 5.0f + Vector3.up * 5.0f;
 		float bias = 0.96f;
 
 		//CameraScript camera = gameObject.GetComponentInChildren<CameraScript> ();
@@ -47,7 +47,7 @@ public class MoveMent : MonoBehaviour {
 
 		//Camera.main.transform.position = Camera.main.transform.position * bias + moveCamtTo * (1.0f - bias);
 
-		gameObject.transform.GetChild (3).transform.LookAt (transform.position + transform.forward * 0.01f);
+		gameObject.transform.GetChild (3).transform.LookAt (transform.position + transform.forward * 1.0f);
 
 		//Camera.main.transform.LookAt (transform.position + transform.forward * 0.01f);
 
@@ -66,8 +66,8 @@ public class MoveMent : MonoBehaviour {
 
 	//Stop owl going below ground level
 	void constrain(){
-		if (transform.position.y <= 0.1f) {
-			transform.position = new Vector3(transform.position.x,0.1f,transform.position.z);
+		if (transform.position.y <= 1f) {
+			transform.position = new Vector3(transform.position.x,1f,transform.position.z);
 			//remove rigid body force
 			rb.velocity = Vector3.zero;
 			rb.useGravity = false;

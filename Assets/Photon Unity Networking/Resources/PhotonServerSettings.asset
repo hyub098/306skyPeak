@@ -18,7 +18,7 @@ MonoBehaviour:
   AppID: 2c64c28c-309d-439a-ab25-4579627e8cc7
   PreferredRegion: 0
   EnabledRegions: -1
-  JoinLobby: 0
+  JoinLobby: 1
   EnableLobbyStatistics: 0
   RpcList:
   - ChangeColorTo
