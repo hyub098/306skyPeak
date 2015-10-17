@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
 	//prefab name, should be in Resource folder
 	public string playerPrefabName = "OnlineOwl";
 	public Camera camera;
+	public Canvas start;
 	void OnJoinedRoom()
 	{
 		StartGame();
@@ -25,15 +26,17 @@ public class GameManager : MonoBehaviour {
 	
 	void StartGame()
 	{
-
 		// Spawn our local player
 		camera.enabled = false;
-		GameObject bird = PhotonNetwork.Instantiate(this.playerPrefabName, new Vector3(0.0f,0.0f,0.0f), Quaternion.identity, 0);
+		Vector3 location = new Vector3 (-80f,98f,112f);
+		GameObject bird = PhotonNetwork.Instantiate (this.playerPrefabName, location, Quaternion.identity, 0);
+		bird.gameObject.transform.Rotate (0.0f, 90.0f, 0.0f);
 		MoveMent controller = bird.GetComponent<MoveMent>();
 		// Enable the camera
 		controller.isControllable = true;
 		Transform playerCam = bird.transform.Find ("Camera");
 		playerCam.gameObject.SetActive ( true);
+		start.enabled = true;
 
 	}
 	

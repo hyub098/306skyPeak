@@ -4,9 +4,11 @@ using System.Collections;
 public class MainManager : MonoBehaviour
 {
 	public Camera camera;
+	public Canvas start;
 	void Awake()
 	{
-	
+		start.enabled = false;
+
 		//Connect to the main photon server. 
 		if (!PhotonNetwork.connected)
 			PhotonNetwork.ConnectUsingSettings("v1.0"); // version of the game.
@@ -15,7 +17,7 @@ public class MainManager : MonoBehaviour
 		PhotonNetwork.playerName = PlayerPrefs.GetString("playerName", "Guest" + Random.Range(1, 9999));
 
 		//Set camera  for  "main menu" 
-		camera.farClipPlane = camera.nearClipPlane + 0.1f;
+
 		
 	}
 	
