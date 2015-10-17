@@ -11,6 +11,8 @@ public class MailCount : MonoBehaviour {
 	private float time;
     public Image achievement_timeMountain, achievement_timeCity, achievement_city3Lives, achievement_CloseOne, achievement_timePark, achievement_mountain3Lives, achievement_park3Lives;
 
+	public static bool timeMountain;
+
     public AudioClip getMailSound;
     public AudioClip postMailSound;
     public AudioClip winSound;
@@ -39,6 +41,8 @@ public class MailCount : MonoBehaviour {
         achievement_timePark.enabled = false;
         achievement_mountain3Lives.enabled = false;
         achievement_park3Lives.enabled = false;
+
+		timeMountain = false;
 
         source = GetComponent<AudioSource>();
         firstOnMailBox = 0;
@@ -167,6 +171,7 @@ public class MailCount : MonoBehaviour {
                 {
 
                     achievement_timeMountain.enabled = true;
+					timeMountain = true;
 
                 }
 

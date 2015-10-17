@@ -46,13 +46,13 @@ public class StoringScore : MonoBehaviour {
 		}
 		
 		StartCoroutine(PostScores(name, score));
-		mailCount = GetComponent<MailCount>();
-		Debug.Log(mailCount);
+		//mailCount = GetComponent<MailCount>();
+		Debug.Log(MailCount.timeMountain);
+
 		
-		/*if (mailCount.returnAch()) {
-			Debug.Log(mailCount.timeCity);
-			StartCoroutine (PostAchievement (name, "TimeCit"));
-		}*/
+		if (MailCount.timeMountain) {
+			StartCoroutine (PostAchievement (name, "TimeMount"));
+		}
 	}
 	
 	//Helper function to store in the database
