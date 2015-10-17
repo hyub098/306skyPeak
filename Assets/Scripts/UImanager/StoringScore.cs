@@ -46,13 +46,34 @@ public class StoringScore : MonoBehaviour {
 		}
 		
 		StartCoroutine(PostScores(name, score));
-		//mailCount = GetComponent<MailCount>();
-		Debug.Log(MailCount.timeMountain);
 
-		
 		if (MailCount.timeMountain) {
-			StartCoroutine (PostAchievement (name, "TimeMount"));
+			StartCoroutine (PostAchievement (name, "mountainKing"));
 		}
+
+		if (MailCount.city3Lives) {
+			StartCoroutine (PostAchievement (name, "StormyWeather"));
+		}
+
+		if (MailCount.closeOne) {
+			StartCoroutine (PostAchievement (name, "livinOnAPrayer"));
+		}
+
+		if (MailCount.mountain3Live) {
+			StartCoroutine (PostAchievement (name, "aintNoMountainHighEnough"));
+		}
+
+		if (MailCount.park3Lives) {
+			StartCoroutine (PostAchievement (name, "learningToFly"));
+		}
+
+		if (MailCount.timeCity) {
+			StartCoroutine (PostAchievement (name, "midnightCity"));
+		}
+
+		if (MailCount.timePark) {
+			StartCoroutine (PostAchievement (name, "runthroughthejungle"));
+		} 
 	}
 	
 	//Helper function to store in the database
