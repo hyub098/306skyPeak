@@ -58,14 +58,14 @@ GameObject:
   - 124: {fileID: 12430824}
   - 92: {fileID: 9221364}
   - 81: {fileID: 8159260}
-  - 114: {fileID: 11446396}
+  - 114: {fileID: 11453930}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &108670
 GameObject:
   m_ObjectHideFlags: 1
@@ -545,10 +545,10 @@ GameObject:
   - 54: {fileID: 5471832}
   - 65: {fileID: 6521242}
   - 114: {fileID: 11448558}
-  - 114: {fileID: 11470896}
-  - 114: {fileID: 11459372}
+  - 114: {fileID: 11457260}
+  - 114: {fileID: 11422250}
   m_Layer: 0
-  m_Name: GREAT_HORNED_OWL 1
+  m_Name: OnlineOwl
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -763,7 +763,7 @@ Transform:
   m_GameObject: {fileID: 180656}
   m_LocalRotation: {x: .0592201874, y: 0, z: 0, w: .998244941}
   m_LocalPosition: {x: 0, y: .468909383, z: .0507822037}
-  m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 472686}
   - {fileID: 406578}
@@ -1195,7 +1195,7 @@ Camera:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105420}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
@@ -1332,15 +1332,15 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
---- !u!114 &11446396
+--- !u!114 &11422250
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 105420}
+  m_GameObject: {fileID: 180656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26f10d2ecb3184d8da8ea365cfb9b403, type: 3}
+  m_Script: {fileID: 11500000, guid: 35d26344f92f741bf83236e549fd492c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11448558
@@ -1364,12 +1364,24 @@ MonoBehaviour:
   ownershipTransfer: 0
   ObservedComponents:
   - {fileID: 419950}
-  - {fileID: 11470896}
+  - {fileID: 11422250}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
   isRuntimeInstantiated: 0
---- !u!114 &11459372
+--- !u!114 &11453930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3922599f8ad4847879a43e7565995bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMine: 0
+--- !u!114 &11457260
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1377,23 +1389,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 180656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af34ff5a150bc49039bb0a4d2d12841e, type: 3}
+  m_Script: {fileID: 11500000, guid: a32e8365c726f421e9ca7d664f32eef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _characterState: 0
   isControllable: 0
   maxSpd: 10
---- !u!114 &11470896
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 180656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d38f02b6f6b4b1f8bb0ae3ff51f72a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!124 &12430824
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1494,11 +1495,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: isControllable
@@ -1510,20 +1511,24 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x
-      value: .100000001
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.y
-      value: .100000001
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
-      value: .100000001
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxSpd
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ObservedComponents.Array.data[1]
+      value: 
+      objectReference: {fileID: 11422250}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 180656}

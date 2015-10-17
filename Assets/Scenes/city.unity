@@ -11619,7 +11619,7 @@ Transform:
   m_Children:
   - {fileID: 1607939765}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
 --- !u!114 &762284587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13378,13 +13378,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mailCount: 0
   mailText: {fileID: 2130470183}
-  Congratulations: {fileID: 0}
-  achievement_Mountain: {fileID: 0}
-  achievement_Perfect: {fileID: 0}
-  achievement_City: {fileID: 0}
-  achievement_CloseOne: {fileID: 0}
-  achievement_Park: {fileID: 0}
-  achievement_Fast: {fileID: 0}
+  Congratulations: {fileID: 2116701621}
+  achievement_Mountain: {fileID: 412861384}
+  achievement_Perfect: {fileID: 688674658}
+  achievement_City: {fileID: 780801}
+  achievement_CloseOne: {fileID: 318792394}
+  achievement_Park: {fileID: 1821267688}
+  achievement_Fast: {fileID: 109032225}
   getMailSound: {fileID: 8300000, guid: b25a86a96e6107943b8664b2dc827ace, type: 3}
   postMailSound: {fileID: 8300000, guid: 70c1151b299e967479535ff12f855b77, type: 3}
 --- !u!114 &910471765
@@ -13413,6 +13413,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOver: {fileID: 0}
+  achievement_Pressure: {fileID: 1739030871}
+  achievement_Wipeout: {fileID: 1531048849}
 --- !u!65 &910471767
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13523,7 +13525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd8e1fe038ff466291b7ea2c0912bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOver: {fileID: 0}
+  gameOver: {fileID: 1846994470}
   mountainHelp: {fileID: 1607939771}
 --- !u!64 &910471773
 MeshCollider:

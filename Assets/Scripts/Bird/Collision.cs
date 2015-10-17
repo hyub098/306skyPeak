@@ -11,17 +11,19 @@ public class Collision : MonoBehaviour {
 	private Vector3 moveBackPosition;
 	private float time;
 	public Canvas gameOver;
-//    public Image achievement_Pressure, achievement_Wipeout;
+    public Image achievement_Pressure, achievement_Wipeout;
     private bool ispause;
 	private float deadTime;
 	private bool isSaved;
 
 	private LifeManager lifeManager;
+    private MailCount mailCount;
     
     private int count = 0;
 	private int life;
 	private bool invincible;
 	private float hitTime;
+    private int carryingMail;
 
 
 
@@ -40,8 +42,8 @@ public class Collision : MonoBehaviour {
 		gameOver.enabled = false;
 
 		skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();  
-//        achievement_Pressure.enabled = false;
-//        achievement_Wipeout.enabled = false;
+        achievement_Pressure.enabled = false;
+        achievement_Wipeout.enabled = false;
         ispause = false;
 		isSaved = false;
 		lifeManager = GetComponent<LifeManager> ();
@@ -107,6 +109,16 @@ public class Collision : MonoBehaviour {
 
     }
 
+	public void axeCollision(){
+		if (!invincible) {
+			invincible = true;
+			hitTime = time;
+			life = lifeManager.subtractLife();
+		}
+
+		checkDead();
+	}
+
 
     //collision detection
     void OnCollisionEnter(UnityEngine.Collision collision)
@@ -116,35 +128,69 @@ public class Collision : MonoBehaviour {
 			if (!collision.gameObject.CompareTag ("Mail box")) {
 
 			if(!invincible){
+				//stop it from further damage
 				invincible = true;
+				//record hit time
 				hitTime = time;
-				Debug.Log(hitTime);
+
+				//Change life
 				life = lifeManager.subtractLife ();
 //				flash();
 			}
 
 
+			checkDead();
 				
 			
-				if (life < 1) {
-					flyMovement.enabled = false;
-					rb.useGravity = true;
-					anim.Play ("falling");
-					//if (count == 0)
-					//{
-					//  count = count + 1;
-					//source.clip = gameoverSound;
-					//source.Play();
-					//Debug.Log("game over");
-					//}
-					gameOver.enabled = true;
 				
-				}
-			}
+        }
 
 
 
     }
+
+	void checkDead(){
+		if (life < 1) {
+			flyMovement.enabled = false;
+			rb.useGravity = true;
+			anim.Play ("falling");
+			//if (count == 0)
+			//{
+			//  count = count + 1;
+			//source.clip = gameoverSound;
+			//source.Play();
+			//Debug.Log("game over");
+			//}
+			gameOver.enabled = true;
+			
+			
+			
+			//Check for time and 3 mail achievements
+			
+			//Check if the time is less than 20 seconds
+			if (time <= 30)
+			{
+				achievement_Wipeout.enabled = true;
+			}
+			
+			//Check if the owl is carry more than 3 pieces of mail
+			mailCount = GetComponent<MailCount>();
+			carryingMail = mailCount.returnMail();
+			if (carryingMail >= 3)
+			{
+				achievement_Pressure.enabled = true;
+			}
+			
+			
+		}
+	}
+
+    public int returnLife()
+    {
+        return life;
+    }
+
+
 	IEnumerator flash(){
 		invincible = true;
 		for(int i = 0; i<2;i++){
