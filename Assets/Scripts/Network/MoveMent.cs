@@ -28,7 +28,9 @@ public class MoveMent : MonoBehaviour {
 	void OnGUI(){
 		if (isFinish) {
 			if(GUI.Button(new Rect(10,10,150,100),"button")){
-				GUILayout.Label("Congratulation!!!!!");
+
+				Application.LoadLevel(1);
+				print("something");
 			}
 
 		}

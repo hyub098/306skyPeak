@@ -207,7 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680a0cacc70918c4f99e9cc96a675ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 8300000, guid: 0e72ec3f58fa313438b9ef7e113f5954, type: 3}
 --- !u!114 &684679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -852,7 +851,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680a0cacc70918c4f99e9cc96a675ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 8300000, guid: 0e72ec3f58fa313438b9ef7e113f5954, type: 3}
 --- !u!114 &203940497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -918,7 +916,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680a0cacc70918c4f99e9cc96a675ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
 --- !u!1 &240428094 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 158456, guid: 30c13599319e24318b7896714077e21b, type: 2}
@@ -1992,7 +1989,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680a0cacc70918c4f99e9cc96a675ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
 --- !u!114 &778095773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3019,6 +3015,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpd: 4
+  windSound: {fileID: 0}
+  wingSound: {fileID: 0}
 --- !u!65 &1009465642
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3252,7 +3250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680a0cacc70918c4f99e9cc96a675ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 8300000, guid: 0e72ec3f58fa313438b9ef7e113f5954, type: 3}
 --- !u!82 &1019536146
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3801,9 +3798,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2011582588}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1654357089}
+        m_MethodName: LoadScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4879,6 +4876,7 @@ GameObject:
   - 114: {fileID: 1654357088}
   - 114: {fileID: 1654357087}
   - 114: {fileID: 1654357086}
+  - 114: {fileID: 1654357089}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
@@ -4975,6 +4973,17 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &1654357089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1654357083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680a0cacc70918c4f99e9cc96a675ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1722452522
 GameObject:
   m_ObjectHideFlags: 0
@@ -5351,7 +5360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680a0cacc70918c4f99e9cc96a675ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
 --- !u!114 &1819990016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5386,7 +5394,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680a0cacc70918c4f99e9cc96a675ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
 --- !u!1 &1886238850 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 181320, guid: 4653f2212890168438a449a7915bdb1d, type: 2}

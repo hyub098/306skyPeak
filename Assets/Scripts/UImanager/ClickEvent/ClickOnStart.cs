@@ -9,7 +9,7 @@ public class ClickOnStart : MonoBehaviour {
     //public Canvas start1;
     //public Canvas go;
     //public Canvas current;
-    public Canvas congratulations;
+    //public Canvas congratulations;
     public Text n;
 
     private bool start = false;
@@ -23,8 +23,8 @@ public class ClickOnStart : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        congratulations.enabled = false;
-        start3.enabled = true;
+        //congratulations.enabled = false;
+        //start3.enabled = true;
         //start2.enabled = false;
         //start1.enabled = false;
         //go.enabled = false;
@@ -41,6 +41,7 @@ public class ClickOnStart : MonoBehaviour {
         realtime = Time.deltaTime + realtime;
         if (start)
         {
+			//Debug.Log("start game111");
             if (realtime - starttime > 1 && three)
             {
                 //start3.enabled = false;
