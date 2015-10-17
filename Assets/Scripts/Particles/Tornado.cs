@@ -25,7 +25,7 @@ public class Tornado : MonoBehaviour {
 	void Update () {
 
 		realtime = Time.deltaTime + realtime;
-		if (realtime - time > 3 && collide) {
+		if (realtime - time > 2 && collide) {
 		
 			flymovement.enabled = true;
 			rb.velocity = Vector3.zero;
@@ -38,12 +38,13 @@ public class Tornado : MonoBehaviour {
 
 	//If near tornado, create collision
 	void checkNear(){
+
 		if (Vector3.Distance (player.transform.position, transform.position) < 8) {
 			flymovement.enabled = false;
 			collide = true;
 			time = realtime;
 			
-			rb.AddForce (5000.0f, 200.0f, 3000.0f, ForceMode.Force);
+			rb.AddForce (200f, -20.0f*Time.deltaTime,2000f, ForceMode.Force);
 		}
 	}
 }

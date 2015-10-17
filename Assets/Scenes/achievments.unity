@@ -441,7 +441,7 @@ GameObject:
   - 222: {fileID: 251610184}
   - 114: {fileID: 251610183}
   m_Layer: 5
-  m_Name: 'secondAch. '
+  m_Name: ain'tNoMaountainHighEnough
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -890,7 +890,7 @@ GameObject:
   - 222: {fileID: 641617421}
   - 114: {fileID: 641617420}
   m_Layer: 5
-  m_Name: fourthAch.
+  m_Name: learningToFly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1079,15 +1079,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'first achievment text
-
-    ...........................................................................................................................f.
-
-    .
-
-    .
-
-    .'
+  m_Text: 'Everything is against you but you still manage to do your job! Deliver
+    all 7 scrolls along with your 3 lives to the mailbox to earn this badge. It''sa  tough
+    world out there. '
 --- !u!222 &737641869
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1159,15 +1153,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'fourth achievment text
-
-    ...........................................................................................................................f.
-
-    .
-
-    .
-
-    .'
+  m_Text: "Have you finished your first flying experience safely? Deliver all 3 scrolls
+    in the \"park\" stage without losing lives to achieve this badge. \nGet your learner's
+    license already! "
 --- !u!222 &749674812
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1257,7 +1245,7 @@ GameObject:
   - 222: {fileID: 936100296}
   - 114: {fileID: 936100295}
   m_Layer: 5
-  m_Name: seventhAch.
+  m_Name: mountainKing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1385,7 +1373,7 @@ GameObject:
   - 222: {fileID: 1045294128}
   - 114: {fileID: 1045294127}
   m_Layer: 5
-  m_Name: firstAch.
+  m_Name: stormyWeather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1598,15 +1586,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'second achievment text
-
-    ...........................................................................................................................f.
-
-    .
-
-    .
-
-    .'
+  m_Text: Somegot promoted to work in a rocky environment? Good job! Deliver your
+    5 scrolls unwounded and unhurt to get ths badge. Shine on!
 --- !u!222 &1422187141
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1799,15 +1780,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'sixth achievment text
-
-    ...........................................................................................................................f.
-
-    .
-
-    .
-
-    .'
+  m_Text: You learnt how to fly and you're doing it fast! Finish your job at the "park"
+    stage under one minute to achieve this badge. Fly fast!
 --- !u!222 &1669865728
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2123,7 +2097,7 @@ GameObject:
   - 222: {fileID: 1995669127}
   - 114: {fileID: 1995669126}
   m_Layer: 5
-  m_Name: 'sixthAch. '
+  m_Name: parkunder1min
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

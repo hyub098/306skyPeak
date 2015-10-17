@@ -14,6 +14,8 @@ public class HunterMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animation> ();
+		axe = GetComponentInChildren<Axe> ();
+		axe.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -41,8 +43,8 @@ public class HunterMovement : MonoBehaviour {
 
 	//Create new destination
 	void newDest(){
-		float newX = UnityEngine.Random.Range (0, 20);
-		float newZ = UnityEngine.Random.Range (0, 20);
+		float newX = UnityEngine.Random.Range (0, 60);
+		float newZ = UnityEngine.Random.Range (0, 60);
 
 		dest = new Vector3 (newX, 1, newZ);
 	}
@@ -60,9 +62,11 @@ public class HunterMovement : MonoBehaviour {
 	IEnumerator shootTime(){
 		shoot = true;
 		anim.Play ("Lumbering");
-		//axe.shootAxe ();
-		yield return new WaitForSeconds(5f);
+		axe.enabled = true;
 
+		anim.PlayQueued ("Idle");
+		yield return new WaitForSeconds(8f);
+		axe.enabled = false;
 		shoot = false;
 		anim.Play ("Walk");
 

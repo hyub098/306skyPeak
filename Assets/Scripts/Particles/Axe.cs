@@ -9,15 +9,16 @@ public class Axe : MonoBehaviour {
     private Vector3 location;
 	private bool destroy = true;
 
+
     // Use this for initialization
     void Start () {
-        
     }
 	
 	// Update is called once per frame
 	void Update () {
         
-        location = owl.transform.position;
+		location = owl.transform.position;
+//		location =  Vector3.Scale(owl.transform.position, new Vector3(10,10,10));
 
 		if (destroy) {
 			axeClone = createAxe ();
@@ -34,7 +35,8 @@ public class Axe : MonoBehaviour {
     }
 
 
-	public GameObject createAxe(){
+
+	GameObject createAxe(){
 
 		//Create Axe as game object
 		GameObject instantiatedProjectile = Instantiate(axe, transform.position, transform.rotation) as GameObject;
@@ -47,12 +49,16 @@ public class Axe : MonoBehaviour {
 
 	void shootAxe(GameObject axe){
 
-		// instantiatedProjectile.transform.Rotate(-90f, 0.0f, 0.0f);
-		axe.transform.position = Vector3.Lerp(axe.transform.position, location, 0.1f);
-	
-		//Destroy the arrow 
-		Destroy(axe, 3);
+	//	axe.transform.position = Vector3.Lerp(axe.transform.position, location, 0.001f);
+		axe.transform.position += axe.transform.forward * Time.deltaTime * 10.0f;
+		axe.transform.Rotate (0,0,1000);
+
+
+
+		//Destroy the axe 
+		Destroy(axe, 10);
 
 	}
+
 
 }

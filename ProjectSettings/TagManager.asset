@@ -13,6 +13,8 @@ TagManager:
   - Tornado
   - No Impact
   - Axe
+  - SF_Door
+  - LobbyCamera
   layers:
   - Default
   - TransparentFX
