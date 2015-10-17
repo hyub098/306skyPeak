@@ -51,12 +51,12 @@ public class LifeManager : MonoBehaviour {
 
 
 
-			//  using (System.IO.StreamWriter file =
-			//   new System.IO.StreamWriter(@"C:\Users\Public\skypeak_log.txt", true))
-			//{
-			//  file.WriteLine("Expected outcome: life " + (life + 1).ToString() + " -> " + "collision" + "-->" + life.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
-			//file.WriteLine("assert: life " + (life + 1).ToString() + " -> " + "collision" + "-->" + life.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
-			//}
+			  using (System.IO.StreamWriter file =
+			   new System.IO.StreamWriter(@"C:\Users\Public\skypeak_log.txt", true))
+			{
+			  file.WriteLine("Expected outcome: life " + (life + 1).ToString() + " -> " + "collision" + "-->" + life.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
+			file.WriteLine("assert: life " + (life + 1).ToString() + " -> " + "collision" + "-->" + life.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
+			}
 			
 		}
 
