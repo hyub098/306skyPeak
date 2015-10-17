@@ -9458,6 +9458,80 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c370a91b345318d4eac7637d8ad2b05a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &786477163 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 143502, guid: 6389cdd320e1a4deca3cc4e2e8684538, type: 2}
+  m_PrefabInternal: {fileID: 969717443}
+--- !u!82 &786477168
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 786477163}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!4 &788536709 stripped
 Transform:
   m_PrefabParentObject: {fileID: 442224, guid: 18cc4e56883a25347965f7758ed71742, type: 2}
@@ -11642,6 +11716,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11441426, guid: 6389cdd320e1a4deca3cc4e2e8684538, type: 2}
+      propertyPath: throwSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bee4b5f45df460248bd2d0db5c3e7da8, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6389cdd320e1a4deca3cc4e2e8684538, type: 2}
   m_IsPrefabParent: 0
@@ -26095,7 +26173,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2078015720}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -26181,8 +26259,9 @@ MonoBehaviour:
   achievement_timePark: {fileID: 586726225}
   achievement_mountain3Lives: {fileID: 896521883}
   achievement_park3Lives: {fileID: 582538207}
-  getMailSound: {fileID: 8300000, guid: b25a86a96e6107943b8664b2dc827ace, type: 3}
+  getMailSound: {fileID: 8300000, guid: 66c06e4b99367c543a560bbba177d12f, type: 3}
   postMailSound: {fileID: 8300000, guid: 70c1151b299e967479535ff12f855b77, type: 3}
+  winSound: {fileID: 8300000, guid: a8adfaae163e59641b2754da4f262067, type: 3}
 --- !u!114 &2078015728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26196,6 +26275,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpd: 4
+  windSound: {fileID: 8300000, guid: e39fb023bd852704c9455b66733c05cc, type: 3}
+  wingSound: {fileID: 8300000, guid: 6ab6bf0b8eaedf24d820677edcc5999c, type: 3}
 --- !u!114 &2078015729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26211,6 +26292,8 @@ MonoBehaviour:
   gameOver: {fileID: 45865085}
   achievement_Pressure: {fileID: 975463469}
   achievement_Wipeout: {fileID: 1781222583}
+  collisionSound: {fileID: 8300000, guid: 91d3042120789dd4cb27aee4eb1b82fa, type: 3}
+  gameOverSound: {fileID: 8300000, guid: 9fee655191e0bd847bb895531704f6f9, type: 3}
 --- !u!65 &2078015730
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -13,12 +13,14 @@ public class MailCount : MonoBehaviour {
 
     public AudioClip getMailSound;
     public AudioClip postMailSound;
+    public AudioClip winSound;
     private AudioSource source;
 
     private Rigidbody rb;
 	private int level;
     private int life;
     private Collision collision;
+    private int firstOnMailBox;
 
 
 
@@ -38,7 +40,8 @@ public class MailCount : MonoBehaviour {
         achievement_mountain3Lives.enabled = false;
         achievement_park3Lives.enabled = false;
 
-        //source = GetComponent<AudioSource>();
+        source = GetComponent<AudioSource>();
+        firstOnMailBox = 0;
         level = getLevel();
     }
 
@@ -64,9 +67,7 @@ public class MailCount : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Mail box")) {
 			Debug.Log ("Deliver");
 			checkWin ();
-			//mailCount=0;
-            //source.clip = postMailSound;
-            //source.Play();
+            //mailCount=0;
 
         }
 
@@ -81,8 +82,8 @@ public class MailCount : MonoBehaviour {
 			mailCount++;
 
 			//play audio
-            //source.clip = getMailSound;
-            //source.Play();
+            source.clip = getMailSound;
+            source.Play();
 
 			//debug file
             using (System.IO.StreamWriter file =
@@ -116,7 +117,9 @@ public class MailCount : MonoBehaviour {
             if (mailCount >= 3)
             {
                 Congratulations.enabled = true;
-				Time.timeScale = 0f; //Stop the game
+                source.clip = winSound;
+                source.Play();
+                Time.timeScale = 0f; //Stop the game
                 //Achievement for beating park in under a minute
                 if (time < 60)
                 {
@@ -138,6 +141,19 @@ public class MailCount : MonoBehaviour {
                     achievement_CloseOne.enabled = true;
                 }
 
+            }
+            else
+            {
+                if (firstOnMailBox == 0)
+                {
+
+                    firstOnMailBox = 1;
+                }
+                else
+                {
+                    source.clip = postMailSound;
+                    source.Play();
+                }
             }
         }
         else if (level == 2)
