@@ -18,10 +18,13 @@ public class Timer: MonoBehaviour {
 	public Text timerText;
 	public Text scoreText;
 
+	private int level;
+
 	// Initialize timer to 00:00
 	void Start () {
 
 		SetTimerText();
+		level = getLevel;
 	}
 	
 	// Update the timer every second
@@ -46,8 +49,19 @@ public class Timer: MonoBehaviour {
 		timerText.text = timerFormatted;
 	}
 
+	int getLevel(){
+		int level = 0;
+		if(Application.loadedLevelName.Equals("Park")){
+			level = 1;
+		}else if(Application.loadedLevelName.Equals("mountain1")){
+			level = 2;
+		}else if(Application.loadedLevelName.Equals("city")){
+			level = 3;
+		}
+		return level;
+	}
+
 	// Algorithm to calculate the score using the time played
-	// TODO This will be improved later
 	void calcScore() {
         
 		totalTime = (minute * 60) + second;
@@ -87,8 +101,14 @@ public class Timer: MonoBehaviour {
         }
         
         // Store the player's score
-        PlayerPrefs.SetInt("highscore", score);
-    }
+		if (level == 1) {
+			PlayerPrefs.SetInt ("park", score);
+		} else if (level == 2) {
+			PlayerPrefs.SetInt ("mountain", score);
+		} else if (level == 3) {
+			PlayerPrefs.SetInt ("city", score);
+		}
 
+    }
 
 }
