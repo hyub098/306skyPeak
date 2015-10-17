@@ -24,7 +24,7 @@ public class Timer: MonoBehaviour {
 	void Start () {
 
 		SetTimerText();
-		level = getLevel;
+		level = getLevel();
 	}
 	
 	// Update the timer every second
