@@ -25,6 +25,16 @@ public class MoveMent : MonoBehaviour {
 	private int count2 = 0;
 
 
+	void OnGUI(){
+		if (isFinish) {
+			if(GUI.Button(new Rect(10,10,150,100),"button")){
+				print("something");
+			}
+
+		}
+
+	}
+
 	// Use this for initialization
 	void Start () {
 	
@@ -35,6 +45,7 @@ public class MoveMent : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();	
 		isFinish = false;
 		maxSpd = 10;
+
 	}
 	
 	// Update is called once per frame
@@ -55,6 +66,7 @@ public class MoveMent : MonoBehaviour {
 		if (isFinish) {
 		
 			Time.timeScale = 0f; //Stops the game
+
 		
 		}
 
