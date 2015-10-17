@@ -12,6 +12,10 @@ public class Collision : MonoBehaviour {
 	private float time;
 	public Canvas gameOver;
     public Image achievement_Pressure, achievement_Wipeout;
+
+	public static bool pressure;
+	public static bool wipeout;
+
     private bool ispause;
 	private float deadTime;
 	private bool isSaved;
@@ -50,6 +54,10 @@ public class Collision : MonoBehaviour {
 		isSaved = false;
 		lifeManager = GetComponent<LifeManager> ();
 		invincible = false;
+
+		pressure = false;
+		wipeout = false; 
+
 		hitTime = 0;
 		life = 3;
         source = GetComponent<AudioSource>();
@@ -167,6 +175,7 @@ public class Collision : MonoBehaviour {
 			if (time <= 30)
 			{
 				achievement_Wipeout.enabled = true;
+				wipeout = true;
 			}
 			
 			//Check if the owl is carry more than 3 pieces of mail
@@ -175,6 +184,7 @@ public class Collision : MonoBehaviour {
 			if (carryingMail >= 3)
 			{
 				achievement_Pressure.enabled = true;
+				pressure = true;
 			}
 			
 			

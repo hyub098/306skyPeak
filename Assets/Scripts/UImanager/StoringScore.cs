@@ -74,6 +74,14 @@ public class StoringScore : MonoBehaviour {
 		if (MailCount.timePark) {
 			StartCoroutine (PostAchievement (name, "runthroughthejungle"));
 		} 
+
+		if (Collision.pressure) {
+			StartCoroutine (PostAchievement (name, "underPressure"));
+		} 
+
+		if (Collision.wipeout) {
+			StartCoroutine (PostAchievement (name, "dontStopBelieving"));
+		} 
 	}
 	
 	//Helper function to store in the database
