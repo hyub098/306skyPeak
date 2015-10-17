@@ -43,8 +43,14 @@ public class MoveMent : MonoBehaviour {
             print("something");
             }
 
-        }
+    
+			if(GUI.Button(new Rect(10,10,150,100),"button")){
 
+				Application.LoadLevel(1);
+				print("something");
+			}
+
+		}
 	}
 
 	// Use this for initialization

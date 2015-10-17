@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
 	void OnJoinedRoom()
 	{
 		StartGame();
+
 	}
 	
 	IEnumerator OnLeftRoom()
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour {
 		if (GUILayout.Button("Leave Room"))
 		{
 			PhotonNetwork.LeaveRoom();
+			start.enabled=false;
 		}
 	}
 	
