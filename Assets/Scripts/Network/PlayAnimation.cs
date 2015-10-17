@@ -5,10 +5,16 @@ public class PlayAnimation : MonoBehaviour {
 
 	// Use this for initialization
 	public Animation animation;
-	
+	public bool canOpen=true;
 	void Start() {
 		animation = GetComponent<Animation>();
-		StartCoroutine(MyCoroutine());
+		if (canOpen) {
+			animation.Play ("open");
+		}
+
+	}
+	void Update(){
+
 	}
 	
 	void RepeatMyCoroutine() {
