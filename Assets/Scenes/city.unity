@@ -9695,7 +9695,7 @@ LineRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 00ed4a2b0d52c4b389443404faff8481, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -9716,8 +9716,8 @@ LineRenderer:
   - {x: 100, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   m_Parameters:
-    startWidth: 5
-    endWidth: 5
+    startWidth: 3
+    endWidth: 3
     m_StartColor:
       serializedVersion: 2
       rgba: 4278190335
@@ -11315,7 +11315,7 @@ Transform:
   - {fileID: 725685297}
   - {fileID: 61101055}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1001 &725685293
 Prefab:
   m_ObjectHideFlags: 0
@@ -16741,7 +16741,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &1043143663 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 101162, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
