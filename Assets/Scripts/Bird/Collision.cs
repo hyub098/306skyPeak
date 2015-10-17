@@ -108,17 +108,7 @@ public class Collision : MonoBehaviour {
 //        }
 
     }
-
-	public void axeCollision(){
-		if (!invincible) {
-			invincible = true;
-			hitTime = time;
-			life = lifeManager.subtractLife();
-		}
-
-		checkDead();
-	}
-
+	
 
     //collision detection
     void OnCollisionEnter(UnityEngine.Collision collision)
