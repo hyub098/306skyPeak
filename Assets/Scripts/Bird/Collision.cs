@@ -109,6 +109,16 @@ public class Collision : MonoBehaviour {
 
     }
 
+	public void axeCollision(){
+		if (!invincible) {
+			invincible = true;
+			hitTime = time;
+			life = lifeManager.subtractLife();
+		}
+
+		checkDead();
+	}
+
 
     //collision detection
     void OnCollisionEnter(UnityEngine.Collision collision)
@@ -118,54 +128,62 @@ public class Collision : MonoBehaviour {
 			if (!collision.gameObject.CompareTag ("Mail box")) {
 
 			if(!invincible){
+				//stop it from further damage
 				invincible = true;
+				//record hit time
 				hitTime = time;
-				Debug.Log(hitTime);
+
+				//Change life
 				life = lifeManager.subtractLife ();
 //				flash();
 			}
 
 
+			checkDead();
 				
 			
-				if (life < 1) {
-					flyMovement.enabled = false;
-					rb.useGravity = true;
-					anim.Play ("falling");
-					//if (count == 0)
-					//{
-					//  count = count + 1;
-					//source.clip = gameoverSound;
-					//source.Play();
-					//Debug.Log("game over");
-					//}
-					gameOver.enabled = true;
-
-
-
-                    //Check for time and 3 mail achievements
-
-                    //Check if the time is less than 20 seconds
-                    if (time <= 30)
-                      {
-                          achievement_Wipeout.enabled = true;
-                      }
-
-                    //Check if the owl is carry more than 3 pieces of mail
-                    mailCount = GetComponent<MailCount>();
-                    carryingMail = mailCount.returnMail();
-                    if (carryingMail >= 3)
-                        {
-                            achievement_Pressure.enabled = true;
-                        }
-
-
-            }
+				
         }
 
 
 
     }
+
+	void checkDead(){
+		if (life < 1) {
+			flyMovement.enabled = false;
+			rb.useGravity = true;
+			anim.Play ("falling");
+			//if (count == 0)
+			//{
+			//  count = count + 1;
+			//source.clip = gameoverSound;
+			//source.Play();
+			//Debug.Log("game over");
+			//}
+			gameOver.enabled = true;
+			
+			
+			
+			//Check for time and 3 mail achievements
+			
+			//Check if the time is less than 20 seconds
+			if (time <= 30)
+			{
+				achievement_Wipeout.enabled = true;
+			}
+			
+			//Check if the owl is carry more than 3 pieces of mail
+			mailCount = GetComponent<MailCount>();
+			carryingMail = mailCount.returnMail();
+			if (carryingMail >= 3)
+			{
+				achievement_Pressure.enabled = true;
+			}
+			
+			
+		}
+	}
 
     public int returnLife()
     {
