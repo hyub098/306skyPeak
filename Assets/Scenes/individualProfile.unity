@@ -1065,7 +1065,7 @@ GameObject:
   - 82: {fileID: 730212096}
   - 114: {fileID: 730212100}
   m_Layer: 0
-  m_Name: Canvas (1)
+  m_Name: inputCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1234,12 +1234,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 730212093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07560d20227cb3946be957d6fb0a45c8, type: 3}
+  m_Script: {fileID: 11500000, guid: e2ff6b24349bdfb4c96dd11e82e5d756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  park: {fileID: 0}
-  city: {fileID: 0}
-  mountain: {fileID: 0}
+  input: {fileID: 730212099}
+  actualScene: {fileID: 1326231419}
 --- !u!1 &763182249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,7 +1516,6 @@ MonoBehaviour:
   g_image: {fileID: 0}
   h_image: {fileID: 0}
   i_image: {fileID: 0}
-  namesText: {fileID: 0}
 --- !u!114 &936793443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1619,6 +1617,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 952611141}
   - 108: {fileID: 952611140}
+  - 114: {fileID: 952611142}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1670,6 +1669,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &952611142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 952611139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ff6b24349bdfb4c96dd11e82e5d756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 0}
+  actualScene: {fileID: 0}
 --- !u!1 &970932265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1916,9 +1928,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 730212094}
+      - m_Target: {fileID: 730212100}
         m_MethodName: LoadScene
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2348,15 +2360,15 @@ GameObject:
   - 223: {fileID: 1326231419}
   - 114: {fileID: 1326231418}
   - 114: {fileID: 1326231417}
-  - 114: {fileID: 1326231422}
   - 114: {fileID: 1326231421}
+  - 114: {fileID: 1326231422}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: actualScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1326231417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2451,12 +2463,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1326231416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07560d20227cb3946be957d6fb0a45c8, type: 3}
+  m_Script: {fileID: 11500000, guid: e2ff6b24349bdfb4c96dd11e82e5d756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  park: {fileID: 0}
-  city: {fileID: 0}
-  mountain: {fileID: 0}
+  input: {fileID: 730212099}
+  actualScene: {fileID: 1326231419}
 --- !u!1 &1372290675
 GameObject:
   m_ObjectHideFlags: 0
