@@ -11,7 +11,15 @@ public class MailCount : MonoBehaviour {
 	private float time;
     public Image achievement_timeMountain, achievement_timeCity, achievement_city3Lives, achievement_CloseOne, achievement_timePark, achievement_mountain3Lives, achievement_park3Lives;
 
+	public static bool timePark;
 	public static bool timeMountain;
+	public static bool timeCity;
+	
+	public static bool closeOne;
+
+	public static bool city3Lives;
+	public static bool mountain3Live;
+	public static bool park3Lives;
 
     public AudioClip getMailSound;
     public AudioClip postMailSound;
@@ -42,7 +50,15 @@ public class MailCount : MonoBehaviour {
         achievement_mountain3Lives.enabled = false;
         achievement_park3Lives.enabled = false;
 
+		timePark = false;
 		timeMountain = false;
+		timeCity = false;
+		
+		closeOne = false;
+		
+		city3Lives = false;
+		mountain3Live = false;
+		park3Lives = false;
 
         source = GetComponent<AudioSource>();
         firstOnMailBox = 0;
@@ -129,6 +145,7 @@ public class MailCount : MonoBehaviour {
                 {
 
                     achievement_timePark.enabled = true;
+					timePark = true;
 
                 }
 
@@ -137,12 +154,14 @@ public class MailCount : MonoBehaviour {
                 if (life == 3)
                 {
                     achievement_park3Lives.enabled = true;
+					park3Lives = true;
                 }
 
                 //Achievement for winning with only one life left
                 if (life == 1)
                 {
                     achievement_CloseOne.enabled = true;
+					closeOne = true;
                 }
 
             }
@@ -180,12 +199,14 @@ public class MailCount : MonoBehaviour {
                 if (life == 3)
                 {
                     achievement_mountain3Lives.enabled = true;
+					mountain3Live = true;
                 }
 
                 //Achievement for winning with only one life left
                 if (life == 1)
                 {
                     achievement_CloseOne.enabled = true;
+					closeOne = true;
                 }
 
             }
@@ -201,6 +222,7 @@ public class MailCount : MonoBehaviour {
                 {
 
                     achievement_timeCity.enabled = true;
+					timeCity = true;
 
                 }
 
@@ -209,12 +231,14 @@ public class MailCount : MonoBehaviour {
                 if (life == 3)
                 {
                     achievement_city3Lives.enabled = true;
+					city3Lives = true;
                 }
 
                 //Achievement for winning with only one life left
                 if (life == 1)
                 {
                     achievement_CloseOne.enabled = true;
+					closeOne = true;
                 }
 
             }
