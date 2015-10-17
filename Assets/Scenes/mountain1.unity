@@ -720,6 +720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOver: {fileID: 1415713692}
   mountainHelp: {fileID: 1445546221}
+  radarCam: {fileID: 1062137977}
 --- !u!114 &29683421
 MonoBehaviour:
   m_ObjectHideFlags: 0
