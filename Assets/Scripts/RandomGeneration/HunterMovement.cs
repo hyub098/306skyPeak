@@ -43,8 +43,8 @@ public class HunterMovement : MonoBehaviour {
 
 	//Create new destination
 	void newDest(){
-		float newX = UnityEngine.Random.Range (0, 20);
-		float newZ = UnityEngine.Random.Range (0, 20);
+		float newX = UnityEngine.Random.Range (0, 60);
+		float newZ = UnityEngine.Random.Range (0, 60);
 
 		dest = new Vector3 (newX, 1, newZ);
 	}
@@ -65,7 +65,7 @@ public class HunterMovement : MonoBehaviour {
 		axe.enabled = true;
 
 		anim.PlayQueued ("Idle");
-		yield return new WaitForSeconds(4f);
+		yield return new WaitForSeconds(8f);
 		axe.enabled = false;
 		shoot = false;
 		anim.Play ("Walk");
