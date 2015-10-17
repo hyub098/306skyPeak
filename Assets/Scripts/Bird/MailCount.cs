@@ -7,52 +7,53 @@ using System.Collections;
 public class MailCount : MonoBehaviour {
 	public int mailCount;
 	public Text mailText;
-	public Text gold;
-	public int goldCount;
 	public  Canvas Congratulations;
 	private float time;
-	private float winTime;
-	private bool isSaved;
-	public Text achieveText;
+    public Image achievement_Mountain, achievement_Perfect, achievement_City, achievement_CloseOne, achievement_Park, achievement_Fast;
 
-	private Rigidbody rb;
+    public AudioClip getMailSound;
+    public AudioClip postMailSound;
+    private AudioSource source;
 
-	// Use this for initialization
-	void Start () {
+    private Rigidbody rb;
+	private int level;
+    private int life;
+    private Collision collision;
+
+
+
+
+    // Use this for initialization
+    void Start () {
+        collision = GetComponent<Collision>();
+        Debug.Log ("script added:" );
 		rb = GetComponent<Rigidbody> ();
 		mailCount = 0;
 		Congratulations.enabled = false;
-		isSaved = false;
-		achieveText.enabled = false;
-	}
+        achievement_Mountain.enabled = false;
+        achievement_Perfect.enabled = false;
+        achievement_City.enabled = false;
+        achievement_CloseOne.enabled = false;
+        achievement_Park.enabled = false;
+        achievement_Fast.enabled = false;
+       
+        //source = GetComponent<AudioSource>();
+		level = getLevel();
+    }
+
+
 	
 	// Update is called once per frame
 	void Update () {
 
+		//update mail number
 		mailText.text =  ("Mail:" + mailCount);
-		gold.text = ("Gold: " + goldCount);
 
 		time = time + (Time.deltaTime) * 1 ;
-		if (goldCount == 300) {
+	
 			
-			if(!isSaved){
-				winTime = time;
-				isSaved=true;
-			}
-			Debug.Log(time-winTime);
-			Congratulations.enabled=true;
-
-			if(time - winTime > 3){
-				Application.LoadLevel("map");
-			}
-
-			if(time < 60){
-				//achievement
-				achieveText.enabled = true;
-
-			}
 			
-		}
+
 	
 	}
 
@@ -61,19 +62,28 @@ public class MailCount : MonoBehaviour {
 		// If the player collide withe the mail box, increase the gold according to the number of mails
 		if (other.gameObject.CompareTag ("Mail box")) {
 			Debug.Log ("Deliver");
-			goldCount=goldCount+mailCount*100;
-			mailCount=0;
+			checkWin ();
+			//mailCount=0;
+            //source.clip = postMailSound;
+            //source.Play();
 
-
-		}
+        }
 
 		// If the player hit the mail
 		if (other.gameObject.CompareTag ("Mail")) {
 			// Player can only carry 3 mails at a time
-			if(mailCount<3){
+			if(mailCount<10){
 			other.gameObject.SetActive (false);
+
+
 			Debug.Log (" Got Mail");
 			mailCount++;
+
+			//play audio
+            //source.clip = getMailSound;
+            //source.Play();
+
+			//debug file
             using (System.IO.StreamWriter file =
                new System.IO.StreamWriter(@"C:\Users\Public\skypeak_log.txt", true))
                 {
@@ -84,4 +94,114 @@ public class MailCount : MonoBehaviour {
             }
         }
 	}
+
+	int getLevel(){
+		int level = 0;
+		if(Application.loadedLevelName.Equals("Park")){
+			level = 1;
+		}else if(Application.loadedLevelName.Equals("mountain1")){
+			level = 2;
+		}else if(Application.loadedLevelName.Equals("city")){
+			level = 3;
+		}
+		return level;
+	}
+
+    void checkWin()
+    {
+        Debug.Log("check win");
+        if (level == 1)
+        {
+            if (mailCount >= 3)
+            {
+                Congratulations.enabled = true;
+				Time.timeScale = 0f; //Stop the game
+                //Achievement for beating park in under a minute
+                if (time < 60)
+                {
+
+                    achievement_Park.enabled = true;
+
+                }
+
+                //Achievement for beating park without losing a life
+                life = collision.returnLife();
+                if (life == 3)
+                {
+                    achievement_Mountain.enabled = true;
+                }
+
+                //Achievement for winning with only one life left
+                if (life == 1)
+                {
+                    achievement_CloseOne.enabled = true;
+                }
+
+            }
+        }
+        else if (level == 2)
+        {
+            if (mailCount >= 5)
+            {
+                Congratulations.enabled = true;
+				Time.timeScale = 0f; //Stop the game
+                //Achievement for beating mountain in under a minute
+                if (time < 120)
+                {
+
+                    achievement_Mountain.enabled = true;
+
+                }
+
+                //Achievement for beating mountain without losing a life
+                life = collision.returnLife();
+                if (life == 3)
+                {
+                    achievement_Park.enabled = true;
+                }
+
+                //Achievement for winning with only one life left
+                if (life == 1)
+                {
+                    achievement_CloseOne.enabled = true;
+                }
+
+            }
+        }
+        else if (level == 3)
+        {
+            if (mailCount >= 10)
+            {
+                Congratulations.enabled = true;
+				Time.timeScale = 0f; //Stop the game
+                //Achievement for beating city in under 3 minutes
+                if (time < 180)
+                {
+
+                    achievement_City.enabled = true;
+
+                }
+
+                //Achievement for beating city without losing a life
+                life = collision.returnLife();
+                if (life == 3)
+                {
+                    achievement_Park.enabled = true;
+                }
+
+                //Achievement for winning with only one life left
+                if (life == 1)
+                {
+                    achievement_CloseOne.enabled = true;
+                }
+
+            }
+        }
+    }
+
+
+    public int returnMail()
+    {
+        return mailCount;
+    }
 }

@@ -8,6 +8,11 @@ TagManager:
   - Mail
   - Pick Up
   - Mail box
+  - AICars
+  - Ground
+  - Tornado
+  - No Impact
+  - Axe
   layers:
   - Default
   - TransparentFX
@@ -19,7 +24,7 @@ TagManager:
   - 
   - Radar
   - Invisible
-  - 
+  - Particle Collision
   - 
   - 
   - 

@@ -1,0 +1,54 @@
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 2:21:36 PM
+assert: mailcount 0 -> collision with mail-->1 at time 2:21:36 PM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 2:21:40 PM
+assert: mailcount 1 -> collision with mail-->2 at time 2:21:40 PM
+Expected outcome: mailcount 2 -> collision with mail-->3 at time 2:21:49 PM
+assert: mailcount 2 -> collision with mail-->3 at time 2:21:49 PM
+Expected outcome: life 3 -> collision-->2 at time 1:22:41 PM
+assert: life 3 -> collision-->2 at time 1:22:41 PM
+Expected outcome: life 2 -> collision-->1 at time 1:22:42 PM
+assert: life 2 -> collision-->1 at time 1:22:42 PM
+Expected outcome: life 1 -> collision-->0 at time 1:22:51 PM
+assert: life 1 -> collision-->0 at time 1:22:51 PM
+Expected outcome: life 3 -> collision-->2 at time 1:22:56 PM
+assert: life 3 -> collision-->2 at time 1:22:56 PM
+Expected outcome: life 3 -> collision-->2 at time 2:50:39 PM
+assert: life 3 -> collision-->2 at time 2:50:39 PM
+Expected outcome: life 2 -> collision-->1 at time 2:50:41 PM
+assert: life 2 -> collision-->1 at time 2:50:41 PM
+Expected outcome: life 1 -> collision-->0 at time 2:50:44 PM
+assert: life 1 -> collision-->0 at time 2:50:44 PM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 2:57:52 PM
+assert: mailcount 0 -> collision with mail-->1 at time 2:57:52 PM
+Expected outcome: life 3 -> collision-->2 at time 2:58:23 PM
+assert: life 3 -> collision-->2 at time 2:58:23 PM
+Expected outcome: life 2 -> collision-->1 at time 2:58:30 PM
+assert: life 2 -> collision-->1 at time 2:58:30 PM
+Expected outcome: life 1 -> collision-->0 at time 2:58:37 PM
+assert: life 1 -> collision-->0 at time 2:58:37 PM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 3:09:48 PM
+assert: mailcount 0 -> collision with mail-->1 at time 3:09:48 PM
+Expected outcome: life 3 -> collision-->2 at time 3:09:53 PM
+assert: life 3 -> collision-->2 at time 3:09:53 PM
+Expected outcome: life 2 -> collision-->1 at time 3:09:54 PM
+assert: life 2 -> collision-->1 at time 3:09:54 PM
+Expected outcome: life 1 -> collision-->0 at time 3:09:57 PM
+assert: life 1 -> collision-->0 at time 3:09:57 PM
+Expected outcome: life 3 -> collision-->2 at time 3:12:23 PM
+assert: life 3 -> collision-->2 at time 3:12:23 PM
+Expected outcome: life 2 -> collision-->1 at time 3:12:26 PM
+assert: life 2 -> collision-->1 at time 3:12:26 PM
+Expected outcome: life 1 -> collision-->0 at time 3:12:26 PM
+assert: life 1 -> collision-->0 at time 3:12:26 PM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 3:29:31 PM
+assert: mailcount 0 -> collision with mail-->1 at time 3:29:31 PM
+Expected outcome: life 3 -> collision-->2 at time 3:29:43 PM
+assert: life 3 -> collision-->2 at time 3:29:43 PM
+Expected outcome: life 2 -> collision-->1 at time 3:30:10 PM
+assert: life 2 -> collision-->1 at time 3:30:10 PM
+Expected outcome: life 3 -> collision-->2 at time 3:58:10 PM
+assert: life 3 -> collision-->2 at time 3:58:10 PM
+Expected outcome: life 2 -> collision-->1 at time 3:58:22 PM
+assert: life 2 -> collision-->1 at time 3:58:22 PM
+Expected outcome: life 1 -> collision-->0 at time 3:59:03 PM
+assert: life 1 -> collision-->0 at time 3:59:03 PM

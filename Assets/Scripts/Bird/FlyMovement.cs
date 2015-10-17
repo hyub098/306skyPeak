@@ -14,16 +14,22 @@ public class FlyMovement : MonoBehaviour {
 
 	private float time;
 
-	// Use this for initialization
-	void Start () {
-		Debug.Log ("plane pilot script added to: " + gameObject.name);
+//    public AudioClip windSound;
+//    public AudioClip wingSound;
+//    private AudioSource source;
+    private int count=0;
+    private int count2 = 0;
+
+    // Use this for initialization
+    void Start () {
 		moveDistance = new Vector3(0,0,0);
 		currentSpd = 0;
 		anim = GetComponent<Animation> ();
 		rb = GetComponent<Rigidbody> ();
-		
-	
-	}
+//        source = GetComponent<AudioSource>();
+
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -32,11 +38,11 @@ public class FlyMovement : MonoBehaviour {
 		currentSpd = Mathf.Clamp (currentSpd, 0, maxSpd);
 
 		//camera position adjust
-		Vector3 moveCamtTo = transform.position - transform.forward * 5.0f + Vector3.up * 5.0f;
+		Vector3 moveCamtTo = transform.position - transform.forward * 0.5f + Vector3.up * 0.3f;
 		float bias = 0.96f;
 		Camera.main.transform.position = Camera.main.transform.position * bias + moveCamtTo * (1.0f - bias);
 		
-		Camera.main.transform.LookAt (transform.position + transform.forward * 1.0f);
+		Camera.main.transform.LookAt (transform.position + transform.forward * 0.01f);
 
 
 		//check if owl started
@@ -93,8 +99,8 @@ public class FlyMovement : MonoBehaviour {
 
 	//Stop owl going below ground level
 	void constrain(){
-		if (transform.position.y <= 1) {
-			transform.position = new Vector3(transform.position.x,1,transform.position.z);
+		if (transform.position.y <= 0.1f) {
+			transform.position = new Vector3(transform.position.x,0.1f,transform.position.z);
 			//remove rigid body force
 			rb.velocity = Vector3.zero;
 			rb.useGravity = false;
@@ -128,39 +134,52 @@ public class FlyMovement : MonoBehaviour {
 		//Get input from both axis
 		float h = Input.GetAxis("Horizontal");
 		float v = Input.GetAxis ("Vertical");
-		
-		
-		
-		//Speed up with space
-		if (Input.GetKey ("space")) {
-			
-			//Increase speed slowly to max
-			currentSpd = Mathf.Lerp(currentSpd,maxSpd,Time.deltaTime);
-			Debug.Log("CurrentSpd:"+currentSpd);
-			
-			//move the plane
-			moveDistance = transform.forward * Time.deltaTime * currentSpd;
-			transform.position += moveDistance;
-			
-			//remove rigid body force
-			rb.velocity = Vector3.zero;
-			rb.useGravity = false;
-			
-			
-			//animation clip
-			if(transform.eulerAngles.x > 0 && transform.eulerAngles.x < 61){ 
-				anim.Play("glideNormal");
-			}else if(transform.eulerAngles.x > 299 && transform.eulerAngles.x < 361){
-				anim.Play ("flyNormal");
+
+
+
+        //Speed up with space
+        if (Input.GetKey("space")) {
+
+            //Increase speed slowly to max
+            currentSpd = Mathf.Lerp(currentSpd, maxSpd, Time.deltaTime);
+
+            //move the plane
+            moveDistance = transform.forward * Time.deltaTime * currentSpd;
+            transform.position += moveDistance;
+
+            //remove rigid body force
+            rb.velocity = Vector3.zero;
+            rb.useGravity = false;
+
+
+            //animation clip
+            if (transform.eulerAngles.x > 0 && transform.eulerAngles.x < 61) {
+                anim.Play("glideNormal");
+                count2++;
+                if (count2 == 300)
+                {
+//                    source.clip = windSound;
+//                    source.Play();
+                    count2 = 0;
+                }
+            } else if (transform.eulerAngles.x > 299 && transform.eulerAngles.x < 361) {
+                anim.Play("flyNormal");
+                count++;
+                if (count == 100)
+                {
+//                    source.clip = wingSound;
+//                    source.Play();
+
+                    count = 0;
+                }
 			}
 		} else {
 
 			//Re-adjust owl if space is not pressed
 			currentSpd = 0;
 			if(start){
-
-				//Calculate angle to re-adjust
-				float desiredZAngle = 0;
+                //Calculate angle to re-adjust
+                float desiredZAngle = 0;
 				float desiredXAngle = 330;
 				if(transform.eulerAngles.z > 180){desiredZAngle = 360;} else {desiredZAngle = 0;}
 				if(transform.eulerAngles.x > 0 && transform.eulerAngles.x < 60){desiredXAngle = -30;}
@@ -182,7 +201,7 @@ public class FlyMovement : MonoBehaviour {
 		//Change rotation of owl base on user input
 		if (Rotation ()) {
 			//rotate the plane from input
-			transform.Rotate (-v,h, -h/2);
+			transform.Rotate (-v,h*1.2f, -h*0.6f);
 		}
 
 
