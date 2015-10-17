@@ -16,6 +16,7 @@ public class StoringScore : MonoBehaviour {
 	void Start () {
 		var usernameField = gameObject.GetComponent<InputField>();
 		usernameField.onEndEdit.AddListener(SubmitScore);
+
 		level = getLevel();
 	}
 	

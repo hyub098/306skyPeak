@@ -1,0 +1,65 @@
+<<<<<<< HEAD
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 10:43:57 AM
+assert: mailcount 0 -> collision with mail-->1 at time 10:43:57 AM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 10:45:39 AM
+assert: mailcount 0 -> collision with mail-->1 at time 10:45:39 AM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 10:45:50 AM
+assert: mailcount 1 -> collision with mail-->2 at time 10:45:50 AM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 10:46:18 AM
+assert: mailcount 0 -> collision with mail-->1 at time 10:46:18 AM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 10:47:41 AM
+assert: mailcount 0 -> collision with mail-->1 at time 10:47:41 AM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 10:49:29 AM
+assert: mailcount 0 -> collision with mail-->1 at time 10:49:29 AM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 10:50:42 AM
+assert: mailcount 0 -> collision with mail-->1 at time 10:50:42 AM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 10:51:04 AM
+assert: mailcount 1 -> collision with mail-->2 at time 10:51:04 AM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 10:52:33 AM
+assert: mailcount 0 -> collision with mail-->1 at time 10:52:33 AM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 10:52:50 AM
+assert: mailcount 1 -> collision with mail-->2 at time 10:52:50 AM
+Expected outcome: mailcount 2 -> collision with mail-->3 at time 10:52:51 AM
+assert: mailcount 2 -> collision with mail-->3 at time 10:52:51 AM
+Expected outcome: mailcount 3 -> collision with mail-->4 at time 10:53:30 AM
+assert: mailcount 3 -> collision with mail-->4 at time 10:53:30 AM
+Expected outcome: mailcount 4 -> collision with mail-->5 at time 10:55:44 AM
+assert: mailcount 4 -> collision with mail-->5 at time 10:55:44 AM
+Expected outcome: mailcount 5 -> collision with mail-->6 at time 10:56:12 AM
+assert: mailcount 5 -> collision with mail-->6 at time 10:56:12 AM
+Expected outcome: mailcount 6 -> collision with mail-->7 at time 10:57:19 AM
+assert: mailcount 6 -> collision with mail-->7 at time 10:57:19 AM
+Expected outcome: mailcount 7 -> collision with mail-->8 at time 10:58:04 AM
+assert: mailcount 7 -> collision with mail-->8 at time 10:58:04 AM
+Expected outcome: mailcount 8 -> collision with mail-->9 at time 10:58:20 AM
+assert: mailcount 8 -> collision with mail-->9 at time 10:58:20 AM
+Expected outcome: mailcount 9 -> collision with mail-->10 at time 10:58:20 AM
+assert: mailcount 9 -> collision with mail-->10 at time 10:58:20 AM
+=======
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 10:37:55 AM
+assert: mailcount 0 -> collision with mail-->1 at time 10:37:55 AM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 10:37:57 AM
+assert: mailcount 1 -> collision with mail-->2 at time 10:37:57 AM
+Expected outcome: mailcount 2 -> collision with mail-->3 at time 10:38:19 AM
+assert: mailcount 2 -> collision with mail-->3 at time 10:38:19 AM
+>>>>>>> 4d6968dace2603dc8f0e5e4ac7a2e542fa730656
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 11:14:29 AM
+assert: mailcount 0 -> collision with mail-->1 at time 11:14:29 AM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 11:14:49 AM
+assert: mailcount 1 -> collision with mail-->2 at time 11:14:49 AM
+Expected outcome: mailcount 2 -> collision with mail-->3 at time 11:14:49 AM
+assert: mailcount 2 -> collision with mail-->3 at time 11:14:49 AM
+Expected outcome: mailcount 3 -> collision with mail-->4 at time 11:15:09 AM
+assert: mailcount 3 -> collision with mail-->4 at time 11:15:09 AM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 11:16:42 AM
+assert: mailcount 0 -> collision with mail-->1 at time 11:16:42 AM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 11:17:12 AM
+assert: mailcount 1 -> collision with mail-->2 at time 11:17:12 AM
+Expected outcome: mailcount 2 -> collision with mail-->3 at time 11:17:19 AM
+assert: mailcount 2 -> collision with mail-->3 at time 11:17:19 AM
+Expected outcome: mailcount 3 -> collision with mail-->4 at time 11:17:25 AM
+assert: mailcount 3 -> collision with mail-->4 at time 11:17:25 AM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 11:20:03 AM
+assert: mailcount 0 -> collision with mail-->1 at time 11:20:03 AM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 11:20:57 AM
+assert: mailcount 0 -> collision with mail-->1 at time 11:20:57 AM
