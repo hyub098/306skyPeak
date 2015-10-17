@@ -7,7 +7,11 @@ using System.Collections.Generic;
 
 public class HSController : MonoBehaviour
 {
-    public Text guiText;
+    //public Text guiText;
+	public Text firstParkText;
+	public Text firstScoreText;
+
+
     private string secretKey = "mySecretKey"; // Edit this value and make sure it's the same as the one stored on the server
                                               //be sure to add a ? to your url
     public Image a_image;
@@ -112,7 +116,7 @@ public class HSController : MonoBehaviour
     // remember to use StartCoroutine when calling this function!
     IEnumerator GetScores()
     {
-        var highscoreURL = "http://306skypeak.site90.net/displayImages.php";
+        /*var highscoreURL = "http://306skypeak.site90.net/displayImages.php";
         guiText.text = "Loading Scores";
 
         WWW hs_get = new WWW(highscoreURL);
@@ -128,7 +132,58 @@ public class HSController : MonoBehaviour
         {
             guiText.text = hs_get.text; // this is a GUIText that will display the scores in game.
             Debug.Log(hs_get.text);
-        }
+        }*/
+
+
+		var highscoreURL = "http://306skypeak.site90.net/dispPark.php?";
+
+		
+		WWW hs_get = new WWW(highscoreURL);
+		yield return hs_get;
+		
+		
+		//Debug.Log(post_url);
+		
+
+		if (hs_get.error != null)
+		{
+			print("There was an error getting the high score: " + hs_get.error);
+		}
+		else
+		{
+
+			Regex rgx = new Regex("[^a-zA-Z0-9 & - , <]");
+			string str = hs_get.text.ToString();
+			str = rgx.Replace(str, "");
+
+			//guiText.text = extractString(str); // this is a GUIText that will display the scores in game.
+			List<string> achievements = extractString(str).Split(',').ToList<string>();
+			foreach (string s in achievements)
+			{
+				if (s.Equals("Hello"))
+				{
+					Color temp = a_image.color;
+					temp.a = 1.0f;
+					a_image.color = temp;
+				}
+				if (s.Equals("Hello2"))
+				{
+					Color temp = b_image.color;
+					temp.a = 1.0f;
+					b_image.color = temp;
+				}
+				if (s.Equals("Hello3"))
+				{
+					Color temp = c_image.color;
+					temp.a = 1.0f;
+					c_image.color = temp;
+				}
+			}
+			
+			Debug.Log(extractString(str));
+		}
+
+
     }
 
     IEnumerator GetAchievements(string user)
@@ -148,7 +203,7 @@ public class HSController : MonoBehaviour
 
 
         var highscoreURL = "http://306skypeak.site90.net/dispTest.php?";
-        guiText.text = "Loading Scores";
+        //guiText.text = "Loading Scores";
         string hash = Md5Sum(user + secretKey);
         string post_url = highscoreURL + "user=" + WWW.EscapeURL(user) + "&hash=" + hash;
 
@@ -167,7 +222,7 @@ public class HSController : MonoBehaviour
         }
         else
         {
-            guiText.text = extractString(str); // this is a GUIText that will display the scores in game.
+            //guiText.text = extractString(str); // this is a GUIText that will display the scores in game.
             List<string> achievements = extractString(str).Split(',').ToList<string>();
             foreach (string s in achievements)
             {

@@ -63,12 +63,24 @@ public class MailCount : MonoBehaviour {
         source = GetComponent<AudioSource>();
         firstOnMailBox = 0;
         level = getLevel();
+
+        //debug file
+        string dir = System.IO.Directory.GetCurrentDirectory().ToString();
+        string filename = dir + "\\log.txt";
+        using (System.IO.StreamWriter file =
+           new System.IO.StreamWriter(@"C:\Users\Public\log.txt", true))
+            {
+                file.WriteLine("filename: "+filename);
+                file.WriteLine("Expected outcome: mailcount " + (mailCount - 1).ToString() + " -> " + "collision with mail" + "-->" + mailCount.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
+                file.WriteLine("assert: mailcount " + (mailCount - 1).ToString() + " -> " + "collision with mail" + "-->" + mailCount.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
+
+
+            }
     }
 
 
-	
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
 
 		//update mail number
 		mailText.text =  ("Mail:" + mailCount);
@@ -106,12 +118,12 @@ public class MailCount : MonoBehaviour {
             source.Play();
 
 			//debug file
-            using (System.IO.StreamWriter file =
+            /*using (System.IO.StreamWriter file =
                new System.IO.StreamWriter(@"C:\Users\Public\skypeak_log.txt", true))
                 {
                     file.WriteLine("Expected outcome: mailcount " + (mailCount - 1).ToString() + " -> " + "collision with mail" + "-->" + mailCount.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
                     file.WriteLine("assert: mailcount " + (mailCount - 1).ToString() + " -> " + "collision with mail" + "-->" + mailCount.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
-                }
+                }*/
 
             }
         }
