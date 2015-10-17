@@ -13,6 +13,7 @@ TagManager:
   - Tornado
   - No Impact
   - Axe
+  - Finish
   layers:
   - Default
   - TransparentFX
