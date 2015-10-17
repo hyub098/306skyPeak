@@ -11,17 +11,19 @@ public enum BirdState
 
 }
 
+
 public class MoveMent : MonoBehaviour {
 
 	private Animation anim;
 	public BirdState _characterState;
 	public bool isControllable = false;
-
+	public bool isFinish=false;
 	public float maxSpd;
 	private float currentSpd;
 	private Rigidbody rb;
 	private Vector3 moveDistance;
 	private int count2 = 0;
+
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +33,7 @@ public class MoveMent : MonoBehaviour {
 		currentSpd = 0;
 		anim = GetComponent<Animation> ();
 		rb = GetComponent<Rigidbody> ();	
-
+		isFinish = false;
 	}
 	
 	// Update is called once per frame
@@ -42,17 +44,18 @@ public class MoveMent : MonoBehaviour {
 		Vector3 moveCamtTo = transform.position - transform.forward * 5.0f + Vector3.up * 5.0f;
 		float bias = 0.96f;
 
-		//CameraScript camera = gameObject.GetComponentInChildren<CameraScript> ();
 		gameObject.transform.GetChild(3).transform.position=gameObject.transform.GetChild(3).transform.position* bias + moveCamtTo * (1.0f - bias);
 
-		//Camera.main.transform.position = Camera.main.transform.position * bias + moveCamtTo * (1.0f - bias);
 
 		gameObject.transform.GetChild (3).transform.LookAt (transform.position + transform.forward * 1.0f);
 
-		//Camera.main.transform.LookAt (transform.position + transform.forward * 0.01f);
 
 
-
+		if (isFinish) {
+		
+			Time.timeScale = 0f; //Stops the game
+		
+		}
 
 		constrain ();
 
@@ -106,31 +109,6 @@ public class MoveMent : MonoBehaviour {
 	}
 
 
-	private void InputMovement()
-	{
-		if (Input.GetKey (KeyCode.W)) {
-			GetComponent<Rigidbody> ().MovePosition (GetComponent<Rigidbody> ().position + Vector3.forward * 10 * Time.deltaTime);
-			//anim.Play ("flyNormal");
-			_characterState = BirdState.Fly;
-		
-		}
-		if (Input.GetKey (KeyCode.S)) {
-			GetComponent<Rigidbody> ().MovePosition (GetComponent<Rigidbody> ().position - Vector3.forward * 10 * Time.deltaTime);
-			//anim.Play("idleFloor2");
-			_characterState = BirdState.Fall;
-		
-		}
-		if (Input.GetKey (KeyCode.D)) {
-			GetComponent<Rigidbody> ().MovePosition (GetComponent<Rigidbody> ().position + Vector3.right * 10 * Time.deltaTime);
-		
-		}
-		if (Input.GetKey (KeyCode.A)) {
-			GetComponent<Rigidbody> ().MovePosition (GetComponent<Rigidbody> ().position - Vector3.right * 10 * Time.deltaTime);
-		
-		}
-
-
-	}
 
 	
 	//flight control
@@ -203,6 +181,10 @@ public class MoveMent : MonoBehaviour {
 		}
 		
 		
+	}
+
+	void OnTriggerEnter(Collider other) {
+		isFinish = true;
 	}
 	
 	private void UpdateAnimation(){

@@ -1404,9 +1404,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LoadScene
-        m_Mode: 3
+      - m_Target: {fileID: 1267086469}
+        m_MethodName: LoadParkCanvas
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1755,9 +1755,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LoadScene
-        m_Mode: 3
+      - m_Target: {fileID: 1743079390}
+        m_MethodName: LoadParkCanvas
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1948,9 +1948,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LoadScene
-        m_Mode: 3
+      - m_Target: {fileID: 1743079390}
+        m_MethodName: LoadMountainCanvas
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2726,9 +2726,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LoadScene
-        m_Mode: 3
+      - m_Target: {fileID: 1267086469}
+        m_MethodName: LoadMountainCanvas
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3256,9 +3256,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LoadScene
-        m_Mode: 3
+      - m_Target: {fileID: 1743079390}
+        m_MethodName: LoadCityCanvas
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3932,9 +3932,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LoadScene
-        m_Mode: 3
+      - m_Target: {fileID: 1267086469}
+        m_MethodName: LoadCityCanvas
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4273,6 +4273,7 @@ GameObject:
   - 114: {fileID: 1267086468}
   - 114: {fileID: 1267086467}
   - 114: {fileID: 1267086466}
+  - 114: {fileID: 1267086469}
   m_Layer: 5
   m_Name: CityCanvas
   m_TagString: Untagged
@@ -4368,6 +4369,20 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &1267086469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1267086463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07560d20227cb3946be957d6fb0a45c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  park: {fileID: 1326231419}
+  city: {fileID: 1267086465}
+  mountain: {fileID: 1743079386}
 --- !u!1 &1299040826
 GameObject:
   m_ObjectHideFlags: 0
@@ -5864,6 +5879,7 @@ GameObject:
   - 114: {fileID: 1743079389}
   - 114: {fileID: 1743079388}
   - 114: {fileID: 1743079387}
+  - 114: {fileID: 1743079390}
   m_Layer: 5
   m_Name: MountainCanvas
   m_TagString: Untagged
@@ -5959,6 +5975,20 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &1743079390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1743079384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07560d20227cb3946be957d6fb0a45c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  park: {fileID: 1326231419}
+  city: {fileID: 1267086465}
+  mountain: {fileID: 1743079386}
 --- !u!1 &1760930732
 GameObject:
   m_ObjectHideFlags: 0
