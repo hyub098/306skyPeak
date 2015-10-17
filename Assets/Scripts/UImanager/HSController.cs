@@ -20,12 +20,10 @@ public class HSController : MonoBehaviour
     public Image h_image;
     public Image i_image;
 
-    public Text namesText;
-
+  
 
     void Start()
     {
-        StartCoroutine(GetAchievements());
         Color temp = a_image.color;
         temp.a = 0.5f;
         a_image.color = temp;
@@ -53,6 +51,15 @@ public class HSController : MonoBehaviour
         Color temp9 = d_image.color;
         temp9.a = 0.5f;
         d_image.color = temp9;
+        var usernameField = gameObject.GetComponent<InputField>();
+        usernameField.onEndEdit.AddListener(SubmitScore);
+    }
+
+
+    // Get the user name and gets achivements from the database
+    private void SubmitScore(string name)
+    {
+        StartCoroutine(GetAchievements(name));
     }
 
 
@@ -124,7 +131,7 @@ public class HSController : MonoBehaviour
         }
     }
 
-    IEnumerator GetAchievements()
+    IEnumerator GetAchievements(string user)
     {
         /*var usersUrl = "http://306skypeak.site90.net/getUsers.php";
         WWW hs_get0 = new WWW(usersUrl);
@@ -142,7 +149,6 @@ public class HSController : MonoBehaviour
 
         var highscoreURL = "http://306skypeak.site90.net/dispTest.php?";
         guiText.text = "Loading Scores";
-        string user = "Me";
         string hash = Md5Sum(user + secretKey);
         string post_url = highscoreURL + "user=" + WWW.EscapeURL(user) + "&hash=" + hash;
 
