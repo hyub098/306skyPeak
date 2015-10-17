@@ -43,3 +43,23 @@ assert: mailcount 1 -> collision with mail-->2 at time 10:37:57 AM
 Expected outcome: mailcount 2 -> collision with mail-->3 at time 10:38:19 AM
 assert: mailcount 2 -> collision with mail-->3 at time 10:38:19 AM
 >>>>>>> 4d6968dace2603dc8f0e5e4ac7a2e542fa730656
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 11:14:29 AM
+assert: mailcount 0 -> collision with mail-->1 at time 11:14:29 AM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 11:14:49 AM
+assert: mailcount 1 -> collision with mail-->2 at time 11:14:49 AM
+Expected outcome: mailcount 2 -> collision with mail-->3 at time 11:14:49 AM
+assert: mailcount 2 -> collision with mail-->3 at time 11:14:49 AM
+Expected outcome: mailcount 3 -> collision with mail-->4 at time 11:15:09 AM
+assert: mailcount 3 -> collision with mail-->4 at time 11:15:09 AM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 11:16:42 AM
+assert: mailcount 0 -> collision with mail-->1 at time 11:16:42 AM
+Expected outcome: mailcount 1 -> collision with mail-->2 at time 11:17:12 AM
+assert: mailcount 1 -> collision with mail-->2 at time 11:17:12 AM
+Expected outcome: mailcount 2 -> collision with mail-->3 at time 11:17:19 AM
+assert: mailcount 2 -> collision with mail-->3 at time 11:17:19 AM
+Expected outcome: mailcount 3 -> collision with mail-->4 at time 11:17:25 AM
+assert: mailcount 3 -> collision with mail-->4 at time 11:17:25 AM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 11:20:03 AM
+assert: mailcount 0 -> collision with mail-->1 at time 11:20:03 AM
+Expected outcome: mailcount 0 -> collision with mail-->1 at time 11:20:57 AM
+assert: mailcount 0 -> collision with mail-->1 at time 11:20:57 AM
