@@ -9,7 +9,7 @@ public class MailCount : MonoBehaviour {
 	public Text mailText;
 	public  Canvas Congratulations;
 	private float time;
-    public Image achievement_Mountain, achievement_Perfect, achievement_City, achievement_CloseOne, achievement_Park, achievement_Fast;
+    public Image achievement_timeMountain, achievement_timeCity, achievement_city3Lives, achievement_CloseOne, achievement_timePark, achievement_mountain3Lives, achievement_park3Lives;
 
     public AudioClip getMailSound;
     public AudioClip postMailSound;
@@ -30,15 +30,16 @@ public class MailCount : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 		mailCount = 0;
 		Congratulations.enabled = false;
-        achievement_Mountain.enabled = false;
-        achievement_Perfect.enabled = false;
-        achievement_City.enabled = false;
+        achievement_timeMountain.enabled = false;
+        achievement_timeCity.enabled = false;
+        achievement_city3Lives.enabled = false;
         achievement_CloseOne.enabled = false;
-        achievement_Park.enabled = false;
-        achievement_Fast.enabled = false;
-       
+        achievement_timePark.enabled = false;
+        achievement_mountain3Lives.enabled = false;
+        achievement_park3Lives.enabled = false;
+
         //source = GetComponent<AudioSource>();
-		level = getLevel();
+        level = getLevel();
     }
 
 
@@ -120,7 +121,7 @@ public class MailCount : MonoBehaviour {
                 if (time < 60)
                 {
 
-                    achievement_Park.enabled = true;
+                    achievement_timePark.enabled = true;
 
                 }
 
@@ -128,7 +129,7 @@ public class MailCount : MonoBehaviour {
                 life = collision.returnLife();
                 if (life == 3)
                 {
-                    achievement_Mountain.enabled = true;
+                    achievement_park3Lives.enabled = true;
                 }
 
                 //Achievement for winning with only one life left
@@ -141,7 +142,7 @@ public class MailCount : MonoBehaviour {
         }
         else if (level == 2)
         {
-            if (mailCount >= 5)
+            if (mailCount >= 1)
             {
                 Congratulations.enabled = true;
 				Time.timeScale = 0f; //Stop the game
@@ -149,7 +150,7 @@ public class MailCount : MonoBehaviour {
                 if (time < 120)
                 {
 
-                    achievement_Mountain.enabled = true;
+                    achievement_timeMountain.enabled = true;
 
                 }
 
@@ -157,7 +158,7 @@ public class MailCount : MonoBehaviour {
                 life = collision.returnLife();
                 if (life == 3)
                 {
-                    achievement_Park.enabled = true;
+                    achievement_mountain3Lives.enabled = true;
                 }
 
                 //Achievement for winning with only one life left
@@ -178,7 +179,7 @@ public class MailCount : MonoBehaviour {
                 if (time < 180)
                 {
 
-                    achievement_City.enabled = true;
+                    achievement_timeCity.enabled = true;
 
                 }
 
@@ -186,7 +187,7 @@ public class MailCount : MonoBehaviour {
                 life = collision.returnLife();
                 if (life == 3)
                 {
-                    achievement_Park.enabled = true;
+                    achievement_city3Lives.enabled = true;
                 }
 
                 //Achievement for winning with only one life left
