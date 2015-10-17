@@ -908,7 +908,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Park:\n\t\t\t1\n\t\t\t2\n\t\t\t3\n\n\nMountain\n\t\t\t1\n\t\t\t2\n\t\t\t3\n\n\nCity\n\t\t\t1\n\t\t\t2\n\t\t\t3\n\n"
+  m_Text: "Park:\n\t\t\t1\n\n\n\nMountain:\n\t\t\t1\n\n\n\nCity:\n\t\t\t1\n\n\n"
 --- !u!222 &584065699
 CanvasRenderer:
   m_ObjectHideFlags: 0
