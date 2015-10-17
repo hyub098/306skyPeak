@@ -29,7 +29,8 @@ public class RandomMatchmaker : Photon.PunBehaviour
 
 	void OnJoinedRoom(){
 
-		GameObject bird = PhotonNetwork.Instantiate(this.playerPrefabName, Vector3.zero, Quaternion.identity, 0);
+		Vector3 location = new Vector3 (-80f,98f,112f);
+		GameObject bird = PhotonNetwork.Instantiate(this.playerPrefabName, location, Quaternion.identity, 0);
 		MoveMent controller = bird.GetComponent<MoveMent>();
 		// Enable the camera
 

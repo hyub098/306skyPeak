@@ -12,6 +12,10 @@ public class Collision : MonoBehaviour {
 	private float time;
 	public Canvas gameOver;
     public Image achievement_Pressure, achievement_Wipeout;
+
+	public static bool pressure;
+	public static bool wipeout;
+
     private bool ispause;
 	private float deadTime;
 	private bool isSaved;
@@ -25,9 +29,11 @@ public class Collision : MonoBehaviour {
 	private float hitTime;
     private int carryingMail;
 
+    public AudioClip collisionSound;
+    public AudioClip gameOverSound;
+    private AudioSource source;
 
-
-	private SkinnedMeshRenderer skinnedMeshRenderer; 
+    private SkinnedMeshRenderer skinnedMeshRenderer; 
 	private Texture normTexture;
 
     void Start()
@@ -48,9 +54,14 @@ public class Collision : MonoBehaviour {
 		isSaved = false;
 		lifeManager = GetComponent<LifeManager> ();
 		invincible = false;
+
+		pressure = false;
+		wipeout = false; 
+
 		hitTime = 0;
 		life = 3;
-       
+        source = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -116,17 +127,18 @@ public class Collision : MonoBehaviour {
 
 
 			if (!collision.gameObject.CompareTag ("Mail box")) {
-
-			if(!invincible){
-				//stop it from further damage
-				invincible = true;
+            if (!invincible){
+                source.clip = collisionSound;
+                source.Play();
+                //stop it from further damage
+                invincible = true;
 				//record hit time
 				hitTime = time;
 
 				//Change life
 				life = lifeManager.subtractLife ();
-//				flash();
-			}
+                //flash();
+            }
 
 
 			checkDead();
@@ -143,7 +155,9 @@ public class Collision : MonoBehaviour {
 		if (life < 1) {
 			flyMovement.enabled = false;
 			rb.useGravity = true;
-			anim.Play ("falling");
+            source.clip = gameOverSound;
+            source.Play();
+            anim.Play ("falling");
 			//if (count == 0)
 			//{
 			//  count = count + 1;
@@ -161,6 +175,7 @@ public class Collision : MonoBehaviour {
 			if (time <= 30)
 			{
 				achievement_Wipeout.enabled = true;
+				wipeout = true;
 			}
 			
 			//Check if the owl is carry more than 3 pieces of mail
@@ -169,6 +184,7 @@ public class Collision : MonoBehaviour {
 			if (carryingMail >= 3)
 			{
 				achievement_Pressure.enabled = true;
+				pressure = true;
 			}
 			
 			

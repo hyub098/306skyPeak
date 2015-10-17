@@ -14,9 +14,9 @@ public class FlyMovement : MonoBehaviour {
 
 	private float time;
 
-//    public AudioClip windSound;
-//    public AudioClip wingSound;
-//    private AudioSource source;
+    public AudioClip windSound;
+    public AudioClip wingSound;
+    private AudioSource source;
     private int count=0;
     private int count2 = 0;
 
@@ -26,7 +26,7 @@ public class FlyMovement : MonoBehaviour {
 		currentSpd = 0;
 		anim = GetComponent<Animation> ();
 		rb = GetComponent<Rigidbody> ();
-//        source = GetComponent<AudioSource>();
+        source = GetComponent<AudioSource>();
 
 
     }
@@ -158,8 +158,8 @@ public class FlyMovement : MonoBehaviour {
                 count2++;
                 if (count2 == 300)
                 {
-//                    source.clip = windSound;
-//                    source.Play();
+                    source.clip = windSound;
+                    source.Play();
                     count2 = 0;
                 }
             } else if (transform.eulerAngles.x > 299 && transform.eulerAngles.x < 361) {
@@ -167,8 +167,8 @@ public class FlyMovement : MonoBehaviour {
                 count++;
                 if (count == 100)
                 {
-//                    source.clip = wingSound;
-//                    source.Play();
+                    source.clip = wingSound;
+                    source.Play();
 
                     count = 0;
                 }
