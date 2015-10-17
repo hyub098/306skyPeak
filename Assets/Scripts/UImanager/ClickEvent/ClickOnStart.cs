@@ -10,6 +10,9 @@ public class ClickOnStart : MonoBehaviour {
     //public Canvas go;
     //public Canvas current;
     //public Canvas congratulations;
+    public Button startButton;
+    //public Text title;
+
     public Text n;
 
     private bool start = false;
@@ -24,7 +27,8 @@ public class ClickOnStart : MonoBehaviour {
     void Start()
     {
         //congratulations.enabled = false;
-        //start3.enabled = true;
+        start3.enabled = false;
+
         //start2.enabled = false;
         //start1.enabled = false;
         //go.enabled = false;
@@ -46,6 +50,8 @@ public class ClickOnStart : MonoBehaviour {
             {
                 //start3.enabled = false;
                 //start2.enabled = true;
+                startButton.enabled = false;
+                //title.enabled = false;
                 n.text = ""+2;
                 three = false;
                 two = true;
@@ -71,6 +77,7 @@ public class ClickOnStart : MonoBehaviour {
                 zero = false;
                 start = false;
                 start3.enabled = false;
+                startButton.enabled = true;
             }
         }
     }
