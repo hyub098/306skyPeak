@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LoadProfileScene: MonoBehaviour {
+public class loadProfileScene: MonoBehaviour {
 
     public Canvas input;
     public Canvas actualScene;
