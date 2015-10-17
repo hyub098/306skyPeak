@@ -65,11 +65,12 @@ public class ClickOnGo : MonoBehaviour {
         start3.enabled = true;
     }
 
-    public void StartGame()
+    public void StartGame(int level)
     {
         start = true;
         three = true;
         starttime = realtime;
+        Application.LoadLevel(level);
         //System.Threading.Thread.Sleep(1000);
         //StartCoroutine(Wait());
 
