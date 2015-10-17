@@ -3,17 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Terrain
-  - Mail
-  - Pick Up
-  - Mail box
-  - AICars
-  - Ground
-  - Tornado
-  - No Impact
-  - Axe
-  - Finish
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -23,9 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - Radar
-  - Invisible
-  - Particle Collision
+  - 
+  - 
+  - 
   - 
   - 
   - 
