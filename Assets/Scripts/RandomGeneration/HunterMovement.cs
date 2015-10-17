@@ -14,6 +14,8 @@ public class HunterMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animation> ();
+		axe = GetComponentInChildren<Axe> ();
+		axe.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -60,9 +62,11 @@ public class HunterMovement : MonoBehaviour {
 	IEnumerator shootTime(){
 		shoot = true;
 		anim.Play ("Lumbering");
-		//axe.shootAxe ();
-		yield return new WaitForSeconds(5f);
+		axe.enabled = true;
 
+		anim.PlayQueued ("Idle");
+		yield return new WaitForSeconds(4f);
+		axe.enabled = false;
 		shoot = false;
 		anim.Play ("Walk");
 
