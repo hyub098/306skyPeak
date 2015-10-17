@@ -27,11 +27,23 @@ public class MoveMent : MonoBehaviour {
 
 	void OnGUI(){
 		if (isFinish) {
-			if(GUI.Button(new Rect(10,10,150,100),"button")){
-				print("something");
-			}
+            GUILayout.BeginArea(new Rect((Screen.width - 400) / 2, (Screen.height - 300) / 2, 400, 300));
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Congratulations!", GUILayout.Width(400));
+            GUILayout.EndHorizontal();
+            GUILayout.Space(30);
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("Exit"))
+            {
+                Application.LoadLevel(1);
+            }
+            GUILayout.EndHorizontal();
+            GUILayout.EndArea();
+            if(GUI.Button(new Rect(10,10,150,100),"button")){
+            print("something");
+            }
 
-		}
+        }
 
 	}
 
