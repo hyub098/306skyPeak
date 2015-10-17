@@ -14,6 +14,11 @@ public class HSController : MonoBehaviour
     public Image b_image;
     public Image c_image;
     public Image d_image;
+    public Image e_image;
+    public Image f_image;
+    public Image g_image;
+    public Image h_image;
+    public Image i_image;
 
     public Text namesText;
 
@@ -31,8 +36,23 @@ public class HSController : MonoBehaviour
         temp3.a = 0.5f;
         c_image.color = temp;
         Color temp4 = d_image.color;
-        temp.a = 0.5f;
-        d_image.color = temp;
+        temp4.a = 0.5f;
+        d_image.color = temp4;
+        Color temp5 = a_image.color;
+        temp5.a = 0.5f;
+        a_image.color = temp5;
+        Color temp6 = b_image.color;
+        temp6.a = 0.5f;
+        b_image.color = temp6;
+        Color temp7 = c_image.color;
+        temp7.a = 0.5f;
+        c_image.color = temp7;
+        Color temp8 = d_image.color;
+        temp8.a = 0.5f;
+        d_image.color = temp8;
+        Color temp9 = d_image.color;
+        temp9.a = 0.5f;
+        d_image.color = temp9;
     }
 
 
