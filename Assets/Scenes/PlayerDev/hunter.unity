@@ -810,7 +810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owl: {fileID: 1646773695}
-  axe: {fileID: 100000, guid: c333d7981397d95428d0fa6dc5f84f96, type: 2}
+  axe: {fileID: 100000, guid: 9c4a9c7ab16b34e93a69e3d8c074767b, type: 2}
 --- !u!1 &1006781321
 GameObject:
   m_ObjectHideFlags: 0
