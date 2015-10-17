@@ -25,6 +25,8 @@ public class Radar : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+
 		createRadarObj ();
 
 
@@ -41,6 +43,7 @@ public class Radar : MonoBehaviour {
 		mailBorders ();
 		radarBorders ();
 	}
+
 
 
 	void createRadarObj(){
