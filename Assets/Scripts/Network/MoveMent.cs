@@ -184,7 +184,9 @@ public class MoveMent : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
+		if(other.gameObject.CompareTag ("Finish")){
 		isFinish = true;
+		}
 	}
 	
 	private void UpdateAnimation(){
