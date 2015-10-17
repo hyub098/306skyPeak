@@ -187,7 +187,7 @@ public class MailCount : MonoBehaviour {
         }
         else if (level == 3)
         {
-            if (mailCount >= 10)
+            if (mailCount >= 1)
             {
                 Congratulations.enabled = true;
 				Time.timeScale = 0f; //Stop the game

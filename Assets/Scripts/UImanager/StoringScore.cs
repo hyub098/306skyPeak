@@ -3,19 +3,22 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class StoringScore : MonoBehaviour {
-
+	
 	private string secretKey = "mySecretKey";
 	private int level;
 	int score = 0;
-
-
+	string achievement = "win";
+	
+	private MailCount mailCount;
+	
+	
 	// Add Listener to the text field to get user's name
 	void Start () {
 		var usernameField = gameObject.GetComponent<InputField>();
 		usernameField.onEndEdit.AddListener(SubmitScore);
 		level = getLevel();
 	}
-
+	
 	int getLevel(){
 		int level = 0;
 		if(Application.loadedLevelName.Equals("Park")){
@@ -28,22 +31,30 @@ public class StoringScore : MonoBehaviour {
 		return level;
 	}
 	
+	
 	// Get the user name and score and submit it to the database
 	private void SubmitScore(string name) {
 		// Store the player's score
 		if (level == 1) {
 			score = PlayerPrefs.GetInt ("park");
-
+			
 		} else if (level == 2) {
 			score = PlayerPrefs.GetInt ("mountain");
-
+			
 		} else if (level == 3) {
 			score =  PlayerPrefs.GetInt ("city");
 		}
-
+		
 		StartCoroutine(PostScores(name, score));
+		mailCount = GetComponent<MailCount>();
+		Debug.Log(mailCount);
+		
+		/*if (mailCount.returnAch()) {
+			Debug.Log(mailCount.timeCity);
+			StartCoroutine (PostAchievement (name, "TimeCit"));
+		}*/
 	}
-
+	
 	//Helper function to store in the database
 	public string Md5Sum(string strToEncrypt)
 	{
@@ -64,12 +75,12 @@ public class StoringScore : MonoBehaviour {
 		
 		return hashString.PadLeft(32, '0');
 	}
-
+	
 	// Posting score to the database
 	IEnumerator PostScores(string name, int score)
 	{
 		var addScoreURL = "http://306skypeak.site90.net/addPark.php?";
-
+		
 		if (level == 1) {
 			addScoreURL = "http://306skypeak.site90.net/addPark.php?";
 		} else if (level == 2) {
@@ -78,7 +89,7 @@ public class StoringScore : MonoBehaviour {
 		} else if (level == 3) {
 			addScoreURL = "http://306skypeak.site90.net/addCity.php?";
 		}
-
+		
 		
 		//This connects to a server side php script that will add the name and score to a MySQL DB.
 		// Supply it with a string representing the players name and the players score.
@@ -97,6 +108,31 @@ public class StoringScore : MonoBehaviour {
 		if (hs_post.error != null)
 		{
 			print("There was an error posting the high score: " + hs_post.error);
+		}
+	}
+	
+	IEnumerator PostAchievement(string user, string achievement)
+	{
+		var addAchievementURL = "http://306skypeak.site90.net/addAchievment.php?";
+		
+		
+		//This connects to a server side php script that will add the name and score to a MySQL DB.
+		// Supply it with a string representing the players name and the players score.
+		string hash2 = Md5Sum(user + achievement + secretKey);
+		
+		string post_url2 = addAchievementURL + "user=" + WWW.EscapeURL(user) + "&achievement=" + achievement + "&hash=" + hash2;
+		
+		Debug.Log(post_url2);
+		
+		
+		// Post the URL to the site and create a download object to get the result.
+		WWW hs_post2 = new WWW(post_url2);
+		yield return hs_post2; // Wait until the download is done
+		
+		
+		if (hs_post2.error != null)
+		{
+			print("There was an error posting the high score: " + hs_post2.error);
 		}
 	}
 }
