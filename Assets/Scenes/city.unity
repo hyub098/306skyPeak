@@ -11619,7 +11619,7 @@ Transform:
   m_Children:
   - {fileID: 1607939765}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 21
 --- !u!114 &762284587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11693,7 +11693,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.0999999
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -11717,11 +11717,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 181150, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 478344, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
@@ -13283,7 +13295,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 910471761}
   m_LocalRotation: {x: .183012426, y: -.683012843, z: -.183012456, w: -.683012724}
-  m_LocalPosition: {x: 22.8029995, y: 6.91200018, z: 18.0319996}
+  m_LocalPosition: {x: 22.8029995, y: 6.82999992, z: 18.0319996}
   m_LocalScale: {x: .200000003, y: .109999999, z: .0700000003}
   m_Children:
   - {fileID: 899128476}
@@ -13412,7 +13424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d40b31b9675f4e1b8d81ca514f64902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOver: {fileID: 0}
+  gameOver: {fileID: 1846994470}
   achievement_Pressure: {fileID: 1739030871}
   achievement_Wipeout: {fileID: 1531048849}
 --- !u!65 &910471767
@@ -15371,7 +15383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &958644911
 Transform:
   m_ObjectHideFlags: 0
