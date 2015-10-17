@@ -562,129 +562,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 166070629}
---- !u!1 &178439059
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 178439061}
-  - 82: {fileID: 178439060}
-  - 114: {fileID: 178439062}
-  - 114: {fileID: 178439063}
-  m_Layer: 0
-  m_Name: BackgroundMusic
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &178439060
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 178439059}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5dc71ebd7bf16524b9229f523178c823, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
---- !u!4 &178439061
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 178439059}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 262.223694, y: 223.5, z: 152.463242}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
---- !u!114 &178439062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 178439059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59a0e371a2633784ea0fb6ad5eb232cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &178439063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 178439059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7607525c97f9bf14785fe24192607401, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level1Music: {fileID: 8300000, guid: 5dc71ebd7bf16524b9229f523178c823, type: 3}
 --- !u!1 &183274131
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,7 +2952,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1267086466}
         m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
@@ -3727,7 +3604,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1743079387}
         m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
@@ -4274,6 +4151,7 @@ GameObject:
   - 114: {fileID: 1267086467}
   - 114: {fileID: 1267086466}
   - 114: {fileID: 1267086469}
+  - 114: {fileID: 1267086470}
   m_Layer: 5
   m_Name: CityCanvas
   m_TagString: Untagged
@@ -4331,7 +4209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680a0cacc70918c4f99e9cc96a675ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
 --- !u!114 &1267086467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4383,6 +4260,17 @@ MonoBehaviour:
   park: {fileID: 1326231419}
   city: {fileID: 1267086465}
   mountain: {fileID: 1743079386}
+--- !u!114 &1267086470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1267086463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680a0cacc70918c4f99e9cc96a675ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1299040826
 GameObject:
   m_ObjectHideFlags: 0
@@ -4549,6 +4437,7 @@ GameObject:
   - 114: {fileID: 1326231418}
   - 114: {fileID: 1326231417}
   - 114: {fileID: 1326231421}
+  - 114: {fileID: 1326231422}
   m_Layer: 5
   m_Name: ParkCanvas
   m_TagString: Untagged
@@ -4646,6 +4535,17 @@ MonoBehaviour:
   park: {fileID: 1326231419}
   city: {fileID: 1267086465}
   mountain: {fileID: 1743079386}
+--- !u!114 &1326231422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1326231416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680a0cacc70918c4f99e9cc96a675ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1355006849
 GameObject:
   m_ObjectHideFlags: 0
@@ -5021,7 +4921,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1326231422}
         m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
@@ -5880,6 +5780,7 @@ GameObject:
   - 114: {fileID: 1743079388}
   - 114: {fileID: 1743079387}
   - 114: {fileID: 1743079390}
+  - 114: {fileID: 1743079391}
   m_Layer: 5
   m_Name: MountainCanvas
   m_TagString: Untagged
@@ -5937,7 +5838,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680a0cacc70918c4f99e9cc96a675ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
 --- !u!114 &1743079388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5989,6 +5889,17 @@ MonoBehaviour:
   park: {fileID: 1326231419}
   city: {fileID: 1267086465}
   mountain: {fileID: 1743079386}
+--- !u!114 &1743079391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1743079384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680a0cacc70918c4f99e9cc96a675ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1760930732
 GameObject:
   m_ObjectHideFlags: 0

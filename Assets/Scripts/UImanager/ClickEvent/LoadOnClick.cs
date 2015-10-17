@@ -8,12 +8,12 @@ using System.Collections;
 public class LoadOnClick : MonoBehaviour
 {
 
-    public AudioClip clickSound;
-    private AudioSource source;
+    //public AudioClip clickSound;
+    //private AudioSource source;
 
     void Start()
     {
-        source = GetComponent<AudioSource>();
+        //source = GetComponent<AudioSource>();
         //source.clip = clickSound;
     }
 
