@@ -5,17 +5,42 @@ using UnityEngine.UI;
 public class StoringScore : MonoBehaviour {
 
 	private string secretKey = "mySecretKey";
+	private int level;
 	int score = 0;
+
 
 	// Add Listener to the text field to get user's name
 	void Start () {
 		var usernameField = gameObject.GetComponent<InputField>();
 		usernameField.onEndEdit.AddListener(SubmitScore);
+		level = getLevel();
+	}
+
+	int getLevel(){
+		int level = 0;
+		if(Application.loadedLevelName.Equals("Park")){
+			level = 1;
+		}else if(Application.loadedLevelName.Equals("mountain1")){
+			level = 2;
+		}else if(Application.loadedLevelName.Equals("city")){
+			level = 3;
+		}
+		return level;
 	}
 	
 	// Get the user name and score and submit it to the database
 	private void SubmitScore(string name) {
-		score = PlayerPrefs.GetInt("highscore", score);
+		// Store the player's score
+		if (level == 1) {
+			score = PlayerPrefs.GetInt ("park");
+
+		} else if (level == 2) {
+			score = PlayerPrefs.GetInt ("mountain");
+
+		} else if (level == 3) {
+			score =  PlayerPrefs.GetInt ("city");
+		}
+
 		StartCoroutine(PostScores(name, score));
 	}
 
@@ -43,8 +68,17 @@ public class StoringScore : MonoBehaviour {
 	// Posting score to the database
 	IEnumerator PostScores(string name, int score)
 	{
-		
-		var addScoreURL = "http://306skypeak.site90.net/addscore.php?";
+		var addScoreURL = "http://306skypeak.site90.net/addPark.php?";
+
+		if (level == 1) {
+			addScoreURL = "http://306skypeak.site90.net/addPark.php?";
+		} else if (level == 2) {
+			Debug.Log("adding to mountain");
+			addScoreURL = "http://306skypeak.site90.net/addMountain.php?";
+		} else if (level == 3) {
+			addScoreURL = "http://306skypeak.site90.net/addCity.php?";
+		}
+
 		
 		//This connects to a server side php script that will add the name and score to a MySQL DB.
 		// Supply it with a string representing the players name and the players score.
