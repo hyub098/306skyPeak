@@ -547,6 +547,7 @@ GameObject:
   - 114: {fileID: 11448558}
   - 114: {fileID: 11457260}
   - 114: {fileID: 11422250}
+  - 114: {fileID: 11401062}
   m_Layer: 0
   m_Name: OnlineOwl
   m_TagString: Player
@@ -1332,6 +1333,17 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &11401062
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e695047e3ce0c4901bcdac646fdb61ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11422250
 MonoBehaviour:
   m_ObjectHideFlags: 1
