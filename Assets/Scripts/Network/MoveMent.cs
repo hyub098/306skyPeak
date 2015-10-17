@@ -16,12 +16,13 @@ public class MoveMent : MonoBehaviour {
 	private Animation anim;
 	public BirdState _characterState;
 	public bool isControllable = false;
-
+	public bool isFinish;
 	public float maxSpd;
 	private float currentSpd;
 	private Rigidbody rb;
 	private Vector3 moveDistance;
 	private int count2 = 0;
+
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +32,7 @@ public class MoveMent : MonoBehaviour {
 		currentSpd = 0;
 		anim = GetComponent<Animation> ();
 		rb = GetComponent<Rigidbody> ();	
-
+		isFinish = false;
 	}
 	
 	// Update is called once per frame
@@ -52,7 +53,11 @@ public class MoveMent : MonoBehaviour {
 		//Camera.main.transform.LookAt (transform.position + transform.forward * 0.01f);
 
 
-
+		if (isFinish) {
+		
+			isControllable=false;
+		
+		}
 
 		constrain ();
 
@@ -203,6 +208,10 @@ public class MoveMent : MonoBehaviour {
 		}
 		
 		
+	}
+
+	void OnTriggerEnter(Collider other) {
+		isFinish = true;
 	}
 	
 	private void UpdateAnimation(){

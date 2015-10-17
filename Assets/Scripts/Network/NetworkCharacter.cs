@@ -25,6 +25,8 @@ public class NetworkCharacter : Photon.MonoBehaviour
 
 			MoveMent myC = GetComponent<MoveMent>();
 			stream.SendNext((int)myC._characterState);
+			stream.SendNext((bool)myC.isFinish);
+
 			
 		}
 		else
@@ -34,6 +36,8 @@ public class NetworkCharacter : Photon.MonoBehaviour
 			this.correctPlayerRot = (Quaternion)stream.ReceiveNext();
 			MoveMent myC = GetComponent<MoveMent>();
 			myC._characterState = (BirdState)stream.ReceiveNext();
+			myC.isFinish = (bool)stream.ReceiveNext();
+			Debug.Log(myC.isFinish);
 		}
 	}
 }
