@@ -12023,7 +12023,7 @@ MonoBehaviour:
   minX: 0
   maxX: 60
   minY: 1
-  maxY: 1
+  maxY: 20
   minZ: 0
   maxZ: 60
 --- !u!1 &970607727 stripped
