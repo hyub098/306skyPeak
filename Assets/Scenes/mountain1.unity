@@ -760,7 +760,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 29683418}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -846,8 +846,9 @@ MonoBehaviour:
   achievement_timePark: {fileID: 2137720757}
   achievement_mountain3Lives: {fileID: 1118803237}
   achievement_park3Lives: {fileID: 681742453}
-  getMailSound: {fileID: 8300000, guid: b25a86a96e6107943b8664b2dc827ace, type: 3}
+  getMailSound: {fileID: 8300000, guid: 66c06e4b99367c543a560bbba177d12f, type: 3}
   postMailSound: {fileID: 8300000, guid: 70c1151b299e967479535ff12f855b77, type: 3}
+  winSound: {fileID: 8300000, guid: a8adfaae163e59641b2754da4f262067, type: 3}
 --- !u!114 &29683425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,6 +862,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpd: 4
+  windSound: {fileID: 0}
+  wingSound: {fileID: 8300000, guid: 6ab6bf0b8eaedf24d820677edcc5999c, type: 3}
 --- !u!114 &29683426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,6 +879,8 @@ MonoBehaviour:
   gameOver: {fileID: 1415713692}
   achievement_Pressure: {fileID: 2026748613}
   achievement_Wipeout: {fileID: 1714387212}
+  collisionSound: {fileID: 8300000, guid: 91d3042120789dd4cb27aee4eb1b82fa, type: 3}
+  gameOverSound: {fileID: 8300000, guid: 9fee655191e0bd847bb895531704f6f9, type: 3}
 --- !u!65 &29683427
 BoxCollider:
   m_ObjectHideFlags: 0

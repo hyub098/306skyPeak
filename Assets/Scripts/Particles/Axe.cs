@@ -9,9 +9,13 @@ public class Axe : MonoBehaviour {
     private Vector3 location;
 	private bool destroy = true;
 
+    public AudioClip throwSound;
+    private AudioSource source;
+
 
     // Use this for initialization
     void Start () {
+        source = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -49,8 +53,10 @@ public class Axe : MonoBehaviour {
 
 	void shootAxe(GameObject axe){
 
-	//	axe.transform.position = Vector3.Lerp(axe.transform.position, location, 0.001f);
-		axe.transform.position += axe.transform.forward * Time.deltaTime * 10.0f;
+        //	axe.transform.position = Vector3.Lerp(axe.transform.position, location, 0.001f);
+        source.clip = throwSound;
+        source.Play();
+        axe.transform.position += axe.transform.forward * Time.deltaTime * 10.0f;
 		axe.transform.Rotate (0,0,1000);
 
 
