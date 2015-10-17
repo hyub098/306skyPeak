@@ -1,0 +1,9 @@
+/Users/chahatchawla/306skyPeaklog.txt
+Expected outcome: mailcount -1 -> collision with mail-->0 at time 12:14:26 PM
+assert: mailcount -1 -> collision with mail-->0 at time 12:14:26 PM
+/Users/chahatchawla/306skyPeaklog.txt
+Expected outcome: mailcount -1 -> collision with mail-->0 at time 12:16:59 PM
+assert: mailcount -1 -> collision with mail-->0 at time 12:16:59 PM
+/Users/chahatchawla/306skyPeaklog.txt
+Expected outcome: mailcount -1 -> collision with mail-->0 at time 12:18:49 PM
+assert: mailcount -1 -> collision with mail-->0 at time 12:18:49 PM
