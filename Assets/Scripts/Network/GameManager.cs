@@ -7,10 +7,13 @@ public class GameManager : MonoBehaviour {
 	public string playerPrefabName = "OnlineOwl";
 	public Camera camera;
 	public Canvas start;
+	public GameObject door;
 	void OnJoinedRoom()
 	{
 		StartGame();
-
+		PlayAnimation doorScript=door.GetComponent<PlayAnimation> ();
+		doorScript.openDoor = true;
+		doorScript.isOpen = false;
 	}
 	
 	IEnumerator OnLeftRoom()
