@@ -126,7 +126,7 @@ public class Collision : MonoBehaviour {
     {
 
 
-			if (!collision.gameObject.CompareTag ("Mail box")) {
+			if (!collision.gameObject.CompareTag ("Mailbox")) {
             if (!invincible){
                 source.clip = collisionSound;
                 source.Play();

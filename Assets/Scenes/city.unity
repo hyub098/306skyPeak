@@ -12181,6 +12181,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 181320, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
+      propertyPath: m_TagString
+      value: Mailbox
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4653f2212890168438a449a7915bdb1d, type: 2}
   m_IsPrefabParent: 0
@@ -14293,8 +14297,6 @@ GameObject:
   - 65: {fileID: 910471767}
   - 114: {fileID: 910471766}
   - 114: {fileID: 910471765}
-  - 114: {fileID: 910471764}
-  - 82: {fileID: 910471763}
   - 114: {fileID: 910471770}
   - 114: {fileID: 910471771}
   - 114: {fileID: 910471772}
@@ -14303,6 +14305,7 @@ GameObject:
   - 114: {fileID: 910471775}
   - 114: {fileID: 910471776}
   - 114: {fileID: 910471777}
+  - 82: {fileID: 910471763}
   m_Layer: 0
   m_Name: GREAT_HORNED_OWL (1)
   m_TagString: Player
@@ -14398,18 +14401,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &910471764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11474288, guid: e925d1b3d51db43f592f8f3a2c2d9910,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 910471761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2881b5ac18dd84774841c3708444fedd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &910471765
 MonoBehaviour:
   m_ObjectHideFlags: 0
