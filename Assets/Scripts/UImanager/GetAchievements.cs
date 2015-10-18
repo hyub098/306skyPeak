@@ -94,7 +94,7 @@ public class GetAchievements : MonoBehaviour {
         }*/
 
 
-        var highscoreURL = "http://306skypeak.site90.net/dispTest.php?";
+        var highscoreURL = "http://306skypeak.site90.net/dispPersonalAchievements.php?";
         //guiText.text = "Loading Scores";
         string hash = Md5Sum(user + secretKey);
         string post_url = highscoreURL + "user=" + WWW.EscapeURL(user) + "&hash=" + hash;

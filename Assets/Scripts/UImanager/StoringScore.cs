@@ -7,7 +7,7 @@ public class StoringScore : MonoBehaviour {
 	private string secretKey = "mySecretKey";
 	private int level;
 	int score = 0;
-	string achievement = "win";
+	string achievement = "";
 	
 	private MailCount mailCount;
 	
