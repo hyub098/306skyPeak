@@ -26366,6 +26366,7 @@ GameObject:
   - 114: {fileID: 2078015733}
   - 114: {fileID: 2078015734}
   - 114: {fileID: 2078015735}
+  - 114: {fileID: 2078015736}
   m_Layer: 0
   m_Name: GREAT_HORNED_OWL (1)
   m_TagString: Player
@@ -26532,19 +26533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2881b5ac18dd84774841c3708444fedd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mailCount: 0
-  mailText: {fileID: 1091065293}
-  Congratulations: {fileID: 1553441149}
-  achievement_timeMountain: {fileID: 778789074}
-  achievement_timeCity: {fileID: 1048523680}
-  achievement_city3Lives: {fileID: 998832816}
-  achievement_CloseOne: {fileID: 1970270680}
-  achievement_timePark: {fileID: 586726225}
-  achievement_mountain3Lives: {fileID: 896521883}
-  achievement_park3Lives: {fileID: 582538207}
-  getMailSound: {fileID: 8300000, guid: 66c06e4b99367c543a560bbba177d12f, type: 3}
-  postMailSound: {fileID: 8300000, guid: 70c1151b299e967479535ff12f855b77, type: 3}
-  winSound: {fileID: 8300000, guid: a8adfaae163e59641b2754da4f262067, type: 3}
 --- !u!114 &2078015728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26706,6 +26694,30 @@ MonoBehaviour:
   checkMethods: 8192
   m_ActionBase: {fileID: 681549965}
   checksPerformed: 0
+--- !u!114 &2078015736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2078015720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71535f02331e714dbfa6c8ac418cb11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mailCount: 0
+  mailText: {fileID: 1091065293}
+  Congratulations: {fileID: 1553441149}
+  achievement_timeMountain: {fileID: 778789074}
+  achievement_timeCity: {fileID: 1048523680}
+  achievement_city3Lives: {fileID: 998832816}
+  achievement_CloseOne: {fileID: 1970270680}
+  achievement_timePark: {fileID: 586726225}
+  achievement_mountain3Lives: {fileID: 896521883}
+  achievement_park3Lives: {fileID: 582538207}
+  getMailSound: {fileID: 8300000, guid: 66c06e4b99367c543a560bbba177d12f, type: 3}
+  postMailSound: {fileID: 8300000, guid: 70c1151b299e967479535ff12f855b77, type: 3}
+  winSound: {fileID: 8300000, guid: a8adfaae163e59641b2754da4f262067, type: 3}
 --- !u!1 &2078882994 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 165264, guid: 40b641cefef37b147b40453898c94c69, type: 2}
