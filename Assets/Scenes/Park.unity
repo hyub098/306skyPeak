@@ -14945,7 +14945,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPaused: 0
-  canvas: {fileID: 0}
 --- !u!114 &1224293363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27257,7 +27256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minX: 0
   maxX: 80
-  minY: 0
+  minY: 1
   maxY: 40
   minZ: 0
   maxZ: 80

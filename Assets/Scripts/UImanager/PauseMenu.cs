@@ -4,7 +4,7 @@ using System.Collections;
 public class PauseMenu : MonoBehaviour {
 
 	public bool isPaused;
-	public Canvas canvas;
+	private Canvas canvas;
 
 	// Disable the pause menu at the beginnig
 	void Start(){

@@ -87,8 +87,6 @@ public class Collision : MonoBehaviour {
             Time.timeScale = 0f;
         }
 
-		checkDead();
-
 //        if (life < 1)
 //        {
 //
@@ -143,7 +141,7 @@ public class Collision : MonoBehaviour {
             }
 
 
-
+			checkDead();
 				
 			
 				
