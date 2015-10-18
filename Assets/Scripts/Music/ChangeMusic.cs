@@ -39,6 +39,23 @@ public class ChangeMusic : MonoBehaviour {
          {
            source.Stop();
         }
+        if (level == 3)
+        {
+            source.Stop();
+        }
+        if (level == 4)
+        {
+            source.Stop();
+        }
+        if (level == 5)
+        {
+            source.Stop();
+        }
+        if (level == 6)
+        {
+            source.Stop();
+
+        }
 
     }
 }
