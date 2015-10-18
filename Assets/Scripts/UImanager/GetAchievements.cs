@@ -118,55 +118,55 @@ public class GetAchievements : MonoBehaviour {
             List<string> achievements = extractString(str).Split(',').ToList<string>();
             foreach (string s in achievements)
             {
-                if (s.Equals("learningToFly"))
+				if (s.Equals("learningToFly"))
                 {
                     Color temp = a_image.color;
                     temp.a = 1.0f;
                     a_image.color = temp;
                 }
-                if (s.Equals("stormyWeather"))
+				if (s.Equals("stormyWeather"))
                 {
                     Color temp = b_image.color;
                     temp.a = 1.0f;
                     b_image.color = temp;
                 }
-                if (s.Equals("aintNoMountainHighEnough"))
+				if (s.Equals("aintNoMountainHighEnough"))
                 {
                     Color temp = c_image.color;
                     temp.a = 1.0f;
                     c_image.color = temp;
                 }
-                if (s.Equals("runThroughTheJungle"))
+				if (s.Equals("runThroughTheJungle"))
                 {
                     Color temp = d_image.color;
                     temp.a = 1.0f;
                     d_image.color = temp;
                 }
-                if (s.Equals("midnightCity"))
+				if (s.Equals("midnightCity"))
                 {
                     Color temp = e_image.color;
                     temp.a = 1.0f;
                     e_image.color = temp;
                 }
-                if (s.Equals("mountainKing"))
+				if (s.Equals("mountainKing"))
                 {
                     Color temp = f_image.color;
                     temp.a = 1.0f;
                     f_image.color = temp;
                 }
-                if (s.Equals("underPressure"))
+				if (s.Equals("underPressure"))
                 {
                     Color temp = g_image.color;
                     temp.a = 1.0f;
                     g_image.color = temp;
                 }
-                if (s.Equals("DontStopBelieving"))
+				if (s.Equals("dontStopBelieving"))
                 {
                     Color temp = h_image.color;
                     temp.a = 1.0f;
                     h_image.color = temp;
                 }
-                if (s.Equals("livinOnAPrayer"))
+				if (s.Equals("livinOnAPrayer"))
                 {
                     Color temp = i_image.color;
                     temp.a = 1.0f;
