@@ -5,49 +5,50 @@ using System;
 //This calss is for random generation
 public class cityRandom : MonoBehaviour {
 	public List<Vector3> myList = new List<Vector3>();
-
+	
 	// Use this for initialization
 	void Start () {
 		// Generate the object in a certain area
 		//transform.position=new Vector3(100+500*Random.value, 400,800*Random.value );
-
-		myList.Add(new Vector3(27,4, 21 ));
-		myList.Add(new Vector3(50,4, 50 ));
-		myList.Add(new Vector3(78,4, 21 ));
-		myList.Add(new Vector3(11,4, 7 ));
-		myList.Add(new Vector3(70,4, 14 ));
-		myList.Add(new Vector3(23,4, 67 ));
-		myList.Add(new Vector3(25,4, 43 ));
-		myList.Add(new Vector3(89,4, 46 ));
-		myList.Add(new Vector3(9,4, 67 ));
-
-		myList.Add(new Vector3(32,4 +UnityEngine.Random.value*4, 65 ));
-		myList.Add(new Vector3(50,4 +UnityEngine.Random.value*4, 52 ));
-		myList.Add(new Vector3(36,4 +UnityEngine.Random.value*4, 42 ));
-		myList.Add(new Vector3(43,4 +UnityEngine.Random.value*4, 10 ));
+		
+		myList.Add(new Vector3(27,10 +UnityEngine.Random.value*15, 21 ));
+		myList.Add(new Vector3(50,10 +UnityEngine.Random.value*15, 50 ));
+		myList.Add(new Vector3(68,10 +UnityEngine.Random.value*15, 21 ));
+		myList.Add(new Vector3(11,10 +UnityEngine.Random.value*15, 7 ));
+		myList.Add(new Vector3(80,10 +UnityEngine.Random.value*15, 14 ));
 		
 		
-		myList.Add(new Vector3(75,6 +UnityEngine.Random.value*4, 15 ));
-		myList.Add(new Vector3(9,6 +UnityEngine.Random.value*4, 50 ));
-		myList.Add(new Vector3(31,10 +UnityEngine.Random.value*4, 22 ));
-		myList.Add(new Vector3(11,10 +UnityEngine.Random.value*4, 35 ));
-		myList.Add(new Vector3(75,15 +UnityEngine.Random.value*4, 68 ));
+		myList.Add(new Vector3(32,10 +UnityEngine.Random.value*15, 65 ));
+		myList.Add(new Vector3(50,10 +UnityEngine.Random.value*15, 67 ));
+		myList.Add(new Vector3(65,10 +UnityEngine.Random.value*15, 36 ));
+		myList.Add(new Vector3(15,10 +UnityEngine.Random.value*15, 67 ));
+		myList.Add(new Vector3(75,10 +UnityEngine.Random.value*15, 21 ));
 		
-		myList.Add(new Vector3(53,10+UnityEngine.Random.value*4, 78 ));
-		myList.Add(new Vector3(75,15+UnityEngine.Random.value*4, 72 ));
-		myList.Add(new Vector3(33,15 +UnityEngine.Random.value*4, 15 ));
-		myList.Add(new Vector3(18,4 +UnityEngine.Random.value*4, 55 ));
-		myList.Add(new Vector3(23,15 +UnityEngine.Random.value*4, 67 ));
-		myList.Add(new Vector3(7,4 +UnityEngine.Random.value*4, 6 ));
 		
-		myList.Add(new Vector3(7,4 +UnityEngine.Random.value*4, 6 ));
-
-
+		myList.Add(new Vector3(32,10 +UnityEngine.Random.value*15, 31 ));
+		myList.Add(new Vector3(56,10 +UnityEngine.Random.value*15, 76 ));
+		myList.Add(new Vector3(30,10 +UnityEngine.Random.value*15, 48 ));
+		myList.Add(new Vector3(9,10 +UnityEngine.Random.value*15, 50 ));
+		myList.Add(new Vector3(71,10 +UnityEngine.Random.value*15, 62 ));
+		
+		myList.Add(new Vector3(15,10 +UnityEngine.Random.value*15, 32 ));
+		myList.Add(new Vector3(55,10 +UnityEngine.Random.value*15, 20 ));
+		myList.Add(new Vector3(10,10 +UnityEngine.Random.value*15, 68 ));
+		myList.Add(new Vector3(17,10+UnityEngine.Random.value*15, 58 ));
+		myList.Add(new Vector3(53,10+UnityEngine.Random.value*15, 35 ));
+		
+		myList.Add(new Vector3(66,10+UnityEngine.Random.value*15, 44 ));
+		myList.Add(new Vector3(34,10 +UnityEngine.Random.value*15, 34 ));
+		myList.Add(new Vector3(47,10 +UnityEngine.Random.value*15, 44 ));
+		myList.Add(new Vector3(62,10 +UnityEngine.Random.value*15, 54 ));
+		myList.Add(new Vector3(17,10 +UnityEngine.Random.value*15, 16 ));
+		
+		
 		int number = Mathf.RoundToInt(UnityEngine.Random.value*25);
 		transform.position=myList[number];
-
-
-
+		
+		
+		
 	}
 	
 	// Update is called once per frame
