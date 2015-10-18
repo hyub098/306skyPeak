@@ -667,9 +667,9 @@ MonoBehaviour:
   fourthScoreText: {fileID: 1335353340}
   fifthtNameText: {fileID: 394725799}
   fifthScoreText: {fileID: 397557766}
-  park: {fileID: 122819112}
-  city: {fileID: 0}
-  mountain: {fileID: 0}
+  park: {fileID: 1326231419}
+  city: {fileID: 122819112}
+  mountain: {fileID: 1783150798}
 --- !u!114 &122819115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5488,8 +5488,8 @@ MonoBehaviour:
   fifthtNameText: {fileID: 469435967}
   fifthScoreText: {fileID: 1686720225}
   park: {fileID: 1326231419}
-  city: {fileID: 0}
-  mountain: {fileID: 0}
+  city: {fileID: 122819112}
+  mountain: {fileID: 1783150798}
 --- !u!114 &1326231424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7264,9 +7264,9 @@ MonoBehaviour:
   fourthScoreText: {fileID: 435382471}
   fifthtNameText: {fileID: 1536428921}
   fifthScoreText: {fileID: 1857320605}
-  park: {fileID: 1783150798}
-  city: {fileID: 0}
-  mountain: {fileID: 0}
+  park: {fileID: 1326231419}
+  city: {fileID: 122819112}
+  mountain: {fileID: 1783150798}
 --- !u!114 &1783150802
 MonoBehaviour:
   m_ObjectHideFlags: 0

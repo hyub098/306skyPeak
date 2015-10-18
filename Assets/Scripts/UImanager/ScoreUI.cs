@@ -36,12 +36,13 @@ public class ScoreUI : MonoBehaviour
 		StartCoroutine(GetScores());
 		
 	}
-	
 
-	
-	// Get the scores from the MySQL DB to display in a GUIText.
-	// remember to use StartCoroutine when calling this function!
-	IEnumerator GetScores()
+
+
+
+    // Get the scores from the MySQL DB to display in a GUIText.
+    // remember to use StartCoroutine when calling this function!
+    IEnumerator GetScores()
 	{
 
 		var highscoreURL = "http://306skypeak.site90.net/dispPark.php";
@@ -61,7 +62,7 @@ public class ScoreUI : MonoBehaviour
 		WWW hs_get = new WWW(highscoreURL);
 		yield return hs_get;
 
-		//Debug.Log(post_url);
+		Debug.Log(hs_get);
 		
 		if (hs_get.error != null)
 		{
@@ -77,27 +78,28 @@ public class ScoreUI : MonoBehaviour
 			
 			List<string> results = extractString(str).Split(',').ToList<string>();
 
-			if (results.Count > 0){
+			if (results.Count > 1){
 				firstNameText.text = results[0];
 				firstScoreText.text = results[1];
 			}
 
-			if (results.Count > 2){
+			if (results.Count > 3){
 				secondtNameText.text = results[2];
 				secondScoreText.text = results[3];
 			}
 
-			if (results.Count > 4){
+			if (results.Count > 5){
 				thirdNameText.text = results[4];
 				thirdScoreText.text = results[5];
 			}
 
-			if (results.Count > 6){
+			if (results.Count > 7){
 				fourthNameText.text = results[6];
 				fourthScoreText.text = results[7];
 			}
 
-			if (results.Count > 8){
+			if (results.Count > 9){
+                Debug.Log(results.Count);
 				fifthtNameText.text = results[8];
 				fifthScoreText.text = results[9];
 			}
