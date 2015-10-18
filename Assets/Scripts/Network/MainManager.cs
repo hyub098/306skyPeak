@@ -21,7 +21,7 @@ public class MainManager : MonoBehaviour
 		
 	}
 	
-	private string roomName = "myRoom";
+	private string roomName = "SkyPeakRoom1";
 	private Vector2 scrollPos = Vector2.zero;
 	
 	void OnGUI()

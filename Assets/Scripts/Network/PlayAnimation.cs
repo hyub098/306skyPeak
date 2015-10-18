@@ -10,7 +10,7 @@ public class PlayAnimation : MonoBehaviour {
 	void Start() {
 		animation = GetComponent<Animation>();
 		isOpen = false;
-		openDoor = false;
+		openDoor = true;
 		}
 	void Update(){
 		if (!isOpen && openDoor) {
