@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
 		PlayAnimation doorScript=door.GetComponent<PlayAnimation> ();
 		doorScript.openDoor = true;
 		doorScript.isOpen = false;
+		Time.timeScale = 1.0f;
 	}
 	
 	IEnumerator OnLeftRoom()
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour {
 			yield return 0;
 		
 		Application.LoadLevel(Application.loadedLevel);
+		Time.timeScale = 1.0f;
 
 		
 	}
@@ -53,6 +55,7 @@ public class GameManager : MonoBehaviour {
 		{
 			PhotonNetwork.LeaveRoom();
 			start.enabled=false;
+			Time.timeScale = 1.0f;
 		}
 	}
 	
