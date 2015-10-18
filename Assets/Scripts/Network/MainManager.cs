@@ -112,7 +112,16 @@ public class MainManager : MonoBehaviour
 			}
 			GUILayout.EndScrollView();
 		}
-		
+		GUILayout.BeginHorizontal();
+		GUILayout.Space(40);
+		GUILayout.Label("", GUILayout.Width(70));
+		if (GUILayout.Button("Exit", GUILayout.Width(150)))
+		{
+			PhotonNetwork.LeaveRoom();
+			Application.LoadLevel(Application.loadedLevel);
+			Application.LoadLevel(1);
+		}
+		GUILayout.EndHorizontal();
 		GUILayout.EndArea();
 	}
 	
