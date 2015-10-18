@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour {
 			yield return 0;
 		
 		Application.LoadLevel(Application.loadedLevel);
+
 		
 	}
 	
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour {
 	void OnGUI()
 	{
 		if (PhotonNetwork.room == null) return; //Only display this GUI when inside a room
-		
+		GUI.skin.button.fontSize = 13;
 		if (GUILayout.Button("Leave Room"))
 		{
 			PhotonNetwork.LeaveRoom();
