@@ -14138,7 +14138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healtText: {fileID: 1136033031}
-  testing: 1
+  testing: 0
   damageImg: {fileID: 451971815}
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: .100000001}
@@ -14243,7 +14243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71535f02331e714dbfa6c8ac418cb11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testing: 1
+  testing: 0
   mailCount: 0
   mailText: {fileID: 2130470183}
   Congratulations: {fileID: 43979240}
