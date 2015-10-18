@@ -15,7 +15,30 @@ public class NetworkCharacter : Photon.MonoBehaviour
 			//gameObject.GetComponent<MoveMent>().isFinish=isFinish;
 			
 	}
-	
+
+	void OnGUI(){
+		if (isFinish) {
+			GUILayout.BeginArea (new Rect ((Screen.width - 500) / 2, (Screen.height - 300) / 2, 500, 300));
+			GUILayout.BeginHorizontal ();
+			GUI.skin.label.fontSize = 60;
+			GUILayout.Label ("", GUILayout.Width (150));
+			GUILayout.Label ("You lost!", GUILayout.Width (700));
+			GUILayout.EndHorizontal ();
+			GUILayout.Space (100);
+			GUILayout.BeginHorizontal ();
+			GUILayout.Label ("", GUILayout.Width (150));
+			GUI.skin.button.fontSize = 20;
+			if (GUILayout.Button ("Exit", GUILayout.Width (150))) {
+				PhotonNetwork.LeaveRoom ();
+				Application.LoadLevel (Application.loadedLevel);
+				Application.LoadLevel (1);
+			}
+			GUILayout.EndHorizontal ();
+			GUILayout.EndArea ();
+		
+		}
+	}
+
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
 	{
 		if (stream.isWriting)
@@ -42,6 +65,7 @@ public class NetworkCharacter : Photon.MonoBehaviour
 			isFinish = (bool)stream.ReceiveNext();
 			if(isFinish){
 				Time.timeScale = 0f; //Stops the game
+
 			}
 
 
