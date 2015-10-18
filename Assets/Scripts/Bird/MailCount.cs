@@ -85,7 +85,7 @@ public class MailCount : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 
 		// If the player collide withe the mail box, increase the gold according to the number of mails
-		if (other.gameObject.CompareTag ("Mail box")) {
+		if (other.gameObject.CompareTag ("Mailbox")) {
 			Debug.Log ("Deliver");
 			checkWin ();
 
