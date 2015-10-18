@@ -16,6 +16,7 @@ public class DoorScript : MonoBehaviour {
 	
 		if (myDoor && otherDoor) {
 			openDoor.openDoor=true;
+			Debug.Log("!!!!!!");
 		}
 
 	}

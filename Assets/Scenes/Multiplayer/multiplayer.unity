@@ -1215,6 +1215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start3: {fileID: 1804892516}
+  startButton: {fileID: 0}
   n: {fileID: 1833741677}
 --- !u!114 &1804892513
 MonoBehaviour:
