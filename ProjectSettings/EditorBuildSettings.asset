@@ -25,3 +25,5 @@ EditorBuildSettings:
     path: Assets/Scenes/highScores.unity
   - enabled: 1
     path: Assets/Scenes/individualProfile.unity
+  - enabled: 1
+    path: Assets/Scenes/achievments.unity
