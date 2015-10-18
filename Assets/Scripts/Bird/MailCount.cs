@@ -178,7 +178,7 @@ public class MailCount : MonoBehaviour {
                 }
 
                 //Achievement for winning with only one life left
-                if (life == 1)
+                if (life == 0)
                 {
                     achievement_CloseOne.enabled = true;
 					closeOne = true;

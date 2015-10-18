@@ -649,7 +649,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Individual Profile
+  m_Text: Achievement Info
 --- !u!222 &197875505
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -758,7 +758,7 @@ GameObject:
   - 114: {fileID: 528334992}
   - 114: {fileID: 528334991}
   m_Layer: 5
-  m_Name: Ind
+  m_Name: Achievements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

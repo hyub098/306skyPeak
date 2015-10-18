@@ -3096,12 +3096,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstNameText: {fileID: 1187273791}
   firstScoreText: {fileID: 1082289468}
-  secondtNameText: {fileID: 1180868947}
-  secondScoreText: {fileID: 1023699617}
+  secondtNameText: {fileID: 1823666857}
+  secondScoreText: {fileID: 95153904}
   thirdNameText: {fileID: 956309345}
   thirdScoreText: {fileID: 1433109739}
-  fourthNameText: {fileID: 1251440923}
-  fourthScoreText: {fileID: 719679039}
+  fourthNameText: {fileID: 1840575375}
+  fourthScoreText: {fileID: 1398967940}
   fifthtNameText: {fileID: 1149634262}
   fifthScoreText: {fileID: 903521186}
 --- !u!114 &1326231422
@@ -3128,12 +3128,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstNameText: {fileID: 263341703}
   firstScoreText: {fileID: 574729672}
-  secondtNameText: {fileID: 1823666857}
-  secondScoreText: {fileID: 95153904}
+  secondtNameText: {fileID: 1180868947}
+  secondScoreText: {fileID: 1023699617}
   thirdNameText: {fileID: 2089498741}
   thirdScoreText: {fileID: 237403721}
-  fourthNameText: {fileID: 1840575375}
-  fourthScoreText: {fileID: 1398967940}
+  fourthNameText: {fileID: 1251440923}
+  fourthScoreText: {fileID: 719679039}
   fifthtNameText: {fileID: 722905219}
   fifthScoreText: {fileID: 1105908521}
 --- !u!114 &1326231424
