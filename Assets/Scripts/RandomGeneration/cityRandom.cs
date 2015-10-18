@@ -15,7 +15,7 @@ public class cityRandom : MonoBehaviour {
 		myList.Add(new Vector3(50,10 +UnityEngine.Random.value*15, 50 ));
 		myList.Add(new Vector3(68,10 +UnityEngine.Random.value*15, 21 ));
 		myList.Add(new Vector3(11,10 +UnityEngine.Random.value*15, 7 ));
-		myList.Add(new Vector3(80,10 +UnityEngine.Random.value*15, 14 ));
+		myList.Add(new Vector3(78,10 +UnityEngine.Random.value*15, 14 ));
 		
 		
 		myList.Add(new Vector3(32,10 +UnityEngine.Random.value*15, 65 ));
