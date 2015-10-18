@@ -12692,7 +12692,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "You have 3 scrolls to deliver to the mailbox in order to complete this
-    stage. \nStay clear of yellow bushes and flying arrows, they suck on your lives!\nBe
+    stage. \nStay clear of yellow bushes and the hunter's axe, they suck on your lives!\nBe
     fast to get a good score. Goodluck!\n"
 --- !u!222 &997980464
 CanvasRenderer:
