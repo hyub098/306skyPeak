@@ -111,7 +111,7 @@ public class Tutorial : MonoBehaviour {
     void OnCollisionEnter(UnityEngine.Collision collision)
     {
         // If the player collide with the mail box
-        if (collision.gameObject.CompareTag("Mail box"))
+        if (collision.gameObject.CompareTag("Mailbox"))
         {
             count2 = 8;
             //Debug.Log("Finished");
