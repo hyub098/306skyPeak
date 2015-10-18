@@ -7,7 +7,7 @@ public class DoorScript : MonoBehaviour {
 	public PlayAnimation openDoor;
 	// Use this for initialization
 	void Start () {
-		myDoor = false;
+		myDoor = true;
 		otherDoor = false;
 	}
 	

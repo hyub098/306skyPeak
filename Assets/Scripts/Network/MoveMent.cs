@@ -27,28 +27,27 @@ public class MoveMent : MonoBehaviour {
 
 	void OnGUI(){
 		if (isFinish) {
-            GUILayout.BeginArea(new Rect((Screen.width - 400) / 2, (Screen.height - 300) / 2, 400, 300));
+            GUILayout.BeginArea(new Rect((Screen.width - 500) / 2, (Screen.height - 300) / 2, 500, 300));
             GUILayout.BeginHorizontal();
-            GUILayout.Label("Congratulations!", GUILayout.Width(400));
+            GUI.skin.label.fontSize = 60;
+            GUILayout.Label("Congratulations!", GUILayout.Width(1000));
             GUILayout.EndHorizontal();
-            GUILayout.Space(30);
+            GUILayout.Space(100);
             GUILayout.BeginHorizontal();
-            if (GUILayout.Button("Exit"))
+            GUILayout.Label("", GUILayout.Width(150));
+            GUI.skin.button.fontSize = 20;
+            if (GUILayout.Button("Exit", GUILayout.Width(150)))
             {
                 Application.LoadLevel(1);
             }
             GUILayout.EndHorizontal();
             GUILayout.EndArea();
-            if(GUI.Button(new Rect(10,10,150,100),"button")){
-            print("something");
-            }
-
     
-			if(GUI.Button(new Rect(10,10,150,100),"button")){
-
-				Application.LoadLevel(1);
-				print("something");
-			}
+			//if(GUI.Button(new Rect(10,10,150,100),"button")){
+            //
+				//Application.LoadLevel(1);
+				//print("something");
+			//}
 
 		}
 	}

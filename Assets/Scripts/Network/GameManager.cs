@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
 	{
 		// Spawn our local player
 		camera.enabled = false;
-		Vector3 location = new Vector3 (-80f,98f,112f);
+		Vector3 location = new Vector3 (-80f,98f,118f);
 		GameObject bird = PhotonNetwork.Instantiate (this.playerPrefabName, location, Quaternion.identity, 0);
 		bird.gameObject.transform.Rotate (0.0f, 90.0f, 0.0f);
 		MoveMent controller = bird.GetComponent<MoveMent>();
