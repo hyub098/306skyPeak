@@ -757,20 +757,6 @@ Animation:
   m_PrefabParentObject: {fileID: 11100000, guid: cfef738579cd02c40b3b1d63e67b0f84,
     type: 2}
   m_PrefabInternal: {fileID: 1199139435}
---- !u!114 &1380687405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1380687398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e695047e3ce0c4901bcdac646fdb61ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myDoor: 1
-  otherDoor: 0
-  openDoor: {fileID: 1380687399}
 --- !u!1 &1414299187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,7 +1181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1804892511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1229,7 +1215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start3: {fileID: 1804892516}
-  startButton: {fileID: 0}
+  startButton: {fileID: 1601512593}
   n: {fileID: 1833741677}
 --- !u!114 &1804892513
 MonoBehaviour:

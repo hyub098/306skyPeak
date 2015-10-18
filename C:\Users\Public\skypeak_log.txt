@@ -1,0 +1,45 @@
+filename: /Users/chahatchawla/306skyPeak\log.txt
+Expected outcome: life 3 -> collision-->2 at time 12:34:27 PM
+assert: life 3 -> collision-->2 at time 12:34:27 PM
+filename: /Users/chahatchawla/306skyPeak\log.txt
+Expected outcome: life 2 -> collision-->1 at time 12:34:41 PM
+assert: life 2 -> collision-->1 at time 12:34:41 PM
+filename: /Users/chahatchawla/306skyPeak\log.txt
+Expected outcome: life 1 -> collision-->0 at time 12:34:52 PM
+assert: life 1 -> collision-->0 at time 12:34:52 PM
+filename: /Users/chahatchawla/306skyPeak\log.txt
+Expected outcome: life 3 -> collision-->2 at time 12:57:42 PM
+assert: life 3 -> collision-->2 at time 12:57:42 PM
+filename: /Users/chahatchawla/306skyPeak\log.txt
+Expected outcome: life 2 -> collision-->1 at time 12:57:56 PM
+assert: life 2 -> collision-->1 at time 12:57:56 PM
+filename: /Users/chahatchawla/306skyPeak\log.txt
+Expected outcome: life 1 -> collision-->0 at time 12:58:06 PM
+assert: life 1 -> collision-->0 at time 12:58:06 PM
+filename: /Users/chahatchawla/306skyPeak\log.txt
+Expected outcome: life 3 -> collision-->2 at time 12:58:27 PM
+assert: life 3 -> collision-->2 at time 12:58:27 PM
+filename: /Users/chahatchawla/306skyPeak\log.txt
+Expected outcome: life 2 -> collision-->1 at time 12:58:39 PM
+assert: life 2 -> collision-->1 at time 12:58:39 PM
+filename: /Users/chahatchawla/306skyPeak\log.txt
+Expected outcome: life 1 -> collision-->0 at time 12:58:47 PM
+assert: life 1 -> collision-->0 at time 12:58:47 PM
+filename: /Users/chahatchawla/306skyPeak\log.txt
+Expected outcome: life 3 -> collision-->2 at time 1:04:02 PM
+assert: life 3 -> collision-->2 at time 1:04:02 PM
+filename: /Users/chahatchawla/306skyPeak\log.txt
+Expected outcome: life 2 -> collision-->1 at time 1:04:08 PM
+assert: life 2 -> collision-->1 at time 1:04:08 PM
+filename: /Users/chahatchawla/306skyPeak\log.txt
+Expected outcome: life 1 -> collision-->0 at time 1:04:21 PM
+assert: life 1 -> collision-->0 at time 1:04:21 PM
+filename: /Users/chahatchawla/306skyPeak\log.txt
+Expected outcome: life 3 -> collision-->2 at time 1:05:10 PM
+assert: life 3 -> collision-->2 at time 1:05:10 PM
+filename: /Users/chahatchawla/306skyPeak\log.txt
+Expected outcome: life 2 -> collision-->1 at time 1:05:18 PM
+assert: life 2 -> collision-->1 at time 1:05:18 PM
+filename: /Users/chahatchawla/306skyPeak\log.txt
+Expected outcome: life 1 -> collision-->0 at time 1:05:26 PM
+assert: life 1 -> collision-->0 at time 1:05:26 PM
