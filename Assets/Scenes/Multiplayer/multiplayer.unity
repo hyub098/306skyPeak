@@ -548,6 +548,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6500002, guid: cfef738579cd02c40b3b1d63e67b0f84, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400000, guid: cfef738579cd02c40b3b1d63e67b0f84, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: cfef738579cd02c40b3b1d63e67b0f84, type: 2}
@@ -668,6 +672,7 @@ MonoBehaviour:
   playerPrefabName: OnlineOwl
   camera: {fileID: 1414299188}
   start: {fileID: 1804892516}
+  door: {fileID: 1380687398}
 --- !u!1 &1377640517
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,25 +757,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animation: {fileID: 1380687400}
   openDoor: 0
+  isOpen: 0
 --- !u!111 &1380687400 stripped
 Animation:
   m_PrefabParentObject: {fileID: 11100000, guid: cfef738579cd02c40b3b1d63e67b0f84,
     type: 2}
   m_PrefabInternal: {fileID: 1199139435}
---- !u!114 &1380687405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1380687398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e695047e3ce0c4901bcdac646fdb61ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myDoor: 1
-  otherDoor: 0
-  openDoor: {fileID: 1380687399}
 --- !u!1 &1414299187
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,10 +7,14 @@ public class GameManager : MonoBehaviour {
 	public string playerPrefabName = "OnlineOwl";
 	public Camera camera;
 	public Canvas start;
+	public GameObject door;
 	void OnJoinedRoom()
 	{
 		StartGame();
-
+		PlayAnimation doorScript=door.GetComponent<PlayAnimation> ();
+		doorScript.openDoor = true;
+		doorScript.isOpen = false;
+		Time.timeScale = 1.0f;
 	}
 	
 	IEnumerator OnLeftRoom()
@@ -22,6 +26,8 @@ public class GameManager : MonoBehaviour {
 			yield return 0;
 		
 		Application.LoadLevel(Application.loadedLevel);
+		Time.timeScale = 1.0f;
+
 		
 	}
 	
@@ -44,11 +50,12 @@ public class GameManager : MonoBehaviour {
 	void OnGUI()
 	{
 		if (PhotonNetwork.room == null) return; //Only display this GUI when inside a room
-		
+		GUI.skin.button.fontSize = 13;
 		if (GUILayout.Button("Leave Room"))
 		{
 			PhotonNetwork.LeaveRoom();
 			start.enabled=false;
+			Time.timeScale = 1.0f;
 		}
 	}
 	

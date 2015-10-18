@@ -7,7 +7,7 @@ public class StoringScore : MonoBehaviour {
 	private string secretKey = "mySecretKey";
 	private int level;
 	int score = 0;
-	string achievement = "win";
+	string achievement = "";
 	
 	private MailCount mailCount;
 	
@@ -53,7 +53,7 @@ public class StoringScore : MonoBehaviour {
 		}
 
 		if (MailCount.city3Lives) {
-			StartCoroutine (PostAchievement (name, "StormyWeather"));
+			StartCoroutine (PostAchievement (name, "stormyWeather"));
 		}
 
 		if (MailCount.closeOne) {
@@ -73,7 +73,7 @@ public class StoringScore : MonoBehaviour {
 		}
 
 		if (MailCount.timePark) {
-			StartCoroutine (PostAchievement (name, "runthroughthejungle"));
+			StartCoroutine (PostAchievement (name, "runThroughTheJungle"));
 		} 
 
 		if (Collision.pressure) {

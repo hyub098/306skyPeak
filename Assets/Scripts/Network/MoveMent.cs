@@ -38,6 +38,8 @@ public class MoveMent : MonoBehaviour {
             GUI.skin.button.fontSize = 20;
             if (GUILayout.Button("Exit", GUILayout.Width(150)))
             {
+				PhotonNetwork.LeaveRoom();
+				Application.LoadLevel(Application.loadedLevel);
                 Application.LoadLevel(1);
             }
             GUILayout.EndHorizontal();

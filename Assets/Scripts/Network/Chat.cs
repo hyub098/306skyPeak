@@ -22,8 +22,9 @@ public class Chat : Photon.MonoBehaviour
 	}
 	
 	void OnGUI()
-	{        
-		GUI.SetNextControlName("");
+	{
+        GUI.skin.label.fontSize = 20;
+        GUI.SetNextControlName("");
 		
 		GUILayout.BeginArea(new Rect(0, Screen.height - chatHeight, Screen.width, chatHeight));
 		
