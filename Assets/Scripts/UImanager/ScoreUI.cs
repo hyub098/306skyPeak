@@ -23,9 +23,9 @@ public class ScoreUI : MonoBehaviour
 	public Text fifthtNameText;
 	public Text fifthScoreText;
 
-	public Canvas park;
-	public Canvas city;
-	public Canvas mountain;
+	//public Canvas park;
+	//public Canvas city;
+	//public Canvas mountain;
 	
 	
 	private string secretKey = "mySecretKey"; // Edit this value and make sure it's the same as the one stored on the server
@@ -46,7 +46,7 @@ public class ScoreUI : MonoBehaviour
 	{
 
 		var highscoreURL = "http://306skypeak.site90.net/dispPark.php";
-
+        /*
 		if (park.enabled) {
 			highscoreURL = "http://306skypeak.site90.net/dispPark.php";
 
@@ -56,7 +56,7 @@ public class ScoreUI : MonoBehaviour
 		} else if (city.enabled) {
 			highscoreURL = "http://306skypeak.site90.net/dispCity.php";
 
-		}
+		}*/
 
 			
 		WWW hs_get = new WWW(highscoreURL);
