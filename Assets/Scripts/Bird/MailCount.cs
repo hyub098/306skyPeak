@@ -5,7 +5,10 @@ using System.Collections;
 
 //Class to count the mail as it is collected
 public class MailCount : MonoBehaviour {
-	public int mailCount;
+
+    public bool testing ;
+    
+    public int mailCount;
 	public Text mailText;
 	public  Canvas Congratulations;
 	private float time;
@@ -31,6 +34,7 @@ public class MailCount : MonoBehaviour {
     private int life;
     private Collision collision;
     private int firstOnMailBox;
+    private int counter =0;
 
 
 
@@ -64,18 +68,7 @@ public class MailCount : MonoBehaviour {
         firstOnMailBox = 0;
         level = getLevel();
 
-        //debug file
-        string dir = System.IO.Directory.GetCurrentDirectory().ToString();
-        string filename = dir + "\\log.txt";
-        using (System.IO.StreamWriter file =
-           new System.IO.StreamWriter(@"C:\Users\Public\log.txt", true))
-            {
-                file.WriteLine("filename: "+filename);
-                file.WriteLine("Expected outcome: mailcount " + (mailCount - 1).ToString() + " -> " + "collision with mail" + "-->" + mailCount.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
-                file.WriteLine("assert: mailcount " + (mailCount - 1).ToString() + " -> " + "collision with mail" + "-->" + mailCount.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
-
-
-            }
+       
     }
 
 
@@ -86,11 +79,7 @@ public class MailCount : MonoBehaviour {
 		mailText.text =  ("Mail:" + mailCount);
 
 		time = time + (Time.deltaTime) * 1 ;
-	
-			
-			
 
-	
 	}
 
 	void OnTriggerEnter(Collider other){
@@ -99,31 +88,50 @@ public class MailCount : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Mail box")) {
 			Debug.Log ("Deliver");
 			checkWin ();
-            //mailCount=0;
 
         }
 
 		// If the player hit the mail
 		if (other.gameObject.CompareTag ("Mail")) {
-			// Player can only carry 3 mails at a time
-			if(mailCount<10){
-			other.gameObject.SetActive (false);
+
+            //incremenet counter 
+            counter++;
+
+          
+            if (mailCount < 10) {
+                other.gameObject.SetActive(false);
 
 
-			Debug.Log (" Got Mail");
-			mailCount++;
+                Debug.Log(" Got Mail");
+                mailCount++;
 
-			//play audio
-            source.clip = getMailSound;
-            source.Play();
+                //play audio
+                source.clip = getMailSound;
+                source.Play();
 
-			//debug file
-            /*using (System.IO.StreamWriter file =
-               new System.IO.StreamWriter(@"C:\Users\Public\skypeak_log.txt", true))
+                string dir = System.IO.Directory.GetCurrentDirectory().ToString();
+                string filename = dir + "\\maillog.txt";
+
+                if (testing) { 
+                    //debug file
+                   
+                using (System.IO.StreamWriter file =
+                   new System.IO.StreamWriter(@filename, true))
                 {
-                    file.WriteLine("Expected outcome: mailcount " + (mailCount - 1).ToString() + " -> " + "collision with mail" + "-->" + mailCount.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
-                    file.WriteLine("assert: mailcount " + (mailCount - 1).ToString() + " -> " + "collision with mail" + "-->" + mailCount.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
-                }*/
+                    //file.WriteLine("filename: "+filename);
+                    file.WriteLine("Expected outcome: mailcount " + (counter).ToString() +
+                        " should be equal to " + mailCount.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
+
+                    file.WriteLine("------------------------------");
+                    file.WriteLine();
+
+                }
+                }
+                else
+                {
+                    if (System.IO.File.Exists(@filename))
+                        System.IO.File.Delete(@filename);
+                }
 
             }
         }
