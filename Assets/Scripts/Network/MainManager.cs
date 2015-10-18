@@ -35,9 +35,10 @@ public class MainManager : MonoBehaviour
 		
 		if (PhotonNetwork.room != null)
 			return; //Only when we're not in a Room
-		
-		
-		GUILayout.BeginArea(new Rect((Screen.width - 400) / 2, (Screen.height - 300) / 2, 400, 300));
+
+        GUI.skin.label.fontSize = 13;
+        GUI.skin.button.fontSize = 13;
+        GUILayout.BeginArea(new Rect((Screen.width - 380) / 2, (Screen.height - 300) / 2, 380, 300));
 		
 		GUILayout.Label("Main Menu");
 		
@@ -118,7 +119,8 @@ public class MainManager : MonoBehaviour
 	
 	void ShowConnectingGUI()
 	{
-		GUILayout.BeginArea(new Rect((Screen.width - 400) / 2, (Screen.height - 300) / 2, 400, 300));		
+        GUI.skin.label.fontSize = 13;
+        GUILayout.BeginArea(new Rect((Screen.width - 400) / 2, (Screen.height - 300) / 2, 400, 300));		
 		GUILayout.Label("Connecting to Photon server.");	
 		GUILayout.EndArea();
 	}
