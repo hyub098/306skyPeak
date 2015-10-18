@@ -4,6 +4,7 @@ using System.Collections;
 
 public class LifeManager : MonoBehaviour {
 	public Text healtText;
+    public bool testing;
 
 //	public AudioClip gameoverSound;
 //	public AudioClip hitSound;
@@ -18,6 +19,7 @@ public class LifeManager : MonoBehaviour {
 
 
 	public int life;
+    private int counter = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -46,20 +48,30 @@ public class LifeManager : MonoBehaviour {
 		//check the life
 		if (life > 0) {
 			life--;
+            counter++;
             //			source.clip = hitSound;
             //			source.Play ();
 
             string dir = System.IO.Directory.GetCurrentDirectory().ToString();
-            string filename = dir + "\\log.txt";
+            string filename = dir + "\\lifelog.txt";
+            if (testing)
+            {
+                using (System.IO.StreamWriter file =
+               new System.IO.StreamWriter(@filename, true))
+                {
 
-            using (System.IO.StreamWriter file =
-			   new System.IO.StreamWriter(@"C:\Users\Public\skypeak_log.txt", true))
-			{
-                file.WriteLine("filename: " + filename);
-                file.WriteLine("Expected outcome: life " + (life + 1).ToString() + " -> " + "collision" + "-->" + life.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
-			    file.WriteLine("assert: life " + (life + 1).ToString() + " -> " + "collision" + "-->" + life.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
-			}
-			
+                    file.WriteLine("Expected outcome: life " + (3 - counter).ToString()
+                        + " should be equal to " + life.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
+
+                    file.WriteLine("------------------------------");
+                    file.WriteLine();
+                }
+            }
+            else
+            {
+                if (System.IO.File.Exists(@filename))
+                    System.IO.File.Delete(@filename);
+            }
 		}
 
 		return life;
