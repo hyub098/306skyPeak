@@ -15,6 +15,7 @@ public class LoadOnClick : MonoBehaviour
     {
         //source = GetComponent<AudioSource>();
         //source.clip = clickSound;
+		Time.timeScale = 1f;
     }
 
     public void LoadScene(int level)
