@@ -52,26 +52,26 @@ public class LifeManager : MonoBehaviour {
             //			source.clip = hitSound;
             //			source.Play ();
 
-            string dir = System.IO.Directory.GetCurrentDirectory().ToString();
-            string filename = dir + "\\lifelog.txt";
-            if (testing)
-            {
-                using (System.IO.StreamWriter file =
-               new System.IO.StreamWriter(@filename, true))
-                {
-
-                    file.WriteLine("Expected outcome: life " + (3 - counter).ToString()
-                        + " should be equal to " + life.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
-
-                    file.WriteLine("------------------------------");
-                    file.WriteLine();
-                }
-            }
-            else
-            {
-                if (System.IO.File.Exists(@filename))
-                    System.IO.File.Delete(@filename);
-            }
+//            string dir = System.IO.Directory.GetCurrentDirectory().ToString();
+//            string filename = dir + "\\lifelog.txt";
+//            if (testing)
+//            {
+//                using (System.IO.StreamWriter file =
+//               new System.IO.StreamWriter(@filename, true))
+//                {
+//
+//                    file.WriteLine("Expected outcome: life " + (3 - counter).ToString()
+//                        + " should be equal to " + life.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
+//
+//                    file.WriteLine("------------------------------");
+//                    file.WriteLine();
+//                }
+//            }
+//            else
+//            {
+//                if (System.IO.File.Exists(@filename))
+//                    System.IO.File.Delete(@filename);
+//            }
 		}
 
 		return life;

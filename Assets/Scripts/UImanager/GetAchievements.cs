@@ -124,13 +124,13 @@ public class GetAchievements : MonoBehaviour {
                     temp.a = 1.0f;
                     a_image.color = temp;
                 }
-				if (s.Equals("stormyWeather"))
+				if (s.Equals("aintNoMountainHighEnough"))
                 {
                     Color temp = b_image.color;
                     temp.a = 1.0f;
                     b_image.color = temp;
                 }
-				if (s.Equals("aintNoMountainHighEnough"))
+				if (s.Equals("stormyWeather"))
                 {
                     Color temp = c_image.color;
                     temp.a = 1.0f;
@@ -141,14 +141,14 @@ public class GetAchievements : MonoBehaviour {
                     Color temp = d_image.color;
                     temp.a = 1.0f;
                     d_image.color = temp;
-                }
-				if (s.Equals("midnightCity"))
+				}
+				if (s.Equals("mountainKing"))
                 {
                     Color temp = e_image.color;
                     temp.a = 1.0f;
                     e_image.color = temp;
-                }
-				if (s.Equals("mountainKing"))
+				}
+				if (s.Equals("midnightCity"))
                 {
                     Color temp = f_image.color;
                     temp.a = 1.0f;
