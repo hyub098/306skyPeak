@@ -1,15 +1,15 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
-//This calss is for random generation
+//This class is for random generation of scrolss in city 
 public class cityRandom : MonoBehaviour {
 	public List<Vector3> myList = new List<Vector3>();
 	
 	// Use this for initialization
 	void Start () {
-		// Generate the object in a certain area
-		//transform.position=new Vector3(100+500*Random.value, 400,800*Random.value );
+		// Generate the scrolls randomly from these available values
+		// Values are chosen keeping in mind that none of them are accessible in the game area
 		
 		myList.Add(new Vector3(27,10 +UnityEngine.Random.value*15, 21 ));
 		myList.Add(new Vector3(50,10 +UnityEngine.Random.value*15, 50 ));
@@ -42,7 +42,8 @@ public class cityRandom : MonoBehaviour {
 		myList.Add(new Vector3(47,10 +UnityEngine.Random.value*15, 44 ));
 		myList.Add(new Vector3(62,10 +UnityEngine.Random.value*15, 54 ));
 		myList.Add(new Vector3(17,10 +UnityEngine.Random.value*15, 16 ));
-		
+
+		// Randomly pick one position from the 25 above
 		
 		int number = Mathf.RoundToInt(UnityEngine.Random.value*25);
 		transform.position=myList[number];
