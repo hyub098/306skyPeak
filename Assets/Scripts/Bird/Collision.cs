@@ -41,6 +41,7 @@ public class Collision : MonoBehaviour {
 
         Debug.Log("Collision script added to: " + gameObject.name);
 
+		//intialize all variables
 		collision = false;
 		rb = GetComponent<Rigidbody> ();
 		anim = GetComponent<Animation> ();
@@ -71,22 +72,24 @@ public class Collision : MonoBehaviour {
 
 
 
+		//within the time limit, owl is invincible, and flash to notice player
 		if ((time - hitTime) < 5) {
+			//flash
 			invincible = true;
 			StartCoroutine(flash());
 		} else {
+			//stop flashing, back to normal
 			invincible = false;
 			skinnedMeshRenderer.material.color = Color.white;
 		}
 
-	
-
-
+		//pause game
         if (ispause)
         {
             Time.timeScale = 0f;
         }
 
+		//check if owl is dead 
         checkDead();
 
     }
@@ -121,24 +124,27 @@ public class Collision : MonoBehaviour {
 
 	void checkDead(){
 		if (life < 1) {
+			//enable gravity and disable user control
 			flyMovement.enabled = false;
 			rb.useGravity = true;
 
             //when the player loses all three lifes, the game-over sound is played.
             source.clip = gameOverSound;
             source.Play();
+
+			//play falling animation
             anim.Play ("falling");
 			gameOver.enabled = true;
 			Time.timeScale = 0f; //Stop the game
 
-			//Check if the time is less than 30 seconds
+			//Check if the time is less than 30 seconds, give achievement
 			if (time <= 30)
 			{
 				achievement_Wipeout.enabled = true;
 				wipeout = true;
 			}
 			
-			//Check if the owl is carry more than 3 pieces of mail
+			//Check if the owl is carry more than 3 pieces of mail, give achievement
 			mailCount = GetComponent<MailCount>();
 			carryingMail = mailCount.returnMail();
 			if (carryingMail >= 3)
@@ -151,12 +157,13 @@ public class Collision : MonoBehaviour {
 		}
 	}
 
+	//public function to check current life
     public int returnLife()
     {
         return life;
     }
 
-
+	//flash the owl to notice player
 	IEnumerator flash(){
 		invincible = true;
 		for(int i = 0; i<2;i++){

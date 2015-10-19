@@ -24,6 +24,8 @@ public class Tornado : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
+		//enable owl's control from player after 2 sec
 		realtime = Time.deltaTime + realtime;
 		if (realtime - time > 2 && collide) {
 		
@@ -39,6 +41,8 @@ public class Tornado : MonoBehaviour {
 	//If near tornado, create collision
 	void checkNear(){
 
+
+		//throw owl away if it comes near
 		if (Vector3.Distance (player.transform.position, transform.position) < 8) {
 			flymovement.enabled = false;
 			collide = true;

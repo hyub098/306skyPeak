@@ -61,6 +61,7 @@ public class Radar : MonoBehaviour {
 			borderObjs.Add(j);
 		}
 
+		//create for mail box
 		mailBorder = Instantiate (mailRrefab, mailBox.transform.position, Quaternion.identity) as GameObject;
 		mailRadar = Instantiate (mailRrefab, mailBox.transform.position, Quaternion.identity) as GameObject;
 
@@ -76,7 +77,9 @@ public class Radar : MonoBehaviour {
 				//switch to border
 				helpTransform.LookAt(radarObjs[i].transform);
 				borderObjs[i].transform.position = transform.position + switchDist * helpTransform.forward;
-				
+
+				//switch between the real radar obj and the "replaced" radar obj when the real one is out of sight in minimap
+
 				borderObjs[i].layer = LayerMask.NameToLayer("Radar");
 				radarObjs[i].layer = LayerMask.NameToLayer("Invisible");
 			}
@@ -95,7 +98,8 @@ public class Radar : MonoBehaviour {
 		if (Vector3.Distance (mailBox.transform.position, player.transform.position) > switchDist) {
 			helpTransform.LookAt (mailRadar.transform);
 			mailBorder.transform.position = transform.position + switchDist * helpTransform.forward;
-			
+
+			//switch between the real radar obj and the "replaced" radar obj when the real one is out of sight in minimap
 			mailBorder.layer = LayerMask.NameToLayer ("Radar");
 			mailRadar.layer = LayerMask.NameToLayer ("Invisible");
 		} else {
@@ -112,6 +116,8 @@ public class Radar : MonoBehaviour {
 			if(!o.activeSelf){
 				for(int i =0 ;i <radarObjs.Count; i++){
 					if(radarObjs[i].transform.position == o.transform.position){
+
+						//remove from radar list and make items invisible
 						radarObjs[i].layer = LayerMask.NameToLayer("Invisible");
 						borderObjs[i].layer = LayerMask.NameToLayer("Invisible");
 						radarObjs.RemoveAt(i);

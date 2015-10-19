@@ -38,6 +38,8 @@ public class StartGameManager : MonoBehaviour {
 			startGame ();
 	
 		}
+
+		//play owl animation randomly if player doesnt start
 		if (!started) {
 			time = time + (Time.deltaTime) * 1;
 			if (time > 3) {
@@ -48,6 +50,7 @@ public class StartGameManager : MonoBehaviour {
 	}
 
 	void startGame(){
+		//enable all the scripts when called
 		flymovement.enabled = true;
 		mailcount.enabled = true;
 		collision.enabled = true;
@@ -58,11 +61,12 @@ public class StartGameManager : MonoBehaviour {
 	}
 
 	void beforeStart(){
+
+		//Stop all the scripts until user start the game
 		flymovement.enabled = false;
 		gameOver.enabled = false;
 		radar.enabled = false;
 
-//		mailcount.enabled = false;
 		collision.enabled = false;
 		rb.useGravity = false;
 	}

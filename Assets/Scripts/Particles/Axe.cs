@@ -21,13 +21,18 @@ public class Axe : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-		location = owl.transform.position;
-//		location =  Vector3.Scale(owl.transform.position, new Vector3(10,10,10));
 
+		//get the owl location to aim at
+		location = owl.transform.position;
+
+
+		//if no active axe created, create one
 		if (destroy) {
 			axeClone = createAxe ();
 		}
-					
+
+
+		//if there is active axe, throw it
 		if (!destroy) {
 			if(axeClone == null){
 				destroy = true;
@@ -45,6 +50,7 @@ public class Axe : MonoBehaviour {
 		//Create Axe as game object
 		GameObject instantiatedProjectile = Instantiate(axe, transform.position, transform.rotation) as GameObject;
 
+		//aim at owl
 		instantiatedProjectile.transform.LookAt (location);
 		destroy = false;
 		return instantiatedProjectile;
@@ -53,15 +59,17 @@ public class Axe : MonoBehaviour {
 
 	void shootAxe(GameObject axe){
 
-        //	axe.transform.position = Vector3.Lerp(axe.transform.position, location, 0.001f);
+		//play sound
         source.clip = throwSound;
         source.Play();
+
+		//throw axe
         axe.transform.position += axe.transform.forward * Time.deltaTime * 10.0f;
 		axe.transform.Rotate (0,0,1000);
 
 
 
-		//Destroy the axe 
+		//Destroy the axe after 10 sec
 		Destroy(axe, 10);
 
 	}

@@ -6,9 +6,7 @@ public class LifeManager : MonoBehaviour {
 	public Text healtText;
     public bool testing;
 
-//	public AudioClip gameoverSound;
-//	public AudioClip hitSound;
-//	private AudioSource source;
+
 
 
 	public Image damageImg;
@@ -24,8 +22,6 @@ public class LifeManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-//		source = GetComponent<AudioSource>();
-
 	}
 	
 	// Update is called once per frame
@@ -35,13 +31,17 @@ public class LifeManager : MonoBehaviour {
 
 		//flash damage color
 		if (damaged) {
+			//flash  to red
 			damageImg.color = flashColour;
 		} else {
+
+			//back to normal
 			damageImg.color = Color.Lerp (damageImg.color, Color.clear, flashSpeed * Time.deltaTime);
 		}
 		damaged = false;
 	}
 
+	//method being called by collision
 	public int subtractLife(){
 		damaged = true;
 
@@ -49,8 +49,7 @@ public class LifeManager : MonoBehaviour {
 		if (life > 0) {
 			life--;
             counter++;
-            //			source.clip = hitSound;
-            //			source.Play ();
+            
 
 //            string dir = System.IO.Directory.GetCurrentDirectory().ToString();
 //            string filename = dir + "\\lifelog.txt";
