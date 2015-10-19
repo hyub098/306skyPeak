@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
+//Enum for bird state
 public enum BirdState
 {
 	Idle = 0,
@@ -26,6 +26,7 @@ public class MoveMent : MonoBehaviour {
 
 
 	void OnGUI(){
+		//if the player wins the game, display the "congratulation screen"
 		if (isFinish) {
             GUILayout.BeginArea(new Rect((Screen.width - 500) / 2, (Screen.height - 300) / 2, 500, 300));
             GUILayout.BeginHorizontal();
@@ -45,11 +46,7 @@ public class MoveMent : MonoBehaviour {
             GUILayout.EndHorizontal();
             GUILayout.EndArea();
     
-			//if(GUI.Button(new Rect(10,10,150,100),"button")){
-            //
-				//Application.LoadLevel(1);
-				//print("something");
-			//}
+
 
 		}
 	}
@@ -74,24 +71,13 @@ public class MoveMent : MonoBehaviour {
 		currentSpd = Mathf.Clamp (currentSpd, 0, maxSpd);
 		Vector3 moveCamtTo = transform.position - transform.forward * 5.0f + Vector3.up * 2.0f;
 		float bias = 0.96f;
-
 		gameObject.transform.GetChild(3).transform.position=gameObject.transform.GetChild(3).transform.position* bias + moveCamtTo * (1.0f - bias);
-
-
 		gameObject.transform.GetChild (3).transform.LookAt (transform.position + transform.forward * 1.0f);
-
-
-
 		if (isFinish) {
-		
-			Time.timeScale = 0f; //Stops the game
-
-		
+			//Stops the game
+			Time.timeScale = 0f; 
 		}
-
 		constrain ();
-
-
 		UpdateAnimation ();
 
 		if (isControllable) {
@@ -169,7 +155,6 @@ public class MoveMent : MonoBehaviour {
 			
 			//animation clip
 			if (transform.eulerAngles.x > 0 && transform.eulerAngles.x < 61) {
-				//anim.Play("glideNormal");
 				_characterState = BirdState.Glide;
 				maxSpd=20;
 				count2++;
@@ -179,7 +164,6 @@ public class MoveMent : MonoBehaviour {
 					maxSpd=10;
 				}
 			} else if (transform.eulerAngles.x > 299 && transform.eulerAngles.x < 361) {
-				//anim.Play("flyNormal");
 				_characterState = BirdState.Fly;
 				maxSpd=10;
 			}
@@ -217,13 +201,13 @@ public class MoveMent : MonoBehaviour {
 		
 		
 	}
-
+	//When player reaches the end, set current state to "isfinished"
 	void OnTriggerEnter(Collider other) {
 		if(other.gameObject.CompareTag ("Finish")){
 		isFinish = true;
 		}
 	}
-	
+	//method for playing animation for different state
 	private void UpdateAnimation(){
 
 		if (_characterState == BirdState.Idle) {

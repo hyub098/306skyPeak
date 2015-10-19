@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 	public Camera camera;
 	public Canvas start;
 	public GameObject door;
+
 	void OnJoinedRoom()
 	{
 		StartGame();
@@ -20,7 +21,6 @@ public class GameManager : MonoBehaviour {
 	IEnumerator OnLeftRoom()
 	{
 		//reset everything
-
 		//Wait untill Photon is properly disconnected (empty room, and connected back to main server)
 		while(PhotonNetwork.room!=null || PhotonNetwork.connected==false)
 			yield return 0;

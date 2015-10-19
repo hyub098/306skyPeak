@@ -5,25 +5,22 @@ public class MainManager : MonoBehaviour
 {
 	public Camera camera;
 	public Canvas start;
+	//default room name
+	private string roomName = "SkyPeakRoom1";
+	private Vector2 scrollPos = Vector2.zero;
+
 	void Awake()
 	{
 		start.enabled = false;
 
 		//Connect to the main photon server. 
 		if (!PhotonNetwork.connected)
-			PhotonNetwork.ConnectUsingSettings("v1.0"); // version of the game.
-		
+			PhotonNetwork.ConnectUsingSettings("v1.0"); // version of the game.	
 		//Load name from PlayerPrefs
-		PhotonNetwork.playerName = PlayerPrefs.GetString("playerName", "Guest" + Random.Range(1, 9999));
-
-		//Set camera  for  "main menu" 
-
-		
+		PhotonNetwork.playerName = PlayerPrefs.GetString("playerName", "Guest" + Random.Range(1, 9999));		
 	}
 	
-	private string roomName = "SkyPeakRoom1";
-	private Vector2 scrollPos = Vector2.zero;
-	
+	//display the main screen for multiplayer,including creating room, joining room, going back to main screen
 	void OnGUI()
 	{
 		if (!PhotonNetwork.connected)
@@ -79,7 +76,7 @@ public class MainManager : MonoBehaviour
 		GUILayout.Label("JOIN RANDOM ROOM:", GUILayout.Width(150));
 		if (PhotonNetwork.GetRoomList().Length == 0)
 		{
-			GUILayout.Label("..no games available...");
+			GUILayout.Label("..no games available right now..");
 		}
 		else
 		{
@@ -94,7 +91,7 @@ public class MainManager : MonoBehaviour
 		GUILayout.Label("ROOM LISTING:");
 		if (PhotonNetwork.GetRoomList().Length == 0)
 		{
-			GUILayout.Label("..no games available..");
+			GUILayout.Label("..no games available right now..");
 		}
 		else
 		{
@@ -115,6 +112,7 @@ public class MainManager : MonoBehaviour
 		GUILayout.BeginHorizontal();
 		GUILayout.Space(40);
 		GUILayout.Label("", GUILayout.Width(70));
+		//button to go back to map
 		if (GUILayout.Button("Exit", GUILayout.Width(150)))
 		{
 			PhotonNetwork.LeaveRoom();
@@ -125,7 +123,7 @@ public class MainManager : MonoBehaviour
 		GUILayout.EndArea();
 	}
 	
-	
+	//GUI when it's connecting to the server
 	void ShowConnectingGUI()
 	{
         GUI.skin.label.fontSize = 13;
