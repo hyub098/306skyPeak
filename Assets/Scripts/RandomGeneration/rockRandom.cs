@@ -1,15 +1,16 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
-//This calss is for random generation
+
+//This class is for random generation of scrolss in mountains 
 public class rockRandom : MonoBehaviour {
 	public List<Vector3> myList = new List<Vector3>();
 	
 	// Use this for initialization
 	void Start () {
-		// Generate the object in a certain area
-		//transform.position=new Vector3(100+500*Random.value, 400,800*Random.value );
+		// Generate the scrolls randomly from these available values
+		// Values are chosen keeping in mind that none of them are accessible in the game area
 		myList.Add(new Vector3(32,10 +UnityEngine.Random.value*15, 65 ));
 		myList.Add(new Vector3(50,10 +UnityEngine.Random.value*15, 67 ));
 		myList.Add(new Vector3(75,10 +UnityEngine.Random.value*15, 36 ));
@@ -33,7 +34,10 @@ public class rockRandom : MonoBehaviour {
 		myList.Add(new Vector3(45,10 +UnityEngine.Random.value*15, 44 ));
 		myList.Add(new Vector3(62,10 +UnityEngine.Random.value*15, 54 ));
 		myList.Add(new Vector3(17,10 +UnityEngine.Random.value*15, 16 ));
-		
+
+
+		// Randomly pick one position from the 20 above
+
 		int number = Mathf.RoundToInt(UnityEngine.Random.value*20);
 		transform.position=myList[number];
 		
