@@ -22,13 +22,9 @@ public class ScoreUI : MonoBehaviour
 
 	public Text fifthtNameText;
 	public Text fifthScoreText;
-
-	//public Canvas park;
-	//public Canvas city;
-	//public Canvas mountain;
 	
 	
-	private string secretKey = "mySecretKey"; // Edit this value and make sure it's the same as the one stored on the server
+	private string secretKey = "mySecretKey"; 
 
 	void Start()
 	{
@@ -40,23 +36,11 @@ public class ScoreUI : MonoBehaviour
 
 
 
-    // Get the scores from the MySQL DB to display in a GUIText.
-    // remember to use StartCoroutine when calling this function!
+    // Get the Park level scores
     IEnumerator GetScores()
 	{
 
 		var highscoreURL = "http://306skypeak.site90.net/dispPark.php";
-        /*
-		if (park.enabled) {
-			highscoreURL = "http://306skypeak.site90.net/dispPark.php";
-
-		} else if (mountain.enabled) {
-			highscoreURL = "http://306skypeak.site90.net/dispMountain.php";
-
-		} else if (city.enabled) {
-			highscoreURL = "http://306skypeak.site90.net/dispCity.php";
-
-		}*/
 
 			
 		WWW hs_get = new WWW(highscoreURL);
@@ -71,6 +55,7 @@ public class ScoreUI : MonoBehaviour
 		else
 		{
 			
+			// Format the returned scores from DB and php scripts
 			Regex rgx = new Regex("[^a-zA-Z0-9 & - , <]");
 			string str = hs_get.text.ToString();
 			Debug.Log(str);
@@ -78,6 +63,7 @@ public class ScoreUI : MonoBehaviour
 			
 			List<string> results = extractString(str).Split(',').ToList<string>();
 
+			// Display the scores
 			if (results.Count > 1){
 				firstNameText.text = results[0];
 				firstScoreText.text = results[1];

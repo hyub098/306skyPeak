@@ -19,7 +19,8 @@ public class StoringScore : MonoBehaviour {
 
 		level = getLevel();
 	}
-	
+
+	// Find the current level the user is playing
 	int getLevel(){
 		int level = 0;
 		if(Application.loadedLevelName.Equals("Park")){
@@ -35,7 +36,7 @@ public class StoringScore : MonoBehaviour {
 	
 	// Get the user name and score and submit it to the database
 	private void SubmitScore(string name) {
-		// Store the player's score
+		// Get the score from the dictionary
 		if (level == 1) {
 			score = PlayerPrefs.GetInt ("park");
 			
@@ -45,7 +46,8 @@ public class StoringScore : MonoBehaviour {
 		} else if (level == 3) {
 			score =  PlayerPrefs.GetInt ("city");
 		}
-		
+
+		// Store the scores and the achievements
 		StartCoroutine(PostScores(name, score));
 
 		if (MailCount.timeMountain) {

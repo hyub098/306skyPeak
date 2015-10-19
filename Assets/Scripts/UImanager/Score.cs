@@ -6,14 +6,15 @@ public class Score : MonoBehaviour
 {
 
     int score = 0;
-	private int level;
 
+	private int level;
     public Text scoreText;
 
 	void Start(){
 		level = getLevel();
 	}
 
+	// Get the current level the user is playing
 	int getLevel(){
 		int level = 0;
 		if(Application.loadedLevelName.Equals("Park")){
@@ -26,7 +27,7 @@ public class Score : MonoBehaviour
 		return level;
 	}
 
-    // Update the score of the player
+    // Update the score of the player on the congratulation screen
     void Update()
     {
 

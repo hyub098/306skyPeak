@@ -7,7 +7,6 @@ using System.Collections.Generic;
 
 public class CityScoreUI : MonoBehaviour
 {
-    //public Text guiText;
     public Text firstNameText;
     public Text firstScoreText;
 
@@ -25,7 +24,7 @@ public class CityScoreUI : MonoBehaviour
 
 
 
-    private string secretKey = "mySecretKey"; // Edit this value and make sure it's the same as the one stored on the server
+    private string secretKey = "mySecretKey"; 
 
     void Start()
     {
@@ -37,8 +36,7 @@ public class CityScoreUI : MonoBehaviour
 
 
 
-    // Get the scores from the MySQL DB to display in a GUIText.
-    // remember to use StartCoroutine when calling this function!
+    // Get the City Level Scores
     IEnumerator GetScores()
     {
 
@@ -57,6 +55,7 @@ public class CityScoreUI : MonoBehaviour
         else
         {
 
+            // Format the returned scores from DB and php scripts
             Regex rgx = new Regex("[^a-zA-Z0-9 & - , <]");
             string str = hs_get.text.ToString();
             Debug.Log(str);
@@ -64,6 +63,7 @@ public class CityScoreUI : MonoBehaviour
 
             List<string> results = extractString(str).Split(',').ToList<string>();
 
+            // Display the scores
             if (results.Count > 1)
             {
                 firstNameText.text = results[0];
