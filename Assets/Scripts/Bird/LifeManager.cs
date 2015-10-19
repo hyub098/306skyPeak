@@ -50,6 +50,9 @@ public class LifeManager : MonoBehaviour {
 			life--;
             counter++;
             
+            
+// This section is uncommented when we are running our unit test to test the life system
+
 
 //            string dir = System.IO.Directory.GetCurrentDirectory().ToString();
 //            string filename = dir + "\\lifelog.txt";
