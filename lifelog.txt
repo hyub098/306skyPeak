@@ -1,0 +1,9 @@
+Expected outcome: life 2 should be equal to 2 at time 11:55:13 PM
+------------------------------
+
+Expected outcome: life 1 should be equal to 1 at time 11:55:31 PM
+------------------------------
+
+Expected outcome: life 0 should be equal to 0 at time 11:55:38 PM
+------------------------------
+
