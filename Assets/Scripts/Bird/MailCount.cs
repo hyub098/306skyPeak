@@ -109,29 +109,29 @@ public class MailCount : MonoBehaviour {
                 source.clip = getMailSound;
                 source.Play();
 
-                string dir = System.IO.Directory.GetCurrentDirectory().ToString();
-                string filename = dir + "\\maillog.txt";
-
-                if (testing) { 
-                    //debug file
-                   
-                using (System.IO.StreamWriter file =
-                   new System.IO.StreamWriter(@filename, true))
-                {
-                    //file.WriteLine("filename: "+filename);
-                    file.WriteLine("Expected outcome: mailcount " + (counter).ToString() +
-                        " should be equal to " + mailCount.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
-
-                    file.WriteLine("------------------------------");
-                    file.WriteLine();
-
-                }
-                }
-                else
-                {
-                    if (System.IO.File.Exists(@filename))
-                        System.IO.File.Delete(@filename);
-                }
+//                string dir = System.IO.Directory.GetCurrentDirectory().ToString();
+//                string filename = dir + "\\maillog.txt";
+//
+//                if (testing) { 
+//                    //debug file
+//                   
+//                using (System.IO.StreamWriter file =
+//                   new System.IO.StreamWriter(@filename, true))
+//                {
+//                    //file.WriteLine("filename: "+filename);
+//                    file.WriteLine("Expected outcome: mailcount " + (counter).ToString() +
+//                        " should be equal to " + mailCount.ToString() + " at time " + System.DateTime.Now.ToString("h:mm:ss tt"));
+//
+//                    file.WriteLine("------------------------------");
+//                    file.WriteLine();
+//
+//                }
+//                }
+//                else
+//                {
+//                    if (System.IO.File.Exists(@filename))
+//                        System.IO.File.Delete(@filename);
+//                }
 
             }
         }
