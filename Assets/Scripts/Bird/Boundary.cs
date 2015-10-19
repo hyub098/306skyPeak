@@ -9,12 +9,6 @@ public class Boundary : MonoBehaviour {
 	public int minZ;
 	public int maxZ;
 
-//	int minX = -600; //left boundary 
-//	int maxX = 600; //right boundary 
-//	int minY = -100; // up boundary 
-//	int maxY = 600; // down boundary
-//	int maxZ =600;// front boundary
-//	int minZ =-600; //back boundary
 	private Rigidbody rb;
 	bool ispushing=false;
 

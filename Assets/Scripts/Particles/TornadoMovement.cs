@@ -14,6 +14,8 @@ public class TornadoMovement : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
+
+		//Add destination points to the list if not added
 		if (!added) {
 			initializeArray();
 			dest = posArray[0];
@@ -21,25 +23,20 @@ public class TornadoMovement : MonoBehaviour {
 		}
 
 
-
+		//On arrive destination, pick a new destination
 		if (checkArrive ()) {
 			chooseDest();
 
 		} 
+
+		//move tornado
 		Debug.Log (dest);
 		moveTornado ();
-			
-
-
-
-
-
-//			new Vector3( Mathf.Lerp (transform.position.x, dest.x, Time.deltaTime),transform.position.y,Mathf.Lerp(transform.position.z,dest.z,Time.deltaTime));
-
 	}
 
 	void initializeArray(){
 	
+		//List of potential destinations
 		posArray.Add(new Vector3 (43f, 7.7f, 65f));
 		posArray.Add(new Vector3 (80f, 7.7f, 88f));
 		posArray.Add(new Vector3 (16f, 7.7f, 88f));
@@ -53,14 +50,17 @@ public class TornadoMovement : MonoBehaviour {
 	}
 
 	void chooseDest(){
-		int index = UnityEngine.Random.Range (0, 4);
-//		Debug.Log (index);
+
+		//randomly choose one
+		int index = UnityEngine.Random.Range (0, 8);
 		dest = posArray [index];
 
 
 	}
 
 	bool checkArrive(){
+
+		//check if tornado arrive destination
 		if (Vector3.Distance (transform.position, dest) < 5) {
 			return true;
 		}
@@ -68,6 +68,8 @@ public class TornadoMovement : MonoBehaviour {
 	}
 
 	void moveTornado(){
+
+		//move tornado
 		transform.position = Vector3.Lerp (transform.position, dest, 0.01f);
 	}
 }

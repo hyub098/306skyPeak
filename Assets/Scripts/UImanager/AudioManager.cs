@@ -18,10 +18,13 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	public void muteSound(){
+		//If toggle to mute, pause the camera's audio listener
 		AudioListener.pause = volumeToggle.isOn;
 	}
 
 	public void soundVolume(){
+
+		//update audio listener 's volume to the slider's value
 		float value = volumeSlider.value;
 		Debug.Log (AudioListener.volume);
 		AudioListener.volume = value;

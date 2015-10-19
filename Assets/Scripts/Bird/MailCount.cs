@@ -105,7 +105,7 @@ public class MailCount : MonoBehaviour {
                 Debug.Log(" Got Mail");
                 mailCount++;
 
-                //play audio
+                //when geting a mail scroll, the get-mail-sound is played
                 source.clip = getMailSound;
                 source.Play();
 
@@ -157,6 +157,8 @@ public class MailCount : MonoBehaviour {
             if (mailCount >= 3)
             {
                 Congratulations.enabled = true;
+
+                //play successful sound when the player wins the game
                 source.clip = winSound;
                 source.Play();
                 Time.timeScale = 0f; //Stop the game
@@ -187,6 +189,8 @@ public class MailCount : MonoBehaviour {
             }
             else
             {
+                // when the owl delivers mails  to the mail box, a post-mail-sound is played, 
+                // expect the first time the game begins 
                 if (firstOnMailBox == 0)
                 {
 
@@ -204,7 +208,10 @@ public class MailCount : MonoBehaviour {
             if (mailCount >= 5)
             {
                 Congratulations.enabled = true;
-				Time.timeScale = 0f; //Stop the game
+                //play successful sound when the player wins the game
+                source.clip = winSound;
+                source.Play();
+                Time.timeScale = 0f; //Stop the game
                 //Achievement for beating mountain in under a minute
                 if (time < 120)
                 {
@@ -230,13 +237,31 @@ public class MailCount : MonoBehaviour {
                 }
 
             }
+            else
+            {
+                // when the owl delivers mails  to the mail box, a post-mail-sound is played, 
+                // expect the first time the game begins 
+                if (firstOnMailBox == 0)
+                {
+
+                    firstOnMailBox = 1;
+                }
+                else
+                {
+                    source.clip = postMailSound;
+                    source.Play();
+                }
+            }
         }
         else if (level == 3)
         {
             if (mailCount >= 10)
             {
                 Congratulations.enabled = true;
-				Time.timeScale = 0f; //Stop the game
+                //play successful sound when the player wins the game
+                source.clip = winSound;
+                source.Play();
+                Time.timeScale = 0f; //Stop the game
                 //Achievement for beating city in under 3 minutes
                 if (time < 180)
                 {
@@ -261,6 +286,21 @@ public class MailCount : MonoBehaviour {
 					closeOne = true;
                 }
 
+            }
+            else
+            {
+                // when the owl delivers mails  to the mail box, a post-mail-sound is played, 
+                // expect the first time the game begins 
+                if (firstOnMailBox == 0)
+                {
+
+                    firstOnMailBox = 1;
+                }
+                else
+                {
+                    source.clip = postMailSound;
+                    source.Play();
+                }
             }
         }
     }
