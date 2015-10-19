@@ -5,6 +5,8 @@ using System.Collections.Generic;
 /// <summary>
 /// This simple chat example showcases the use of RPC targets and targetting certain players via RPCs.
 /// </summary>
+/// Reference:Photon Viking template from asset store.
+/// Modified By: Skypeak Team
 public class Chat : Photon.MonoBehaviour
 {
 	
@@ -59,14 +61,9 @@ public class Chat : Photon.MonoBehaviour
 				}
 			}
 		}
-		
-		//if (GUILayout.Button("SEND", GUILayout.Height(17)))
-		//   SendChat(PhotonTargets.All);
+
 		GUILayout.FlexibleSpace();
 		GUILayout.EndHorizontal();
-		
-		
-		
 		GUILayout.EndArea();
 	}
 	
@@ -102,7 +99,7 @@ public class Chat : Photon.MonoBehaviour
 			chatInput = "";
 		}
 	}
-	
+	//Only available when joining the room
 	void OnLeftRoom()
 	{
 		this.enabled = false;
