@@ -7,8 +7,9 @@ using System.Collections.Generic;
 
 public class GetAchievements : MonoBehaviour {
     //public Text guiText;
-    private string secretKey = "mySecretKey"; // Edit this value and make sure it's the same as the one stored on the server
-                                              //be sure to add a ? to your url
+    private string secretKey = "mySecretKey"; // Key stored on the server
+
+    //nine images of achievements                                         
     public Image a_image;
     public Image b_image;
     public Image c_image;
@@ -78,32 +79,18 @@ public class GetAchievements : MonoBehaviour {
         return hashString.PadLeft(32, '0');
     }
 
+    // Get the achievemnts from the MySQL DB and change achievement images alpha value depending on whether achievement was obtained.
     IEnumerator GetUserAchievements(string user)
     {
-        /*var usersUrl = "http://306skypeak.site90.net/getUsers.php";
-        WWW hs_get0 = new WWW(usersUrl);
-        yield return hs_get0;
-        if (hs_get0.error != null)
-        {
-            print("There was an error getting the high score: " + hs_get0.error);
-        }
-        else
-        {
-            namesText.text = hs_get0.text; // this is a GUIText that will display the scores in game.
-            Debug.Log(hs_get0.text);
-        }*/
-
-
+ 
         var highscoreURL = "http://306skypeak.site90.net/dispPersonalAchievements.php?";
-        //guiText.text = "Loading Scores";
+
         string hash = Md5Sum(user + secretKey);
         string post_url = highscoreURL + "user=" + WWW.EscapeURL(user) + "&hash=" + hash;
 
         WWW hs_get = new WWW(post_url);
         yield return hs_get;
-
-
-        //Debug.Log(post_url);
+        
 
         Regex rgx = new Regex("[^a-zA-Z0-9 & - , < ']");
         string str = hs_get.text.ToString();
@@ -113,8 +100,9 @@ public class GetAchievements : MonoBehaviour {
             print("There was an error getting the high score: " + hs_get.error);
         }
         else
-        {
-            //guiText.text = extractString(str); // this is a GUIText that will display the scores in game.
+        {   
+            //returned string of achievements from db is separated by comma 
+            //store achievemnts in list       
             List<string> achievements = extractString(str).Split(',').ToList<string>();
             foreach (string s in achievements)
             {
@@ -177,6 +165,7 @@ public class GetAchievements : MonoBehaviour {
             Debug.Log(extractString(str));
         }
     }
+    //Extract only the data from the Database
     public static string extractString(string s)
     {
         int l = s.IndexOf("<");

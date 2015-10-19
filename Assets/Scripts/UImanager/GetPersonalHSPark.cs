@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class GetPersonalHSPark : MonoBehaviour {
-    private string secretKey = "mySecretKey";
+    private string secretKey = "mySecretKey"; // Key stored on the server
     public Text guiText;
     // Use this for initialization
     void Start () {
@@ -38,7 +38,6 @@ public class GetPersonalHSPark : MonoBehaviour {
     }
 
     // Get the scores from the MySQL DB to display in a GUIText.
-    // remember to use StartCoroutine when calling this function!
     IEnumerator GetScores(string name)
     {
 
@@ -62,6 +61,7 @@ public class GetPersonalHSPark : MonoBehaviour {
             Debug.Log(extractString(hs_get.text));
         }
     }
+    //Extract only the data from the Database
     public static string extractString(string s)
     {
         int l = s.IndexOf("<");

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class GetPersonalHSMountain : MonoBehaviour
 {
-    private string secretKey = "mySecretKey";
+    private string secretKey = "mySecretKey"; // Key stored on the server
     public Text guiText;
     // Use this for initialization
     void Start()
@@ -13,7 +13,7 @@ public class GetPersonalHSMountain : MonoBehaviour
         usernameField.onEndEdit.AddListener(SubmitScore);
     }
 
-    // Get the user name and gets Park HS from the database
+    // Get the user name and gets Mountain HS from the database
     private void SubmitScore(string name)
     {
         StartCoroutine(GetScores(name));
@@ -40,7 +40,6 @@ public class GetPersonalHSMountain : MonoBehaviour
     }
 
     // Get the scores from the MySQL DB to display in a GUIText.
-    // remember to use StartCoroutine when calling this function!
     IEnumerator GetScores(string name)
     {
 
@@ -64,6 +63,7 @@ public class GetPersonalHSMountain : MonoBehaviour
             Debug.Log(extractString(hs_get.text));
         }
     }
+    //Extract only the data from the Database
     public static string extractString(string s)
     {
         int l = s.IndexOf("<");
