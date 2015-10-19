@@ -8,21 +8,14 @@ using System.Collections;
 public class LoadOnClick : MonoBehaviour
 {
 
-    //public AudioClip clickSound;
-    //private AudioSource source;
-
     void Start()
     {
-        //source = GetComponent<AudioSource>();
-        //source.clip = clickSound;
 		Time.timeScale = 1f;
     }
 
+    // load a specific scene due to the number of level
     public void LoadScene(int level)
     {
-        //loadingImage.SetActive(true);
-        //source.clip = clickSound;
-        //source.Play();
         Application.LoadLevel(level);
 		Time.timeScale = 1f;
     }

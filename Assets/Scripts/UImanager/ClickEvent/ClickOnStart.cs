@@ -2,16 +2,14 @@
 using UnityEngine.UI;
 using System.Collections;
 
+/**
+* ClickOnStart is used at the beginning of multiplayer scene. It counts three seconds and displays
+* 3, 2, 1 and Go on the screen to tell the player the game starts.
+*/
 public class ClickOnStart : MonoBehaviour {
 
     public Canvas start3;
-    //public Canvas start2;
-    //public Canvas start1;
-    //public Canvas go;
-    //public Canvas current;
-    //public Canvas congratulations;
     public Button startButton;
-    //public Text title;
 
     public Text n;
 
@@ -26,17 +24,9 @@ public class ClickOnStart : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        //congratulations.enabled = false;
         start3.enabled = false;
-
-        //start2.enabled = false;
-        //start1.enabled = false;
-        //go.enabled = false;
         starttime = 0;
         realtime = 0;
-        //starttime = realtime;
-        //start = true;
-        //three = true;
     }
 
     // Update is called once per frame
@@ -45,33 +35,29 @@ public class ClickOnStart : MonoBehaviour {
         realtime = Time.deltaTime + realtime;
         if (start)
         {
-			//Debug.Log("start game111");
+            // count down to 2
             if (realtime - starttime > 1 && three)
             {
-                //start3.enabled = false;
-                //start2.enabled = true;
                 startButton.enabled = false;
-                //title.enabled = false;
                 n.text = ""+2;
                 three = false;
                 two = true;
             }
+            // count down to 1
             else if (realtime - starttime > 2 && two)
             {
-                //start2.enabled = false;
-                //start1.enabled = true;
                 n.text = ""+1;
                 two = false;
                 one = true;
             }
+            // count down to 0
             else if (realtime - starttime > 3 && one)
             {
-                //start1.enabled = false;
-                //go.enabled = true;
                 n.text = "Go";
                 one = false;
                 zero = true;
             }
+            // refresh all private fields and wait for the next call
             else if (realtime - starttime > 4 && zero)
             {
                 zero = false;
@@ -81,19 +67,14 @@ public class ClickOnStart : MonoBehaviour {
             }
         }
     }
-
-    //public void GoToRoom()
-    //{
-        //current.enabled = false;
-      //  start3.enabled = true;
-    //}
-
+    
+    //When the player click on the start button, the number will count down.
+    //It activated the function in update().  
     public void StartGame()
     {
         start = true;
         three = true;
         starttime = realtime;
         Debug.Log("start game");
-        //Application.LoadLevel(level);
     }
 }

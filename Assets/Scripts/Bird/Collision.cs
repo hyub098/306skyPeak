@@ -87,36 +87,7 @@ public class Collision : MonoBehaviour {
             Time.timeScale = 0f;
         }
 
-//        if (life < 1)
-//        {
-//
-//            if (!isSaved)
-//            {
-//                deadTime = time;
-//                isSaved = true;
-//            }
-//            Debug.Log(time - deadTime);
-//
-//            if (time - deadTime > 3)
-//            {
-//
-//                //	Application.LoadLevel(Application.loadedLevel);
-//
-//            }
-//            if (count == 0)
-//            {
-//                gameOver.enabled = true;
-//                count = count + 1;
-//               
-//
-//                //If time is less than 10 seconds give the wipeout 
-//                if (time <= 10)
-//                {
-//                    achievement_Wipeout.enabled = true;
-//                }
-//            }
-//
-//        }
+        checkDead();
 
     }
 	
@@ -128,6 +99,8 @@ public class Collision : MonoBehaviour {
 
 			if (!collision.gameObject.CompareTag ("Mailbox")) {
             if (!invincible){
+
+                // when a collision happens, a collision sound is played.
                 source.clip = collisionSound;
                 source.Play();
                 //stop it from further damage
@@ -139,11 +112,6 @@ public class Collision : MonoBehaviour {
 				life = lifeManager.subtractLife ();
                 //flash();
             }
-
-
-			checkDead();
-				
-			
 				
         }
 
@@ -155,23 +123,15 @@ public class Collision : MonoBehaviour {
 		if (life < 1) {
 			flyMovement.enabled = false;
 			rb.useGravity = true;
+
+            //when the player loses all three lifes, the game-over sound is played.
             source.clip = gameOverSound;
             source.Play();
             anim.Play ("falling");
-			//if (count == 0)
-			//{
-			//  count = count + 1;
-			//source.clip = gameoverSound;
-			//source.Play();
-			//Debug.Log("game over");
-			//}
 			gameOver.enabled = true;
 			Time.timeScale = 0f; //Stop the game
-			
-			
-			//Check for time and 3 mail achievements
-			
-			//Check if the time is less than 20 seconds
+
+			//Check if the time is less than 30 seconds
 			if (time <= 30)
 			{
 				achievement_Wipeout.enabled = true;

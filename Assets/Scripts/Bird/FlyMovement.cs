@@ -156,6 +156,8 @@ public class FlyMovement : MonoBehaviour {
             if (transform.eulerAngles.x > 0 && transform.eulerAngles.x < 61) {
                 anim.Play("glideNormal");
                 count2++;
+
+                //when the owl glides for about 3 seconds, the wind sound is played
                 if (count2 == 300)
                 {
                     source.clip = windSound;
@@ -165,6 +167,7 @@ public class FlyMovement : MonoBehaviour {
             } else if (transform.eulerAngles.x > 299 && transform.eulerAngles.x < 361) {
                 anim.Play("flyNormal");
                 count++;
+                //when the owl flaps wings for 100 times, the wing-flag sound is played
                 if (count == 100)
                 {
                     source.clip = wingSound;

@@ -3,7 +3,6 @@ using System.Collections;
 
 public class tensec : MonoBehaviour {
 
-	// Use this for initialization
 	public int count;
 	// Use this for initialization
 	void Start () {
