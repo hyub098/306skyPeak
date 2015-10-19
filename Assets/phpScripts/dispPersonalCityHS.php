@@ -8,7 +8,7 @@
        
         $hash = $_GET['hash']; 
  
-        $secretKey="mySecretKey"; # Change this value to match the value stored in the client javascript below 
+        $secretKey="mySecretKey"; 
 
         $real_hash = md5($name . $secretKey); 
 
