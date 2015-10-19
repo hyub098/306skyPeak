@@ -30,5 +30,5 @@ Both the scripts folder and the scenes folder have the main screens/scripts insi
 To view individual contributions, visit "Individual Contribution" and "Member Work Logs" pages on wiki.
 To view meeting minutes, visit "Meeting" Minutes page on wiki
 
-To view the prototype checklist, visit https://github.com/hyub098/306skyPeak/blob/master/SE306-PrototypeChecklist.pdf.
 To view the final checklist, visit https://github.com/hyub098/306skyPeak/blob/dev/SE306-FinalChecklist.pdf.
+To view the prototype checklist, visit https://github.com/hyub098/306skyPeak/blob/master/SE306-PrototypeChecklist.pdf.
