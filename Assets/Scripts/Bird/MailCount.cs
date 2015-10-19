@@ -109,6 +109,9 @@ public class MailCount : MonoBehaviour {
                 source.clip = getMailSound;
                 source.Play();
 
+
+// This section is uncommented when we are running our unit test to test the mail collection system
+
 //                string dir = System.IO.Directory.GetCurrentDirectory().ToString();
 //                string filename = dir + "\\maillog.txt";
 //
